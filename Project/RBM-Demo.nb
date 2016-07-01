@@ -1,0 +1,492 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     19465,        483]
+NotebookOptionsPosition[     18502,        449]
+NotebookOutlinePosition[     18957,        467]
+CellTagsIndexPosition[     18914,        464]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.551031325653844*^9, 3.5510313271105947`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Logistic", "[", "x_", "]"}], ":=", " ", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      RowBox[{"Exp", "[", 
+       RowBox[{"-", "x"}], "]"}]}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sample", "[", "l_", "]"}], ":=", 
+   RowBox[{"Sign", "[", 
+    RowBox[{"Thread", "[", 
+     RowBox[{"l", " ", "-", " ", 
+      RowBox[{"RandomReal", "[", 
+       RowBox[{"1", ",", " ", 
+        RowBox[{"Length", "[", "l", "]"}]}], "]"}]}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"SampleHidden", "[", "w_", "]"}], "[", "v_", "]"}], ":=", 
+   RowBox[{"sample", "[", 
+    RowBox[{"Logistic", "[", 
+     RowBox[{
+      RowBox[{"w", "\[Transpose]"}], ".", "v"}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"SampleVisible", "[", "w_", "]"}], "[", "h_", "]"}], ":=", " ", 
+   RowBox[{"sample", "[", 
+    RowBox[{"Logistic", "[", 
+     RowBox[{"w", ".", "h"}], "]"}], "]"}]}], ";"}]}], "Code",
+ CellChangeTimes->{{3.550856907709586*^9, 3.550856946261508*^9}, {
+  3.550857489007963*^9, 3.5508574937372017`*^9}, {3.550857581244684*^9, 
+  3.550857604423088*^9}, {3.550858825662678*^9, 3.550858837244577*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"flip", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x_", ",", "y_"}], "}"}], ",", "l_List"}], "]"}], ":=", 
+  RowBox[{"ReplacePart", "[", 
+   RowBox[{"l", ",", 
+    RowBox[{
+     RowBox[{"Ceiling", "[", "x", "]"}], "\[Rule]", 
+     RowBox[{
+      RowBox[{"l", "[", 
+       RowBox[{"[", 
+        RowBox[{"Ceiling", "[", "x", "]"}], "]"}], "]"}], "*", 
+      RowBox[{"-", "1"}]}]}]}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.55085706346268*^9, 3.5508571103524303`*^9}, {
+  3.550858842317445*^9, 3.550858856348197*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"RBMDemo", "[", 
+    RowBox[{"V_", ",", "W_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"DynamicModule", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"h", "=", 
+        RowBox[{
+         RowBox[{"SampleHidden", "[", "W", "]"}], "[", "V", "]"}]}], ",", 
+       RowBox[{"v", "=", "V"}], ",", "reconstruction"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"reconstruction", "=", 
+       RowBox[{
+        RowBox[{"SampleVisible", "[", "W", "]"}], "[", "h", "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Dynamic", "[", 
+       RowBox[{"Row", "[", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Column", "[", 
+            RowBox[{
+             RowBox[{"{", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"ClickPane", "[", 
+                RowBox[{
+                 RowBox[{"ArrayPlot", "[", 
+                  RowBox[{
+                   RowBox[{"{", "h", "}"}], ",", 
+                   RowBox[{"Mesh", "\[Rule]", "True"}], ",", 
+                   RowBox[{"ImageSize", "\[Rule]", "300"}]}], "]"}], ",", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"h", "=", 
+                    RowBox[{"flip", "[", 
+                    RowBox[{"#", ",", "h"}], "]"}]}], ";", 
+                    RowBox[{"reconstruction", "=", 
+                    RowBox[{
+                    RowBox[{"SampleVisible", "[", "W", "]"}], "[", "h", 
+                    "]"}]}]}], ")"}], "&"}]}], "]"}], ",", 
+               "\[IndentingNewLine]", 
+               RowBox[{"ClickPane", "[", 
+                RowBox[{
+                 RowBox[{"ArrayPlot", "[", 
+                  RowBox[{
+                   RowBox[{"{", "v", "}"}], ",", 
+                   RowBox[{"Mesh", "\[Rule]", "True"}], ",", 
+                   RowBox[{"ImageSize", "\[Rule]", "300"}]}], "]"}], ",", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"v", "=", 
+                    RowBox[{"flip", "[", 
+                    RowBox[{"#", ",", "v"}], "]"}]}], ";", 
+                    RowBox[{"h", "=", 
+                    RowBox[{
+                    RowBox[{"SampleHidden", "[", "W", "]"}], "[", "v", 
+                    "]"}]}], ";", 
+                    RowBox[{"reconstruction", "=", 
+                    RowBox[{
+                    RowBox[{"SampleVisible", "[", "W", "]"}], "[", "h", 
+                    "]"}]}]}], ")"}], "&"}]}], "]"}]}], "}"}], ",", 
+             RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"ArrayPlot", "[", 
+            RowBox[{
+             RowBox[{"{", "reconstruction", "}"}], ",", 
+             RowBox[{"Mesh", "\[Rule]", "True"}], ",", 
+             RowBox[{"ImageSize", "\[Rule]", "300"}]}], "]"}]}], 
+          "\[IndentingNewLine]", "}"}], ",", 
+         RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}], "\[IndentingNewLine]",
+        "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}]], "Code",
+ CellChangeTimes->{{3.5508547624438972`*^9, 3.5508549219362288`*^9}, {
+  3.550854952761423*^9, 3.550855122657053*^9}, {3.550855154992661*^9, 
+  3.550855226402177*^9}, {3.55085527343258*^9, 3.550855381438149*^9}, {
+  3.550855449291605*^9, 3.550855450819448*^9}, {3.550855760275647*^9, 
+  3.550855954670231*^9}, {3.5508559952201433`*^9, 3.550856041216158*^9}, {
+  3.550856108000752*^9, 3.550856121076728*^9}, {3.550856238509564*^9, 
+  3.550856264531599*^9}, {3.5508566663417797`*^9, 3.550856888283412*^9}, {
+  3.550856967662245*^9, 3.550856993142*^9}, {3.550857116095237*^9, 
+  3.5508571418538647`*^9}, {3.550857175915996*^9, 3.5508571811067038`*^9}, {
+  3.550857306251265*^9, 3.550857308817635*^9}, {3.550857346904028*^9, 
+  3.550857355407236*^9}, {3.550858482082121*^9, 3.550858483529291*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"WeightMatrix", "=", 
+   RowBox[{"RandomReal", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "5"}], ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "4"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"V", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "0"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"W1", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "1", ",", "1"}], "}"}]}], "}"}]}], 
+  ";"}]}], "Code",
+ CellChangeTimes->{{3.550856572236906*^9, 3.55085662911313*^9}, {
+  3.5508569105878363`*^9, 3.5508569178194513`*^9}, {3.550857208423482*^9, 
+  3.5508572253813868`*^9}, {3.550857963799461*^9, 3.550858191674994*^9}, {
+  3.550858360183823*^9, 3.550858369349186*^9}}],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.550858220942748*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RBMDemo", "[", 
+  RowBox[{"V", ",", "W1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.550856130537059*^9, 3.550856141276408*^9}, {
+   3.5508567060215807`*^9, 3.550856707077292*^9}, {3.550856999887124*^9, 
+   3.550857010214181*^9}, 3.550858077257414*^9}],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`h$$ = {1, 0, 1, 1}, $CellContext`v$$ = {1, 1, 
+  1, 1, 0}, $CellContext`reconstruction$$ = {1, 0, 0, 0, 1}}, 
+  DynamicBox[ToBoxes[
+    Row[{
+      Column[{
+        ClickPane[
+         ArrayPlot[{$CellContext`h$$}, Mesh -> True, ImageSize -> 
+          300], ($CellContext`h$$ = $CellContext`flip[#, $CellContext`h$$]; \
+$CellContext`reconstruction$$ = $CellContext`SampleVisible[{{1, 0, 1, 0}, {1, 
+            1, 0, 1}, {1, 0, 1, 1}, {0, 0, 1, 1}, {0, 1, 1, 
+            1}}][$CellContext`h$$])& ], 
+        ClickPane[
+         ArrayPlot[{$CellContext`v$$}, Mesh -> True, ImageSize -> 
+          300], ($CellContext`v$$ = $CellContext`flip[#, $CellContext`v$$]; \
+$CellContext`h$$ = $CellContext`SampleHidden[{{1, 0, 1, 0}, {1, 1, 0, 1}, {1, 
+            0, 1, 1}, {0, 0, 1, 1}, {0, 1, 1, 
+            1}}][$CellContext`v$$]; $CellContext`reconstruction$$ = \
+$CellContext`SampleVisible[{{1, 0, 1, 0}, {1, 1, 0, 1}, {1, 0, 1, 1}, {0, 0, 
+            1, 1}, {0, 1, 1, 1}}][$CellContext`h$$])& ]}, Frame -> All], 
+      ArrayPlot[{$CellContext`reconstruction$$}, Mesh -> True, ImageSize -> 
+       300]}, Frame -> True], StandardForm],
+   ImageSizeCache->{488., {199., 206.}}],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{
+  3.550856141978471*^9, {3.550856707605337*^9, 3.550856731123074*^9}, 
+   3.550857011239808*^9, {3.550857159944236*^9, 3.5508572297816267`*^9}, 
+   3.550857312530472*^9, 3.550857358354782*^9, 3.550857610460225*^9, 
+   3.550858089544238*^9, {3.55085817506494*^9, 3.550858194340416*^9}}]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.550857953029718*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ArrayPlot2", "[", "x_", "]"}], " ", ":=", " ", 
+   RowBox[{"ArrayPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"x", "+", "1"}], "}"}], "/", "2"}], ",", " ", 
+     RowBox[{"Mesh", "\[Rule]", "True"}], ",", " ", 
+     RowBox[{"ImageSize", "\[Rule]", " ", 
+      RowBox[{
+       RowBox[{"Length", "[", "x", "]"}], " ", "*", " ", "20"}]}]}], "]"}]}], 
+  ";"}]], "Code",
+ CellChangeTimes->{{3.550858881578676*^9, 3.550858891719161*^9}, {
+  3.550859019417247*^9, 3.5508590255914993`*^9}, {3.550859133283533*^9, 
+  3.550859135875066*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetAttributes", "[", 
+   RowBox[{"EditableArrayPlot", ",", "HoldAll"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"EditableArrayPlot", "[", 
+    RowBox[{"sym_Symbol", ",", " ", "rest_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"Dynamic", "[", "\n", "\t", 
+    RowBox[{"ClickPane", "[", 
+     RowBox[{
+      RowBox[{"ArrayPlot2", "[", "sym", "]"}], ",", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"sym", "\[LeftDoubleBracket]", 
+           RowBox[{"Ceiling", "[", 
+            RowBox[{"First", "[", "#", "]"}], "]"}], 
+           "\[RightDoubleBracket]"}], "*=", 
+          RowBox[{"-", "1"}]}], ";", "\[IndentingNewLine]", "\t", "rest"}], 
+        ")"}], "&"}]}], "]"}], "\n", "]"}]}], ";"}]}], "Code",
+ CellChangeTimes->{{3.5508554006015053`*^9, 3.550855463876751*^9}, {
+  3.5508555155043716`*^9, 3.550855729443348*^9}, {3.550857401133254*^9, 
+  3.550857419698941*^9}, {3.550858774231884*^9, 3.5508587890816917`*^9}, {
+  3.5508588788941517`*^9, 3.55085889759721*^9}, {3.5508589875316153`*^9, 
+  3.550858992961828*^9}, {3.550859027177969*^9, 3.550859028936563*^9}, {
+  3.550859137701482*^9, 3.550859137815844*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"RBMDemo2", "[", 
+    RowBox[{"V_", ",", "W_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"DynamicModule", "[", "\n", "\t", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "hidden", ",", " ", "visible", ",", " ", "reconstruction", ",", " ", 
+       RowBox[{"auto1", " ", "=", " ", "True"}], ",", " ", 
+       RowBox[{"auto2", " ", "=", " ", "True"}]}], "}"}], ",", "\n", "\t", 
+     RowBox[{
+      RowBox[{"hidden", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"SampleHidden", "[", "W", "]"}], "[", "V", "]"}]}], ";", "\n",
+       "\t", 
+      RowBox[{"visible", " ", "=", " ", "V"}], ";", " ", 
+      "\[IndentingNewLine]", "\t", 
+      RowBox[{"reconstruction", "=", 
+       RowBox[{
+        RowBox[{"SampleVisible", "[", "W", "]"}], "[", "hidden", "]"}]}], ";",
+       "\[IndentingNewLine]", "\t", 
+      RowBox[{"Dynamic", "[", "\[IndentingNewLine]", "\t\t", 
+       RowBox[{"Row", "[", 
+        RowBox[{"{", "\[IndentingNewLine]", "\t\t\t", 
+         RowBox[{
+          RowBox[{"EditableArrayPlot", "[", 
+           RowBox[{"visible", ",", " ", "\n", "\t\t\t\t", 
+            RowBox[{
+             RowBox[{"hidden", "=", 
+              RowBox[{
+               RowBox[{"SampleHidden", "[", "W", "]"}], "[", "visible", 
+               "]"}]}], ";", "\n", "\t\t\t\t", 
+             RowBox[{"reconstruction", "=", 
+              RowBox[{
+               RowBox[{"SampleVisible", "[", "W", "]"}], "[", "hidden", 
+               "]"}]}]}]}], "]"}], ",", " ", "\n", "\t\t\t\t", 
+          "\"\< \[Rule] \>\"", ",", " ", 
+          RowBox[{"Checkbox", "[", 
+           RowBox[{"Dynamic", "[", "auto1", "]"}], "]"}], ",", 
+          "\"\<\[Rule] \>\"", ",", "\n", "\t\t\t", 
+          RowBox[{"Dynamic", "[", "\n", "\t\t\t\t", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{"auto1", ",", " ", 
+               RowBox[{"hidden", "=", 
+                RowBox[{
+                 RowBox[{"SampleHidden", "[", "W", "]"}], "[", "visible", 
+                 "]"}]}]}], "]"}], ";", "\n", "\t\t\t\t", 
+             RowBox[{"EditableArrayPlot", "[", 
+              RowBox[{"hidden", ",", " ", "\n", "\t\t\t\t\t", 
+               RowBox[{"reconstruction", "=", 
+                RowBox[{
+                 RowBox[{"SampleVisible", "[", "W", "]"}], "[", "hidden", 
+                 "]"}]}]}], "]"}]}], ",", "\n", "\t\t\t\t", 
+            RowBox[{"UpdateInterval", " ", "\[Rule]", " ", "0.1"}]}], "\n", 
+           "\t\t\t", "]"}], ",", "\n", "\t\t\t", "\"\< \[Rule] \>\"", ",", 
+          RowBox[{"Checkbox", "[", 
+           RowBox[{"Dynamic", "[", "auto2", "]"}], "]"}], ",", " ", 
+          RowBox[{"\"\<\[Rule] \>\"", "\n", "\t\t\t", 
+           RowBox[{"Dynamic", "[", "\n", "\t\t\t\t", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"If", "[", 
+               RowBox[{"auto2", ",", " ", 
+                RowBox[{"reconstruction", "=", 
+                 RowBox[{
+                  RowBox[{"SampleVisible", "[", "W", "]"}], "[", "hidden", 
+                  "]"}]}]}], "]"}], ";", "\n", "\t\t\t\t", 
+              RowBox[{"ArrayPlot2", "[", "reconstruction", "]"}]}], ",", "\n",
+              "\t\t\t\t", 
+             RowBox[{"UpdateInterval", " ", "\[Rule]", " ", "0.1"}]}], "\n", 
+            "\t\t\t", "]"}]}]}], "\n", "\t\t", "}"}], "]"}], "\n", "\t", 
+       "]"}]}]}], "\n", "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{{3.5508547624438972`*^9, 3.5508549219362288`*^9}, {
+   3.550854952761423*^9, 3.550855122657053*^9}, {3.550855154992661*^9, 
+   3.550855226402177*^9}, {3.55085527343258*^9, 3.550855381438149*^9}, {
+   3.550855449291605*^9, 3.550855450819448*^9}, {3.550855760275647*^9, 
+   3.550855954670231*^9}, {3.5508559952201433`*^9, 3.550856041216158*^9}, {
+   3.550856108000752*^9, 3.550856121076728*^9}, {3.550856238509564*^9, 
+   3.550856264531599*^9}, {3.5508566663417797`*^9, 3.550856888283412*^9}, {
+   3.550856967662245*^9, 3.550856993142*^9}, {3.550857116095237*^9, 
+   3.5508571418538647`*^9}, {3.550857175915996*^9, 3.5508571811067038`*^9}, {
+   3.550857306251265*^9, 3.550857308817635*^9}, {3.550857346904028*^9, 
+   3.550857355407236*^9}, {3.550858482082121*^9, 3.5508587552567253`*^9}, 
+   3.550858904121273*^9, {3.550858952414032*^9, 3.550858970733004*^9}, {
+   3.550859038893553*^9, 3.550859086765873*^9}, {3.5508591172492437`*^9, 
+   3.550859121441636*^9}, {3.5508591648057117`*^9, 3.550859187013673*^9}, {
+   3.550859225193853*^9, 3.550859525496303*^9}, {3.5508595684492493`*^9, 
+   3.550859606432139*^9}}],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.550873431174603*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RBMDemo2", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "1", ",", "1"}], "}"}], ",", "W1"}], 
+  "]"}]], "Code",
+ CellChangeTimes->{{3.550858742405571*^9, 3.550858751019353*^9}, {
+  3.550858924841827*^9, 3.5508589319847813`*^9}, {3.5508733441007566`*^9, 
+  3.550873375282105*^9}, {3.550873668599069*^9, 3.55087368567456*^9}, {
+  3.55102469728176*^9, 3.551024714746045*^9}}],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`hidden$$ = {-1, -1, 1, 
+  1}, $CellContext`visible$$ = {-1, -1, -1, 1, 
+  1}, $CellContext`reconstruction$$ = {1, -1, 1, 1, 1}, $CellContext`auto1$$ =
+   True, $CellContext`auto2$$ = True}, 
+  DynamicBox[ToBoxes[
+    Row[{
+      $CellContext`EditableArrayPlot[$CellContext`visible$$, \
+$CellContext`hidden$$ = $CellContext`SampleHidden[{{1, 0, 1, 0}, {1, 1, 0, 
+          1}, {1, 0, 1, 1}, {0, 0, 1, 1}, {0, 1, 1, 
+          1}}][$CellContext`visible$$]; $CellContext`reconstruction$$ = \
+$CellContext`SampleVisible[{{1, 0, 1, 0}, {1, 1, 0, 1}, {1, 0, 1, 1}, {0, 0, 
+          1, 1}, {0, 1, 1, 1}}][$CellContext`hidden$$]], " \[Rule] ", 
+      Checkbox[
+       Dynamic[$CellContext`auto1$$]], "\[Rule] ", 
+      Dynamic[
+      If[$CellContext`auto1$$, $CellContext`hidden$$ = \
+$CellContext`SampleHidden[{{1, 0, 1, 0}, {1, 1, 0, 1}, {1, 0, 1, 1}, {0, 0, 1,
+            1}, {0, 1, 1, 
+           1}}][$CellContext`visible$$]]; \
+$CellContext`EditableArrayPlot[$CellContext`hidden$$, \
+$CellContext`reconstruction$$ = $CellContext`SampleVisible[{{1, 0, 1, 0}, {1, 
+           1, 0, 1}, {1, 0, 1, 1}, {0, 0, 1, 1}, {0, 1, 1, 
+           1}}][$CellContext`hidden$$]], UpdateInterval -> 0.1], " \[Rule] ", 
+      
+      Checkbox[
+       Dynamic[$CellContext`auto2$$]], "\[Rule] " 
+      Dynamic[If[$CellContext`auto2$$, $CellContext`reconstruction$$ = \
+$CellContext`SampleVisible[{{1, 0, 1, 0}, {1, 1, 0, 1}, {1, 0, 1, 1}, {0, 0, 
+            1, 1}, {0, 1, 1, 
+            1}}][$CellContext`hidden$$]]; \
+$CellContext`ArrayPlot2[$CellContext`reconstruction$$], UpdateInterval -> 
+        0.1]}], StandardForm],
+   ImageSizeCache->{597., {12., 23.}}],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{3.5510313819275703`*^9}]
+}, Open  ]]
+},
+WindowSize->{1076, 752},
+WindowMargins->{{36, Automatic}, {16, Automatic}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.5, 1.5 Inherited],
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 94, 1, 40, "Input"],
+Cell[654, 23, 1262, 37, 138, "Code"],
+Cell[1919, 62, 556, 16, 66, "Code"],
+Cell[2478, 80, 3981, 88, 319, "Code"],
+Cell[6462, 170, 1201, 33, 111, "Code"],
+Cell[7666, 205, 87, 1, 64, "Input"],
+Cell[CellGroupData[{
+Cell[7778, 210, 274, 5, 40, "Input"],
+Cell[8055, 217, 1568, 28, 429, "Output"]
+}, Open  ]],
+Cell[9638, 248, 87, 1, 64, "Input"],
+Cell[9728, 251, 607, 16, 66, "Code"],
+Cell[10338, 269, 1224, 28, 158, "Code"],
+Cell[11565, 299, 4538, 91, 641, "Code"],
+Cell[16106, 392, 87, 1, 64, "Input"],
+Cell[CellGroupData[{
+Cell[16218, 397, 490, 12, 64, "Code"],
+Cell[16711, 411, 1775, 35, 59, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

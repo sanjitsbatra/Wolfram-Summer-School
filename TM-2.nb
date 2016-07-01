@@ -1,0 +1,89 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2208,         80]
+NotebookOptionsPosition[      1510,         54]
+NotebookOutlinePosition[      1851,         69]
+CellTagsIndexPosition[      1808,         66]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["1160799974309365096186901"], "Input"],
+
+Cell[BoxData["1191227020209745589168921"], "Input"],
+
+Cell[BoxData["1178364675744802444726455"], "Input"],
+
+Cell[BoxData["1187136511554725371338345"], "Input"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.550100287837192*^9}],
+
+Cell[BoxData["1155572364621817212683183"], "Input"],
+
+Cell[BoxData["1124251219361610193454025"], "Input"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.550100226767385*^9}],
+
+Cell[BoxData["1177739321965985406374387"], "Input"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.5500981688955812`*^9}],
+
+Cell[BoxData["1117997248956711683574335"], "Input"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.55010023049225*^9, 3.550100230906026*^9}}],
+
+Cell[BoxData["1169293620130773321384875"], "Input"],
+
+Cell[BoxData["1193351100008487213643703"], "Input"]
+},
+WindowSize->{740, 752},
+WindowMargins->{{129, Automatic}, {-224, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit) (October 5, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 51, 0, 27, "Input"],
+Cell[611, 22, 51, 0, 27, "Input"],
+Cell[665, 24, 51, 0, 27, "Input"],
+Cell[719, 26, 51, 0, 27, "Input"],
+Cell[773, 28, 68, 1, 27, "Input"],
+Cell[844, 31, 51, 0, 27, "Input"],
+Cell[898, 33, 51, 0, 27, "Input"],
+Cell[952, 35, 68, 1, 27, "Input"],
+Cell[1023, 38, 51, 0, 27, "Input"],
+Cell[1077, 40, 70, 1, 27, "Input"],
+Cell[1150, 43, 51, 0, 27, "Input"],
+Cell[1204, 45, 194, 3, 88, "Input"],
+Cell[1401, 50, 51, 0, 27, "Input"],
+Cell[1455, 52, 51, 0, 27, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

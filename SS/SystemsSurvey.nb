@@ -1,0 +1,2341 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     63966,       2332]
+NotebookOptionsPosition[     60146,       2216]
+NotebookOutlinePosition[     60844,       2245]
+CellTagsIndexPosition[     60772,       2240]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["A Survey Of \"Other\" Rule Systems", "Title"],
+
+Cell["\<\
+A lecture for the NKS Summer School 2007 at the University Of Vermont\
+\>", "Subtitle",
+ CellChangeTimes->{{3.392984513868858*^9, 3.392984523524377*^9}}],
+
+Cell["\<\
+By Matthew P. Szudzik
+9 July 2007 Draft\
+\>", "Subsubtitle",
+ CellChangeTimes->{{3.392984530673932*^9, 3.392984534557985*^9}},
+ FontSlant->"Italic"],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section"],
+
+Cell[TextData[{
+ "Cellular automata are one example of a computational system.  Although \
+cellular automata are emphasized more than any other system in Stephen \
+Wolfram's ",
+ StyleBox["A New Kind Of Science",
+  FontSlant->"Italic"],
+ ", there are several other systems of theoretical and historical \
+significance.  After cellular automata, the most important system is"
+}], "Text"],
+
+Cell[TextData[{
+ "\[FilledSmallCircle]",
+ StyleBox["Turing Machines,",
+  FontWeight->"Bold"]
+}], "Text",
+ CellMargins->{{90, Inherited}, {Inherited, Inherited}}],
+
+Cell["\<\
+which will be discussed later in a separate lecture.  Today's lecture is \
+devoted to\
+\>", "Text"],
+
+Cell[TextData[{
+ "\[FilledSmallCircle]",
+ StyleBox["Multiway Systems and Sequential Substitution Systems,",
+  FontWeight->"Bold"],
+ "\n\[FilledSmallCircle]",
+ StyleBox["Combinators and Symbolic Systems, and",
+  FontWeight->"Bold"],
+ "\n\[FilledSmallCircle]",
+ StyleBox["Kalm\[AAcute]r Elementary Functions.",
+  FontWeight->"Bold"]
+}], "Text",
+ CellMargins->{{90, Inherited}, {Inherited, Inherited}}],
+
+Cell["We will begin with Multiway Systems.", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Multiway Systems And Sequential Substitution Systems", "Section"],
+
+Cell[TextData[{
+ "Note: Multiway Systems are covered on pages ",
+ ButtonBox["204-209",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.wolframscience.com/nksonline/page-204"], None}],
+ ", and ",
+ ButtonBox["937",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.wolframscience.com/nksonline/page-937"], None}],
+ " of ",
+ StyleBox["A New Kind Of Science",
+  FontSlant->"Italic"],
+ "."
+}], "SmallText"],
+
+Cell["\<\
+Multiway systems are known in the mathematical literature as semi-Thue \
+systems.  (\"Thue\" is pronounced like \"two-way\", but without the \"w\".  \
+We will see in a moment that semi-Thue systems allow transformations in one \
+direction, but Thue systems allow transformations in two \
+directions\[LongDash]they are literally \"two-way\" systems.)  Multiway \
+systems are a useful idealization of the process of doing mathematics.  \
+Normally, in mathematics we will begin with a statement that we know is true, \
+like\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"a", "+", "1"}], ")"}], "2"], "\[Equal]", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"a", "+", "1"}], ")"}], "2"]}]], "DisplayFormula",
+ SingleLetterItalics->False],
+
+Cell["\<\
+and then we will apply transformation rules to the statement.  For example, \
+the above statement can be transformed as follows.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"a", "+", "1"}], ")"}], "2"], "\[Equal]", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"a", "+", "1"}], ")"}], 
+   RowBox[{"(", 
+    RowBox[{"a", "+", "1"}], ")"}]}]}]], "DisplayFormula",
+ SingleLetterItalics->False],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"a", "+", "1"}], ")"}], "2"], "\[Equal]", 
+  RowBox[{
+   SuperscriptBox["a", "2"], "+", 
+   RowBox[{"2", "a"}], "+", "1"}]}]], "DisplayFormula",
+ SingleLetterItalics->False],
+
+Cell[TextData[{
+ "Here, the transformation rules that we used are the definition of \
+exponentiation and the distributive law of multiplication, respectively.  We \
+then think of the result ",
+ Cell[BoxData[
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"a", "+", "1"}], ")"}], "2"], "\[Equal]", 
+   RowBox[{
+    SuperscriptBox["a", "2"], "+", 
+    RowBox[{"2", "a"}], "+", "1"}]}]]],
+ " as a ",
+ StyleBox["theorem",
+  FontSlant->"Italic"],
+ ".  Of course, there is no reason why we cannot continue applying more \
+transformation rules to obtain, for example, ",
+ Cell[BoxData[
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"a", "+", "1"}], ")"}], "2"], "\[Equal]", 
+   RowBox[{
+    RowBox[{"a", 
+     RowBox[{"(", 
+      RowBox[{"a", "+", "2"}], ")"}]}], "+", "1"}]}]]],
+ " as another theorem. "
+}], "Text"],
+
+Cell[TextData[{
+ "Analogously, in Multiway Systems we have an alphabet of symbols (usually \
+just ",
+ Cell[BoxData["\"\<A\>\""]],
+ " and ",
+ Cell[BoxData["\"\<B\>\""]],
+ ") and a list of rules for transforming strings of symbols from that \
+alphabet.  For example, one possible list of transformation rules is the \
+following."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\"\<AB\>\"", "\[Rule]", "\"\<AAB\>\""}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"\"\<BA\>\"", "\[Rule]", "\"\<ABB\>\""}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"\"\<AABB\>\"", "\[Rule]", "\"\<BAB\>\""}]}], 
+  "}"}]], "DisplayFormula",
+ SingleLetterItalics->False],
+
+Cell[TextData[{
+ "We then begin with an initial string, such as ",
+ Cell[BoxData["\"\<BABB\>\""]],
+ ", and apply the transformation rules whenever they apply, obtaining a \
+\"tree of theorems\" such as the following."
+}], "Text"],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .57143 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.142857 0.238095 0.52381 0.238095 [
+[ 0 0 -0.125 0 ]
+[ 0 0 -0.125 0 ]
+[ 0 .57143 .125 0 ]
+[ 1 0 .125 0 ]
+[ 0 0 0 0 ]
+[ 1 .57143 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 g
+.25 Mabswid
+[ ] 0 setdash
+0 0 m
+1 0 L
+s
+0 0 m
+0 .57143 L
+s
+0 .57143 m
+1 .57143 L
+s
+1 0 m
+1 .57143 L
+s
+0 0 m
+1 0 L
+1 .57143 L
+0 .57143 L
+closepath
+clip
+newpath
+% Start of user PostScript
+/mathtops {
+gsave
+MBeginOrig
+moveto
+MEndOrig
+currentpoint
+grestore
+} bind def
+/MAtocoords {
+mathtops 4 2 roll mathtops
+4 copy pop pop
+3 -1 roll sub
+/arry exch def
+exch sub
+/arrx exch def
+arrx dup mul
+arry dup mul
+add sqrt
+/arrl exch def
+translate
+} bind def
+/MAarrowhead1 {
+gsave
+MAtocoords
+arrl 0. eq
+{ 0 0 Mdot }
+{
+[ arrx arrl div
+arry arrl div
+-1 arry mul arrl div
+arrx arrl div
+0 0 ]
+concat
+-0.05 0.0125 moveto 0 0 lineto
+-0.05 -0.0125 lineto fill
+-0.05 0.0125 moveto 0 0 lineto
+-0.05 -0.0125 lineto
+-0.05 0.0125 lineto stroke
+} ifelse
+grestore
+} def
+% End of user PostScript
+gsave
+.14286 .52381 -95.4375 -11.9063 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 23.8125 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 16.063 moveto
+(\") show
+73.813 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(BABB) show
+117.063 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(\") show
+127.875 16.063 moveto
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+gsave
+.14286 .28571 -100.844 -11.9063 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 23.8125 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 16.063 moveto
+(\") show
+73.813 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(BAABB) show
+127.875 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(\") show
+138.688 16.063 moveto
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+gsave
+.38095 .28571 -100.844 -11.9063 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 23.8125 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 16.063 moveto
+(\") show
+73.813 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(ABBBB) show
+127.875 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(\") show
+138.688 16.063 moveto
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+gsave
+.14286 .04762 -106.25 -11.9063 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 23.8125 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 16.063 moveto
+(\") show
+73.813 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(BAAABB) show
+138.688 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(\") show
+149.500 16.063 moveto
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+gsave
+.38095 .04762 -106.25 -11.9063 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 23.8125 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 16.063 moveto
+(\") show
+73.813 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(ABBABB) show
+138.688 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(\") show
+149.500 16.063 moveto
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+gsave
+.61905 .04762 -95.4375 -11.9063 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 23.8125 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 16.063 moveto
+(\") show
+73.813 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(BBAB) show
+117.063 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(\") show
+127.875 16.063 moveto
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+gsave
+.85714 .04762 -106.25 -11.9063 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 23.8125 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 16.063 moveto
+(\") show
+73.813 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(AABBBB) show
+138.688 16.063 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(\") show
+149.500 16.063 moveto
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+.5 Mabswid
+.14286 .47619 m
+.14286 .33333 L
+s
+% Start of user PostScript
+0 -0.2 0 -0.8 MAarrowhead1
+% End of user PostScript
+.14286 .47619 m
+.38095 .33333 L
+s
+% Start of user PostScript
+0 -0.2 1. -0.8 MAarrowhead1
+% End of user PostScript
+.14286 .2381 m
+.14286 .09524 L
+s
+% Start of user PostScript
+0 -1.2 0 -1.8 MAarrowhead1
+% End of user PostScript
+.14286 .2381 m
+.38095 .09524 L
+s
+% Start of user PostScript
+0 -1.2 1. -1.8 MAarrowhead1
+% End of user PostScript
+.14286 .2381 m
+.61905 .09524 L
+s
+% Start of user PostScript
+0 -1.2 2. -1.8 MAarrowhead1
+% End of user PostScript
+.38095 .2381 m
+.85714 .09524 L
+s
+% Start of user PostScript
+1. -1.2 3. -1.8 MAarrowhead1
+% End of user PostScript
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+ ImageSize->{385.563, 220.25},
+ ImageMargins->{{62, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ ImageCache->GraphicsData["CompressedBitmap", "\<\
+eJztW11oXEUUnuzu3U2z+f9t82OS2u62jW23TdLYrmmrbX5qjT9FqH0QDEFs
+haLWgA+CUEEQfBAEHwTBB0HwQRB8EAQfBMEHQVBRBIUWwQfB1n+tvoyzZ53L
+ydy5Z2b2TuJFEtjpuTPfOeebn97c/c7N0vLq+YcvLq9eWFkeW7i0/Pj5CytP
+js0/dkl0ZZsYa7rMGPumkwn7BitcZaOcsWdZ7SfLGBc/teYZzps2+5S+Xs4L
+4opz0RFwnkdtlsEAwAPGcoAckUjtaJYc3QUtjSyvZaKNg9tt6oT6xEfaNc+g
+bkOMgmhz/45FLzAyQFEySkRpDyE7cPBXGbnmLcX0N5pnpzKPRIvi2t9v2j/f
+CV37h1PGx3b30xp/PQ9IIXKHcN3qBrwyDXk1sMxEllKCWXvdkDgnX0RsMCOe
+4tjwt4lTXue8ZceYSdbBpn9Ac0CC6G+TvOE6AK88tOPEmOa3VDi2x4ibcGCB
+20F1kq2KYy5mdXLuy+C8K9i/6Dm+yj8pv74N5INx/Ro/3/uQZF06Ng/Y5gFL
+5QELiQpMc4yd93yoCgliBx55JT1Mtlyog5Tn/tbc6wESm5ZhNZcMfGnHWkJc
+G+JbkJ1z9O218w0xfQl4kpOei5nQfAzZSgypOSohT5F65LtvCh23szD9+zhv
+YewMtIco+P2c5xhb5LwH2l7GZlT4JOhJZ2BPT3HexdidnHczdlgPvJvzLQDp
+YGwJ2qoeeJrzImN3cd4GTu2M3aYHLgJkCeD3ct7K2FEVeBCeLucgymmA1IHH
+9cB5GDwF0bPw9e8eZN8R61SENgc31gC45+AGIlbmhN5pAVbjJEQvymmH9pzq
+dAAIiBzNQEN0t6PNWoz0xAQ4CYcglAAFyWNA9QFoz+mdTqy9gQngLOQ7B+2D
+eqfbIVNdcqwi+EMqvAILcQzlwDfeGXCq01vRu85CpnAeYvARPbAKwKOIzKN6
+4BFEoIoIXFTh+2HnZyDuEUTgCT1wGoCHEYFV6r/gDLIPIRpPUU71HNOIzNMU
+fBLgU4gSeRM5iOwDiNJlyqkib84hpeco+D6A70eUnqfge5F9C6L0AuU0ATlC
+uGhfpOC7Ab4HzeAlCr4L2WVE6WXKqQQ5yojSKxR8B8B3IkqvUvCbkb0dUXqN
+chqHHNsRpdcp+CjAxxClNyj4TcgeQZTepJyGIccIovQWBR8E+BCi9DYF34bs
+rYjSO5TTAOTYiii9S8HrDyb9iNJ7FLwX2T2I0vuUUzfk6EGUPqDgXcjuRE4f
+Uk4d8nFKkDkL7UcUvA3g7Sj6xxS8FdlF5PQJ5dQinxRDSp9S8GaAb0HRv6Dg
+BWTnkdNXlFMgfw2GlL6m4Fn50B1Gv0LBa18ncvIrROjyLeWSlzy+06ACGeJ7
+zWAGbsei/SEtj7dp7xvUFYOzTFOCDcu02lHcRo7o0NrjQxdoXb9rq7XM9RZY
+PjPNznfCtJXtXBag4RJVaUMKW+RUfBW2XAtGG1m4+VyzABaFG1wiUcspceWT
+L9VUXVFHLUeTuu1bLf6vVdrIQ8fmQnleqDg527dUnETC9r44nS5yq6vQqniR
+yasx4atUAJ6iZ6YkfVG585pZ4rxOyZo/UlLmT5R8+TMlWf5CyZS/UtLkb5QE
++TslNf5BSYp/2sqFN2wlwr/MsuDfblJgJCKW/8R1nlL9xHWzWezTobDGJ66L
+lLQnrttsFT0TNozYadbvhNVtK9uZsBUZsc8s0gkr8nZKnDZnwk7IiJFXQaJK
+nLCGbQU4E7YkI46a5TZhjduqbCbsuIy4w6ypCatkK6WZsMMy4m6zcCasCVu9
+zIQdkBH3mdUxYVVsRTETtltGnLSVwEzYDhmRLKC1SdSttjqXCdsiI0bqZlFV
+S1iztmKWCRvIiMfN0pWwIlUyVbFCeWks/BupZNWLFcJaoJx14zxFzypp6hu1
++GMDgYsUgMfWbn/iN/HFZ8qUwxTDtd8xZwO6iSmDqxRiM0PxmdbkNLzeyTU3
+IN1rV7qMvl8zE+3e/wMXn29L6Xjg91xsXtYxxagYsDxF960G+sI/ZGv6B6Th
+7kY=\
+\>"],
+ ImageRangeCache->{{{0, 384.562}, {219.25, 0}} -> {-0.604815, -2.20002, \
+0.0109466, 0.0109466}}],
+
+Cell["This is a Multiway System.  We write", "Text"],
+
+Cell[BoxData[
+ RowBox[{"s", "\[DoubleLongRightArrow]", "t"}]], "DisplayFormula",
+ SingleLetterItalics->False],
+
+Cell[TextData[{
+ "to denote that it is possible to begin with the string ",
+ Cell[BoxData["s"]],
+ " and use the transformation rules to eventually obtain ",
+ Cell[BoxData["t"]],
+ ".  So, for example, ",
+ Cell[BoxData[
+  RowBox[{"\"\<BABB\>\"", "\[DoubleLongRightArrow]", "\"\<BBAB\>\""}]]],
+ " using the transformation rules from the example above."
+}], "Text"],
+
+Cell[TextData[{
+ StyleBox["Exercise 1.",
+  FontWeight->"Bold"],
+ "  Using the transformation rules ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\"\<AB\>\"", "\[Rule]", "\"\<AAB\>\""}], ",", 
+    RowBox[{"\"\<BA\>\"", "\[Rule]", "\"\<ABB\>\""}], ",", 
+    RowBox[{"\"\<AABB\>\"", "\[Rule]", "\"\<BAB\>\""}]}], "}"}]]],
+ " for the Multiway System from the example above, determine whether or not \
+",
+ Cell[BoxData[
+  RowBox[{"\"\<BABB\>\"", "\[DoubleLongRightArrow]", "\"\<BAAB\>\""}]]],
+ "."
+}], "Text",
+ CellFrame->True,
+ Background->GrayLevel[0.833326]],
+
+Cell[TextData[{
+ "Note:  Our transformation rules are \"one-way\" rules in the sense that, \
+for example, we allow the transformation ",
+ Cell[BoxData[
+  RowBox[{"\"\<BA\>\"", "\[Rule]", "\"\<ABB\>\""}]]],
+ ", but we do not allow the reverse transformation ",
+ Cell[BoxData[
+  RowBox[{"\"\<ABB\>\"", "\[Rule]", "\"\<BA\>\""}]]],
+ ".  Multiway Systems in which every transformation rule ",
+ Cell[BoxData[
+  RowBox[{"x", "\[Rule]", "y"}]]],
+ " is accompanied by the reverse transformation rule ",
+ Cell[BoxData[
+  RowBox[{"y", "\[Rule]", "x"}]]],
+ ", are called ",
+ StyleBox["Thue systems",
+  FontSlant->"Italic"],
+ " in the mathematical literature."
+}], "SmallText"],
+
+Cell[TextData[{
+ "Closely related to Multiway Systems are Sequential Substitution Systems \
+(see pages ",
+ ButtonBox["88-92",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.wolframscience.com/nksonline/page-88"], None}],
+ " and ",
+ ButtonBox["893-894",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.wolframscience.com/nksonline/page-893"], None}],
+ " of ",
+ StyleBox["A New Kind Of Science",
+  FontSlant->"Italic"],
+ "), which are obtained from Multiway Systems by restricting the computation \
+to the single \"branch of the tree\" where the first applicable rule is \
+applied to the left-most sub-string.  For example, using the same rules ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\"\<AB\>\"", "\[Rule]", "\"\<AAB\>\""}], ",", 
+    RowBox[{"\"\<BA\>\"", "\[Rule]", "\"\<ABB\>\""}], ",", 
+    RowBox[{"\"\<AABB\>\"", "\[Rule]", "\"\<BAB\>\""}]}], "}"}]]],
+ ", we obtain the computation"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"\"\<BAA\>\"", "\[Rule]", 
+  RowBox[{"\"\<ABBA\>\"", "\[Rule]", 
+   RowBox[{"\"\<AABBA\>\"", "\[Rule]", 
+    RowBox[{
+    "\"\<AAABBA\>\"", "\[Rule]", 
+     "\[CenterEllipsis]"}]}]}]}]], "DisplayFormula"],
+
+Cell[TextData[{
+ "as a Sequential Substitution System with initial string ",
+ Cell[BoxData["\"\<BAA\>\""]],
+ "."
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Combinators And Symbolic Systems", "Section"],
+
+Cell[TextData[{
+ "Note: Combinators and Symbolic Systems are covered on pages ",
+ ButtonBox["102-104",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.wolframscience.com/nksonline/page-102"], None}],
+ ", and ",
+ ButtonBox["711-712",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.wolframscience.com/nksonline/page-711"], None}],
+ " of ",
+ StyleBox["A New Kind Of Science",
+  FontSlant->"Italic"],
+ "."
+}], "SmallText"],
+
+Cell[TextData[{
+ "Symbolic Systems are very similar to Multiway Systems and Sequential \
+Substitution Systems, but instead of applying transformation rules to strings \
+of symbols, Symbolic Systems apply transformation rules to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " expressions.  An important special kind of Symbolic System is the ",
+ Cell[BoxData["s"]],
+ "-",
+ Cell[BoxData["k"]],
+ " Combinator System, first studied by Moses Sch\[ODoubleDot]nfinkel in the \
+1920's.  With ",
+ Cell[BoxData["s"]],
+ "-",
+ Cell[BoxData["k"]],
+ " combinators, we use only the following two ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " transformation rules."
+}], "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"s", "[", "x_", "]"}], "[", "y_", "]"}], "[", "z_", "]"}], 
+  "\[Rule]", 
+  RowBox[{
+   RowBox[{"x", "[", "z", "]"}], "[", 
+   RowBox[{"y", "[", "z", "]"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"k", "[", "x_", "]"}], "[", "y_", "]"}], "\[Rule]", 
+  "x"}]}], "DisplayFormula",
+ SingleLetterItalics->False],
+
+Cell[TextData[{
+ "Note: Sch\[ODoubleDot]nfinkel called ",
+ Cell[BoxData["s"]],
+ " the \"fusion\" function and ",
+ Cell[BoxData["k"]],
+ " the \"constancy\" function."
+}], "SmallText"],
+
+Cell[TextData[{
+ "And we apply these transformation rules to ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " expressions that only contain the symbols ",
+ Cell[BoxData["\"\<s\>\""]],
+ ", ",
+ Cell[BoxData["\"\<k\>\""]],
+ ", ",
+ Cell[BoxData["\"\<[\>\""]],
+ ", and ",
+ Cell[BoxData["\"\<]\>\""]],
+ ".  An ",
+ Cell[BoxData[
+  StyleBox["s",
+   FontSlant->"Italic"]]],
+ StyleBox["-",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  StyleBox["k",
+   FontSlant->"Italic"]]],
+ StyleBox[" combinator expression",
+  FontSlant->"Italic"],
+ " is any well-formed ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " expression that is built from these four symbols and that contains no \
+\"empty\" arguments where the symbols ",
+ Cell[BoxData["\"\<[\>\""]],
+ " and ",
+ Cell[BoxData["\"\<]\>\""]],
+ " appear consecutively.  So, for example, ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"k", "[", "s", "]"}], "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"s", "[", "k", "]"}], "[", "]"}], "[", "k", "]"}], "]"}]]],
+ " is not an ",
+ Cell[BoxData["s"]],
+ "-",
+ Cell[BoxData["k"]],
+ " combinator expression because it contains an empty argument, but ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"k", "[", "s", "]"}], "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"s", "[", "k", "]"}], "[", "s", "]"}], "[", "k", "]"}], "]"}]]],
+ " is an ",
+ Cell[BoxData["s"]],
+ "-",
+ Cell[BoxData["k"]],
+ " combinator expression."
+}], "Text"],
+
+Cell["\<\
+Applying the transformation rules to that expression, we obtain the \
+following.\
+\>", "Text"],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: 1.09677 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.0967742 0.322581 1.03226 0.322581 [
+[ 0 0 -0.125 0 ]
+[ 0 0 -0.125 0 ]
+[ 0 1.09677 .125 0 ]
+[ 1 0 .125 0 ]
+[ 0 0 0 0 ]
+[ 1 1.09677 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 g
+.25 Mabswid
+[ ] 0 setdash
+0 0 m
+1 0 L
+s
+0 0 m
+0 1.09677 L
+s
+0 1.09677 m
+1 1.09677 L
+s
+1 0 m
+1 1.09677 L
+s
+0 0 m
+1 0 L
+1 1.09677 L
+0 1.09677 L
+closepath
+clip
+newpath
+% Start of user PostScript
+/mathtops {
+gsave
+MBeginOrig
+moveto
+MEndOrig
+currentpoint
+grestore
+} bind def
+/MAtocoords {
+mathtops 4 2 roll mathtops
+4 copy pop pop
+3 -1 roll sub
+/arry exch def
+exch sub
+/arrx exch def
+arrx dup mul
+arry dup mul
+add sqrt
+/arrl exch def
+translate
+} bind def
+/MAarrowhead1 {
+gsave
+MAtocoords
+arrl 0. eq
+{ 0 0 Mdot }
+{
+[ arrx arrl div
+arry arrl div
+-1 arry mul arrl div
+arrx arrl div
+0 0 ]
+concat
+-0.05 0.0125 moveto 0 0 lineto
+-0.05 -0.0125 lineto fill
+-0.05 0.0125 moveto 0 0 lineto
+-0.05 -0.0125 lineto
+-0.05 0.0125 lineto stroke
+} ifelse
+grestore
+} def
+% End of user PostScript
+gsave
+.09677 1.03226 -69.85 -12.2813 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 24.5625 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+63.000 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(k) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+73.813 16.250 moveto
+(@) show
+84.625 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(s) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+95.438 16.250 moveto
+(D) show
+106.250 16.250 moveto
+(@) show
+117.063 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(s) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+127.875 16.250 moveto
+(@) show
+138.688 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(k) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+149.500 16.250 moveto
+(D) show
+160.313 16.250 moveto
+(@) show
+171.125 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(s) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+181.938 16.250 moveto
+(D) show
+192.750 16.250 moveto
+(@) show
+203.563 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(k) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+214.375 16.250 moveto
+(D) show
+225.188 16.250 moveto
+(D) show
+236.000 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+0.000 0.000 rmoveto
+1.000 setlinewidth
+grestore
+gsave
+.09677 .70968 -68.4063 -10.3438 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 20.6875 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 12.938 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(s) show
+1.000 setlinewidth
+grestore
+gsave
+.41935 .70968 -69.85 -12.2813 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 24.5625 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(k) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+73.813 16.250 moveto
+(@) show
+84.625 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(s) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+95.438 16.250 moveto
+(D) show
+106.250 16.250 moveto
+(@) show
+117.063 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(k) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+127.875 16.250 moveto
+(@) show
+138.688 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(k) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+149.500 16.250 moveto
+(D) show
+160.313 16.250 moveto
+(@) show
+171.125 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(s) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+181.938 16.250 moveto
+(@) show
+192.750 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(k) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+203.563 16.250 moveto
+(D) show
+214.375 16.250 moveto
+(D) show
+225.188 16.250 moveto
+(D) show
+1.000 setlinewidth
+grestore
+gsave
+.41935 .3871 -68.4063 -10.3438 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 20.6875 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 12.938 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(s) show
+1.000 setlinewidth
+grestore
+gsave
+.74194 .3871 -64.9844 -12.2813 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 24.5625 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(k) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+73.813 16.250 moveto
+(@) show
+84.625 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(s) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+95.438 16.250 moveto
+(D) show
+106.250 16.250 moveto
+(@) show
+117.063 16.250 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(k) show
+%%IncludeResource: font Mathematica2Mono
+%%IncludeFont: Mathematica2Mono
+/Mathematica2Mono findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+127.875 16.250 moveto
+(D) show
+1.000 setlinewidth
+grestore
+gsave
+.74194 .06452 -68.4063 -10.3438 Mabsadd m
+1 1 Mabs scale
+currentpoint translate
+0 20.6875 translate 1 -1 scale
+/g { setgray} bind def
+/k { setcmykcolor} bind def
+/p { gsave} bind def
+/r { setrgbcolor} bind def
+/w { setlinewidth} bind def
+/C { curveto} bind def
+/F { fill} bind def
+/L { lineto} bind def
+/rL { rlineto} bind def
+/P { grestore} bind def
+/s { stroke} bind def
+/S { show} bind def
+/N {currentpoint 3 -1 roll show moveto} bind def
+/Msf { findfont exch scalefont [1 0 0 -1 0 0 ] makefont setfont} bind def
+/m { moveto} bind def
+/Mr { rmoveto} bind def
+/Mx {currentpoint exch pop moveto} bind def
+/My {currentpoint pop exch moveto} bind def
+/X {0 rmoveto} bind def
+/Y {0 exch rmoveto} bind def
+63.000 12.938 moveto
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 18.000 scalefont
+[1 0 0 -1 0 0 ] makefont setfont
+0.000 0.000 0.000 setrgbcolor
+(s) show
+1.000 setlinewidth
+grestore
+.5 Mabswid
+.09677 .96774 m
+.09677 .77419 L
+s
+% Start of user PostScript
+0 -0.2 0 -0.8 MAarrowhead1
+% End of user PostScript
+.09677 .96774 m
+.41935 .77419 L
+s
+% Start of user PostScript
+0 -0.2 1. -0.8 MAarrowhead1
+% End of user PostScript
+.41935 .64516 m
+.41935 .45161 L
+s
+% Start of user PostScript
+1. -1.2 1. -1.8 MAarrowhead1
+% End of user PostScript
+.41935 .64516 m
+.74194 .45161 L
+s
+% Start of user PostScript
+1. -1.2 2. -1.8 MAarrowhead1
+% End of user PostScript
+.74194 .32258 m
+.74194 .12903 L
+s
+% Start of user PostScript
+2. -2.2 2. -2.8 MAarrowhead1
+% End of user PostScript
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+ ImageSize->{299.688, 328.688},
+ ImageMargins->{{43, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ ImageCache->GraphicsData["CompressedBitmap", "\<\
+eJztm3uIVUUcx+c+zn3sbqTdXFOkNYwwrIgiiiikIl/lY7PHKqncrHB7irqb
+SRFUEEEEQQQRRBBBRGXvPwMhgggiiMo2pIigggiCiCJomvubvP3Ond/ve+Y+
+tFPchb3+nN9nvnNmzsy5c76O65v7dt1yZ3Pf9M7m0tV7mrt3Te/cu3TV3Xtc
+UalgTGGF+10zz7j4N1P92kxYY84yrZ+SMdb9tD6WW1sYlg2w7HNrK8asE4rb
+cYnFqzvBIz0nD1ubZLS8HiWL1haNWSvIllt/daErMGvyMtB5KptjwxjcAJj8
+wloXXnVMipUJ0V2xmyFVYVYMpPgza+smnFFKce+DPEwOk8PkMJnrpM3R99m/
+VfY9fZHNp886i2sC2I4bLK4q5ZWBC8zRbqlIm6MKAxPa/9UUyUSpFcjPksyO
+VhVf4qK0bMLiklJeTTehaknNi+I3ut/y33HrDrUTo5FXIFYOmr+vo0mKXX6k
+hxalulkNuns0msYT/Z5WJD4tfw8J7FCuJlF61VNP+J27SRtw3qLf9ldBu3H3
+bDbQ3M5KwvnOXyoqoHVdIRhjLrmNsXzAtMVeUfignS+PlbB/oowFj0D/zBiR
+H4Q2R0/vQZcdCBbl1QiZokUWvOLeSzWvt7ZmzAYh6cJJa0eN2SgnXfGYMZvk
+pCseofrp5H6ai5voPeYaOTlJr0SbhWRCbbrktXJyQ3pRXCcshAoNVZFWQ4k6
+LyHrCOHzU9Fay5DtAuKudRVpNYWHghv2K1l9BbmC6t+M7u/lhNyKkMtYDMGV
+pDWNkEsJuR0hl7AYgheT1l0IuYiQ3Qi5kMUQvIC09iLkfEJmEHIeiyF4Lmnt
+R8g5hBxAyNkshuAK0rofIWcS8gBClrMYgmeQ1oMIOZ2QhxGyjMUQPI20HkHI
+BCGPIuRUFkNwCWk9hpDFhDyOkEUshuBC0noCIeMshuDJpPUkQk4i5CmEzGcx
+BE8kracRcgIhzyBkjMUQHCGtZxFSI+Q5hPCNCAT9JuN5hJQIeQEhRRZj0JgX
+hbwLX0LVgqTN0XbleJQ9RGM0jz79jrABS2rsc0wQ4yuFz6t23BgQw+OR3F7I
+DHypryoy2ks9L0/0upXgvT6zFuzEOElutd1bB2WliQzrIJUDgyS2mfSgldV9
+saEbbIR1gUZAew3+J6Fdo2ZVRFWGnV3S0UGKjW6UoP5JdXl5XamLepdVt5vO
+iaaMNkVEU6aY7lwtUAsVNB5e+EIS26qMaZKuOvD7odlJfd8PvrK2aQsitJYq
+in5/awpbWP2vrPFAfwtfR9DO0h7b2M7iKaCg+WaRClkTl8tPKTNV+24FVlc7
+1mZeo0se9mP2v3rhM8wD5Hu6hJX7uB7s+Hg53PfZHG1oB122mI2u9wxfRsgW
+mvCvdCKLqOYUbaReFZIlMudqxhyUk5NkC74mJzeS2/h6Z/IU5hm+oSZdm28K
+ybZn+Jac7PAM3xYWfodn+I6MhJ6hosU9w3cFpO0ZHhKevB2eoYJ4z/A9dH+9
+Z/g+QrhnCMGVpPUBQrxn+CFCuGcIQe8ZfoQQ7xl+jBDuGULQe4afIMR7hp8i
+hHuGEPSe4WGEeM9wDiHcM4Sg9wyPIMR7hl8hhHuGEPSe4TcI8Z7htwjhniEE
+vWf4HUImCPkBIdwzhKD3DH9EiPcMf0II9wwh6D3DnxHCN2sQ9J7hLwjxnuGv
+COGeIQS9Z/g7Qrxn+AdCuGcIQe8Z/okQ7xm6qIAovpXOYpOjimVElY5SwT97
+cqqYbhez9GddQHw4iipLeZujbczxKFsW4SWKR3Hc5x2CGF9BfL61424tPO0s
+Dudvy+2FLFBcwXLg+GE/sKzo4Foxh47g5bceqZrnx10kzcvr1vtLQHvdasUe
+e8ocANGe0LycGE8s0URjKkedy8nsE8UmbSv12yVJs5ceZelIHeqw+ZLAyMM2
+XxIoYB6f/Opp9Ply0sQ0Uy9m9Ps5X9bbEuE9Cs25eBsvarkM4DBb3G2zgWuX
+6HZcpGuX6OKRCpHn5aK7GOOXNZQeaDOn27Nx/5+LXaAYen6rVWZH+8INV8fB
+v5Kw7bI52k8OqKz9vxQLfwER1ZM2\
+\>"],
+ ImageRangeCache->{{{0, 298.688}, {327.688, 0}} -> {-0.301314, -3.20194, \
+0.0103875, 0.0103875}}],
+
+Cell[TextData[{
+ "Note that in this case, no matter which order we apply the transformation \
+rules, we eventually obtain the expression ",
+ Cell[BoxData["s"]],
+ ".  Unlike Multiway systems, ",
+ Cell[BoxData["s"]],
+ "-",
+ Cell[BoxData["k"]],
+ " combinators give the same \"output\" no matter how the transformation \
+rules are applied.  This is a consequence of the Church-Rosser property of \
+Combinator Systems, which will be discussed in a future lecture."
+}], "Text"],
+
+Cell[TextData[{
+ Cell[BoxData["s"]],
+ "-",
+ Cell[BoxData["k"]],
+ " combinator expressions are theoretically significant because if we \
+associate numbers with ",
+ Cell[BoxData["s"]],
+ "-",
+ Cell[BoxData["k"]],
+ " combinator expressions, for example with"
+}], "Text"],
+
+Cell[BoxData[GridBox[{
+   {"k", 
+    RowBox[{"s", "[", "k", "]"}], 
+    RowBox[{"s", "[", 
+     RowBox[{"s", "[", "k", "]"}], "]"}], 
+    RowBox[{"s", "[", 
+     RowBox[{"s", "[", 
+      RowBox[{"s", "[", "k", "]"}], "]"}], "]"}], "\[CenterEllipsis]"},
+   {"0", "1", "2", "3", "\[CenterEllipsis]"}
+  },
+  GridBoxSpacings->{"Columns" -> {
+      Offset[0.27999999999999997`], {
+       Offset[1.4]}, 
+      Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+      Offset[0.2], {
+       Offset[0.4]}, 
+      Offset[0.2]}, "RowsIndexed" -> {}}]], "DisplayFormula",
+ SingleLetterItalics->False],
+
+Cell[TextData[{
+ "Then every computable mathematical function can be expressed as an ",
+ Cell[BoxData["s"]],
+ "-",
+ Cell[BoxData["k"]],
+ " combinator expression.  That is, ",
+ Cell[BoxData["s"]],
+ "-",
+ Cell[BoxData["k"]],
+ " combinators are capable of universal computation.  For example, ",
+ Cell[BoxData[
+  RowBox[{"f", "=", 
+   RowBox[{
+    RowBox[{"s", "[", "k", "]"}], "[", "k", "]"}]}]]],
+ " is the identity function ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"f", "[", "x", "]"}], "\[DoubleLongRightArrow]", " ", "x"}]]],
+ ", since"
+}], "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"s", "[", "k", "]"}], "[", "k", "]"}], "[", "x", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k", "[", "x", "]"}], "[", 
+  RowBox[{"k", "[", "x", "]"}], 
+  "]"}], "\[IndentingNewLine]", "x"}], "DisplayFormula",
+ SingleLetterItalics->False],
+
+Cell[TextData[{
+ "for any ",
+ Cell[BoxData["s"]],
+ "-",
+ Cell[BoxData["k"]],
+ " combinator expression ",
+ Cell[BoxData["x"]],
+ "."
+}], "Text"],
+
+Cell[TextData[{
+ StyleBox["Exercise 2.",
+  FontWeight->"Bold"],
+ "  Find an ",
+ Cell[BoxData["s"]],
+ "-",
+ Cell[BoxData["k"]],
+ " combinator expression ",
+ Cell[BoxData["g"]],
+ " such that ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "[", "x", "]"}], "[", "y", "]"}], "\[DoubleLongRightArrow]", 
+   "y"}]]],
+ " for all ",
+ Cell[BoxData["s"]],
+ "-",
+ Cell[BoxData["k"]],
+ " combinator expressions ",
+ Cell[BoxData["x"]],
+ " and ",
+ Cell[BoxData["y"]],
+ ".  (Note that ",
+ Cell[BoxData["g"]],
+ " is like the constancy function ",
+ Cell[BoxData["k"]],
+ ", but it takes its arguments in the opposite order.)"
+}], "Text",
+ CellFrame->True,
+ Background->GrayLevel[0.833326]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Kalm\[AAcute]r Elementary Functions", "Section"],
+
+Cell[TextData[{
+ "The previous two systems that we discussed were computationally universal, \
+meaning that they can be used to compute any function that it is possible, in \
+principle, to compute.  Kalm\[AAcute]r Elementary Functions, in contrast, are \
+not computationally universal, but they are a useful intermediary between the \
+sorts of functions that have been studied in traditional mathematics, and \
+abstract computational systems such as Combinators and Multiway Systems.  The \
+Kalm\[AAcute]r Elementary Functions are exactly those functions of \
+non-negative integers (non-negative integers are the numbers ",
+ Cell[BoxData["0"]],
+ ", ",
+ Cell[BoxData["1"]],
+ ", ",
+ Cell[BoxData["2"]],
+ ", ",
+ Cell[BoxData["3"]],
+ ", \[Ellipsis]) that can be expressed in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " using variables, using the integer ",
+ Cell[BoxData["1"]],
+ ", and using the operations ",
+ Cell[BoxData[
+  RowBox[{"\[Placeholder]", "+", "\[Placeholder]"}]]],
+ ", ",
+ Cell[BoxData[
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"\[Placeholder]", "=", "0"}], "\[Placeholder]"], 
+   "\[Placeholder]"}]]],
+ ", ",
+ Cell[BoxData[
+  RowBox[{
+   UnderoverscriptBox["\[Product]", 
+    RowBox[{"\[Placeholder]", "=", "0"}], "\[Placeholder]"], 
+   "\[Placeholder]"}]]],
+ ", and ",
+ Cell[BoxData[
+  RowBox[{"monus", "[", 
+   RowBox[{"\[Placeholder]", ",", "\[Placeholder]"}], "]"}]]],
+ ", where ",
+ Cell[BoxData[
+  RowBox[{"monus", "[", 
+   RowBox[{"a", ",", "b"}], "]"}]]],
+ " is defined so that ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"monus", "[", 
+    RowBox[{"a", ",", "b"}], "]"}], "\[Equal]", 
+   RowBox[{"a", "-", "b"}]}]]],
+ " when ",
+ Cell[BoxData[
+  RowBox[{"a", "\[GreaterEqual]", "b"}]]],
+ ", and so that ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"monus", "[", 
+    RowBox[{"a", ",", "b"}], "]"}], "\[Equal]", "0"}]]],
+ " otherwise."
+}], "Text"],
+
+Cell[TextData[{
+ "Note:  Algorithms for ",
+ Cell[BoxData["monus"]],
+ " are discussed in the ",
+ ButtonBox["appendix",
+  BaseStyle->"Hyperlink",
+  ButtonData:>"appendix"],
+ " of this document."
+}], "SmallText"],
+
+Cell[TextData[{
+ "For example, the function ",
+ Cell[BoxData[
+  RowBox[{"f", "[", "x", "]"}]]],
+ " given by ",
+ Cell[BoxData[
+  RowBox[{"x", "+", "1"}]]],
+ " is a Kalm\[AAcute]r Elementary Function.  The functions ",
+ Cell[BoxData[
+  RowBox[{"g", "[", "x", "]"}]]],
+ " and ",
+ Cell[BoxData[
+  RowBox[{"h", "[", "x", "]"}]]],
+ " given by ",
+ Cell[BoxData[
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"n", "=", "0"}], "x"], 
+   RowBox[{"monus", "[", 
+    RowBox[{
+     RowBox[{"n", "+", "n"}], ",", "1"}], "]"}]}]]],
+ " and ",
+ Cell[BoxData[
+  RowBox[{
+   UnderoverscriptBox["\[Product]", 
+    RowBox[{"n", "=", "0"}], 
+    RowBox[{"monus", "[", 
+     RowBox[{"x", ",", "1"}], "]"}]], 
+   RowBox[{"(", 
+    RowBox[{"n", "+", "1"}], ")"}]}]]],
+ ", are also Kalm\[AAcute]r Elementary Functions."
+}], "Text"],
+
+Cell[TextData[{
+ "Historically, the theory of computation grew out of the study of \
+mathematical logic at the beginning of the 20th century\[LongDash]the Kalm\
+\[AAcute]r Elementary Functions are no exception.  The most important theorem \
+in 20th century mathematical logic was G\[ODoubleDot]del's Incompleteness \
+Theorem, published in 1931.  The proof of G\[ODoubleDot]del's Incompleteness \
+Theorem required a simple language for describing mathematical functions, and \
+G\[ODoubleDot]del chose to use the Primitive Recursive Functions (see pages \
+",
+ ButtonBox["907-908",
+  BaseStyle->"Hyperlink",
+  ButtonData:>{
+    URL["http://www.wolframscience.com/nksonline/page-907"], None}],
+ " of ",
+ StyleBox["A New Kind Of Science",
+  FontSlant->"Italic"],
+ "), which were familiar to mathematical logicians of the time.  But G\
+\[ODoubleDot]del's proof was relatively complex, and many individuals \
+attempted to simplify it.  In 1943, L\[AAcute]szl\[OAcute] Kalm\[AAcute]r \
+noticed that the Primitive Recursive Functions were not essential to G\
+\[ODoubleDot]del's argument, and he proposed a simpler class of functions \
+which could be used in the proof of G\[ODoubleDot]del's Incompleteness \
+Theorem instead of the Primitive Recursive Functions.  Of course, we now call \
+those functions that Kalm\[AAcute]r proposed the ",
+ StyleBox["Kalm\[AAcute]r Elementary Functions",
+  FontSlant->"Italic"],
+ "."
+}], "Text"],
+
+Cell["\<\
+There are two important properties possessed by the Kalm\[AAcute]r Elementary \
+Functions:\
+\>", "Text"],
+
+Cell[TextData[{
+ "\[FilledSmallCircle]",
+ StyleBox["The Kalm\[AAcute]r Elementary Functions output non-negative \
+integers for all non-negative integer inputs.",
+  FontWeight->"Bold"],
+ "\n\[FilledSmallCircle]",
+ StyleBox["All \"traditional\" mathematical functions of non-negative \
+integers are known to be Kalm\[AAcute]r Elementary Functions.",
+  FontWeight->"Bold"]
+}], "Text",
+ CellMargins->{{90, Inherited}, {Inherited, Inherited}}],
+
+Cell[TextData[{
+ "Both of these properties make the Kalm\[AAcute]r Elementary Functions a \
+useful class of functions.  The first property guarantees that the output of \
+a Kalm\[AAcute]r Elementary Function will never be undefined.  Incidentally, \
+that property immediately implies that the Kalm\[AAcute]r Elementary \
+Functions are not computationally universal, as will be shown in a future \
+lecture.  Nevertheless, although they are not computationally universal, the \
+second property guarantees that the Kalm\[AAcute]r Elementary Functions are \
+expressive enough to describe all of the functions of non-negative integers \
+that are needed in traditional mathematics.  For example, the Kalm\[AAcute]r \
+Elementary functions ",
+ Cell[BoxData[
+  RowBox[{"g", "[", "x", "]"}]]],
+ " and ",
+ Cell[BoxData[
+  RowBox[{"h", "[", "x", "]"}]]],
+ " that were described above compute the functions ",
+ Cell[BoxData[
+  SuperscriptBox["x", "2"]]],
+ " and ",
+ Cell[BoxData[
+  RowBox[{"x", "!"}]]],
+ ", respectively."
+}], "Text"],
+
+Cell[TextData[{
+ StyleBox["Exercise 3.",
+  FontWeight->"Bold"],
+ "  Find an expression for a Kalm\[AAcute]r Elementary Function that computes \
+",
+ Cell[BoxData[
+  RowBox[{"\[LeftCeiling]", 
+   SqrtBox["x"], "\[RightCeiling]"}]]],
+ ", the square root of ",
+ Cell[BoxData["x"]],
+ " rounded up.  (Hint: first find an expression for a function ",
+ Cell[BoxData[
+  RowBox[{"a", "[", "x", "]"}]]],
+ " such that ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"a", "[", "x", "]"}], "\[Equal]", "0"}]]],
+ " if ",
+ Cell[BoxData[
+  RowBox[{"x", "\[Equal]", "0"}]]],
+ " and such that ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"a", "[", "x", "]"}], "\[Equal]", "1"}]]],
+ " if ",
+ Cell[BoxData[
+  RowBox[{"x", ">", "0"}]]],
+ ".)"
+}], "Text",
+ CellFrame->True,
+ Background->GrayLevel[0.833326]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Appendix: The Implementation Of Kalm\[AAcute]r Elementary Functions\
+\>", "Section",
+ CellTags->"appendix"],
+
+Cell[TextData[{
+ "Unlike many of the systems that we have discussed, the Kalm\[AAcute]r \
+Elementary Functions are not described in ",
+ StyleBox["A New Kind Of Science",
+  FontSlant->"Italic"],
+ ".  Nevertheless, they have a very simple ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " implementation.  The Kalm\[AAcute]r Elementary Functions are exactly those \
+functions of non-negative integers that can be expressed in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " using variables, using the integer ",
+ Cell[BoxData["1"]],
+ ", and using the operations ",
+ Cell[BoxData[
+  RowBox[{"\[Placeholder]", "+", "\[Placeholder]"}]]],
+ ", ",
+ Cell[BoxData[
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"\[Placeholder]", "=", "0"}], "\[Placeholder]"], 
+   "\[Placeholder]"}]]],
+ ", ",
+ Cell[BoxData[
+  RowBox[{
+   UnderoverscriptBox["\[Product]", 
+    RowBox[{"\[Placeholder]", "=", "0"}], "\[Placeholder]"], 
+   "\[Placeholder]"}]]],
+ ", and ",
+ Cell[BoxData[
+  RowBox[{"monus", "[", 
+   RowBox[{"\[Placeholder]", ",", "\[Placeholder]"}], "]"}]]],
+ ", where ",
+ Cell[BoxData["monus"]],
+ " is defined as follows."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"monus", "[", 
+   RowBox[{"a_", ",", "b_"}], "]"}], ":=", 
+  RowBox[{"\[Piecewise]", GridBox[{
+     {
+      RowBox[{"a", "-", "b"}], 
+      RowBox[{"a", "\[GreaterEqual]", "b"}]},
+     {"0", "True"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.84]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}]}]}]], "Input"],
+
+Cell[TextData[{
+ "Using this definition for ",
+ Cell[BoxData["monus"]],
+ ", calculations for the Kalm\[AAcute]r Elementary Functions can be performed \
+in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ".  For example, the values of the Kalm\[AAcute]r Elementary Function ",
+ Cell[BoxData[
+  RowBox[{
+   UnderoverscriptBox["\[Product]", 
+    RowBox[{"n", "=", "0"}], 
+    RowBox[{"monus", "[", 
+     RowBox[{"x", ",", "1"}], "]"}]], 
+   RowBox[{"(", 
+    RowBox[{"n", "+", "1"}], ")"}]}]]],
+ " when ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"x", "=", "0"}], ",", "1", ",", "\[Ellipsis]", ",", "5"}]]],
+ " are given by the following computation."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{
+    UnderoverscriptBox["\[Product]", 
+     RowBox[{"n", "=", "0"}], 
+     RowBox[{"monus", "[", 
+      RowBox[{"x", ",", "1"}], "]"}]], 
+    RowBox[{"(", 
+     RowBox[{"n", "+", "1"}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "5"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "1", ",", "2", ",", "6", ",", "24", ",", "120"}], 
+  "}"}]], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+ "In many cases, ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " is able to automatically simplify Kalm\[AAcute]r Elementary Functions."
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  UnderoverscriptBox["\[Product]", 
+   RowBox[{"n", "=", "0"}], 
+   RowBox[{"monus", "[", 
+    RowBox[{"x", ",", "1"}], "]"}]], 
+  RowBox[{"(", 
+   RowBox[{"n", "+", "1"}], ")"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"\[Piecewise]", GridBox[{
+    {"1", 
+     RowBox[{"x", "<", "1"}]},
+    {
+     RowBox[{"x", "!"}], 
+     TagBox["True",
+      "PiecewiseDefault",
+      AutoDelete->False,
+      DeletionWarning->True]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.84]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}]}]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Exercise Solutions", "Section"],
+
+Cell[TextData[{
+ StyleBox["Exercise 1.",
+  FontWeight->"Bold"],
+ "  Using the transformation rules ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\<\"AB\"\>", "\[Rule]", "\<\"AAB\"\>"}], ",", 
+    RowBox[{"\<\"BA\"\>", "\[Rule]", "\<\"ABB\"\>"}], ",", 
+    RowBox[{"\<\"AABB\"\>", "\[Rule]", "\<\"BAB\"\>"}]}], "}"}]]],
+ " for a Multiway System, determine whether or not ",
+ Cell[BoxData[
+  RowBox[{"\<\"BABB\"\>", "\[DoubleLongRightArrow]", "\<\"BAAB\"\>"}]]],
+ "."
+}], "Text",
+ CellFrame->True,
+ Background->GrayLevel[0.833326]],
+
+Cell[TextData[{
+ StyleBox["Exercise 1 Solution.",
+  FontWeight->"Bold"],
+ "  No, ",
+ Cell[BoxData["\<\"BABB\"\>"]],
+ " can never be transformed into ",
+ Cell[BoxData["\<\"BAAB\"\>"]],
+ " using the transformation rules ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"\<\"AB\"\>", "\[Rule]", "\<\"AAB\"\>"}], ",", 
+    RowBox[{"\<\"BA\"\>", "\[Rule]", "\<\"ABB\"\>"}], ",", 
+    RowBox[{"\<\"AABB\"\>", "\[Rule]", "\<\"BAB\"\>"}]}], "}"}]]],
+ ", since ",
+ Cell[BoxData["\<\"BAAB\"\>"]],
+ " has fewer ",
+ Cell[BoxData["B"]],
+ "'s than ",
+ Cell[BoxData["\<\"BABB\"\>"]],
+ ", and these particular rules never decrease the number of ",
+ Cell[BoxData["B"]],
+ "'s in a string."
+}], "Text",
+ CellFrame->True],
+
+Cell[TextData[{
+ StyleBox["Exercise 2.",
+  FontWeight->"Bold"],
+ "  Find an ",
+ Cell[BoxData["s"]],
+ "-",
+ Cell[BoxData["k"]],
+ " combinator expression ",
+ Cell[BoxData["g"]],
+ " such that ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "[", "x", "]"}], "[", "y", "]"}], "\[DoubleLongRightArrow]", 
+   "y"}]]],
+ " for all ",
+ Cell[BoxData["s"]],
+ "-",
+ Cell[BoxData["k"]],
+ " combinator expressions ",
+ Cell[BoxData["x"]],
+ " and ",
+ Cell[BoxData["y"]],
+ "."
+}], "Text",
+ CellFrame->True,
+ Background->GrayLevel[0.833326]],
+
+Cell[TextData[{
+ StyleBox["Exercise 2 Solution.",
+  FontWeight->"Bold"],
+ "  Let ",
+ Cell[BoxData[
+  RowBox[{"g", "=", 
+   RowBox[{"s", "[", "k", "]"}]}]]],
+ " or ",
+ Cell[BoxData[
+  RowBox[{"g", "=", 
+   RowBox[{"k", "[", 
+    RowBox[{
+     RowBox[{"s", "[", "k", "]"}], "[", "k", "]"}], "]"}]}]]],
+ ".  There are infinitely many other solutions that will also give the \
+desired result."
+}], "Text",
+ CellFrame->True],
+
+Cell[TextData[{
+ StyleBox["Exercise 3.",
+  FontWeight->"Bold"],
+ "  Find an expression for a Kalm\[AAcute]r Elementary Function that computes \
+",
+ Cell[BoxData[
+  RowBox[{"\[LeftCeiling]", 
+   SqrtBox["x"], "\[RightCeiling]"}]]],
+ ", the square root of ",
+ Cell[BoxData["x"]],
+ " rounded up.  (Hint: first find an expression for a functions ",
+ Cell[BoxData[
+  RowBox[{"a", "[", "x", "]"}]]],
+ " such that ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"a", "[", "x", "]"}], "\[Equal]", "0"}]]],
+ " if ",
+ Cell[BoxData[
+  RowBox[{"x", "\[Equal]", "0"}]]],
+ " and such that ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"a", "[", "x", "]"}], "\[Equal]", "1"}]]],
+ " if ",
+ Cell[BoxData[
+  RowBox[{"x", ">", "0"}]]],
+ ".)"
+}], "Text",
+ CellFrame->True,
+ Background->GrayLevel[0.833326]],
+
+Cell[TextData[{
+ StyleBox["Exercise 3 Solution.",
+  FontWeight->"Bold"],
+ "  ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"\[LeftCeiling]", 
+    SqrtBox["x"], "\[RightCeiling]"}], "\[Equal]", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"i", "=", "0"}], "x"], 
+    RowBox[{"monus", "[", 
+     RowBox[{"1", ",", 
+      RowBox[{"monus", "[", 
+       RowBox[{"1", ",", 
+        RowBox[{"monus", "[", 
+         RowBox[{"x", ",", 
+          RowBox[{
+           UnderoverscriptBox["\[Product]", 
+            RowBox[{"j", "=", "0"}], "1"], "i"}]}], "]"}]}], "]"}]}], 
+     "]"}]}]}]]],
+ ".  Note that the function ",
+ Cell[BoxData[
+  RowBox[{"a", "[", "x", "]"}]]],
+ " is given by ",
+ Cell[BoxData[
+  RowBox[{"monus", "[", 
+   RowBox[{"1", ",", 
+    RowBox[{"monus", "[", 
+     RowBox[{"1", ",", "x"}], "]"}]}], "]"}]]],
+ "."
+}], "Text",
+ CellFrame->True]
+}, Closed]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+ScreenStyleEnvironment->"Presentation",
+WindowToolbars->"EditBar",
+WindowSize->{712, 506},
+WindowMargins->{{4, Automatic}, {Automatic, 1}},
+DefaultNewCellStyle->"Text",
+DefaultInlineFormatType->DefaultInputInlineFormatType,
+ShowStringCharacters->True,
+DelimiterMatching->None,
+Magnification->1,
+FrontEndVersion->"6.0 for Linux x86 (32-bit) (April 20, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "appendix"->{
+  Cell[52050, 1904, 117, 3, 108, "Section",
+   CellTags->"appendix"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"appendix", 60678, 2234}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 51, 0, 148, "Title"],
+Cell[644, 25, 163, 3, 157, "Subtitle"],
+Cell[810, 30, 158, 5, 100, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[993, 39, 31, 0, 78, "Section"],
+Cell[1027, 41, 385, 8, 150, "Text"],
+Cell[1415, 51, 161, 5, 42, "Text"],
+Cell[1579, 58, 109, 3, 42, "Text"],
+Cell[1691, 63, 399, 11, 96, "Text"],
+Cell[2093, 76, 52, 0, 42, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2182, 81, 71, 0, 108, "Section"],
+Cell[2256, 83, 427, 15, 38, "SmallText"],
+Cell[2686, 100, 544, 9, 204, "Text"],
+Cell[3233, 111, 240, 8, 29, "DisplayFormula"],
+Cell[3476, 121, 152, 3, 69, "Text"],
+Cell[3631, 126, 283, 10, 29, "DisplayFormula"],
+Cell[3917, 138, 244, 8, 29, "DisplayFormula"],
+Cell[4164, 148, 838, 27, 150, "Text"],
+Cell[5005, 177, 339, 9, 96, "Text"],
+Cell[5347, 188, 326, 9, 84, "DisplayFormula"],
+Cell[5676, 199, 229, 5, 96, "Text"],
+Cell[5908, 206, 14029, 541, 229, 11697, 499, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[19940, 749, 52, 0, 42, "Text"],
+Cell[19995, 751, 109, 2, 29, "DisplayFormula"],
+Cell[20107, 755, 361, 9, 96, "Text"],
+Cell[20471, 766, 569, 17, 139, "Text"],
+Cell[21043, 785, 665, 18, 103, "SmallText"],
+Cell[21711, 805, 947, 25, 204, "Text"],
+Cell[22661, 832, 227, 6, 29, "DisplayFormula"],
+Cell[22891, 840, 124, 4, 42, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23052, 849, 51, 0, 78, "Section"],
+Cell[23106, 851, 447, 15, 61, "SmallText"],
+Cell[23556, 868, 678, 19, 177, "Text"],
+Cell[24237, 889, 392, 13, 57, "DisplayFormula"],
+Cell[24632, 904, 182, 6, 34, "SmallText"],
+Cell[24817, 912, 1396, 54, 204, "Text"],
+Cell[26216, 968, 104, 3, 42, "Text"],
+Cell[26323, 973, 15875, 596, 337, 13517, 554, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[42201, 1571, 471, 11, 150, "Text"],
+Cell[42675, 1584, 266, 10, 69, "Text"],
+Cell[42944, 1596, 604, 17, 43, "DisplayFormula"],
+Cell[43551, 1615, 549, 19, 123, "Text"],
+Cell[44103, 1636, 296, 9, 84, "DisplayFormula"],
+Cell[44402, 1647, 142, 8, 42, "Text"],
+Cell[44547, 1657, 681, 30, 112, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45265, 1692, 54, 0, 78, "Section"],
+Cell[45322, 1694, 1882, 59, 339, "Text"],
+Cell[47207, 1755, 209, 8, 38, "SmallText"],
+Cell[47419, 1765, 815, 31, 99, "Text"],
+Cell[48237, 1798, 1420, 27, 393, "Text"],
+Cell[49660, 1827, 114, 3, 69, "Text"],
+Cell[49777, 1832, 438, 10, 123, "Text"],
+Cell[50218, 1844, 1021, 23, 285, "Text"],
+Cell[51242, 1869, 771, 30, 141, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52050, 1904, 117, 3, 108, "Section",
+ CellTags->"appendix"],
+Cell[52170, 1909, 1145, 36, 177, "Text"],
+Cell[53318, 1947, 651, 19, 55, "Input"],
+Cell[53972, 1968, 661, 21, 126, "Text"],
+Cell[CellGroupData[{
+Cell[54658, 1993, 342, 11, 73, "Input"],
+Cell[55003, 2006, 119, 3, 39, "Output"]
+}, Open  ]],
+Cell[55137, 2012, 171, 5, 69, "Text"],
+Cell[CellGroupData[{
+Cell[55333, 2021, 215, 7, 73, "Input"],
+Cell[55551, 2030, 630, 20, 53, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56230, 2056, 37, 0, 78, "Section"],
+Cell[56270, 2058, 542, 16, 80, "Text"],
+Cell[56815, 2076, 710, 24, 102, "Text"],
+Cell[57528, 2102, 532, 26, 58, "Text"],
+Cell[58063, 2130, 419, 16, 58, "Text"],
+Cell[58485, 2148, 772, 30, 81, "Text"],
+Cell[59260, 2180, 858, 32, 81, "Text"]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

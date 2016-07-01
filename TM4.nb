@@ -1,0 +1,71 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1666,         62]
+NotebookOptionsPosition[      1257,         43]
+NotebookOutlinePosition[      1595,         58]
+CellTagsIndexPosition[      1552,         55]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.55010512390878*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.550100600408124*^9}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.550105094568438*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"a1", "=", "1080228952069739329181238"}]}]], "Input",
+ CellChangeTimes->{{3.5501047738496647`*^9, 3.5501047743686028`*^9}, 
+   3.550104880775167*^9, 3.550115898367997*^9, 3.550118792361362*^9, {
+   3.550118836319669*^9, 3.5501188382587852`*^9}, {3.5501193815197163`*^9, 
+   3.550119382884655*^9}}],
+
+Cell[BoxData["1080228952069739329181238"], "Output",
+ CellChangeTimes->{3.55011938623717*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 752},
+WindowMargins->{{12, Automatic}, {Automatic, 24}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit) (October 5, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 67, 1, 27, "Input"],
+Cell[627, 23, 68, 1, 27, "Input"],
+Cell[698, 26, 68, 1, 27, "Input"],
+Cell[CellGroupData[{
+Cell[791, 31, 354, 6, 43, "Input"],
+Cell[1148, 39, 93, 1, 27, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

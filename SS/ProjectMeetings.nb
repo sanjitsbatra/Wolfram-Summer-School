@@ -1,0 +1,587 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     31365,        577]
+NotebookOptionsPosition[     30342,        537]
+NotebookOutlinePosition[     30698,        553]
+CellTagsIndexPosition[     30655,        550]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project Meeting Notes", "Section",
+ CellChangeTimes->{{3.550039467973174*^9, 3.550039472013581*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["6-25", "Subsection",
+ CellChangeTimes->{{3.5500402158228874`*^9, 3.55004021747649*^9}}],
+
+Cell["\<\
+7:42 Stan Palasek
+
+f(e1) f(e2)==f(e3) f(e4)
+the whole point of the h principle is that the probability of a collision is \
+a factorable thing, making the particles positions independent.
+Longtime tails studied thirty years.  When you have real particles \
+interacting like this,  Hard sphere gases have these.
+Nuclear weapons, radiation from clouds don\[CloseCurlyQuote]t have these, \
+their tails really matter.
+Not exponential, it has a powerlaw piece.
+
+The case where you start seeing thermodynamic behavior is in reversible CA \
+where you can guarantee that any forward evolution can be inverted.  If you \
+look at correlation function....
+... reason that the atmosphere in Jupiter that instead of breaking into \
+smaller pieces, you get blobs...
+the question is what happens to this exponential correlation, cell that if a \
+cell is black the probability it is black after t steps, averaged over all \
+initial conditions.  In reversible CA you never get rid of the information \
+that there was a black cell.  Is there an exponential fall off?
+
+Entropy of the mapping.  How much do you need to know to find out inside?  \
+Notes chapter 6. 960
+How quickly is local information lost?
+
+The other thing you could look at, given two black cells separated in space, \
+what are the chances they are correlated in the future.
+
+Related to the derivation of 2nd law.  If you can factor the distributions, \
+if no correlation before they collide then entropy increases.  Molecular \
+chaos assumption, tricky because they are correlated after a collision.  Try \
+a finite size region too.  Some pattern, how quickly does it randomize.  Do \
+it for a bunch of rules, there may be some intermediate cases where it does \
+something really wild.\
+\>", "Text",
+ CellChangeTimes->{{3.5496568863967285`*^9, 3.549657044861807*^9}, {
+  3.5496570832690744`*^9, 3.5496570932218924`*^9}, {3.549657288175434*^9, 
+  3.5496573366603193`*^9}, {3.549657404458039*^9, 3.549657451414121*^9}, {
+  3.549657504657015*^9, 3.54965761577601*^9}, {3.549657648988468*^9, 
+  3.5496577074417706`*^9}, {3.5496577421518316`*^9, 3.549657875594466*^9}, {
+  3.5496579156709366`*^9, 3.5496579507397985`*^9}, {3.5496580015490875`*^9, 
+  3.5496580158075123`*^9}, {3.549658157440161*^9, 3.549658180746602*^9}, {
+  3.5500403013110375`*^9, 3.550040303807042*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6-26", "Subsection",
+ CellChangeTimes->{{3.55003998970049*^9, 3.5500399911980925`*^9}}],
+
+Cell["\<\
+Lucas 11:35  CA long distance connection configuration space
+In general cycle lengths will tend to increase.
+For subcases one can do math like shift CA
+
+Gianpiero Cea 11:44
+If you have a substitution system which determines which rule you use as you \
+go down what will the pattern will be.
+For one of these nested patterns what will happen as they interact.
+You will find certain behaviors.  What kinds of behaviors occur, 3-4 seem \
+like them all, then you can do a search after you have classified them.    \
+Color rows of the CA according to the rule applied, maybe, or show the two in \
+a row.
+
+Alex Varga 11:51
+
+Polyominos.  In the case where you cannot tile, what is the closest packing \
+you can get? p.218  Has it been proved that if they tile then they tile \
+periodically.  (Not true)  If it does not tile, What is the configuration \
+that has the smallest fraction of empty space?  First enumerate polynomios.  \
+Then write code that arranges it in all possible ways.
+What is the most for polynomio of fixed size
+
+
+John DeBrota 12:21 - universal synthesis.  Figuring out what it takes to get \
+what, string substitution.  Real chemistry that question is complicated.  \
+What rules are universal constructors, that allow you to make any string.  \
+Nanotechnology goal is the universal constructor.  A sequence of lights to a \
+molecule.  This would be a junior version of that problem.  For what \
+sequence, a more realistic case.  One could say it is always sequential \
+substitution that always goes in the first place.  Under what circumstances, \
+given a set of rules, given an initial string.  Start off by enumerating \
+possible rules
+
+Kiyoshi Okada 12:33 --  Size of proof survey, size of intermediate strings. \
+p.776  The shortest proof can be quite long and can go through complicated \
+stuff.  Go through all the simple rules, as axioms, for the simplest ones \
+examine their proofs.  If true there is a proof length, no proof may be \
+found, maybe very long who knows.
+Show proof length, size of intermediate steps.
+
+Vladimir Feinberg -- what kind of restraints does it take to get funky \
+regions in integer space, related to integer programming
+
+\
+\>", "Text",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGCQBGIQLb1twoquoleOL66Z7QPRfywSD4Poa6/kj4DoUos1
+r0H0wSUib0H0kT52hm4gvebpXnYQvW7HFW4QLeI8VQhEv9S7IAGimd75y4Fo
+NxZfLRCdFLMOTG/5dNIQRJ+8t9cWRE/5Ot8ZrP/+NTCd8P9lGogWuP8wC0R7
+L22uAdGy/5a2gehfoZP6QfR7O+tJIHr+9JP/QHTRJD6GHiAtVFnBB6Kv/hcQ
+AtHPBRglQLRfZJAciJ7iIa8Loh9ofTIF0SUFs2xAdNJVETsQ/fUEawqItlfI
+BNNJUdfyQPQyJ4F8EG13bmMziF7TrNUHojeV3JwGovNKhGaAaI7J/3snAOm2
+Yp8+EN11ZcovzWJgOOwv/AeimQq9WLWAdMTBfWD6n1m5PIi+/eKeMogGACnn
+zQ0=
+  "]],
+
+Cell[TextData[{
+ "Sanjit 3:03 -- Visualize what the model is actually doing.  Possibly the \
+model can be simplified.  Take some CA patterns or something modified, deep \
+learning great with letters of alphabet then to each letter apply CA for one \
+step, two steps, etc. then deep learning will fail at some point.  See how it \
+goes wrong.  Reversible would be an interesting case.  Would be interesting \
+to see what the system is doing.  See if it can recognize output of CA.  Yann \
+.  One is deep learning and the other is SVM, we already know how they fail.  \
+Look at hierarchical deep learning and get a good visualization.  Give it \
+something it works on and what kind of OCR noise.  Evolve the font in a CA, \
+humans can recognize for a while.  A reasonable use case is can you solve \
+captures of that type (that are used in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ").  Implement deep learning in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ".  Would really like to see some kind of a systematic or good \
+visualization.  Show the layers.  Better to use 1D.  Black on one side and \
+white on the other, start flipping some bits using perturbations.  There is \
+no right answer,  Is that more like one or the other.  Could use Hamming \
+distance (maybe not right) how many flip and still recognizes type A or B.  \
+Train with small perturbations.  Should be able to draw the basin of \
+attraction\n\nLuca Belli --  Scanner for large number of coordinates, time, \
+jogging scanner.  typing of expressions, autocompletion of expressions.  Can \
+you deduce what the likely completion of ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " expressions?  How do you find the same thing as for strings?  A pretty \
+good sample from demonstrations.  A practical project, require math thinking \
+in a practical context.  Learning a probabilistic grammar, essentially.  \
+Could propose autocompletions.  The inverse problem is to find things which \
+are obviously wrong.  Log[DSolve is almost certainly wrong, given the \
+examples we have right now.\n\nJaime Diaz Diaz--\nGiven some ratio of ones \
+and zeros, find a rule that reproduces any given ratio.  Find a rule whose \
+center column reproduces the modify the rule in one direction, ... a tree \
+like structure.  A rule and it looks like this, make a perturbation and it\
+\[CloseCurlyQuote]s closer than the other.  Eventually you will evolve to a \
+rule with the right ratio.  You are looking at a pattern starting from a \
+single black cell.  Center column for 100 steps.  31 1\[CloseCurlyQuote]s 69 \
+zeros.  Find a rule with that number.  Make a change in the rule and it gets \
+closer or further.  A further step maybe do 1000 steps and 2 color \
+neighborhood 5 or 7.\n\nVladimir Feinberg 4:07 -- \nTM with delay.  Remember \
+the previous state in addition to the current state.  Possible to use.\n\n\
+Chen Song 4:43--\nDithering.  How do you say it is good? p. 1078  Make \
+picture.  Use several dithering approaches.  Use a model for feature \
+detection to say which dithering is best (or consistent).  Could be gestalt, \
+or like the ones in the book for feature detectors.  Use image processing.\n\n\
+Marco Guidetti -- \nGiven the web, like Wikipedia, make structured statements \
+about it.  Not scavenging facts, but the web as a corpus of human activity.  \
+one article is connected to other articles.  When were people interested?  \
+Has that interest decreased or decreased?  You look at different fields.  \
+What are the pre-requisites of a mathematical topic.   What about topic \
+modeling and categories?\nTopic areas from a catalog, like a library of \
+congress catalog.  What is the web of knowledge?  Can we draw the wall chart \
+of human knowledge.  Time, places and people will be connected.\n\nEtienne \
+Bernard -- 8:07 Data condensation, a big dataset, what are the short \
+questions and how do you precompute them.\nTake Max e.g. that we could \
+evaluate on a lump of data  A simple minded case is a time series.  Let\
+\[CloseCurlyQuote]s say you have a time series where you\[CloseCurlyQuote]ve \
+sampled every second for ten years.  Lots of data most will be irrelevant.  \
+You might ask lots of questions.  What\[CloseCurlyQuote]s the maximum, growth \
+rate.  If you know the average of this section and that section, ..., median \
+doesn\[CloseCurlyQuote]t have the same property.  I bet you can approximate \
+the median.  Something called sketching.  It might be quite adequate with 99% \
+probability or to two digit precision the median is blah.  Develop a \
+formalism for preprocessing the data, what can you figure out from \
+preprocessed things.  Bet you can get the distribution.  You can get that.  \
+Distribution for equally spaced regions.  What\[CloseCurlyQuote]s the \
+distribution for this block here.  What do you store.  Compressed sensing \
+where a few measurements, a sparse thing is enough.  A compressed basis.\n\n\n\
+Thomas Ferguson 8:25 -- Enumerate true theorems in a weird system in logic \
+and let him interpret them.  Euclid.\nExamine the theorems deemed interesting \
+by implication, and historical convention.  Find simplest axiom system for \
+it, if not too hard.  Might as well try.  Where would it be in an enumeration \
+of axioms, put the logics on the number line.  How hard is it to prove such \
+and such a theorem, which is like the reverse mathematics question.  Given \
+the simplest axiom system how many steps does it take to prove such and such \
+a theorem like commutativity of NAND. p.1174\nAnother thing you could ask, \
+pick 5 theorems you think you really like, then ask which axioms are the \
+simplest ones that produce those theorems.\n\n"
+}], "Text",
+ CellChangeTimes->{{3.5497235758013372`*^9, 3.5497235858477545`*^9}, {
+   3.54972361737541*^9, 3.5497236534894733`*^9}, {3.549723932083564*^9, 
+   3.5497239363735714`*^9}, {3.5497239889924636`*^9, 
+   3.5497240030168886`*^9}, {3.5497242768285694`*^9, 
+   3.5497243214290476`*^9}, {3.549724428325074*^9, 3.549724441007897*^9}, {
+   3.5497245154668274`*^9, 3.549724606009386*^9}, {3.549724678065913*^9, 
+   3.5497246833543224`*^9}, 3.549724907058715*^9, {3.5497249653716173`*^9, 
+   3.5497250048396873`*^9}, {3.5497250503137665`*^9, 
+   3.5497250871298313`*^9}, {3.5497251373463197`*^9, 
+   3.5497251485783396`*^9}, {3.549725182009198*^9, 3.5497251935532184`*^9}, {
+   3.5497253170274353`*^9, 3.5497253184470377`*^9}, {3.5497254348700423`*^9, 
+   3.549725447178464*^9}, {3.549725610724352*^9, 3.5497256170111628`*^9}, {
+   3.54972564952162*^9, 3.5497256523608246`*^9}, {3.549725730501362*^9, 
+   3.549725762419018*^9}, {3.5497262187354193`*^9, 3.549726413626562*^9}, {
+   3.5497264727818656`*^9, 3.549726514511939*^9}, {3.549726672789817*^9, 
+   3.549726687063842*^9}, {3.549726743504741*^9, 3.549726827791689*^9}, {
+   3.54972691373224*^9, 3.549726921079853*^9}, {3.5497269538087106`*^9, 
+   3.549726975711149*^9}, {3.549727054397687*^9, 3.5497271329282255`*^9}, {
+   3.549727189415924*^9, 3.549727194891534*^9}, {3.54972732338896*^9, 
+   3.5497273306429725`*^9}, {3.549727557451771*^9, 3.549727580664612*^9}, {
+   3.5497276403971167`*^9, 3.5497276784387836`*^9}, {3.5497277656897373`*^9, 
+   3.549727798621395*^9}, {3.5497278660375137`*^9, 3.5497279698556957`*^9}, {
+   3.5497285359318914`*^9, 3.549728557038728*^9}, {3.5497294356988716`*^9, 
+   3.549729670704085*^9}, {3.549730162113348*^9, 3.5497302562439137`*^9}, {
+   3.549731164094309*^9, 3.5497312019399753`*^9}, 3.5497312534356656`*^9, {
+   3.549732202776134*^9, 3.549732212479351*^9}, {3.5497346847956953`*^9, 
+   3.54973469820492*^9}, {3.5497347561122217`*^9, 3.5497348658272142`*^9}, {
+   3.5497349487765603`*^9, 3.549734961646583*^9}, {3.5497354388826213`*^9, 
+   3.549735448258238*^9}, {3.549735577020864*^9, 3.5497355791580677`*^9}, {
+   3.5497356166449337`*^9, 3.549735656050603*^9}, {3.5497357716376057`*^9, 
+   3.5497357871752334`*^9}, {3.5497359622855406`*^9, 3.549735969399153*^9}, {
+   3.5497366484767466`*^9, 3.5497366528135543`*^9}, {3.549736699379636*^9, 
+   3.5497368225738525`*^9}, {3.5497371895836973`*^9, 3.549737227736565*^9}, {
+   3.5497373138263173`*^9, 3.5497373256823378`*^9}, {3.5497373688788137`*^9, 
+   3.549737375384025*^9}, {3.5497374440049467`*^9, 3.549737445299749*^9}, {
+   3.5497374856414194`*^9, 3.5497374913666296`*^9}, 3.549743182186119*^9, {
+   3.5497438429784794`*^9, 3.5497438478924885`*^9}, {3.5497446737819395`*^9, 
+   3.5497446775727463`*^9}, {3.549744830250214*^9, 3.5497450773070483`*^9}, {
+   3.5497451280383377`*^9, 3.5497451317667437`*^9}, {3.5497451756340213`*^9, 
+   3.549745201639267*^9}, 3.549745609849984*^9, {3.549745741701416*^9, 
+   3.5497457431834183`*^9}, {3.5497458768696537`*^9, 3.5497459032493*^9}, {
+   3.5497459565701933`*^9, 3.549745967022212*^9}, {3.5497464841787205`*^9, 
+   3.549746527234796*^9}, {3.5497466014129257`*^9, 3.5497466923518863`*^9}, {
+   3.549746771600025*^9, 3.54974677437683*^9}, {3.549746853016568*^9, 
+   3.54974687688461*^9}, {3.55004013200394*^9, 3.550040180707226*^9}, {
+   3.550040389669593*^9, 3.550040429215662*^9}}],
+
+Cell["\<\
+Xuxiang Lu 8:45 --  center column finite width initial condition on infinite \
+white determining time series, compute time series, compute call option based \
+on the future of the center cells.  Compare to Black Sholes value.  Compare \
+CAs.
+
+Mohamed Z 9:00-- [See meeting on 6-29]
+\
+\>", "Text",
+ CellChangeTimes->{{3.5497431847757235`*^9, 3.549743246380232*^9}, {
+   3.5497438640541167`*^9, 3.5497439301982327`*^9}, {3.549744115354958*^9, 
+   3.5497441658834467`*^9}, {3.549744259070811*^9, 3.5497442687272277`*^9}, {
+   3.549744666668327*^9, 3.5497446671051273`*^9}, {3.5497468075580883`*^9, 
+   3.5497468332825336`*^9}, {3.5497475521849966`*^9, 
+   3.5497476286719313`*^9}, {3.549748183040905*^9, 3.549748195224527*^9}, {
+   3.549750075836135*^9, 3.5497500810621443`*^9}, {3.5497506665788746`*^9, 
+   3.5497506989177313`*^9}, {3.549750761052641*^9, 3.5497507728618617`*^9}, {
+   3.5497513137460117`*^9, 3.5497513463968687`*^9}, {3.5497517214839277`*^9, 
+   3.5497517308439445`*^9}, {3.549752886461975*^9, 3.5497528923119855`*^9}, 
+   3.5498021226403484`*^9, {3.550040184903633*^9, 3.5500402063224707`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6-27", "Subsection",
+ CellChangeTimes->{{3.5500397642176943`*^9, 3.5500397656060963`*^9}}],
+
+Cell["\<\
+David Smrcka: phenomenology 2D block reversible CA.  Use image processing, \
+get beta 9.  Use Image3D.
+
+Katherine 4:09 May Lin is her professor.  Look at totalistic rules with \
+offset, at first symmetric.  How do the patterns change as the distance \
+changes?  Instead of things happen by contact.  How do nonlocal \
+connections.... As you change do they qualitatively stay the same? Take \
+snapshots.  Use other visualizations.  Image3D (get beta 9) Semitransparent \
+pixels.  Try different colors in successive layers.\
+\>", "Text",
+ CellChangeTimes->{{3.5498699005153418`*^9, 3.5498700584316196`*^9}}],
+
+Cell["\<\
+Tomas Bily 4:21 (Operator on ECA, two rules A+B....)
+Medicine has Disease + code for diseases.  In computers things go wrong.  Is \
+there a way to diagnose the diseases of the kernel [and give these diseases \
+codes]  Imagine some binary with a bunch of bits.  Human goes to the ER check \
+blood pressure + reflexes.  What do you look at in a running program?  Need \
+database of crash dumps.  What does a dashboard look like in a running \
+program?  What if you could do something with the binary stuff, not the \
+symbol table.  Make NKS visualizations of a small C program in process.  A \
+running nontrivial, its time evolution of the memory.  Maybe gnu utility like \
+ls, gzip.
+
+Nikolay Shenkov 5:23 Can you invent a system instead of 0s and 1s on a line?  \
+It depends on fold.  Fold only if possible.  Enumerate possible rules.  \
+Global constraint.  Mobile automaton with folding point. A CA in parallel \
+probably always gets blocked.
+
+Look at whole system.  Fold where there is least curvature or something.  \
+Could just fold at 90 deg to see what happens. 
+
+MA - sometimes rejects a move because it overlaps.  Folds and moves active \
+cell, part of the rule says how to fold.  Color->{new color, fold, active \
+cell movement}  Possibly 3D if constraint too much.
+
+Qinqin 5:43 [See 6-29 for second meeting]
+
+Guilio 7:52 Email hypergraph.  Resume later.
+
+Miguel 8:10.  Fit description of finance data.  Compare what happens with a \
+pure log normal plus volatility parameter versus these actual distributions, \
+e.g. stock price data.  Find the empirical distribution.  Actual value lies \
+within the prediction.  You will make a bunch of predictions.  Probably p is \
+the predicted probability.  Good if it lies in the peak, sometimes it has to \
+go wrong.  Predict empirical distribution does better than log normal by 20%
+
+[Resume]
+Mohamed Al-Emam 8:25 (Taking xn<1/2 -> 0 and xn>=1/2 -> 1 turns it into a \
+symbolic dynamics.  Do this for the continuous CA p.157 Hit it with Round.  \
+Do this for a grid of parameters,  Take width 10 e.g. then 1024 states The \
+successor might be different, measure maker transition probabilities.  As a \
+test do this for the ordinary logistic map.  What are the analogs of period \
+doubling for these continuous CA,  Look at the one on FractionalPart.  Find \
+out what theory can be made for these maps.)
+Resume after understanding Chua paper.  Would like to understand Chua paper.
+
+Giulio II 9:00 
+
+Plot digitization, arxiv preprint database. Render_OCR them for labels.  \
+Might be log scale, error bars, might say log scale in the caption.  Adobe \
+streamline.
+
+Tareq 10:07  One grid point.  Fluid particles on hexagonal grid, introduce \
+energy by rotating.  One a fixed rotation boundary.  Second probability for \
+nonspecular reflection on the other boundary.  When enough impulses then you \
+move by one lattice point, but it has velocity.  Displace particles, work out \
+boundary conditions.  Ask about whether version 9 Finite Element does moving \
+boundaries as a test.\
+\>", "Text",
+ CellChangeTimes->{{3.549870066340833*^9, 3.5498703669797616`*^9}, {
+  3.5498705808569374`*^9, 3.5498715873483057`*^9}, {3.5500398140597816`*^9, 
+  3.5500398868339095`*^9}, {3.550040450213299*^9, 3.5500404650489254`*^9}}],
+
+Cell["\<\
+Andre 10:35 Iotadelta. Period of stripes based on mods.  Try just having a \
+d-term where a=b=c=0.  Show it to Eric. Is it some number theory thing?  What \
+is the continuous variation?  Rules for different moduli?  Different ways to \
+do rule 30.  How similar for the same rule?  Way to generalize rule 30 to be \
+continuous.  Try initial conditions .8,.7,.6 what does it do?  Mod 3 version \
+of rule 30; mod 5 version, etc.  Other functions besides Mod, smooth \
+functions?\
+\>", "Text",
+ CellChangeTimes->{{3.549871590203111*^9, 3.5498717221325426`*^9}, {
+  3.5500399225267725`*^9, 3.5500399234159737`*^9}, {3.5500404948449774`*^9, 
+  3.5500405035653925`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6-28", "Subsection",
+ CellChangeTimes->{{3.5500395546781263`*^9, 3.5500395563629293`*^9}}],
+
+Cell[TextData[{
+ "(Carlo)\nLuca Di Stasio -- 2:50\nWhat is the test that it is the right \
+model?  Discharge in plexiglass, you get a tree pattern.  Is it correct or \
+not?  The minimal thing to do.  Take the phenomenological model p.375 and \
+generalize to multiple cracks.  Different dynamics from different rules.  \
+What happens when cracks merge?  They should have a diffusion rate you can \
+measure.  Crack density as a fraction of post time.  If I drill out a crack, \
+to what extent does that affect the downstream behavior.  If you have a model \
+with bits of cracks, you can make a model.  What are the sizes of the \
+fragments and their distribution?  How does that distribution change?  Is the \
+outer boundary self-similar?  One can think of phenomenological model since \
+there is no underlying model.\n\n(Hernan)\n\nErnesto JeanCarlos Silos \
+Martinez --3:14  traffic flow.  Nagel Stuckenberg model.  Successive lanes \
+have different colors.  See what happens with different control systems to \
+avoid jams.  What fraction of cars need to be computer controlled to avoid \
+jams.  First step, local cell looks a certain number of cars ahead.  Change \
+the density of smart cars.\n\nJuan Carlos Lopez -- 3:40.  Extend search for \
+3D game of life, using the rule type idea which is like a Langton\
+\[CloseCurlyQuote]s parameter.  Spectrum.  p.287-289, can you find more stuff \
+like this?  What happens for small initial condition, and search for gliders. \
+ Symmetric lifelike rules in 3D.  For Jaun Carlos\[CloseCurlyQuote]s 300 \
+rules it would be nice to see a grid of pictures.  Are there subclasses in \
+these rules? Sizes of gliders, things like the infinitely growing things \
+p.289.  3D case+symmetrical+structures.  Find out what is there.  30 min \
+p.618\n\n(Eric Rowland)\n\nPete Giovagnoli 4:05 -- r=1/2  Each cell has a \
+list of 0\[CloseCurlyQuote]s and 1\[CloseCurlyQuote]s, representing the \
+ether.  May be any list of bits.  Write that list of bits as an integer.  \
+Consider rules involving GCD and LCM.  Make up expression trees, maybe plus \
+with constants.  Bit planes visualization, decompose into prime, etc..\n\n\
+Leytzher Muro -- 4:40 Doing all of these modeling components will be hard \
+work.  One approach is to have some high level model to make decisions about \
+going offshore.  Look at the details of low level and make high level model.  \
+Another is propagation through rocks.  If you could get the system\
+\[CloseCurlyQuote]s parameters into the Systems Modeler....\n\nCode of rock.  \
+Thin sections, profile can be seen as obstacles.  Pump water in the rock.  \
+Percolation theory was done before, fill in spaces on a lattice, at a certain \
+density you are guaranteed a path from top to bottom.  One thing you could do \
+is start with this lattice.  Some cells would be rock, fixed.  Model \
+distribution of points.  Oil arrow and a water arrow.  Might be better on a \
+hex grid.  Try oil in a region.  Model distribution of pore centers for Darcy\
+\[CloseCurlyQuote]s law.  Have a 3D region.  Rock=grains+water in between.  \
+Maybe exponential distribution of grain sizes.  Figure out which lattice \
+points are free, don\[CloseCurlyQuote]t have grains.  Put down arrows for \
+fluid.  Two-fluid rule and a rule for fluid interactions (repel)  How much \
+oil gets trapped?  How does it move through the system?  More important to \
+visualize what is happening.  I wonder whether you can derive Darcy\
+\[CloseCurlyQuote]s law.  Cubic grid, literature for avoiding pathologies.  \
+Use different colors for different layers to see it better.  As a test do it \
+in 2D, probably quite different.\n\nMachi Zawidzki 5:17\nAnalog of network \
+routing applied to pedestrians.  Doors line the edges of a grid.  Doors are \
+trying to get from door 1 to door 7.  Somebody else going this way and so on. \
+ Each person has an algorithm.  Subject to nobody being in the way they take \
+a step toward their destination, alternating west+north perhaps.  They get \
+blocked and use an algorithm for what to do.  Let\[CloseCurlyQuote]s say \
+picking pairs at random.  At some point they will jam.  As a function of .... \
+it will take long to get to your destination.  Clumps.  What if you put \
+obstructions in?  Will that always make it take longer?  This gas of people.  \
+ Two populations with different rules, polite versus brash.  As a practical \
+matter you could have signage \[OpenCurlyDoubleQuote]don\[CloseCurlyQuote]t \
+walk here\[CloseCurlyDoubleQuote]  Make a heat map.  Try making the \
+environment its own space.  Maybe heat flow, maybe not.\n\nChristian Wolf -- \
+6:05  Figure out variations that are not the universe using your machinery.  \
+Take parameters that go into it and enumerated alternatives.  Make a \
+histogram for the distribution of values you get for the constants.  Assess \
+the probability of getting it as close as yours is.\n\nHexagonal space of \
+ducks, is there a family of these things?  Are there reasonable dynamics \
+there?  Understand this space.  Can you run CA on this space (nontotalistic)?\
+\n\n\n(Paul-Jean Letourneau)\n\nDavid Thaler 7:00 -- Code, image processing, \
+interpretation.  Import images in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", flash from camera, red eye, black screen suddenly bright, using ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " capture flash, capture, flash, flash, flash, capture, C code in the \
+camera.\nTake an image.  Upload do processing.  Pick out the pupil size, \
+compared to iris.  At beginning darkened room.  Take flash.  in each video, \
+eyes move around.  Do each separately.  Record from that camera and flash \
+separately.  30th of a second should be enough.  What you will see is boom it \
+goes away and gradually comes back.  Play with equations.  Pupillary light \
+reflex on Wiki, in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ".  Interesting in learning about yourself, what affects your reflexes. \
+i-flash  Talk to Chen.\n\nEnrique Barrajon -- 8:08 Gene network.  Represses \
+or promotes transcription of the other gene.  How does growth occur?  Not \
+cell to cell, it is within one cell.  If it divides there are more genes.  \
+Ploidy is maintained.  In this network there is a state of the cells.  When \
+on it divides,...\n"
+}], "Text",
+ CellChangeTimes->{{3.549882739940686*^9, 3.5498827673967347`*^9}, {
+  3.5499535994322176`*^9, 3.549954630048828*^9}, {3.5499546625280848`*^9, 
+  3.549955850064571*^9}, {3.550039595347398*^9, 3.550039679696746*^9}, {
+  3.550040517418217*^9, 3.5500405436730633`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6-29", "Subsection",
+ CellChangeTimes->{{3.550039479579594*^9, 3.5500394807651963`*^9}}],
+
+Cell["\<\
+David Goldfarb -- histone marking TM
+
+Mohamed Zaghoul -- 2:40  Grasshopper demo. 
+Design problem. A facade surrounded by buildings.  Nearby buildings\
+\[CloseCurlyQuote] shadow.  First step find a visualization that is more \
+interesting than the average.  Different times of year.  Is it something \
+like...  Divide the facade into different regions.  Start with highest area \
+of sun another starts at low.  What is the impression of shadows at different \
+times?  Let\[CloseCurlyQuote]s image a whole bunch of little images showing \
+configurations of shading.  First approximation angle of sun.  Different \
+times of year.  Arrange pictures so that the set of impressions is a line \
+through the grid of shadow configurations.  If change design ....  Could do \
+something for average over all configurations that can occur.  Could be \
+dynamic or not.
+
+Say you now a distribution of light levels.  Arrange so that the levels are \
+through the windows independent of shade.  Want to get something like a CA \
+with a specified distribution of densities.  A 2D rule what happens, 2 \
+possible rules, density p1 and p2.  Let\[CloseCurlyQuote]s say you have a \
+different rule in different regions.  What you are trying to avoid is p.578.  \
+Use the same idea across the building.  Like the dither patterns 1078.  Put \
+down a black square, scanning left to right, some diffusion.  There should be \
+a CA.   Ideally should be a local decision, a sensor using a local rule, a \
+shadow waves.
+
+Al-Emam Implement Chua\[CloseCurlyQuote]s differential equations.
+
+Qinqin Take a satellite photo.  Figure out what is manmade.  See note.
+6:12 Filters that man made.  Run it on an Amazon jungle and find nothing.  \
+People have tried this, straight lines searching for shipwrecks.  If you look \
+at Earth from space, Salt Lake divided by causeway.  A 500 mile straight road \
+in Australia.  Look at smaller scale.  Don\[CloseCurlyQuote]t know how hard \
+this is.  NAZCA[??]  Quintessential computational archeology.  Forest- Field- \
+City segmentation uses texture analysis, think this will be different.  \
+Boundaries of fields are manmade.  Canals versus rivers.  Reclaimed land.  \
+Rivers and roads are duals with respect to topography.  Place to start  is to \
+get some images.  Do canals versus river.  See if straight lines or some \
+other feature...
+\
+\>", "Text",
+ CellChangeTimes->{{3.550038195151338*^9, 3.550038250016635*^9}, {
+  3.550038555387171*^9, 3.550039178280665*^9}, {3.550039264283616*^9, 
+  3.5500394365547185`*^9}, {3.5500394997504296`*^9, 3.550039515147657*^9}, {
+  3.5500409018808928`*^9, 3.5500409231749296`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{707, 540},
+WindowMargins->{{Automatic, 126}, {Automatic, 45}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 106, 1, 67, "Section"],
+Cell[CellGroupData[{
+Cell[710, 27, 93, 1, 34, "Subsection"],
+Cell[806, 30, 2325, 43, 401, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3168, 78, 93, 1, 34, "Subsection"],
+Cell[3264, 81, 2670, 55, 506, "Text"],
+Cell[5937, 138, 9070, 127, 926, "Text"],
+Cell[15010, 267, 1120, 19, 86, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16167, 291, 96, 1, 34, "Subsection"],
+Cell[16266, 294, 615, 11, 101, "Text"],
+Cell[16884, 307, 3274, 60, 656, "Text"],
+Cell[20161, 369, 673, 11, 71, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20871, 385, 96, 1, 34, "Subsection"],
+Cell[20970, 388, 6572, 93, 1106, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27579, 486, 94, 1, 34, "Subsection"],
+Cell[27676, 489, 2638, 44, 401, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

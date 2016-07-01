@@ -1,0 +1,365 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     12427,        356]
+NotebookOptionsPosition[     11953,        336]
+NotebookOutlinePosition[     12290,        351]
+CellTagsIndexPosition[     12247,        348]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"runtm", "[", 
+   RowBox[{"rl_Integer", ",", 
+    RowBox[{"steps_:", "50"}]}], "]"}], ":=", 
+  RowBox[{"TuringMachine", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"rl", ",", "4", ",", "4"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", "}"}], ",", "0"}], "}"}]}], "}"}], ",", "steps"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"historytm", "=", 
+   RowBox[{"runtm", "[", 
+    RowBox[{"402266984389705722474101", ",", "60000"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.550099085503192*^9, 3.5500991459447107`*^9}, 
+   3.550099336130435*^9, 3.550099622163868*^9, {3.550099770261191*^9, 
+   3.550099770420825*^9}, 3.5500998220291557`*^9, 3.550099975156456*^9, 
+   3.550100075047262*^9, 3.5501001533290453`*^9, {3.55010018664291*^9, 
+   3.550100340494335*^9}, {3.550100381250341*^9, 3.5501004478361607`*^9}, {
+   3.550100534449806*^9, 3.550100554919759*^9}, {3.550100674862338*^9, 
+   3.5501007003134327`*^9}, 3.55010148752341*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"TuringClipHistory", "[", "history_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"min", ",", "max"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"min", ",", "max"}], "}"}], "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Min", "[", "#", "]"}], ",", 
+          RowBox[{"Max", "[", "#", "]"}]}], "}"}], "&"}], "[", 
+       RowBox[{"history", "[", 
+        RowBox[{"[", 
+         RowBox[{"All", ",", "1", ",", "2"}], "]"}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"MapIndexed", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"MapAt", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "-", "min", "+", "1"}], "&"}], ",", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", "2"}], "]"}], ",", 
+          RowBox[{"Take", "[", 
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"min", ",", "max"}], "}"}]}], "]"}]}], "}"}], "&"}], ",",
+        "history"}], "]"}]}]}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"TuringPadRightHistory", "[", 
+   RowBox[{"history_", ",", "n_", ",", 
+    RowBox[{"m_:", "0"}], ",", 
+    RowBox[{"offset_:", "0"}]}], "]"}], ":=", 
+  RowBox[{"MapIndexed", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"MapAt", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "+", "offset"}], "&"}], ",", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], ",", "2"}], "]"}], ",", 
+       RowBox[{"PadRight", "[", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], ",", "n", ",", "m", ",", "offset"}],
+         "]"}]}], "}"}], "&"}], ",", "history"}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"TuringPadHistory", "[", 
+   RowBox[{"history_", ",", "left_", ",", "right_"}], "]"}], ":=", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"MapAt", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "+", "left"}], "&"}], ",", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], ",", "2"}], "]"}], ",", 
+       RowBox[{"Join", "[", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{"0", ",", 
+           RowBox[{"{", "left", "}"}]}], "]"}], ",", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{"0", ",", 
+           RowBox[{"{", "right", "}"}]}], "]"}]}], "]"}]}], "}"}], "&"}], ",",
+     "history"}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"LeftTuringCompress", "[", "history_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"min", "=", 
+      RowBox[{
+       RowBox[{"history", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], "+", "1"}]}], "}"}],
+     ",", 
+    RowBox[{"Pick", "[", 
+     RowBox[{"history", ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"min", ">", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", 
+             RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"min", "=", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ";", "True"}], ",", 
+          "False"}], "]"}], "&"}], "/@", "history"}]}], "]"}]}], 
+   "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"RightTuringCompress", "[", "history_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"max", "=", 
+      RowBox[{
+       RowBox[{"history", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], "-", "1"}]}], "}"}],
+     ",", 
+    RowBox[{"Pick", "[", 
+     RowBox[{"history", ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"max", "<", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", 
+             RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"max", "=", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ";", "True"}], ",", 
+          "False"}], "]"}], "&"}], "/@", "history"}]}], "]"}]}], 
+   "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"LeftRightTuringCompress", "[", "history_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"min", "=", 
+       RowBox[{
+        RowBox[{"history", "[", 
+         RowBox[{"[", 
+          RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], "+", "1"}]}], ",", 
+      
+      RowBox[{"max", "=", 
+       RowBox[{
+        RowBox[{"history", "[", 
+         RowBox[{"[", 
+          RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], "-", "1"}]}]}], 
+     "}"}], ",", 
+    RowBox[{"Pick", "[", 
+     RowBox[{"history", ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"max", "\[GreaterEqual]", " ", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", 
+             RowBox[{"1", ",", "2"}], "]"}], "]"}], "\[GreaterEqual]", " ", 
+           "min"}], ",", "False", ",", 
+          RowBox[{
+           RowBox[{"min", "=", 
+            RowBox[{"Min", "[", 
+             RowBox[{"min", ",", 
+              RowBox[{"#", "[", 
+               RowBox[{"[", 
+                RowBox[{"1", ",", "2"}], "]"}], "]"}]}], "]"}]}], ";", 
+           RowBox[{"max", "=", 
+            RowBox[{"Max", "[", 
+             RowBox[{"max", ",", 
+              RowBox[{"#", "[", 
+               RowBox[{"[", 
+                RowBox[{"1", ",", "2"}], "]"}], "]"}]}], "]"}]}], ";", 
+           "True"}]}], "]"}], "&"}], "/@", "history"}]}], "]"}]}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.386677692125*^9, 3.386677883875*^9}, {
+   3.386677937515625*^9, 3.386677941109375*^9}, {3.386677988046875*^9, 
+   3.3866780316875*^9}, {3.38667811325*^9, 3.3866781176875*^9}, 
+   3.550099357181334*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ArrayPlot", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"LeftTuringCompress", "[", "historytm", "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "2"}], "]"}], "]"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Automatic", ",", "100"}], "}"}]}]}], "]"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"ArrayPlot", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"RightTuringCompress", "[", "historytm", "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "2"}], "]"}], "]"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Automatic", ",", "100"}], "}"}]}]}], "]"}], "\n"}], "\n", 
+ RowBox[{"ArrayPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"LeftRightTuringCompress", "[", "historytm", "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", "2"}], "]"}], "]"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Automatic", ",", "100"}], "}"}]}]}], "]"}], "\n"}], "Input",
+ CellChangeTimes->{{3.5500992684563417`*^9, 3.550099276637435*^9}, {
+  3.55009943571791*^9, 3.550099527001313*^9}, {3.550099579345379*^9, 
+  3.550099596645091*^9}, {3.550099650384796*^9, 3.5500996505200663`*^9}, {
+  3.550099713817292*^9, 3.550099763761692*^9}, {3.550099849739028*^9, 
+  3.5500998579108753`*^9}, {3.550099957881752*^9, 3.5500999713081923`*^9}, {
+  3.55010009746456*^9, 3.550100101263277*^9}, {3.55010062451118*^9, 
+  3.5501006434604*^9}, {3.550100681410162*^9, 3.550100715755176*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1:eJxTTMoPSmJiYGBgBuJvIJoZiEYgGJm+HokAACHMC0I=
+   "], {{0, 0}, {246, 3}}, {0, 
+   3}],
+  Frame->Automatic,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  ImageSize->{Automatic, 100}]], "Output",
+ CellChangeTimes->{{3.550100166290936*^9, 3.550100343366102*^9}, {
+   3.550100383709558*^9, 3.550100408252533*^9}, {3.550100438490017*^9, 
+   3.550100450156898*^9}, {3.5501005366004744`*^9, 3.550100559863093*^9}, {
+   3.550100635262498*^9, 3.550100644970064*^9}, {3.550100683154203*^9, 
+   3.550100716406609*^9}, 3.550101492856011*^9}],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1:eJztz0ERgDAAA8EWJ1hCQg1gnuFNdXC7kwi4c93XOsYYz/67P+dekOoO1R2q
+O1R3qO5Q3aG6Q3WH6g7VHao7VHeo7lDdobpDdYfqDtUdqjtUd6juUN2hukN1
+h+oO1R2qO1R3qO5Q3aG6Q3WH6g7VHao7VHeo7lDdobpDdYfqDtUdqjtUd6ju
+UN2hukN1h+oO1R2qO1R3qO5Q3aG6Q3WH6g7VHao7VHeo7lDdobpDdYfqDtUd
+qjtUd6juUN2hukN1h+oO1R2qO1R3qO5Q3aG6Q3WH6g7VHao7VHeo7lDdobpD
+dYfqDtUdqjtUd6juUN2hukN1h+oO1R2qO1R3qO5Q3aG6Q3WH6g7VHao7VHeo
+7lDdobpDdYfqDtUdqjtUd6juUN2hukN1h2r+7AO2Ie0Y
+   "], {{0, 0}, {246, 244}}, {0, 
+   1}],
+  Frame->Automatic,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  ImageSize->{Automatic, 100}]], "Output",
+ CellChangeTimes->{{3.550100166290936*^9, 3.550100343366102*^9}, {
+   3.550100383709558*^9, 3.550100408252533*^9}, {3.550100438490017*^9, 
+   3.550100450156898*^9}, {3.5501005366004744`*^9, 3.550100559863093*^9}, {
+   3.550100635262498*^9, 3.550100644970064*^9}, {3.550100683154203*^9, 
+   3.550100716406609*^9}, 3.550101492970305*^9}],
+
+Cell[BoxData[
+ GraphicsBox[RasterBox[CompressedData["
+1:eJztzzERgDAABMFMogRLSIgB3FPT4CHF3s58/3ft595zjPH+W2suUdWOqh1V
+O6p2VO2o2lG1o2pH1Y6qHVU7qnZU7ajaUbWjakfVjqodVTuqdlTtqNpRtaNq
+R9WOqh1VO6p2VO2o2lG1o2pH1Y6qHVU7qnZU7ajaUbWjakfVjqodVTuqdlTt
+qNpRtaNqR9WOqh1VO6p2VO2o2lG1o2pH1Y6qHVU7qnZU7ajaUbWjakfVjqod
+VTuqdlTtqNpRtaNqR9WOqh1VO6p2VO2o2lG1o2pH1Y6qHVU7qnZU7ajaUbWj
+akfVjqodVTuqdlTtqNpRtaNqR9WOqh1VO6p2VO2o2lG1o2pH1Y6qHVU7qnZU
+7ajaUbWjakfVjqodVTuqdlTtqNpRtaNqR9WOcfrAEWa16ANd68fm
+   "], {{0, 0}, {246, 
+   246}}, {0, 3}],
+  Frame->Automatic,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  ImageSize->{Automatic, 100}]], "Output",
+ CellChangeTimes->{{3.550100166290936*^9, 3.550100343366102*^9}, {
+   3.550100383709558*^9, 3.550100408252533*^9}, {3.550100438490017*^9, 
+   3.550100450156898*^9}, {3.5501005366004744`*^9, 3.550100559863093*^9}, {
+   3.550100635262498*^9, 3.550100644970064*^9}, {3.550100683154203*^9, 
+   3.550100716406609*^9}, 3.550101493120103*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 752},
+WindowMargins->{{Automatic, 77}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit) (October 5, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1087, 26, 58, "Input"],
+Cell[1647, 48, 6179, 188, 298, "Input"],
+Cell[CellGroupData[{
+Cell[7851, 240, 1500, 36, 103, "Input"],
+Cell[9354, 278, 611, 13, 115, "Output"],
+Cell[9968, 293, 979, 19, 115, "Output"],
+Cell[10950, 314, 987, 19, 115, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

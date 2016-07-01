@@ -1,0 +1,301 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     10880,        292]
+NotebookOptionsPosition[     10178,        267]
+NotebookOutlinePosition[     10633,        285]
+CellTagsIndexPosition[     10590,        282]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"ParseIDX", "[", "file_", "]"}], " ", ":=", " ", 
+    RowBox[{"Module", "[", "\n", "\t", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "stream", ",", " ", "mnumber", ",", " ", "type", ",", " ", "dim", ",", 
+        " ", "sizes", ",", " ", "data"}], "}"}], ",", "\n", "\t", 
+      RowBox[{
+       RowBox[{"stream", " ", "=", " ", 
+        RowBox[{"OpenRead", "[", 
+         RowBox[{"file", ",", " ", 
+          RowBox[{"BinaryFormat", " ", "\[Rule]", " ", "True"}]}], "]"}]}], 
+       ";", "\n", "\t", 
+       RowBox[{"mnumber", " ", "=", " ", 
+        RowBox[{"BinaryRead", "[", 
+         RowBox[{"stream", ",", " ", 
+          RowBox[{"{", 
+           RowBox[{"\"\<Byte\>\"", ",", " ", "\"\<Byte\>\""}], "}"}]}], 
+         "]"}]}], ";", "\n", "\t", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"mnumber", " ", "=!=", " ", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0"}], "}"}]}], ",", " ", 
+         RowBox[{"Abort", "[", "]"}]}], "]"}], ";", "\n", "\t", 
+       RowBox[{"type", " ", "=", " ", 
+        RowBox[{"BinaryRead", "[", 
+         RowBox[{"stream", ",", " ", "\"\<Byte\>\""}], "]"}]}], ";", "\n", 
+       "\t", 
+       RowBox[{"type", " ", "=", " ", 
+        RowBox[{"Replace", "[", 
+         RowBox[{"type", ",", " ", 
+          RowBox[{"{", "\n", "\t\t", 
+           RowBox[{
+            RowBox[{"8", " ", "\[Rule]", " ", "\"\<UnsignedInteger8\>\""}], 
+            ",", "\n", "\t\t", 
+            RowBox[{"9", " ", "\[Rule]", " ", "\"\<Integer8\>\""}], ",", "\n",
+             "\t\t", 
+            RowBox[{"11", " ", "\[Rule]", " ", "\"\<Integer16\>\""}], ",", 
+            "\n", "\t\t", 
+            RowBox[{"12", " ", "\[Rule]", " ", "\"\<Integer32\>\""}], ",", 
+            "\n", "\t\t", 
+            RowBox[{"13", " ", "\[Rule]", " ", "\"\<Real32\>\""}], ",", "\n", 
+            "\t\t", 
+            RowBox[{"14", " ", "\[Rule]", " ", "\"\<Real64\>\""}], ",", "\n", 
+            "\t\t", 
+            RowBox[{"_", " ", "\[RuleDelayed]", " ", 
+             RowBox[{"Abort", "[", "]"}]}]}], "\n", "\t", "}"}]}], "]"}]}], 
+       ";", "\n", "\t", 
+       RowBox[{"Print", "[", "type", "]"}], ";", "\n", "\t", 
+       RowBox[{"dim", " ", "=", " ", 
+        RowBox[{"BinaryRead", "[", 
+         RowBox[{"stream", ",", " ", "\"\<Byte\>\""}], "]"}]}], ";", "\n", 
+       "\t", 
+       RowBox[{"Print", "[", "dim", "]"}], ";", "\n", "\t", 
+       RowBox[{"sizes", " ", "=", " ", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"BinaryRead", "[", 
+           RowBox[{"stream", ",", " ", "\"\<Integer32\>\"", ",", " ", 
+            RowBox[{"ByteOrdering", " ", "\[Rule]", " ", "1"}]}], "]"}], ",", 
+          " ", 
+          RowBox[{"{", "dim", "}"}]}], "]"}]}], ";", "\n", "\t", 
+       RowBox[{"Print", "[", "sizes", "]"}], ";", "\n", "\t", 
+       RowBox[{"data", " ", "=", " ", 
+        RowBox[{"BinaryReadList", "[", 
+         RowBox[{"stream", ",", " ", "type", ",", " ", 
+          RowBox[{"Times", " ", "@@", " ", "sizes"}], ",", "  ", 
+          RowBox[{"ByteOrdering", " ", "\[Rule]", " ", "1"}]}], "]"}]}], ";", 
+       "\n", "\t", 
+       RowBox[{"Fold", "[", 
+        RowBox[{"Partition", ",", " ", "data", ",", " ", 
+         RowBox[{"Reverse", " ", "@", " ", "sizes"}]}], "]"}]}]}], "\n", 
+     "]"}]}], ";"}]}]], "Code",
+ CellChangeTimes->{{3.550272565501762*^9, 3.550272578021043*^9}}],
+
+Cell[BoxData[
+ RowBox[{"data", 
+  StyleBox["=",
+   FontSize->14], 
+  RowBox[{
+  "ParseIDX", "[", "\"\<~/Downloads/train-images-idx3-ubyte\>\"", 
+   "]"}]}]], "Code"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"d", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"ProcessingNew", "[", "i", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "256"}], "}"}]}], "]"}]}], ";"}]], "Code",
+ CellChangeTimes->{
+  3.550272598687797*^9, {3.5502728994186783`*^9, 3.550272900311617*^9}, {
+   3.550273132539358*^9, 3.550273133849843*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"WriteTrainingVector", "[", 
+   RowBox[{"stream_", ",", "vector_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"l", ",", "padvector", ",", "len"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"len", "=", 
+      RowBox[{
+       RowBox[{"Ceiling", "[", 
+        RowBox[{
+         RowBox[{"Length", "[", "vector", "]"}], "/", "8"}], "]"}], "*", 
+       "8"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"padvector", "=", 
+      RowBox[{"PadRight", "[", 
+       RowBox[{"vector", ",", "len"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"l", "=", 
+      RowBox[{"Map", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"FromDigits", "[", 
+          RowBox[{"#", ",", "2"}], "]"}], "&"}], ",", 
+        RowBox[{"Partition", "[", 
+         RowBox[{"padvector", ",", "8"}], "]"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"BinaryWrite", "[", 
+      RowBox[{"stream", ",", "l", ",", "\"\<Byte\>\""}], "]"}], ";"}]}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}]}]], "Code",
+ CellChangeTimes->{{3.550270313339518*^9, 3.5502704435602007`*^9}, {
+  3.550270584360167*^9, 3.550270618815545*^9}, {3.5502707539265413`*^9, 
+  3.550270765653088*^9}, {3.5502720407462378`*^9, 3.550272183233519*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ProcessingNew", "[", "n_", "]"}], ":=", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{"Round", "[", 
+    RowBox[{
+     RowBox[{"data", "[", 
+      RowBox[{"[", 
+       RowBox[{"1", ",", "n"}], "]"}], "]"}], "/", "256"}], "]"}], 
+   "]"}]}]], "Code",
+ CellChangeTimes->{{3.550273918163533*^9, 3.5502739809832582`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PassData", "[", "file_", "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", "stream", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"stream", "=", 
+      RowBox[{"OpenWrite", "[", 
+       RowBox[{"file", ",", 
+        RowBox[{"BinaryFormat", "\[Rule]", "True"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"BinaryWrite", "[", 
+        RowBox[{"stream", ",", "L", ",", "\"\<Real64\>\""}], "]"}], ";"}], 
+      "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"BinaryWrite", "[", 
+      RowBox[{"stream", ",", "2", ",", "\"\<Integer32\>\""}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Scan", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"WriteTrainingVector", "[", 
+         RowBox[{"stream", ",", "#"}], "]"}], "&"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", 
+           ",", "1"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "1", ",", "1", ",", "1", ",", "1", ",", "0", ",", "0", ",", "0", 
+           ",", "0"}], "}"}]}], "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Close", "[", "stream", "]"}], ";"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Code",
+ CellChangeTimes->{{3.550270658852027*^9, 3.550270734587593*^9}, {
+  3.550270773078763*^9, 3.550270792111266*^9}, {3.550272408281686*^9, 
+  3.550272409897792*^9}, {3.5502728779828033`*^9, 3.550272894046567*^9}, {
+  3.550273037030937*^9, 3.5502730418292933`*^9}, {3.550274045311522*^9, 
+  3.550274082035334*^9}}],
+
+Cell[BoxData[
+ RowBox[{"PassData", "[", "\"\<~/Desktop/Data\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.550266618144382*^9, 3.55026665245232*^9}, {
+   3.550266976255084*^9, 3.550266976620411*^9}, 3.5502679622044783`*^9, {
+   3.550269661083951*^9, 3.5502696612267933`*^9}, {3.5502709491998663`*^9, 
+   3.55027095091811*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"HN", "="}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"VN", "=", "785"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"L", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"WMatrix", "=", 
+     RowBox[{"RandomReal", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "0.5"}], ",", "0.5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"VN", ",", "HN"}], "}"}]}], "]"}]}], "]"}]}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.5502712937937593`*^9, 3.550271296110407*^9}, {
+  3.550271412902474*^9, 3.550271426032159*^9}, {3.550272326478343*^9, 
+  3.550272327428212*^9}, {3.550272360299726*^9, 3.5502723685337353`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PassDataWeightMatrix", "[", "file_", "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", "stream", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"stream", "=", 
+      RowBox[{"OpenWrite", "[", 
+       RowBox[{"file", ",", 
+        RowBox[{"BinaryFormat", "\[Rule]", "True"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"BinaryWrite", "[", 
+      RowBox[{"stream", ",", "L", ",", "\"\<Real64\>\""}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Close", "[", "stream", "]"}], ";"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.550270658852027*^9, 3.550270734587593*^9}, {
+  3.550270773078763*^9, 3.550270792111266*^9}, {3.550271062701336*^9, 
+  3.550271090801916*^9}}],
+
+Cell[BoxData[
+ RowBox[{"PassDataWeightMatrix", "[", "\"\<~/Desktop/WeightMatrix\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.550266618144382*^9, 3.55026665245232*^9}, {
+   3.550266976255084*^9, 3.550266976620411*^9}, 3.5502679622044783`*^9, {
+   3.550269661083951*^9, 3.5502696612267933`*^9}, {3.5502709491998663`*^9, 
+   3.55027095091811*^9}, {3.5502710689759197`*^9, 3.550271078768121*^9}}]
+},
+WindowSize->{740, 752},
+WindowMargins->{{Automatic, 145}, {Automatic, 27}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.5, 1.5 Inherited],
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 3450, 78, 596, "Code"],
+Cell[4010, 100, 165, 6, 64, "Code"],
+Cell[4178, 108, 375, 10, 64, "Code"],
+Cell[4556, 120, 1346, 33, 227, "Code"],
+Cell[5905, 155, 345, 10, 66, "Code"],
+Cell[6253, 167, 1682, 41, 227, "Code"],
+Cell[7938, 210, 324, 5, 40, "Input"],
+Cell[8265, 217, 698, 19, 110, "Input"],
+Cell[8966, 238, 810, 19, 157, "Input"],
+Cell[9779, 259, 395, 6, 40, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

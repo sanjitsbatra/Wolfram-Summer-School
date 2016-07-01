@@ -1,0 +1,2388 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[    119545,       2378]
+NotebookOptionsPosition[    119171,       2360]
+NotebookOutlinePosition[    119524,       2376]
+CellTagsIndexPosition[    119481,       2373]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Drawing", "[", 
+    RowBox[{"N_", ",", "k_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\n", 
+     RowBox[{
+      RowBox[{"SeedRandom", "[", "k", "]"}], ";", "\n", 
+      RowBox[{"W", "=", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "10"}], ",", 
+           RowBox[{"+", "10"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"N", ",", "N"}], "}"}]}], "]"}]}], ";", "\n", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"W", "[", 
+          RowBox[{"[", 
+           RowBox[{"i", ",", "i"}], "]"}], "]"}], " ", "=", " ", "0"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "N"}], "}"}]}], "]"}], ";", "\n", 
+      RowBox[{"W", "=", 
+       RowBox[{"W", "+", 
+        RowBox[{"W", "\[Transpose]"}]}]}], ";", "\n", 
+      RowBox[{"theta", "=", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"4", ",", "N"}], "]"}]}], ";", "\n", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Energy", "[", 
+         RowBox[{"w_", ",", "\[Theta]_"}], "]"}], "[", "s_", "]"}], " ", ":=",
+        " ", 
+       RowBox[{
+        RowBox[{"\[Theta]", " ", ".", " ", "s"}], " ", "-", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"s", " ", ".", " ", "w", ".", " ", "s"}], ")"}], "/", 
+          "2"}], ")"}]}]}], ";", "\n", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"UpdateState", "[", 
+         RowBox[{"w_", ",", "\[Theta]_"}], "]"}], "[", "s_", "]"}], ":=", " ", 
+       RowBox[{"With", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"s2", " ", "=", " ", 
+           RowBox[{"MapAt", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"1", "-", "#"}], "&"}], ",", " ", "s", ",", " ", 
+             RowBox[{"RandomInteger", "[", 
+              RowBox[{"{", 
+               RowBox[{"1", ",", 
+                RowBox[{"Length", "[", "s", "]"}]}], "}"}], "]"}]}], "]"}]}], 
+          "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{"Energy", "[", 
+              RowBox[{"w", ",", "\[Theta]"}], "]"}], "[", "s2", "]"}], "<", 
+            RowBox[{
+             RowBox[{"Energy", "[", 
+              RowBox[{"w", ",", "\[Theta]"}], "]"}], "[", "s", "]"}]}], ",", 
+           "s2", ",", "s"}], "]"}]}], "]"}]}], ";", "\n", 
+      RowBox[{
+       RowBox[{"graycode", "[", "n_", "]"}], ":=", 
+       RowBox[{"Map", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"IntegerDigits", "[", 
+           RowBox[{"#", ",", "2", ",", "n"}], "]"}], "&"}], ",", 
+         RowBox[{"Map", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"BitXor", "[", 
+             RowBox[{"#", ",", 
+              RowBox[{"Floor", "[", 
+               RowBox[{"#", "/", "2"}], "]"}]}], "]"}], "&"}], ",", 
+           RowBox[{"Range", "[", 
+            RowBox[{"0", ",", 
+             RowBox[{
+              RowBox[{"2", "^", "n"}], "-", "1"}]}], "]"}]}], "]"}]}], 
+        "]"}]}], ";", "\n", "\n", "\n", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Converge2", "[", 
+         RowBox[{"w_", ",", "\[Theta]_"}], "]"}], "[", "state_", "]"}], ":=", 
+       
+       RowBox[{"Module", "[", "\n", "\t", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"state2", "=", "state"}], ",", 
+           RowBox[{"len", "=", 
+            RowBox[{"Length", "[", "state", "]"}]}], ",", " ", "newstate", 
+           ",", "i", ",", " ", "energy", ",", " ", "newenergy"}], "}"}], ",", 
+         "\n", "\t", 
+         RowBox[{
+          RowBox[{"energy", " ", "=", " ", 
+           RowBox[{
+            RowBox[{"\[Theta]", " ", ".", " ", "state"}], " ", "-", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"state", " ", ".", " ", "w", ".", " ", "state"}], 
+               ")"}], "/", "2"}], ")"}]}]}], ";", "\n", "\t", 
+          RowBox[{"Do", "[", "\n", "\t\t", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"i", " ", "=", " ", 
+              RowBox[{"RandomInteger", "[", 
+               RowBox[{"{", 
+                RowBox[{"1", ",", "len"}], "}"}], "]"}]}], ";", "\n", "\t\t", 
+             
+             RowBox[{"newstate", " ", "=", " ", "state2"}], ";", "\n", "\t\t", 
+             RowBox[{
+              RowBox[{"newstate", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], " ", "=", " ", 
+              RowBox[{"1", " ", "-", " ", 
+               RowBox[{"newstate", "[", 
+                RowBox[{"[", "i", "]"}], "]"}]}]}], ";", "\n", "\t\t", 
+             RowBox[{"newenergy", " ", "=", " ", 
+              RowBox[{
+               RowBox[{"\[Theta]", " ", ".", " ", "newstate"}], " ", "-", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                  "newstate", " ", ".", " ", "w", ".", " ", "newstate"}], 
+                  ")"}], "/", "2"}], ")"}]}]}], ";", "\n", "\t\t", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"newenergy", " ", "<", " ", "energy"}], ",", "\n", 
+               "\t\t\t", 
+               RowBox[{
+                RowBox[{"state2", " ", "=", " ", "newstate"}], ";", "\n", 
+                "\t\t\t", 
+                RowBox[{"energy", " ", "=", " ", "newenergy"}], ";"}]}], "\n",
+               "\t\t", "]"}]}], "\n", "\t", ",", "\n", "\t\t", 
+            RowBox[{"{", "100", "}"}]}], "\n", "\t", "]"}], ";", "\n", "\t", 
+          "state2"}]}], "\n", "]"}]}], ";", "\n", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"FindAttractors", "[", 
+         RowBox[{"w_", ",", "\[Theta]_"}], "]"}], "[", "state_", "]"}], " ", ":=",
+        " ", 
+       RowBox[{"Tally", "[", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Converge2", "[", 
+            RowBox[{"w", ",", "\[Theta]"}], "]"}], "[", "state", "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", "10"}], "}"}]}], "]"}], "]"}]}], ";", "\n", 
+      RowBox[{
+       RowBox[{"FindBasins", "[", 
+        RowBox[{"w_", ",", "\[Theta]_"}], "]"}], ":=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"FindAttractors", "[", 
+             RowBox[{"w", ",", "\[Theta]"}], "]"}], "[", "#", "]"}], ",", 
+           "#"}], "}"}], "&"}], "/@", 
+        RowBox[{"graycode", "[", 
+         RowBox[{"Length", "[", "\[Theta]", "]"}], "]"}]}]}], ";", "\n", 
+      RowBox[{"basins", " ", "=", " ", 
+       RowBox[{"FindBasins", "[", 
+        RowBox[{"W", ",", " ", "theta"}], "]"}]}], ";", "\n", 
+      RowBox[{
+       RowBox[{"nbrs", "[", "state_", "]"}], ":=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"ReplacePart", "[", 
+          RowBox[{"state", ",", 
+           RowBox[{"j", "\[Rule]", 
+            RowBox[{"1", "-", 
+             RowBox[{"state", "[", 
+              RowBox[{"[", "j", "]"}], "]"}]}]}]}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", 
+           RowBox[{"Length", "[", "state", "]"}]}], "}"}]}], "]"}]}], ";", 
+      "\n", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"MinimumQ", "[", 
+         RowBox[{"w_", ",", "\[Theta]_"}], "]"}], "[", "state_", "]"}], ":=", 
+       
+       RowBox[{
+        RowBox[{"Min", "[", 
+         RowBox[{"Map", "[", 
+          RowBox[{
+           RowBox[{"Energy", "[", 
+            RowBox[{"w", ",", "\[Theta]"}], "]"}], ",", 
+           RowBox[{"nbrs", "[", "state", "]"}]}], "]"}], "]"}], " ", ">", " ", 
+        RowBox[{
+         RowBox[{"Energy", "[", 
+          RowBox[{"w", ",", "\[Theta]"}], "]"}], "[", "state", "]"}]}]}], ";",
+       "\n", 
+      RowBox[{
+       RowBox[{"AllAttractors", "[", 
+        RowBox[{"w_", ",", "\[Theta]_"}], "]"}], ":=", " ", 
+       RowBox[{"Select", "[", 
+        RowBox[{
+         RowBox[{"Tuples", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "1"}], "}"}], ",", 
+           RowBox[{"Length", "[", "\[Theta]", "]"}]}], "]"}], ",", " ", 
+         RowBox[{"MinimumQ", "[", 
+          RowBox[{"w", ",", "\[Theta]"}], "]"}]}], "]"}]}], ";", "\n", 
+      RowBox[{"att1", "=", 
+       RowBox[{"AllAttractors", "[", 
+        RowBox[{"W", ",", "theta"}], "]"}]}], ";", "\n", 
+      RowBox[{"att", "=", 
+       RowBox[{"Cases", "[", 
+        RowBox[{
+         RowBox[{"graycode", "[", "N", "]"}], ",", 
+         RowBox[{"Alternatives", "@@", "att1"}]}], "]"}]}], ";", "\n", 
+      RowBox[{
+       RowBox[{"blend", "[", 
+        RowBox[{
+         RowBox[{"{", "x_", "}"}], ",", " ", 
+         RowBox[{"{", "_", "}"}]}], "]"}], " ", ":=", " ", "x"}], ";", "\n", 
+      RowBox[{
+       RowBox[{"blend", "[", 
+        RowBox[{"a_", ",", " ", "b_"}], "]"}], ":=", 
+       RowBox[{"Blend", "[", 
+        RowBox[{"a", ",", "b"}], "]"}]}], ";", " ", "\[IndentingNewLine]", 
+      "\n", 
+      RowBox[{
+       RowBox[{"colourmap", "[", "l_", "]"}], ":=", " ", 
+       RowBox[{"Hue", "[", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"Flatten", "[", 
+              RowBox[{"Position", "[", 
+               RowBox[{"att", ",", "l"}], "]"}], "]"}], "+", "0.4"}], ")"}], "/.", 
+           RowBox[{
+            RowBox[{"{", "}"}], "\[Rule]", "0.2"}]}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"Length", "[", "att", "]"}], ")"}]}], "]"}]}], ";", "\n", 
+      RowBox[{
+       RowBox[{"weightedcolour", "[", "l_", "]"}], " ", ":=", " ", 
+       RowBox[{"blend", "[", 
+        RowBox[{
+         RowBox[{"Map", "[", 
+          RowBox[{"colourmap", ",", " ", 
+           RowBox[{"l", "[", 
+            RowBox[{"[", 
+             RowBox[{"All", ",", "1"}], "]"}], "]"}]}], "]"}], ",", " ", 
+         RowBox[{"l", "[", 
+          RowBox[{"[", 
+           RowBox[{"All", ",", "2"}], "]"}], "]"}]}], "]"}]}], ";", "\n", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Indexpos", "[", "k1_", "]"}], "[", 
+        RowBox[{"{", 
+         RowBox[{"a_", ",", "b_"}], "}"}], "]"}], ":=", 
+       RowBox[{"{", 
+        RowBox[{"a", ",", "k1"}], "}"}]}], ";", "\n", 
+      RowBox[{
+       RowBox[{"PutIndex", "[", "lis_", "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"l", "=", 
+           RowBox[{"{", "}"}]}], "}"}], ",", 
+         RowBox[{
+          RowBox[{"For", " ", "[", 
+           RowBox[{
+            RowBox[{"p", "=", "1"}], ",", 
+            RowBox[{"p", "<=", 
+             RowBox[{"Length", "[", "lis", "]"}]}], ",", 
+            RowBox[{"p", "++"}], ",", 
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"l", ",", 
+              RowBox[{
+               RowBox[{"Indexpos", "[", "p", "]"}], "[", 
+               RowBox[{"lis", "[", 
+                RowBox[{"[", "p", "]"}], "]"}], "]"}]}], "]"}]}], "]"}], ";", 
+          "l"}]}], "]"}]}], ";", "\n", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"rot", "[", 
+        RowBox[{"s_", ",", "x_", ",", "y_", ",", "rx_", ",", "ry_"}], "]"}], ":=", 
+       RowBox[{"Module", "[", " ", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"x1", "=", "x"}], ",", 
+           RowBox[{"y1", "=", "y"}], ",", "tp"}], "}"}], ",", 
+         "\[IndentingNewLine]", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"ry", "\[Equal]", "0"}], ",", 
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"rx", "\[Equal]", "1"}], ",", 
+               RowBox[{
+                RowBox[{"x1", "=", 
+                 RowBox[{"s", "-", "1", "-", "x"}]}], ";", 
+                RowBox[{"y1", "=", 
+                 RowBox[{"s", "-", "1", "-", "y"}]}], ";"}]}], "]"}], ";", 
+             RowBox[{"tp", "=", "x1"}], ";", 
+             RowBox[{"x1", "=", "y1"}], ";", 
+             RowBox[{"y1", "=", "tp"}], ";"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"s", ",", "x1", ",", "y1", ",", "rx", ",", "ry"}], 
+           "}"}]}]}], "\[IndentingNewLine]", "]"}]}], ";", "\n", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"d2xy", "[", "n_", "]"}], "[", "d_", "]"}], ":=", 
+       RowBox[{"Module", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"rx", ",", "ry", ",", 
+           RowBox[{"t", "=", "d"}], ",", 
+           RowBox[{"x", "=", "0"}], ",", 
+           RowBox[{"y", "=", "0"}], ",", "s"}], "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"For", "[", 
+           RowBox[{
+            RowBox[{"s", "=", "1"}], ",", 
+            RowBox[{"s", "<", "n"}], ",", 
+            RowBox[{"s", "*=", "2"}], ",", 
+            RowBox[{
+             RowBox[{"rx", "=", 
+              RowBox[{"BitAnd", "[", 
+               RowBox[{"1", ",", 
+                RowBox[{"Floor", "[", 
+                 RowBox[{"(", 
+                  RowBox[{"t", "/", "2"}], ")"}], "]"}]}], "]"}]}], ";", 
+             RowBox[{"ry", "=", 
+              RowBox[{"BitAnd", "[", 
+               RowBox[{"1", ",", 
+                RowBox[{"BitXor", "[", 
+                 RowBox[{"t", ",", "rx"}], "]"}]}], "]"}]}], ";", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"s", ",", "x", ",", "y", ",", "rx", ",", "ry"}], "}"}],
+               "=", 
+              RowBox[{"rot", "[", 
+               RowBox[{"s", ",", "x", ",", "y", ",", "rx", ",", "ry"}], 
+               "]"}]}], ";", 
+             RowBox[{"x", "=", 
+              RowBox[{"x", "+", 
+               RowBox[{"(", 
+                RowBox[{"s", "*", "rx"}], ")"}]}]}], ";", 
+             RowBox[{"y", "=", 
+              RowBox[{"y", "+", 
+               RowBox[{"(", 
+                RowBox[{"s", "*", "ry"}], ")"}]}]}], ";", 
+             RowBox[{"t", "=", 
+              RowBox[{"Floor", "[", 
+               RowBox[{"t", "/", "4"}], "]"}]}], ";"}]}], 
+           "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "y"}], "}"}]}]}], "\[IndentingNewLine]", "]"}]}],
+       ";", "\n", 
+      RowBox[{
+       RowBox[{"MapHilbert", "[", 
+        RowBox[{"l_", ",", "n_"}], "]"}], ":=", " ", 
+       RowBox[{"MapThread", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"#1", ",", 
+            RowBox[{
+             RowBox[{"d2xy", "[", "n", "]"}], "[", "#2", "]"}]}], "}"}], 
+          "&"}], ",", 
+         RowBox[{"Transpose", "@", "l"}]}], "]"}]}], ";", "\n", 
+      RowBox[{"h", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"weightedcolour", "[", "#1", "]"}], ",", " ", "#2"}], 
+          "}"}], "&"}], " ", "@@@", " ", 
+        RowBox[{"MapHilbert", "[", 
+         RowBox[{
+          RowBox[{"PutIndex", "[", "basins", "]"}], ",", 
+          RowBox[{"(", 
+           RowBox[{"2", "^", 
+            RowBox[{"(", 
+             RowBox[{"N", "/", "2"}], ")"}]}], ")"}]}], "]"}]}]}], ";", "\n", 
+      
+      RowBox[{"arr", "=", 
+       RowBox[{"Array", "[", 
+        RowBox[{"0", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"2", "^", 
+             RowBox[{"(", 
+              RowBox[{"N", "/", "2"}], ")"}]}], ")"}], ",", 
+           RowBox[{"(", 
+            RowBox[{"2", "^", 
+             RowBox[{"(", 
+              RowBox[{"N", "/", "2"}], ")"}]}], ")"}]}], "}"}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"setarr", "[", 
+        RowBox[{"col_", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"p1_", ",", "p2_"}], "}"}]}], "]"}], ":=", 
+       RowBox[{
+        RowBox[{"arr", "[", 
+         RowBox[{"[", 
+          RowBox[{
+           RowBox[{"1", "+", "p1"}], ",", 
+           RowBox[{"1", "+", "p2"}]}], "]"}], "]"}], "=", "col"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"setarr", " ", "@@@", " ", "h"}], ";", "\n", 
+      RowBox[{"ArrayPlot", "[", "arr", "]"}]}]}], "\n", "\n", 
+    "\[IndentingNewLine]", "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.550591343334704*^9, 3.5505913458361387`*^9}, {
+   3.550591447873008*^9, 3.550591450528561*^9}, 3.550591492034648*^9, {
+   3.5505916754998903`*^9, 3.550591682284272*^9}, 3.550591730828713*^9, {
+   3.550591761691618*^9, 3.550591806543689*^9}, {3.550591862849922*^9, 
+   3.550591871443315*^9}, 3.550591915898597*^9, {3.5505919533823977`*^9, 
+   3.550592011157917*^9}, {3.55059206569039*^9, 3.550592156822179*^9}, {
+   3.550592243629212*^9, 3.5505922438282213`*^9}, {3.550592352729122*^9, 
+   3.5505924230846443`*^9}, {3.550592478410676*^9, 3.55059250665129*^9}, 
+   3.550592579457464*^9, {3.550592609922042*^9, 3.5505926101194363`*^9}, {
+   3.550592652033803*^9, 3.5505926521992207`*^9}, {3.550592775896183*^9, 
+   3.55059278309494*^9}, {3.55059285791455*^9, 3.5505928615550756`*^9}, {
+   3.550592994079764*^9, 3.550592999272045*^9}, {3.550593029311198*^9, 
+   3.550593031212944*^9}, {3.550593065104422*^9, 3.550593066032343*^9}, {
+   3.550593273249242*^9, 3.5505932770821533`*^9}, {3.550593311728961*^9, 
+   3.550593315273999*^9}, {3.550593368249576*^9, 3.5505933698072987`*^9}, {
+   3.5505938501498833`*^9, 3.550593866222329*^9}, {3.550594030313447*^9, 
+   3.550594035295795*^9}, {3.55059409509468*^9, 3.550594101517735*^9}, {
+   3.5505942042754*^9, 3.55059420528997*^9}, {3.5505944810582743`*^9, 
+   3.550594497350214*^9}, {3.5505946625919733`*^9, 3.5505946628953247`*^9}, {
+   3.550594722763637*^9, 3.550594723016301*^9}, {3.55059488350272*^9, 
+   3.550594884501831*^9}, {3.550595239228031*^9, 3.5505952426739264`*^9}, {
+   3.550595329045609*^9, 3.5505953316445427`*^9}, {3.5505953882830467`*^9, 
+   3.5505953895743504`*^9}, {3.550595437227462*^9, 3.550595446737919*^9}, {
+   3.550595504700553*^9, 3.550595508084491*^9}, {3.550595775699073*^9, 
+   3.550595833175173*^9}, {3.5505958896502533`*^9, 3.550595891417453*^9}, {
+   3.550595923811098*^9, 3.550595925129545*^9}, {3.5505959957148523`*^9, 
+   3.5505960003000813`*^9}, {3.55059603762309*^9, 3.550596043104179*^9}, {
+   3.550596080415148*^9, 3.5505960811737843`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Drawing", "[", 
+    RowBox[{"m", ",", "k"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m", ",", "4", ",", "\"\<Number Of Units : N \>\""}], "}"}], 
+     ",", "4", ",", "8", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k", ",", "1", ",", "\"\<Random Weight Matrix\>\""}], "}"}], 
+     ",", "1", ",", "5", ",", "1"}], "}"}], ",", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}], ",", 
+   RowBox[{"SynchronousUpdating", "\[Rule]", "False"}]}], "]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQAWIQzbdTYIp5ySvH2o0XZ4PouTe4FoLohnXBS0G0HBvv
+NhBtvSITTPdu+XUQRNu9uXEURM8M7z8FovssFoDp90UPLoPofT/MroLo1VUO
+70B0ka8/mN5w1OgriO4p/gymeS/vYLQA0tpsO5lAdMrVzZwgWmf1M3EQPZWf
+XRVES8V7q4FoxkOe5iA6xzXXEUTfYZL2ANHXvJ1DQfSvGb2RIFrrySYwLcH+
+PA5E6+0qTQPRNWEzOkD096hDnSB6243900C0S9ezGSC6vuLlIrB5V98tAdEi
+C46vBdGLuJ6BaY+KmftBtBlrxREQDQDvmZ0v
+  "]],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`k$$ = 5, $CellContext`m$$ = 8, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`m$$], 4, "Number Of Units : N "}, 4, 8, 2}, {{
+       Hold[$CellContext`k$$], 1, "Random Weight Matrix"}, 1, 5, 1}}, 
+    Typeset`size$$ = {360., {177., 182.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`m$747080$$ = 0, $CellContext`k$747081$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`k$$ = 1, $CellContext`m$$ = 4}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`m$$, $CellContext`m$747080$$, 0], 
+        Hold[$CellContext`k$$, $CellContext`k$747081$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`Drawing[$CellContext`m$$, $CellContext`k$$], 
+      "Specifications" :> {{{$CellContext`m$$, 4, "Number Of Units : N "}, 4, 
+         8, 2}, {{$CellContext`k$$, 1, "Random Weight Matrix"}, 1, 5, 1}}, 
+      "Options" :> {SynchronousUpdating -> False}, "DefaultOptions" :> {}],
+     ImageSizeCache->{403., {233., 239.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`Drawing[
+         Pattern[N, 
+          Blank[]]] := 
+       Module[{}, RandomSeed[1]; $CellContext`W = RandomReal[{-100, 
+             Plus[100]}, {2 N, 2 N}]; 
+         Do[Part[$CellContext`W, $CellContext`i, $CellContext`i] = 
+           0, {$CellContext`i, 2 N}]; $CellContext`W = $CellContext`W + 
+           Transpose[$CellContext`W]; $CellContext`theta = 
+          RandomReal[10, 2 N]; $CellContext`Energy[
+            Pattern[$CellContext`w, 
+             Blank[]], 
+            Pattern[$CellContext`\[Theta], 
+             Blank[]]][
+            Pattern[$CellContext`s, 
+             Blank[]]] := 
+          Dot[$CellContext`\[Theta], $CellContext`s] - 
+           Dot[$CellContext`s, $CellContext`w, $CellContext`s]/
+           2; $CellContext`UpdateState[
+            Pattern[$CellContext`w, 
+             Blank[]], 
+            Pattern[$CellContext`\[Theta], 
+             Blank[]]][
+            Pattern[$CellContext`s, 
+             Blank[]]] := 
+          With[{$CellContext`s2 = MapAt[1 - #& , $CellContext`s, 
+               RandomInteger[{1, 
+                 Length[$CellContext`s]}]]}, 
+            
+            If[$CellContext`Energy[$CellContext`w, \
+$CellContext`\[Theta]][$CellContext`s2] < $CellContext`Energy[$CellContext`w, \
+$CellContext`\[Theta]][$CellContext`s], $CellContext`s2, $CellContext`s]]; \
+$CellContext`graycode[
+            Pattern[$CellContext`n, 
+             Blank[]]] := Map[IntegerDigits[#, 2, $CellContext`n]& , 
+            Map[BitXor[#, 
+              Floor[#/2]]& , 
+             Range[0, 2^$CellContext`n - 1]]]; $CellContext`Converge2[
+            Pattern[$CellContext`w, 
+             Blank[]], 
+            Pattern[$CellContext`\[Theta], 
+             Blank[]]][
+            Pattern[$CellContext`state, 
+             Blank[]]] := 
+          Module[{$CellContext`state2 = $CellContext`state, $CellContext`len = 
+             Length[$CellContext`state], $CellContext`newstate, \
+$CellContext`i, $CellContext`energy, $CellContext`newenergy}, \
+$CellContext`energy = 
+             Dot[$CellContext`\[Theta], $CellContext`state] - 
+              Dot[$CellContext`state, $CellContext`w, $CellContext`state]/2; 
+            Do[$CellContext`i = 
+               RandomInteger[{
+                 1, $CellContext`len}]; $CellContext`newstate = \
+$CellContext`state2; 
+              Part[$CellContext`newstate, $CellContext`i] = 
+               1 - Part[$CellContext`newstate, $CellContext`i]; \
+$CellContext`newenergy = 
+               Dot[$CellContext`\[Theta], $CellContext`newstate] - 
+                Dot[$CellContext`newstate, $CellContext`w, \
+$CellContext`newstate]/2; 
+              If[$CellContext`newenergy < $CellContext`energy, \
+$CellContext`state2 = $CellContext`newstate; $CellContext`energy = \
+$CellContext`newenergy; Null], {
+              120}]; $CellContext`state2]; $CellContext`FindAttractors[
+            Pattern[$CellContext`w, 
+             Blank[]], 
+            Pattern[$CellContext`\[Theta], 
+             Blank[]]][
+            Pattern[$CellContext`state, 
+             Blank[]]] := Tally[
+            Table[
+             $CellContext`Converge2[$CellContext`w, \
+$CellContext`\[Theta]][$CellContext`state], {$CellContext`i, 
+              10}]]; $CellContext`FindBasins[
+            Pattern[$CellContext`w, 
+             Blank[]], 
+            Pattern[$CellContext`\[Theta], 
+             Blank[]]] := Map[{
+             $CellContext`FindAttractors[$CellContext`w, \
+$CellContext`\[Theta]][#], #}& , 
+            $CellContext`graycode[
+             
+             Length[$CellContext`\[Theta]]]]; $CellContext`basins = \
+$CellContext`FindBasins[$CellContext`W, $CellContext`theta]; 
+         Length[$CellContext`basins]; $CellContext`nbrs[
+            Pattern[$CellContext`state, 
+             Blank[]]] := Table[
+            
+            ReplacePart[$CellContext`state, $CellContext`j -> 
+             1 - Part[$CellContext`state, $CellContext`j]], {$CellContext`j, 
+             Length[$CellContext`state]}]; $CellContext`MinimumQ[
+            Pattern[$CellContext`w, 
+             Blank[]], 
+            Pattern[$CellContext`\[Theta], 
+             Blank[]]][
+            Pattern[$CellContext`state, 
+             Blank[]]] := Min[
+             Map[
+              $CellContext`Energy[$CellContext`w, $CellContext`\[Theta]], 
+              $CellContext`nbrs[$CellContext`state]]] > \
+$CellContext`Energy[$CellContext`w, \
+$CellContext`\[Theta]][$CellContext`state]; $CellContext`AllAttractors[
+            Pattern[$CellContext`w, 
+             Blank[]], 
+            Pattern[$CellContext`\[Theta], 
+             Blank[]]] := Select[
+            Tuples[{0, 1}, 
+             Length[$CellContext`\[Theta]]], 
+            $CellContext`MinimumQ[$CellContext`w, $CellContext`\[Theta]]]; \
+$CellContext`att1 = $CellContext`AllAttractors[$CellContext`W, \
+$CellContext`theta]; $CellContext`att = Cases[
+            $CellContext`graycode[2 N], 
+            Apply[Alternatives, $CellContext`att1]]; $CellContext`blend[{
+             Pattern[$CellContext`x, 
+              Blank[]]}, {
+             Blank[]}] := $CellContext`x; $CellContext`blend[
+            Pattern[$CellContext`a, 
+             Blank[]], 
+            Pattern[$CellContext`b, 
+             Blank[]]] := 
+          Blend[$CellContext`a, $CellContext`b]; $CellContext`colourmap[
+            Pattern[$CellContext`l, 
+             Blank[]]] := Hue[(Flatten[
+               Position[$CellContext`att, $CellContext`l]] - 1.)/
+            Length[$CellContext`att]]; $CellContext`weightedcolour[
+            Pattern[$CellContext`l, 
+             Blank[]]] := $CellContext`blend[
+            Map[$CellContext`colourmap, 
+             Part[$CellContext`l, All, 1]], 
+            Part[$CellContext`l, All, 2]]; $CellContext`Indexpos[
+            Pattern[$CellContext`k, 
+             Blank[]]][{
+             Pattern[$CellContext`a, 
+              Blank[]], 
+             Pattern[$CellContext`b, 
+              
+              Blank[]]}] := {$CellContext`a, $CellContext`k}; \
+$CellContext`PutIndex[
+            Pattern[$CellContext`lis, 
+             Blank[]]] := 
+          Module[{$CellContext`l = {}}, 
+            For[$CellContext`p = 1, $CellContext`p <= 
+              Length[$CellContext`lis], 
+              Increment[$CellContext`p], 
+              AppendTo[$CellContext`l, 
+               $CellContext`Indexpos[$CellContext`p][
+                
+                Part[$CellContext`lis, $CellContext`p]]]]; $CellContext`l]; \
+$CellContext`rot[
+            Pattern[$CellContext`s, 
+             Blank[]], 
+            Pattern[$CellContext`x, 
+             Blank[]], 
+            Pattern[$CellContext`y, 
+             Blank[]], 
+            Pattern[$CellContext`rx, 
+             Blank[]], 
+            Pattern[$CellContext`ry, 
+             Blank[]]] := 
+          Module[{$CellContext`x1 = $CellContext`x, $CellContext`y1 = \
+$CellContext`y, $CellContext`tp}, 
+            If[$CellContext`ry == 0, 
+              If[$CellContext`rx == 
+                1, $CellContext`x1 = $CellContext`s - 
+                  1 - $CellContext`x; $CellContext`y1 = $CellContext`s - 
+                  1 - $CellContext`y; 
+                Null]; $CellContext`tp = $CellContext`x1; $CellContext`x1 = \
+$CellContext`y1; $CellContext`y1 = $CellContext`tp; 
+              Null]; {$CellContext`s, $CellContext`x1, $CellContext`y1, \
+$CellContext`rx, $CellContext`ry}]; $CellContext`d2xy[
+            Pattern[$CellContext`n, 
+             Blank[]]][
+            Pattern[$CellContext`d, 
+             Blank[]]] := 
+          Module[{$CellContext`rx, $CellContext`ry, $CellContext`t = \
+$CellContext`d, $CellContext`x = 0, $CellContext`y = 0, $CellContext`s}, 
+            For[$CellContext`s = 1, $CellContext`s < $CellContext`n, 
+              TimesBy[$CellContext`s, 2], $CellContext`rx = BitAnd[1, 
+                 Floor[$CellContext`t/2]]; $CellContext`ry = BitAnd[1, 
+                 
+                 BitXor[$CellContext`t, $CellContext`rx]]; {$CellContext`s, \
+$CellContext`x, $CellContext`y, $CellContext`rx, $CellContext`ry} = \
+$CellContext`rot[$CellContext`s, $CellContext`x, $CellContext`y, \
+$CellContext`rx, $CellContext`ry]; $CellContext`x = $CellContext`x + \
+$CellContext`s $CellContext`rx; $CellContext`y = $CellContext`y + \
+$CellContext`s $CellContext`ry; $CellContext`t = Floor[$CellContext`t/4]; 
+              Null]; {$CellContext`x, $CellContext`y}]; \
+$CellContext`MapHilbert[
+            Pattern[$CellContext`l, 
+             Blank[]], 
+            Pattern[$CellContext`n, 
+             Blank[]]] := MapThread[{#, 
+             $CellContext`d2xy[$CellContext`n][#2]}& , 
+            Transpose[$CellContext`l]]; $CellContext`h = Apply[{
+             $CellContext`weightedcolour[#], #2}& , 
+            $CellContext`MapHilbert[
+             $CellContext`PutIndex[$CellContext`basins], 2^N], {
+            1}]; $CellContext`arr = 
+          Array[0, {2^N, 2^N}]; $CellContext`setarr[
+            Pattern[$CellContext`col, 
+             Blank[]], {
+             Pattern[$CellContext`p1, 
+              Blank[]], 
+             Pattern[$CellContext`p2, 
+              Blank[]]}] := (
+           Part[$CellContext`arr, 1 + $CellContext`p1, 
+             1 + $CellContext`p2] = $CellContext`col); 
+         Apply[$CellContext`setarr, $CellContext`h, {1}]; 
+         ArrayPlot[$CellContext`arr]], $CellContext`Drawing[
+         Pattern[N, 
+          Blank[]], 
+         Pattern[$CellContext`k, 
+          Blank[]]] := 
+       Module[{}, 
+         SeedRandom[$CellContext`k]; $CellContext`W = RandomReal[{-10, 
+             Plus[10]}, {N, N}]; 
+         Do[Part[$CellContext`W, $CellContext`i, $CellContext`i] = 
+           0, {$CellContext`i, N}]; $CellContext`W = $CellContext`W + 
+           Transpose[$CellContext`W]; $CellContext`theta = 
+          RandomReal[4, N]; $CellContext`Energy[
+            Pattern[$CellContext`w, 
+             Blank[]], 
+            Pattern[$CellContext`\[Theta], 
+             Blank[]]][
+            Pattern[$CellContext`s, 
+             Blank[]]] := 
+          Dot[$CellContext`\[Theta], $CellContext`s] - 
+           Dot[$CellContext`s, $CellContext`w, $CellContext`s]/
+           2; $CellContext`UpdateState[
+            Pattern[$CellContext`w, 
+             Blank[]], 
+            Pattern[$CellContext`\[Theta], 
+             Blank[]]][
+            Pattern[$CellContext`s, 
+             Blank[]]] := 
+          With[{$CellContext`s2 = MapAt[1 - #& , $CellContext`s, 
+               RandomInteger[{1, 
+                 Length[$CellContext`s]}]]}, 
+            
+            If[$CellContext`Energy[$CellContext`w, \
+$CellContext`\[Theta]][$CellContext`s2] < $CellContext`Energy[$CellContext`w, \
+$CellContext`\[Theta]][$CellContext`s], $CellContext`s2, $CellContext`s]]; \
+$CellContext`graycode[
+            Pattern[$CellContext`n, 
+             Blank[]]] := Map[IntegerDigits[#, 2, $CellContext`n]& , 
+            Map[BitXor[#, 
+              Floor[#/2]]& , 
+             Range[0, 2^$CellContext`n - 1]]]; $CellContext`Converge2[
+            Pattern[$CellContext`w, 
+             Blank[]], 
+            Pattern[$CellContext`\[Theta], 
+             Blank[]]][
+            Pattern[$CellContext`state, 
+             Blank[]]] := 
+          Module[{$CellContext`state2 = $CellContext`state, $CellContext`len = 
+             Length[$CellContext`state], $CellContext`newstate, \
+$CellContext`i, $CellContext`energy, $CellContext`newenergy}, \
+$CellContext`energy = 
+             Dot[$CellContext`\[Theta], $CellContext`state] - 
+              Dot[$CellContext`state, $CellContext`w, $CellContext`state]/2; 
+            Do[$CellContext`i = 
+               RandomInteger[{
+                 1, $CellContext`len}]; $CellContext`newstate = \
+$CellContext`state2; 
+              Part[$CellContext`newstate, $CellContext`i] = 
+               1 - Part[$CellContext`newstate, $CellContext`i]; \
+$CellContext`newenergy = 
+               Dot[$CellContext`\[Theta], $CellContext`newstate] - 
+                Dot[$CellContext`newstate, $CellContext`w, \
+$CellContext`newstate]/2; 
+              If[$CellContext`newenergy < $CellContext`energy, \
+$CellContext`state2 = $CellContext`newstate; $CellContext`energy = \
+$CellContext`newenergy; Null], {
+              100}]; $CellContext`state2]; $CellContext`FindAttractors[
+            Pattern[$CellContext`w, 
+             Blank[]], 
+            Pattern[$CellContext`\[Theta], 
+             Blank[]]][
+            Pattern[$CellContext`state, 
+             Blank[]]] := Tally[
+            Table[
+             $CellContext`Converge2[$CellContext`w, \
+$CellContext`\[Theta]][$CellContext`state], {$CellContext`i, 
+              10}]]; $CellContext`FindBasins[
+            Pattern[$CellContext`w, 
+             Blank[]], 
+            Pattern[$CellContext`\[Theta], 
+             Blank[]]] := Map[{
+             $CellContext`FindAttractors[$CellContext`w, \
+$CellContext`\[Theta]][#], #}& , 
+            $CellContext`graycode[
+             
+             Length[$CellContext`\[Theta]]]]; $CellContext`basins = \
+$CellContext`FindBasins[$CellContext`W, $CellContext`theta]; $CellContext`nbrs[
+            Pattern[$CellContext`state, 
+             Blank[]]] := Table[
+            
+            ReplacePart[$CellContext`state, $CellContext`j -> 
+             1 - Part[$CellContext`state, $CellContext`j]], {$CellContext`j, 
+             Length[$CellContext`state]}]; $CellContext`MinimumQ[
+            Pattern[$CellContext`w, 
+             Blank[]], 
+            Pattern[$CellContext`\[Theta], 
+             Blank[]]][
+            Pattern[$CellContext`state, 
+             Blank[]]] := Min[
+             Map[
+              $CellContext`Energy[$CellContext`w, $CellContext`\[Theta]], 
+              $CellContext`nbrs[$CellContext`state]]] > \
+$CellContext`Energy[$CellContext`w, \
+$CellContext`\[Theta]][$CellContext`state]; $CellContext`AllAttractors[
+            Pattern[$CellContext`w, 
+             Blank[]], 
+            Pattern[$CellContext`\[Theta], 
+             Blank[]]] := Select[
+            Tuples[{0, 1}, 
+             Length[$CellContext`\[Theta]]], 
+            $CellContext`MinimumQ[$CellContext`w, $CellContext`\[Theta]]]; \
+$CellContext`att1 = $CellContext`AllAttractors[$CellContext`W, \
+$CellContext`theta]; $CellContext`att = Cases[
+            $CellContext`graycode[N], 
+            Apply[Alternatives, $CellContext`att1]]; $CellContext`blend[{
+             Pattern[$CellContext`x, 
+              Blank[]]}, {
+             Blank[]}] := $CellContext`x; $CellContext`blend[
+            Pattern[$CellContext`a, 
+             Blank[]], 
+            Pattern[$CellContext`b, 
+             Blank[]]] := 
+          Blend[$CellContext`a, $CellContext`b]; $CellContext`colourmap[
+            Pattern[$CellContext`l, 
+             Blank[]]] := Hue[ReplaceAll[Flatten[
+                Position[$CellContext`att, $CellContext`l]] + 0.4, {} -> 0.2]/
+            Length[$CellContext`att]]; $CellContext`weightedcolour[
+            Pattern[$CellContext`l, 
+             Blank[]]] := $CellContext`blend[
+            Map[$CellContext`colourmap, 
+             Part[$CellContext`l, All, 1]], 
+            Part[$CellContext`l, All, 2]]; $CellContext`Indexpos[
+            Pattern[$CellContext`k1, 
+             Blank[]]][{
+             Pattern[$CellContext`a, 
+              Blank[]], 
+             Pattern[$CellContext`b, 
+              
+              Blank[]]}] := {$CellContext`a, $CellContext`k1}; \
+$CellContext`PutIndex[
+            Pattern[$CellContext`lis, 
+             Blank[]]] := 
+          Module[{$CellContext`l = {}}, 
+            For[$CellContext`p = 1, $CellContext`p <= 
+              Length[$CellContext`lis], 
+              Increment[$CellContext`p], 
+              AppendTo[$CellContext`l, 
+               $CellContext`Indexpos[$CellContext`p][
+                
+                Part[$CellContext`lis, $CellContext`p]]]]; $CellContext`l]; \
+$CellContext`rot[
+            Pattern[$CellContext`s, 
+             Blank[]], 
+            Pattern[$CellContext`x, 
+             Blank[]], 
+            Pattern[$CellContext`y, 
+             Blank[]], 
+            Pattern[$CellContext`rx, 
+             Blank[]], 
+            Pattern[$CellContext`ry, 
+             Blank[]]] := 
+          Module[{$CellContext`x1 = $CellContext`x, $CellContext`y1 = \
+$CellContext`y, $CellContext`tp}, 
+            If[$CellContext`ry == 0, 
+              If[$CellContext`rx == 
+                1, $CellContext`x1 = $CellContext`s - 
+                  1 - $CellContext`x; $CellContext`y1 = $CellContext`s - 
+                  1 - $CellContext`y; 
+                Null]; $CellContext`tp = $CellContext`x1; $CellContext`x1 = \
+$CellContext`y1; $CellContext`y1 = $CellContext`tp; 
+              Null]; {$CellContext`s, $CellContext`x1, $CellContext`y1, \
+$CellContext`rx, $CellContext`ry}]; $CellContext`d2xy[
+            Pattern[$CellContext`n, 
+             Blank[]]][
+            Pattern[$CellContext`d, 
+             Blank[]]] := 
+          Module[{$CellContext`rx, $CellContext`ry, $CellContext`t = \
+$CellContext`d, $CellContext`x = 0, $CellContext`y = 0, $CellContext`s}, 
+            For[$CellContext`s = 1, $CellContext`s < $CellContext`n, 
+              TimesBy[$CellContext`s, 2], $CellContext`rx = BitAnd[1, 
+                 Floor[$CellContext`t/2]]; $CellContext`ry = BitAnd[1, 
+                 
+                 BitXor[$CellContext`t, $CellContext`rx]]; {$CellContext`s, \
+$CellContext`x, $CellContext`y, $CellContext`rx, $CellContext`ry} = \
+$CellContext`rot[$CellContext`s, $CellContext`x, $CellContext`y, \
+$CellContext`rx, $CellContext`ry]; $CellContext`x = $CellContext`x + \
+$CellContext`s $CellContext`rx; $CellContext`y = $CellContext`y + \
+$CellContext`s $CellContext`ry; $CellContext`t = Floor[$CellContext`t/4]; 
+              Null]; {$CellContext`x, $CellContext`y}]; \
+$CellContext`MapHilbert[
+            Pattern[$CellContext`l, 
+             Blank[]], 
+            Pattern[$CellContext`n, 
+             Blank[]]] := MapThread[{#, 
+             $CellContext`d2xy[$CellContext`n][#2]}& , 
+            Transpose[$CellContext`l]]; $CellContext`h = Apply[{
+             $CellContext`weightedcolour[#], #2}& , 
+            $CellContext`MapHilbert[
+             $CellContext`PutIndex[$CellContext`basins], 2^(N/2)], {
+            1}]; $CellContext`arr = 
+          Array[0, {2^(N/2), 2^(N/2)}]; $CellContext`setarr[
+            Pattern[$CellContext`col, 
+             Blank[]], {
+             Pattern[$CellContext`p1, 
+              Blank[]], 
+             Pattern[$CellContext`p2, 
+              Blank[]]}] := (
+           Part[$CellContext`arr, 1 + $CellContext`p1, 
+             1 + $CellContext`p2] = $CellContext`col); 
+         Apply[$CellContext`setarr, $CellContext`h, {1}]; 
+         ArrayPlot[$CellContext`arr]], $CellContext`W = {{
+         0, -14.101420473141644`, 0.9648846135473086, 
+          0.9647803339033452, -8.646995404392221, 
+          10.314760091688882`, -12.836270768474094`, 
+          14.13407108259598}, {-14.101420473141644`, 0, 1.1483604257870397`, 
+          8.167212051140353, -15.634568763772037`, -14.316491538781925`, 
+          1.5364245068091655`, -0.2648329922828694}, {
+         0.9648846135473086, 1.1483604257870397`, 0, -14.470236824512273`, 
+          7.522009816298713, -10.785383842127167`, 
+          0.003433017445566122, -18.846877547016987`}, {
+         0.9647803339033452, 8.167212051140353, -14.470236824512273`, 
+          0, -7.465099308313867, 2.6742127746207736`, 
+          3.004708267965839, -10.068391580848619`}, {-8.646995404392221, \
+-15.634568763772037`, 7.522009816298713, -7.465099308313867, 
+          0, -3.203463109559813, -7.274619729969146, -1.2018217178087767`}, {
+         10.314760091688882`, -14.316491538781925`, -10.785383842127167`, 
+          2.6742127746207736`, -3.203463109559813, 0, 
+          5.671670514676677, -4.364217990099142}, {-12.836270768474094`, 
+          1.5364245068091655`, 0.003433017445566122, 
+          3.004708267965839, -7.274619729969146, 5.671670514676677, 
+          0, -6.780573466226958}, {
+         14.13407108259598, -0.2648329922828694, -18.846877547016987`, \
+-10.068391580848619`, -1.2018217178087767`, -4.364217990099142, \
+-6.780573466226958, 0}}, $CellContext`theta = {2.6403425719428544`, 
+        1.3002062458192976`, 3.5571672110272052`, 2.792147126674693, 
+        1.7376621519730584`, 2.0251618471070323`, 0.18085874514047529`, 
+        1.3937520142191477`}, $CellContext`Energy[
+         Pattern[$CellContext`w, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta], 
+          Blank[]]][
+         Pattern[$CellContext`s, 
+          Blank[]]] := 
+       Dot[$CellContext`\[Theta], $CellContext`s] - 
+        Dot[$CellContext`s, $CellContext`w, $CellContext`s]/
+        2, $CellContext`UpdateState[
+         Pattern[$CellContext`w, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta], 
+          Blank[]]][
+         Pattern[$CellContext`s, 
+          Blank[]]] := 
+       With[{$CellContext`s2 = MapAt[1 - #& , $CellContext`s, 
+            RandomInteger[{1, 
+              Length[$CellContext`s]}]]}, 
+         If[$CellContext`Energy[$CellContext`w, \
+$CellContext`\[Theta]][$CellContext`s2] < $CellContext`Energy[$CellContext`w, \
+$CellContext`\[Theta]][$CellContext`s], $CellContext`s2, $CellContext`s]], \
+$CellContext`graycode[
+         Pattern[$CellContext`n, 
+          Blank[]]] := Map[IntegerDigits[#, 2, $CellContext`n]& , 
+         Map[BitXor[#, 
+           Floor[#/2]]& , 
+          Range[0, 2^$CellContext`n - 1]]], $CellContext`Converge2[
+         Pattern[$CellContext`w, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta], 
+          Blank[]]][
+         Pattern[$CellContext`state, 
+          Blank[]]] := 
+       Module[{$CellContext`state2 = $CellContext`state, $CellContext`len = 
+          Length[$CellContext`state], $CellContext`newstate, $CellContext`i, \
+$CellContext`energy, $CellContext`newenergy}, $CellContext`energy = 
+          Dot[$CellContext`\[Theta], $CellContext`state] - 
+           Dot[$CellContext`state, $CellContext`w, $CellContext`state]/2; 
+         Do[$CellContext`i = 
+            RandomInteger[{
+              1, $CellContext`len}]; $CellContext`newstate = \
+$CellContext`state2; 
+           Part[$CellContext`newstate, $CellContext`i] = 
+            1 - Part[$CellContext`newstate, $CellContext`i]; \
+$CellContext`newenergy = 
+            Dot[$CellContext`\[Theta], $CellContext`newstate] - 
+             Dot[$CellContext`newstate, $CellContext`w, \
+$CellContext`newstate]/2; 
+           If[$CellContext`newenergy < $CellContext`energy, \
+$CellContext`state2 = $CellContext`newstate; $CellContext`energy = \
+$CellContext`newenergy; Null], {
+           100}]; $CellContext`state2], $CellContext`FindAttractors[
+         Pattern[$CellContext`w, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta], 
+          Blank[]]][
+         Pattern[$CellContext`state, 
+          Blank[]]] := Tally[
+         Table[
+          $CellContext`Converge2[$CellContext`w, \
+$CellContext`\[Theta]][$CellContext`state], {$CellContext`i, 
+           10}]], $CellContext`FindBasins[
+         Pattern[$CellContext`w, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta], 
+          Blank[]]] := Map[{
+          $CellContext`FindAttractors[$CellContext`w, \
+$CellContext`\[Theta]][#], #}& , 
+         $CellContext`graycode[
+          
+          Length[$CellContext`\[Theta]]]], $CellContext`basins = {{{{{0, 0, 0,
+             0, 0, 0, 0, 0}, 10}}, {0, 0, 0, 0, 0, 0, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 6}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            4}}, {0, 0, 0, 0, 0, 0, 0, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}}, {0, 0, 0, 0, 0, 0, 1, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 5}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 3}}, {0, 0, 0, 0, 0, 0, 1, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 10}}, {0, 0, 0, 0, 0, 1, 1, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            6}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}}, {0, 0, 0, 0, 0, 1, 1, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 5}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 3}}, {0, 0, 0, 0, 0, 1, 0, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            4}}, {0, 0, 0, 0, 0, 1, 0, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            5}}, {0, 0, 0, 0, 1, 1, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            5}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}}, {0, 0, 0, 0, 1, 1, 0, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 5}}, {0, 0, 0, 0, 1, 1, 1, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 7}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}}, {0, 0, 0, 0, 1, 1, 1, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 5}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}}, {0, 0, 0, 0, 1, 0, 1, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 3}}, {0, 0, 0, 0, 1, 0, 1, 
+          1}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 4}}, {0, 0, 0, 0, 1, 0, 0, 
+          1}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            7}}, {0, 0, 0, 0, 1, 0, 0, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 4}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}}, {0, 0, 0, 1, 1, 0, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 1}}, {0, 0, 0, 1, 1, 0, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}}, {0, 0, 0, 1, 1, 0, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            3}}, {0, 0, 0, 1, 1, 0, 1, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 9}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {0, 0, 0, 1, 1, 1, 1, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 5}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 3}}, {0, 0, 0, 1, 1, 1, 1, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            6}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}}, {0, 0, 0, 1, 1, 1, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            3}}, {0, 0, 0, 1, 1, 1, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 6}}, {0, 0, 0, 1, 0, 1, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            6}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {0, 0, 0, 1, 0, 1, 0, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            5}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {0, 0, 0, 1, 0, 1, 1, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 10}}, {0, 0, 0, 1, 0, 1, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 6}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            4}}, {0, 0, 0, 1, 0, 0, 1, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 4}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}}, {0, 0, 0, 1, 0, 0, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            5}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}}, {0, 0, 0, 1, 0, 0, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            5}, {{0, 0, 0, 1, 0, 1, 1, 0}, 2}}, {0, 0, 0, 1, 0, 0, 0, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            5}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}}, {0, 0, 1, 1, 0, 0, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 5}}, {0, 0, 1, 1, 0, 0, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 6}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}}, {0, 0, 1, 1, 0, 0, 1, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 4}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 4}}, {0, 0, 1, 1, 0, 0, 1, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 8}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}}, {0, 0, 1, 1, 0, 1, 1, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 5}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}}, {0, 0, 1, 1, 0, 1, 1, 
+          1}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}}, {0, 0, 1, 1, 0, 1, 0, 
+          1}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}}, {0, 0, 1, 1, 0, 1, 0, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}}, {0, 0, 1, 1, 1, 1, 0, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            4}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {0, 0, 1, 1, 1, 1, 0, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}}, {0, 0, 1, 1, 1, 1, 1, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 4}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}}, {0, 0, 1, 1, 1, 1, 1, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            4}, {{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {0, 0, 1, 1, 1, 0, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}}, {0, 0, 1, 1, 1, 0, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 2}}, {0, 0, 1, 1, 1, 0, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            4}}, {0, 0, 1, 1, 1, 0, 0, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 10}}, {0, 0, 1, 0, 1, 0, 0, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 5}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {0, 0, 1, 0, 1, 0, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            5}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}}, {0, 0, 1, 0, 1, 0, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 6}}, {0, 0, 1, 0, 1, 0, 1, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 5}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {0, 0, 1, 0, 1, 1, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}}, {0, 0, 1, 0, 1, 1, 1, 
+          1}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 4}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}}, {0, 0, 1, 0, 1, 1, 0, 
+          1}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 7}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}}, {0, 0, 1, 0, 1, 1, 0, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 3}}, {0, 0, 1, 0, 0, 1, 0, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 4}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}}, {0, 0, 1, 0, 0, 1, 0, 
+          1}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 4}}, {0, 0, 1, 0, 0, 1, 1, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 5}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {0, 0, 1, 0, 0, 1, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 6}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}}, {0, 0, 1, 0, 0, 0, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            4}, {{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}}, {0, 0, 1, 0, 0, 0, 1, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 5}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 2}}, {0, 0, 1, 0, 0, 0, 0, 
+          1}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 9}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {0, 0, 1, 0, 0, 0, 0, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 6}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}}, {0, 1, 1, 0, 0, 0, 0, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 2},
+            {{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}}, {0,
+           1, 1, 0, 0, 0, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 6}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 2}}, {0, 1, 1, 0, 0, 0, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 10}}, {0, 1, 1, 0, 0, 0, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 8}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}}, {0, 1, 1, 0, 0, 1, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 6}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {0, 1, 1, 0, 0, 1, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}}, {0, 1, 1, 0, 0, 1, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 6}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}}, {0, 1, 1, 0, 0, 1, 0, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 4}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}}, {0, 1, 1, 0, 1, 1, 0, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 4}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 2}}, {0, 1, 1, 0, 1, 1, 0, 
+          1}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}}, {0, 1, 1, 0, 1, 1, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 5}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}}, {0, 1, 1, 0, 1, 1, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 5}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 4}}, {0, 1, 1, 0, 1, 0, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 5}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}}, {0, 1, 1, 0, 1, 0, 1, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 5}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 3}}, {0, 1, 1, 0, 1, 0, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            5}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {0, 1, 1, 0, 1, 0, 0, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            7}}, {0, 1, 1, 1, 1, 0, 0, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 5}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            2}}, {0, 1, 1, 1, 1, 0, 0, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            5}, {{0, 0, 1, 0, 1, 0, 0, 0}, 3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}}, {0, 1, 1, 1, 1, 0, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 5}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}}, {0, 1, 1, 1, 1, 0, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 6}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}}, {0, 1, 1, 1, 1, 1, 1, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}}, {0, 1, 1, 1, 1, 1, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 4}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}}, {0, 1, 1, 1, 1, 1, 0, 
+          1}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            5}, {{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}}, {0, 1, 1, 1, 1, 1, 0, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 7}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {0, 1, 1, 1, 0, 1, 0, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            4}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}}, {0, 1, 1, 1, 0, 1, 0, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 5}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}}, {0, 1, 1, 1, 0, 1, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 7}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            3}}, {0, 1, 1, 1, 0, 1, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 10}}, {0, 1, 1, 1, 0, 0, 1, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 7}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}}, {0, 1, 1, 1, 0, 0, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 7}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            3}}, {0, 1, 1, 1, 0, 0, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 6}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}}, {0, 1, 1, 1, 0, 0, 0, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 10}}, {0, 1, 0, 1, 0, 0, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 5}}, {0, 1, 0, 1, 0, 0, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            4}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}}, {0, 1, 0, 1, 0, 0, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 10}}, {0, 1, 0, 1, 0, 0, 1, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 4}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            6}}, {0, 1, 0, 1, 0, 1, 1, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 4}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 4}}, {0, 1, 0, 1, 0, 1, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {0, 1, 0, 1, 0, 1, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 5}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {0, 1, 0, 1, 0, 1, 0, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}}, {0, 1, 0, 1, 1, 1, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 3}}, {0, 1, 0, 1, 1, 1, 0, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            6}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {0, 1, 0, 1, 1, 1, 1, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 7}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 2}}, {0, 1, 0, 1, 1, 1, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 5}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}}, {0, 1, 0, 1, 1, 0, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 7}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}}, {0, 1, 0, 1, 1, 0, 1, 
+          1}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}}, {0, 1, 0, 1, 1, 0, 0, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {0, 1, 0, 1, 1, 0, 0, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 3}}, {0, 1, 0, 0, 1, 0, 0, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 6}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}}, {0, 1, 0, 0, 1, 0, 0, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            5}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}}, {0, 1, 0, 0, 1, 0, 1, 
+          1}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            4}, {{0, 0, 0, 1, 0, 1, 1, 0}, 3}}, {0, 1, 0, 0, 1, 0, 1, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 4}}, {0, 1, 0, 0, 1, 1, 1, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 4}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            4}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}}, {0, 1, 0, 0, 1, 1, 1, 
+          1}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            6}, {{0, 1, 0, 1, 0, 0, 1, 0}, 1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}, 
+           {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {0, 1, 0, 0, 1, 1, 0, 
+          1}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}}, {0, 1, 0, 0, 1, 1, 0, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 7}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {0, 1, 0, 0, 0, 1, 0, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            4}, {{0, 1, 0, 1, 0, 0, 1, 0}, 4}}, {0, 1, 0, 0, 0, 1, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 6}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}}, {0, 1, 0, 0, 0, 1, 1, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 5}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            5}}, {0, 1, 0, 0, 0, 1, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 10}}, {0, 1, 0, 0, 0, 0, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 7}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}}, {0, 1, 0, 0, 0, 0, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 5}}, {0, 1, 0, 0, 0, 0, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 8}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}}, {0, 1, 0, 0, 0, 0, 0, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 6}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}}, {1, 1, 0, 0, 0, 0, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            4}, {{0, 1, 0, 1, 0, 0, 1, 0}, 3}}, {1, 1, 0, 0, 0, 0, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            6}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}}, {1, 1, 0, 0, 0, 0, 1, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            4}, {{1, 0, 0, 0, 0, 1, 0, 1}, 4}}, {1, 1, 0, 0, 0, 0, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 4}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {1, 1, 0, 0, 0, 1, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 6}}, {1, 1, 0, 0, 0, 1, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 9}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}}, {1, 1, 0, 0, 0, 1, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 4}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}}, {1, 1, 0, 0, 0, 1, 0, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}}, {1, 1, 0, 0, 1, 1, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 8}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {1, 1, 0, 0, 1, 1, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            7}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}}, {1, 1, 0, 0, 1, 1, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}}, {1, 1, 0, 0, 1, 1, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}}, {1, 1, 0, 0, 1, 0, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 8}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}}, {1, 1, 0, 0, 1, 0, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 6}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}}, {1, 1, 0, 0, 1, 0, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}}, {1, 1, 0, 0, 1, 0, 0, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            4}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 1}}, {1, 1, 0, 1, 1, 0, 0, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 4}}, {1, 1, 0, 1, 1, 0, 0, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}}, {1, 1, 0, 1, 1, 0, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}}, {1, 1, 0, 1, 1, 0, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {1, 1, 0, 1, 1, 1, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 6}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}}, {1, 1, 0, 1, 1, 1, 1, 
+          1}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 5}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {1, 1, 0, 1, 1, 1, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}}, {1, 1, 0, 1, 1, 1, 0, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            5}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {1, 1, 0, 1, 0, 1, 0, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            2}}, {1, 1, 0, 1, 0, 1, 0, 
+          1}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}}, {1, 1, 0, 1, 0, 1, 1, 
+          1}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            5}, {{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}}, {1, 1, 0, 1, 0, 1, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 7}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}}, {1, 1, 0, 1, 0, 0, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 5}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}}, {1, 1, 0, 1, 0, 0, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}}, {1, 1, 0, 1, 0, 0, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 5}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 2}}, {1, 1, 0, 1, 0, 0, 0, 
+          0}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            2}}, {1, 1, 1, 1, 0, 0, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 5}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            4}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}}, {1, 1, 1, 1, 0, 0, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 3}}, {1, 1, 1, 1, 0, 0, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}}, {1, 1, 1, 1, 0, 0, 1, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}}, {1, 1, 1, 1, 0, 1, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            4}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            3}}, {1, 1, 1, 1, 0, 1, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 7}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}}, {1, 1, 1, 1, 0, 1, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            5}, {{0, 0, 0, 0, 0, 0, 0, 0}, 3}}, {1, 1, 1, 1, 0, 1, 0, 
+          0}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}}, {1, 1, 1, 1, 1, 1, 0, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {1, 1, 1, 1, 1, 1, 0, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}}, {1, 1, 1, 1, 1, 1, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 5}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}}, {1, 1, 1, 1, 1, 1, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}}, {1, 1, 1, 1, 1, 0, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 5}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}}, {1, 1, 1, 1, 1, 0, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}}, {1, 1, 1, 1, 1, 0, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 4}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}}, {1, 1, 1, 1, 1, 0, 0, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 5}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}}, {1, 1, 1, 0, 1, 0, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 5}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            4}, {{0, 1, 0, 1, 0, 0, 1, 0}, 1}}, {1, 1, 1, 0, 1, 0, 0, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 4}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 3}}, {1, 1, 1, 0, 1, 0, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 4}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}}, {1, 1, 1, 0, 1, 0, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}}, {1, 1, 1, 0, 1, 1, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 4}, {{0, 1, 0, 1, 0, 0, 1, 0}, 4},
+            {{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}}, {1,
+           1, 1, 0, 1, 1, 1, 
+          1}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}}, {1, 1, 1, 0, 1, 1, 0, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}}, {1, 1, 1, 0, 1, 1, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}}, {1, 1, 1, 0, 0, 1, 0, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}}, {1, 1, 1, 0, 0, 1, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 4}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}}, {1, 1, 1, 0, 0, 1, 1, 
+          1}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}}, {1, 1, 1, 0, 0, 1, 1, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            6}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}}, {1, 1, 1, 0, 0, 0, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            5}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}}, {1, 1, 1, 0, 0, 0, 1, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            6}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}}, {1, 1, 1, 0, 0, 0, 0, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            5}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}}, {1, 1, 1, 0, 0, 0, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 5}}, {1, 0, 1, 0, 0, 0, 0, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            8}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}}, {1, 0, 1, 0, 0, 0, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}}, {1, 0, 1, 0, 0, 0, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}}, {1, 0, 1, 0, 0, 0, 1, 
+          0}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {1, 0, 1, 0, 0, 1, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 7}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {1, 0, 1, 0, 0, 1, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 7}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 2}}, {1, 0, 1, 0, 0, 1, 0, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 5}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {1, 0, 1, 0, 0, 1, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 5}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 3}}, {1, 0, 1, 0, 1, 1, 0, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            6}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {1, 0, 1, 0, 1, 1, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            6}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}}, {1, 0, 1, 0, 1, 1, 1, 
+          1}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 4}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}}, {1, 0, 1, 0, 1, 1, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            4}, {{0, 0, 1, 0, 1, 0, 0, 0}, 5}}, {1, 0, 1, 0, 1, 0, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}}, {1, 0, 1, 0, 1, 0, 1, 
+          1}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 5}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {1, 0, 1, 0, 1, 0, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            6}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}}, {1, 0, 1, 0, 1, 0, 0, 
+          0}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 6}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}}, {1, 0, 1, 1, 1, 0, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 7}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {1, 0, 1, 1, 1, 0, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}}, {1, 0, 1, 1, 1, 0, 1, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}}, {1, 0, 1, 1, 1, 0, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}}, {1, 0, 1, 1, 1, 1, 1, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            4}}, {1, 0, 1, 1, 1, 1, 1, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            7}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}}, {1, 0, 1, 1, 1, 1, 0, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            4}}, {1, 0, 1, 1, 1, 1, 0, 
+          0}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 9}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}}, {1, 0, 1, 1, 0, 1, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 4}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            5}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {1, 0, 1, 1, 0, 1, 0, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 4}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}}, {1, 0, 1, 1, 0, 1, 1, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 5}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            4}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}}, {1, 0, 1, 1, 0, 1, 1, 
+          0}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {1, 0, 1, 1, 0, 0, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 4}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}}, {1, 0, 1, 1, 0, 0, 1, 
+          1}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 5}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            4}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {1, 0, 1, 1, 0, 0, 0, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            3}, {{0, 1, 0, 1, 0, 0, 1, 0}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}}, {1, 0, 1, 1, 0, 0, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 5}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}}, {1, 0, 0, 1, 0, 0, 0, 
+          0}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            7}}, {1, 0, 0, 1, 0, 0, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 6}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}}, {1, 0, 0, 1, 0, 0, 1, 
+          1}}, {{{{0, 1, 0, 1, 0, 0, 1, 0}, 4}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {1, 0, 0, 1, 0, 0, 1, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 8}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}}, {1, 0, 0, 1, 0, 1, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 6}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}}, {1, 0, 0, 1, 0, 1, 1, 
+          1}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 6}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            4}}, {1, 0, 0, 1, 0, 1, 0, 1}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 10}},
+           {1, 0, 0, 1, 0, 1, 0, 
+          0}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 5}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}}, {1, 0, 0, 1, 1, 1, 0, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            4}, {{1, 0, 0, 1, 0, 1, 0, 0}, 3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            2}}, {1, 0, 0, 1, 1, 1, 0, 
+          1}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            4}}, {1, 0, 0, 1, 1, 1, 1, 
+          1}}, {{{{0, 0, 1, 0, 1, 0, 0, 0}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 6}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}, {{0, 0, 0, 0, 0, 0, 0, 0}, 1}}, {1, 0, 0, 1, 1, 1, 1, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 4}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}}, {1, 0, 0, 1, 1, 0, 1, 
+          0}}, {{{{0, 0, 0, 1, 0, 1, 1, 0}, 1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}}, {1, 0, 0, 1, 1, 0, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 10}}, {1, 0, 0, 1, 1, 0, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            4}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{0, 1, 0, 1, 0, 0, 1, 0}, 1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}}, {1, 0, 0, 1, 1, 0, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            5}, {{1, 0, 0, 1, 0, 1, 0, 0}, 2}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {1, 0, 0, 0, 1, 0, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 10}}, {1, 0, 0, 0, 1, 0, 0, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 8}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 1}}, {1, 0, 0, 0, 1, 0, 1, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 4}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            3}}, {1, 0, 0, 0, 1, 0, 1, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 1}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{1, 0, 0, 0, 0, 1, 0, 1}, 5}, {{0, 0, 0, 1, 0, 1, 1, 0}, 
+            2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 1}}, {1, 0, 0, 0, 1, 1, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 10}}, {1, 0, 0, 0, 1, 1, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 10}}, {1, 0, 0, 0, 1, 1, 0, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 2}, {{0, 0, 1, 0, 1, 0, 0, 0}, 
+            3}, {{0, 0, 0, 0, 0, 0, 0, 0}, 2}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            1}, {{0, 0, 0, 1, 0, 1, 1, 0}, 2}}, {1, 0, 0, 0, 1, 1, 0, 
+          0}}, {{{{1, 0, 0, 1, 0, 1, 0, 0}, 9}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            1}}, {1, 0, 0, 0, 0, 1, 0, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 10}}, {1, 0, 0, 0, 0, 1, 0, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 10}}, {1, 0, 0, 0, 0, 1, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 5}, {{1, 0, 0, 1, 0, 1, 0, 0}, 
+            2}, {{0, 0, 0, 1, 0, 1, 1, 0}, 3}}, {1, 0, 0, 0, 0, 1, 1, 
+          0}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 4}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            3}, {{0, 0, 0, 1, 0, 1, 1, 0}, 2}, {{0, 1, 0, 1, 0, 0, 1, 0}, 
+            1}}, {1, 0, 0, 0, 0, 0, 1, 
+          0}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 9}, {{0, 0, 0, 0, 0, 0, 0, 0}, 
+            1}}, {1, 0, 0, 0, 0, 0, 1, 
+          1}}, {{{{1, 0, 0, 0, 0, 1, 0, 1}, 10}}, {1, 0, 0, 0, 0, 0, 0, 
+          1}}, {{{{0, 0, 0, 0, 0, 0, 0, 0}, 3}, {{1, 0, 0, 0, 0, 1, 0, 1}, 
+            3}, {{1, 0, 0, 1, 0, 1, 0, 0}, 4}}, {1, 0, 0, 0, 0, 0, 0, 
+          0}}}, $CellContext`nbrs[
+         Pattern[$CellContext`state, 
+          Blank[]]] := Table[
+         ReplacePart[$CellContext`state, $CellContext`j -> 
+          1 - Part[$CellContext`state, $CellContext`j]], {$CellContext`j, 
+          Length[$CellContext`state]}], $CellContext`MinimumQ[
+         Pattern[$CellContext`w, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta], 
+          Blank[]]][
+         Pattern[$CellContext`state, 
+          Blank[]]] := Min[
+          Map[
+           $CellContext`Energy[$CellContext`w, $CellContext`\[Theta]], 
+           $CellContext`nbrs[$CellContext`state]]] > \
+$CellContext`Energy[$CellContext`w, \
+$CellContext`\[Theta]][$CellContext`state], $CellContext`AllAttractors[
+         Pattern[$CellContext`w, 
+          Blank[]], 
+         Pattern[$CellContext`\[Theta], 
+          Blank[]]] := Select[
+         Tuples[{0, 1}, 
+          Length[$CellContext`\[Theta]]], 
+         $CellContext`MinimumQ[$CellContext`w, $CellContext`\[Theta]]], \
+$CellContext`att1 = {{0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 1, 1, 0}, {0, 
+        0, 1, 0, 1, 0, 0, 0}, {0, 1, 0, 1, 0, 0, 1, 0}, {1, 0, 0, 0, 0, 1, 0, 
+        1}, {1, 0, 0, 1, 0, 1, 0, 0}}, $CellContext`att = {{0, 0, 0, 0, 0, 0, 
+        0, 0}, {0, 0, 0, 1, 0, 1, 1, 0}, {0, 0, 1, 0, 1, 0, 0, 0}, {0, 1, 0, 
+        1, 0, 0, 1, 0}, {1, 0, 0, 1, 0, 1, 0, 0}, {1, 0, 0, 0, 0, 1, 0, 
+        1}}, $CellContext`blend[{
+          Pattern[$CellContext`x, 
+           Blank[]]}, {
+          Blank[]}] := $CellContext`x, $CellContext`blend[
+         Pattern[$CellContext`a, 
+          Blank[]], 
+         Pattern[$CellContext`b, 
+          Blank[]]] := 
+       Blend[$CellContext`a, $CellContext`b], $CellContext`colourmap[
+         Pattern[$CellContext`l, 
+          Blank[]]] := Hue[ReplaceAll[Flatten[
+             Position[$CellContext`att, $CellContext`l]] + 0.4, {} -> 0.8]/
+         Length[$CellContext`att]], $CellContext`weightedcolour[
+         Pattern[$CellContext`l, 
+          Blank[]]] := $CellContext`blend[
+         Map[$CellContext`colourmap, 
+          Part[$CellContext`l, All, 1]], 
+         Part[$CellContext`l, All, 2]], $CellContext`Indexpos[
+         Pattern[$CellContext`k1, 
+          Blank[]]][{
+          Pattern[$CellContext`a, 
+           Blank[]], 
+          Pattern[$CellContext`b, 
+           
+           Blank[]]}] := {$CellContext`a, $CellContext`k1}, \
+$CellContext`PutIndex[
+         Pattern[$CellContext`lis, 
+          Blank[]]] := 
+       Module[{$CellContext`l = {}}, 
+         For[$CellContext`p = 1, $CellContext`p <= Length[$CellContext`lis], 
+           Increment[$CellContext`p], 
+           AppendTo[$CellContext`l, 
+            $CellContext`Indexpos[$CellContext`p][
+             
+             Part[$CellContext`lis, $CellContext`p]]]]; $CellContext`l], \
+$CellContext`p = 257, $CellContext`rot[
+         Pattern[$CellContext`s, 
+          Blank[]], 
+         Pattern[$CellContext`x, 
+          Blank[]], 
+         Pattern[$CellContext`y, 
+          Blank[]], 
+         Pattern[$CellContext`rx, 
+          Blank[]], 
+         Pattern[$CellContext`ry, 
+          Blank[]]] := 
+       Module[{$CellContext`x1 = $CellContext`x, $CellContext`y1 = \
+$CellContext`y, $CellContext`tp}, 
+         If[$CellContext`ry == 0, 
+           If[$CellContext`rx == 
+             1, $CellContext`x1 = $CellContext`s - 
+               1 - $CellContext`x; $CellContext`y1 = $CellContext`s - 
+               1 - $CellContext`y; 
+             Null]; $CellContext`tp = $CellContext`x1; $CellContext`x1 = \
+$CellContext`y1; $CellContext`y1 = $CellContext`tp; 
+           Null]; {$CellContext`s, $CellContext`x1, $CellContext`y1, \
+$CellContext`rx, $CellContext`ry}], $CellContext`d2xy[
+         Pattern[$CellContext`n, 
+          Blank[]]][
+         Pattern[$CellContext`d, 
+          Blank[]]] := 
+       Module[{$CellContext`rx, $CellContext`ry, $CellContext`t = \
+$CellContext`d, $CellContext`x = 0, $CellContext`y = 0, $CellContext`s}, 
+         For[$CellContext`s = 1, $CellContext`s < $CellContext`n, 
+           TimesBy[$CellContext`s, 2], $CellContext`rx = BitAnd[1, 
+              Floor[$CellContext`t/2]]; $CellContext`ry = BitAnd[1, 
+              
+              BitXor[$CellContext`t, $CellContext`rx]]; {$CellContext`s, \
+$CellContext`x, $CellContext`y, $CellContext`rx, $CellContext`ry} = \
+$CellContext`rot[$CellContext`s, $CellContext`x, $CellContext`y, \
+$CellContext`rx, $CellContext`ry]; $CellContext`x = $CellContext`x + \
+$CellContext`s $CellContext`rx; $CellContext`y = $CellContext`y + \
+$CellContext`s $CellContext`ry; $CellContext`t = Floor[$CellContext`t/4]; 
+           Null]; {$CellContext`x, $CellContext`y}], $CellContext`MapHilbert[
+         Pattern[$CellContext`l, 
+          Blank[]], 
+         Pattern[$CellContext`n, 
+          Blank[]]] := MapThread[{#, 
+          $CellContext`d2xy[$CellContext`n][#2]}& , 
+         Transpose[$CellContext`l]], $CellContext`h = {{
+          Hue[{0.2333333333333333}], {1, 0}}, {
+          Hue[0.1333333333333333, 1, 1], {1, 1}}, {
+          Hue[0.2833333333333333, 1, 1], {0, 1}}, {
+          Hue[0.4166666666666667, 1, 1], {0, 2}}, {
+          Hue[{0.39999999999999997`}], {0, 3}}, {
+          Hue[0.3166666666666666, 1, 1], {1, 3}}, {
+          Hue[0.21666666666666665`, 1, 1], {1, 2}}, {
+          Hue[0.3666666666666667, 1, 1], {2, 2}}, {
+          Hue[0.41666666666666663`, 1, 1], {2, 3}}, {
+          Hue[0.19999999999999998`, 1, 1], {3, 3}}, {
+          Hue[0.19999999999999996`, 1, 1], {3, 2}}, {
+          Hue[0.44999999999999996`, 1, 1], {3, 1}}, {
+          Hue[0.44999999999999996`, 1, 1], {2, 1}}, {
+          Hue[0.4, 1, 1], {2, 0}}, {
+          Hue[0.23333333333333334`, 1, 1], {3, 0}}, {
+          Hue[0.33333333333333326`, 1, 1], {4, 0}}, {
+          Hue[0.45, 1, 1], {4, 1}}, {
+          Hue[0.30000000000000004`, 1, 1], {5, 1}}, {
+          Hue[0.5833333333333334, 1, 1], {5, 0}}, {
+          Hue[0.48333333333333334`, 1, 1], {6, 0}}, {
+          Hue[0.3833333333333333, 1, 1], {7, 0}}, {
+          Hue[0.2833333333333333, 1, 1], {7, 1}}, {
+          Hue[0.2333333333333333, 1, 1], {6, 1}}, {
+          Hue[0.45000000000000007`, 1, 1], {6, 2}}, {
+          Hue[0.5166666666666666, 1, 1], {7, 2}}, {
+          Hue[0.28333333333333327`, 1, 1], {7, 3}}, {
+          Hue[0.26666666666666666`, 1, 1], {6, 3}}, {
+          Hue[{0.39999999999999997`}], {5, 3}}, {
+          Hue[0.6, 1, 1], {5, 2}}, {
+          Hue[0.49999999999999994`, 1, 1], {4, 2}}, {
+          Hue[0.36666666666666664`, 1, 1], {4, 3}}, {
+          Hue[0.5166666666666667, 1, 1], {4, 4}}, {
+          Hue[0.4666666666666667, 1, 1], {4, 5}}, {
+          Hue[0.5666666666666667, 1, 1], {5, 5}}, {
+          Hue[0.6166666666666666, 1, 1], {5, 4}}, {
+          Hue[0.5666666666666667, 1, 1], {6, 4}}, {
+          Hue[0.45000000000000007`, 1, 1], {7, 4}}, {
+          Hue[0.4, 1, 1], {7, 5}}, {
+          Hue[0.45, 1, 1], {6, 5}}, {
+          Hue[0.43333333333333335`, 1, 1], {6, 6}}, {
+          Hue[0.5333333333333333, 1, 1], {7, 6}}, {
+          Hue[0.4666666666666667, 1, 1], {7, 7}}, {
+          Hue[0.45, 1, 1], {6, 7}}, {
+          Hue[0.5833333333333333, 1, 1], {5, 7}}, {
+          Hue[0.5666666666666667, 1, 1], {5, 6}}, {
+          Hue[0.46666666666666673`, 1, 1], {4, 6}}, {
+          Hue[0.4166666666666667, 1, 1], {4, 7}}, {
+          Hue[0.55, 1, 1], {3, 7}}, {
+          Hue[{0.5666666666666667}], {2, 7}}, {
+          Hue[0.3333333333333333, 1, 1], {2, 6}}, {
+          Hue[0.48333333333333334`, 1, 1], {3, 6}}, {
+          Hue[0.5333333333333333, 1, 1], {3, 5}}, {
+          Hue[0.4666666666666667, 1, 1], {3, 4}}, {
+          Hue[0.3333333333333333, 1, 1], {2, 4}}, {
+          Hue[0.44999999999999996`, 1, 1], {2, 5}}, {
+          Hue[0.4833333333333332, 1, 1], {1, 5}}, {
+          Hue[0.4166666666666667, 1, 1], {1, 4}}, {
+          Hue[0.39999999999999997`, 1, 1], {0, 4}}, {
+          Hue[0.4, 1, 1], {0, 5}}, {
+          Hue[0.5166666666666667, 1, 1], {0, 6}}, {
+          Hue[0.6, 1, 1], {1, 6}}, {
+          Hue[0.3833333333333333, 1, 1], {1, 7}}, {
+          Hue[0.25, 1, 1], {0, 7}}, {
+          Hue[0.5333333333333333, 1, 1], {0, 8}}, {
+          Hue[0.5666666666666667, 1, 1], {0, 9}}, {
+          Hue[0.4833333333333334, 1, 1], {1, 9}}, {
+          Hue[0.5666666666666667, 1, 1], {1, 8}}, {
+          Hue[{0.7333333333333334}], {2, 8}}, {
+          Hue[0.6666666666666667, 1, 1], {3, 8}}, {
+          Hue[0.55, 1, 1], {3, 9}}, {
+          Hue[0.3833333333333334, 1, 1], {2, 9}}, {
+          Hue[0.6, 1, 1], {2, 10}}, {
+          Hue[0.5500000000000002, 1, 1], {3, 10}}, {
+          Hue[0.30000000000000004`, 1, 1], {3, 11}}, {
+          Hue[0.41666666666666663`, 1, 1], {2, 11}}, {
+          Hue[0.5666666666666667, 1, 1], {1, 11}}, {
+          Hue[0.6166666666666667, 1, 1], {1, 10}}, {
+          Hue[0.5333333333333333, 1, 1], {0, 10}}, {
+          Hue[0.44999999999999996`, 1, 1], {0, 11}}, {
+          Hue[0.6, 1, 1], {0, 12}}, {
+          Hue[0.6833333333333333, 1, 1], {1, 12}}, {
+          Hue[0.31666666666666665`, 1, 1], {1, 13}}, {
+          Hue[0.5833333333333334, 1, 1], {0, 13}}, {
+          Hue[0.6666666666666666, 1, 1], {0, 14}}, {
+          Hue[0.6666666666666666, 1, 1], {0, 15}}, {
+          Hue[0.44999999999999996`, 1, 1], {1, 15}}, {
+          Hue[0.36666666666666664`, 1, 1], {1, 14}}, {
+          Hue[0.6166666666666667, 1, 1], {2, 14}}, {
+          Hue[0.6333333333333333, 1, 1], {2, 15}}, {
+          Hue[0.3833333333333333, 1, 1], {3, 15}}, {
+          Hue[0.6166666666666667, 1, 1], {3, 14}}, {
+          Hue[0.6333333333333333, 1, 1], {3, 13}}, {
+          Hue[{0.7333333333333334}], {2, 13}}, {
+          Hue[0.6, 1, 1], {2, 12}}, {
+          Hue[0.5833333333333333, 1, 1], {3, 12}}, {
+          Hue[0.6, 1, 1], {4, 12}}, {
+          Hue[{0.7333333333333334}], {5, 12}}, {
+          Hue[0.45, 1, 1], {5, 13}}, {
+          Hue[0.36666666666666664`, 1, 1], {4, 13}}, {
+          Hue[{0.7333333333333334}], {4, 14}}, {
+          Hue[0.6, 1, 1], {4, 15}}, {
+          Hue[0.46666666666666673`, 1, 1], {5, 15}}, {
+          Hue[0.5333333333333333, 1, 1], {5, 14}}, {
+          Hue[0.5666666666666668, 1, 1], {6, 14}}, {
+          Hue[0.49999999999999994`, 1, 1], {6, 15}}, {
+          Hue[0.5833333333333333, 1, 1], {7, 15}}, {
+          Hue[0.5166666666666666, 1, 1], {7, 14}}, {
+          Hue[0.44999999999999996`, 1, 1], {7, 13}}, {
+          Hue[0.5333333333333333, 1, 1], {6, 13}}, {
+          Hue[0.6, 1, 1], {6, 12}}, {
+          Hue[0.3833333333333333, 1, 1], {7, 12}}, {
+          Hue[0.5666666666666668, 1, 1], {7, 11}}, {
+          Hue[0.5166666666666667, 1, 1], {7, 10}}, {
+          Hue[0.3333333333333333, 1, 1], {6, 10}}, {
+          Hue[0.5166666666666667, 1, 1], {6, 11}}, {
+          Hue[0.5833333333333334, 1, 1], {5, 11}}, {
+          Hue[0.44999999999999996`, 1, 1], {4, 11}}, {
+          Hue[0.4, 1, 1], {4, 10}}, {
+          Hue[0.23333333333333334`, 1, 1], {5, 10}}, {
+          Hue[0.5166666666666666, 1, 1], {5, 9}}, {
+          Hue[0.6166666666666666, 1, 1], {4, 9}}, {
+          Hue[0.3666666666666667, 1, 1], {4, 8}}, {
+          Hue[0.5666666666666667, 1, 1], {5, 8}}, {
+          Hue[0.5666666666666667, 1, 1], {6, 8}}, {
+          Hue[{0.7333333333333334}], {6, 9}}, {
+          Hue[0.5499999999999999, 1, 1], {7, 9}}, {
+          Hue[0.2833333333333333, 1, 1], {7, 8}}, {
+          Hue[0.6333333333333334, 1, 1], {8, 8}}, {
+          Hue[0.5, 1, 1], {8, 9}}, {
+          Hue[0.3333333333333333, 1, 1], {9, 9}}, {
+          Hue[0.23333333333333334`, 1, 1], {9, 8}}, {
+          Hue[0.36666666666666675`, 1, 1], {10, 8}}, {
+          Hue[0.3666666666666667, 1, 1], {11, 8}}, {
+          Hue[0.23333333333333334`, 1, 1], {11, 9}}, {
+          Hue[0.13333333333333333`, 1, 1], {10, 9}}, {
+          Hue[0.43333333333333335`, 1, 1], {10, 10}}, {
+          Hue[0.3333333333333333, 1, 1], {11, 10}}, {
+          Hue[0.1333333333333333, 1, 1], {11, 11}}, {
+          Hue[0.18333333333333332`, 1, 1], {10, 11}}, {
+          Hue[0.43333333333333335`, 1, 1], {9, 11}}, {
+          Hue[0.5166666666666667, 1, 1], {9, 10}}, {
+          Hue[0.2, 1, 1], {8, 10}}, {
+          Hue[0.21666666666666665`, 1, 1], {8, 11}}, {
+          Hue[0.5, 1, 1], {8, 12}}, {
+          Hue[0.35000000000000003`, 1, 1], {9, 12}}, {
+          Hue[0.31666666666666665`, 1, 1], {9, 13}}, {
+          Hue[0.4, 1, 1], {8, 13}}, {
+          Hue[0.5333333333333333, 1, 1], {8, 14}}, {
+          Hue[0.55, 1, 1], {8, 15}}, {
+          Hue[0.23333333333333334`, 1, 1], {9, 15}}, {
+          Hue[0.4, 1, 1], {9, 14}}, {
+          Hue[0.4, 1, 1], {10, 14}}, {
+          Hue[0.7666666666666667, 1, 1], {10, 15}}, {
+          Hue[0.48333333333333334`, 1, 1], {11, 15}}, {
+          Hue[0.55, 1, 1], {11, 14}}, {
+          Hue[0.5333333333333334, 1, 1], {11, 13}}, {
+          Hue[0.6, 1, 1], {10, 13}}, {
+          Hue[0.5166666666666666, 1, 1], {10, 12}}, {
+          Hue[0.5333333333333334, 1, 1], {11, 12}}, {
+          Hue[0.6166666666666667, 1, 1], {12, 12}}, {
+          Hue[0.5333333333333333, 1, 1], {13, 12}}, {
+          Hue[0.41666666666666674`, 1, 1], {13, 13}}, {
+          Hue[0.6333333333333333, 1, 1], {12, 13}}, {
+          Hue[0.5666666666666668, 1, 1], {12, 14}}, {
+          Hue[0.5166666666666666, 1, 1], {12, 15}}, {
+          Hue[0.5, 1, 1], {13, 15}}, {
+          Hue[0.2833333333333334, 1, 1], {13, 14}}, {
+          Hue[0.6666666666666666, 1, 1], {14, 14}}, {
+          Hue[0.6500000000000001, 1, 1], {14, 15}}, {
+          Hue[0.4833333333333333, 1, 1], {15, 15}}, {
+          Hue[0.46666666666666673`, 1, 1], {15, 14}}, {
+          Hue[0.5166666666666667, 1, 1], {15, 13}}, {
+          Hue[0.5166666666666666, 1, 1], {14, 13}}, {
+          Hue[0.6166666666666668, 1, 1], {14, 12}}, {
+          Hue[0.3666666666666667, 1, 1], {15, 12}}, {
+          Hue[0.3833333333333333, 1, 1], {15, 11}}, {
+          Hue[0.5166666666666666, 1, 1], {15, 10}}, {
+          Hue[0.2, 1, 1], {14, 10}}, {
+          Hue[0.26666666666666666`, 1, 1], {14, 11}}, {
+          Hue[0.5833333333333334, 1, 1], {13, 11}}, {
+          Hue[0.55, 1, 1], {12, 11}}, {
+          Hue[0.38333333333333336`, 1, 1], {12, 10}}, {
+          Hue[0.2833333333333333, 1, 1], {13, 10}}, {
+          Hue[0.55, 1, 1], {13, 9}}, {
+          Hue[0.41666666666666674`, 1, 1], {12, 9}}, {
+          Hue[0.35, 1, 1], {12, 8}}, {
+          Hue[0.31666666666666665`, 1, 1], {13, 8}}, {
+          Hue[0.5166666666666666, 1, 1], {14, 8}}, {
+          Hue[0.5666666666666667, 1, 1], {14, 9}}, {
+          Hue[0.26666666666666666`, 1, 1], {15, 9}}, {
+          Hue[0.16666666666666666`, 1, 1], {15, 8}}, {
+          Hue[0.30000000000000004`, 1, 1], {15, 7}}, {
+          Hue[0.3, 1, 1], {14, 7}}, {
+          Hue[0.13333333333333333`, 1, 1], {14, 6}}, {
+          Hue[0.41666666666666663`, 1, 1], {15, 6}}, {
+          Hue[0.4833333333333334, 1, 1], {15, 5}}, {
+          Hue[0.4, 1, 1], {15, 4}}, {
+          Hue[0.23333333333333334`, 1, 1], {14, 4}}, {
+          Hue[0.18333333333333332`, 1, 1], {14, 5}}, {
+          Hue[0.35, 1, 1], {13, 5}}, {
+          Hue[0.21666666666666667`, 1, 1], {13, 4}}, {
+          Hue[0.23333333333333328`, 1, 1], {12, 4}}, {
+          Hue[0.25, 1, 1], {12, 5}}, {
+          Hue[0.38333333333333336`, 1, 1], {12, 6}}, {
+          Hue[0.3833333333333333, 1, 1], {13, 6}}, {
+          Hue[0.3499999999999999, 1, 1], {13, 7}}, {
+          Hue[0.3333333333333333, 1, 1], {12, 7}}, {
+          Hue[0.3999999999999999, 1, 1], {11, 7}}, {
+          Hue[0.5333333333333333, 1, 1], {11, 6}}, {
+          Hue[0.18333333333333335`, 1, 1], {10, 6}}, {
+          Hue[0.3666666666666667, 1, 1], {10, 7}}, {
+          Hue[0.5166666666666667, 1, 1], {9, 7}}, {
+          Hue[0.5166666666666667, 1, 1], {8, 7}}, {
+          Hue[0.4, 1, 1], {8, 6}}, {
+          Hue[0.2, 1, 1], {9, 6}}, {
+          Hue[0.5166666666666667, 1, 1], {9, 5}}, {
+          Hue[0.8166666666666668, 1, 1], {8, 5}}, {
+          Hue[0.5, 1, 1], {8, 4}}, {
+          Hue[0.43333333333333335`, 1, 1], {9, 4}}, {
+          Hue[0.5666666666666668, 1, 1], {10, 4}}, {
+          Hue[0.48333333333333334`, 1, 1], {10, 5}}, {
+          Hue[0.4, 1, 1], {11, 5}}, {
+          Hue[0.5, 1, 1], {11, 4}}, {
+          Hue[0.5499999999999999, 1, 1], {11, 3}}, {
+          Hue[0.35, 1, 1], {11, 2}}, {
+          Hue[0.31666666666666665`, 1, 1], {10, 2}}, {
+          Hue[0.30000000000000004`, 1, 1], {10, 3}}, {
+          Hue[0.5333333333333333, 1, 1], {9, 3}}, {
+          Hue[0.5, 1, 1], {8, 3}}, {
+          Hue[0.35, 1, 1], {8, 2}}, {
+          Hue[0.5666666666666667, 1, 1], {9, 2}}, {
+          Hue[{0.9}], {9, 1}}, {
+          Hue[0.5833333333333334, 1, 1], {8, 1}}, {
+          Hue[0.3833333333333333, 1, 1], {8, 0}}, {
+          Hue[0.38333333333333336`, 1, 1], {9, 0}}, {
+          Hue[0.4166666666666666, 1, 1], {10, 0}}, {
+          Hue[0.6000000000000001, 1, 1], {10, 1}}, {
+          Hue[0.43333333333333335`, 1, 1], {11, 1}}, {
+          Hue[{1.0666666666666667`}], {11, 0}}, {
+          Hue[0.33333333333333337`, 1, 1], {12, 0}}, {
+          Hue[0.5, 1, 1], {13, 0}}, {
+          Hue[{1.0666666666666667`}], {13, 1}}, {
+          Hue[0.11666666666666667`, 1, 1], {12, 1}}, {
+          Hue[0.4166666666666667, 1, 1], {12, 2}}, {
+          Hue[0.2833333333333333, 1, 1], {12, 3}}, {
+          Hue[{1.0666666666666667`}], {13, 3}}, {
+          Hue[{1.0666666666666667`}], {13, 2}}, {
+          Hue[0.4, 1, 1], {14, 2}}, {
+          Hue[0.8166666666666668, 1, 1], {14, 3}}, {
+          Hue[{1.0666666666666667`}], {15, 3}}, {
+          Hue[{1.0666666666666667`}], {15, 2}}, {
+          Hue[0.3333333333333333, 1, 1], {15, 1}}, {
+          Hue[0.26666666666666666`, 1, 1], {14, 1}}, {
+          Hue[0.08333333333333331, 1, 1], {14, 0}}, {
+          Hue[{1.0666666666666667`}], {15, 0}}, {
+          Hue[0.45, 1, 1], {0, 0}}}, $CellContext`arr = {{
+          Hue[0.45, 1, 1], 
+          Hue[0.2833333333333333, 1, 1], 
+          Hue[0.4166666666666667, 1, 1], 
+          Hue[{0.39999999999999997`}], 
+          Hue[0.39999999999999997`, 1, 1], 
+          Hue[0.4, 1, 1], 
+          Hue[0.5166666666666667, 1, 1], 
+          Hue[0.25, 1, 1], 
+          Hue[0.5333333333333333, 1, 1], 
+          Hue[0.5666666666666667, 1, 1], 
+          Hue[0.5333333333333333, 1, 1], 
+          Hue[0.44999999999999996`, 1, 1], 
+          Hue[0.6, 1, 1], 
+          Hue[0.5833333333333334, 1, 1], 
+          Hue[0.6666666666666666, 1, 1], 
+          Hue[0.6666666666666666, 1, 1]}, {
+          Hue[{0.2333333333333333}], 
+          Hue[0.1333333333333333, 1, 1], 
+          Hue[0.21666666666666665`, 1, 1], 
+          Hue[0.3166666666666666, 1, 1], 
+          Hue[0.4166666666666667, 1, 1], 
+          Hue[0.4833333333333332, 1, 1], 
+          Hue[0.6, 1, 1], 
+          Hue[0.3833333333333333, 1, 1], 
+          Hue[0.5666666666666667, 1, 1], 
+          Hue[0.4833333333333334, 1, 1], 
+          Hue[0.6166666666666667, 1, 1], 
+          Hue[0.5666666666666667, 1, 1], 
+          Hue[0.6833333333333333, 1, 1], 
+          Hue[0.31666666666666665`, 1, 1], 
+          Hue[0.36666666666666664`, 1, 1], 
+          Hue[0.44999999999999996`, 1, 1]}, {
+          Hue[0.4, 1, 1], 
+          Hue[0.44999999999999996`, 1, 1], 
+          Hue[0.3666666666666667, 1, 1], 
+          Hue[0.41666666666666663`, 1, 1], 
+          Hue[0.3333333333333333, 1, 1], 
+          Hue[0.44999999999999996`, 1, 1], 
+          Hue[0.3333333333333333, 1, 1], 
+          Hue[{0.5666666666666667}], 
+          Hue[{0.7333333333333334}], 
+          Hue[0.3833333333333334, 1, 1], 
+          Hue[0.6, 1, 1], 
+          Hue[0.41666666666666663`, 1, 1], 
+          Hue[0.6, 1, 1], 
+          Hue[{0.7333333333333334}], 
+          Hue[0.6166666666666667, 1, 1], 
+          Hue[0.6333333333333333, 1, 1]}, {
+          Hue[0.23333333333333334`, 1, 1], 
+          Hue[0.44999999999999996`, 1, 1], 
+          Hue[0.19999999999999996`, 1, 1], 
+          Hue[0.19999999999999998`, 1, 1], 
+          Hue[0.4666666666666667, 1, 1], 
+          Hue[0.5333333333333333, 1, 1], 
+          Hue[0.48333333333333334`, 1, 1], 
+          Hue[0.55, 1, 1], 
+          Hue[0.6666666666666667, 1, 1], 
+          Hue[0.55, 1, 1], 
+          Hue[0.5500000000000002, 1, 1], 
+          Hue[0.30000000000000004`, 1, 1], 
+          Hue[0.5833333333333333, 1, 1], 
+          Hue[0.6333333333333333, 1, 1], 
+          Hue[0.6166666666666667, 1, 1], 
+          Hue[0.3833333333333333, 1, 1]}, {
+          Hue[0.33333333333333326`, 1, 1], 
+          Hue[0.45, 1, 1], 
+          Hue[0.49999999999999994`, 1, 1], 
+          Hue[0.36666666666666664`, 1, 1], 
+          Hue[0.5166666666666667, 1, 1], 
+          Hue[0.4666666666666667, 1, 1], 
+          Hue[0.46666666666666673`, 1, 1], 
+          Hue[0.4166666666666667, 1, 1], 
+          Hue[0.3666666666666667, 1, 1], 
+          Hue[0.6166666666666666, 1, 1], 
+          Hue[0.4, 1, 1], 
+          Hue[0.44999999999999996`, 1, 1], 
+          Hue[0.6, 1, 1], 
+          Hue[0.36666666666666664`, 1, 1], 
+          Hue[{0.7333333333333334}], 
+          Hue[0.6, 1, 1]}, {
+          Hue[0.5833333333333334, 1, 1], 
+          Hue[0.30000000000000004`, 1, 1], 
+          Hue[0.6, 1, 1], 
+          Hue[{0.39999999999999997`}], 
+          Hue[0.6166666666666666, 1, 1], 
+          Hue[0.5666666666666667, 1, 1], 
+          Hue[0.5666666666666667, 1, 1], 
+          Hue[0.5833333333333333, 1, 1], 
+          Hue[0.5666666666666667, 1, 1], 
+          Hue[0.5166666666666666, 1, 1], 
+          Hue[0.23333333333333334`, 1, 1], 
+          Hue[0.5833333333333334, 1, 1], 
+          Hue[{0.7333333333333334}], 
+          Hue[0.45, 1, 1], 
+          Hue[0.5333333333333333, 1, 1], 
+          Hue[0.46666666666666673`, 1, 1]}, {
+          Hue[0.48333333333333334`, 1, 1], 
+          Hue[0.2333333333333333, 1, 1], 
+          Hue[0.45000000000000007`, 1, 1], 
+          Hue[0.26666666666666666`, 1, 1], 
+          Hue[0.5666666666666667, 1, 1], 
+          Hue[0.45, 1, 1], 
+          Hue[0.43333333333333335`, 1, 1], 
+          Hue[0.45, 1, 1], 
+          Hue[0.5666666666666667, 1, 1], 
+          Hue[{0.7333333333333334}], 
+          Hue[0.3333333333333333, 1, 1], 
+          Hue[0.5166666666666667, 1, 1], 
+          Hue[0.6, 1, 1], 
+          Hue[0.5333333333333333, 1, 1], 
+          Hue[0.5666666666666668, 1, 1], 
+          Hue[0.49999999999999994`, 1, 1]}, {
+          Hue[0.3833333333333333, 1, 1], 
+          Hue[0.2833333333333333, 1, 1], 
+          Hue[0.5166666666666666, 1, 1], 
+          Hue[0.28333333333333327`, 1, 1], 
+          Hue[0.45000000000000007`, 1, 1], 
+          Hue[0.4, 1, 1], 
+          Hue[0.5333333333333333, 1, 1], 
+          Hue[0.4666666666666667, 1, 1], 
+          Hue[0.2833333333333333, 1, 1], 
+          Hue[0.5499999999999999, 1, 1], 
+          Hue[0.5166666666666667, 1, 1], 
+          Hue[0.5666666666666668, 1, 1], 
+          Hue[0.3833333333333333, 1, 1], 
+          Hue[0.44999999999999996`, 1, 1], 
+          Hue[0.5166666666666666, 1, 1], 
+          Hue[0.5833333333333333, 1, 1]}, {
+          Hue[0.3833333333333333, 1, 1], 
+          Hue[0.5833333333333334, 1, 1], 
+          Hue[0.35, 1, 1], 
+          Hue[0.5, 1, 1], 
+          Hue[0.5, 1, 1], 
+          Hue[0.8166666666666668, 1, 1], 
+          Hue[0.4, 1, 1], 
+          Hue[0.5166666666666667, 1, 1], 
+          Hue[0.6333333333333334, 1, 1], 
+          Hue[0.5, 1, 1], 
+          Hue[0.2, 1, 1], 
+          Hue[0.21666666666666665`, 1, 1], 
+          Hue[0.5, 1, 1], 
+          Hue[0.4, 1, 1], 
+          Hue[0.5333333333333333, 1, 1], 
+          Hue[0.55, 1, 1]}, {
+          Hue[0.38333333333333336`, 1, 1], 
+          Hue[{0.9}], 
+          Hue[0.5666666666666667, 1, 1], 
+          Hue[0.5333333333333333, 1, 1], 
+          Hue[0.43333333333333335`, 1, 1], 
+          Hue[0.5166666666666667, 1, 1], 
+          Hue[0.2, 1, 1], 
+          Hue[0.5166666666666667, 1, 1], 
+          Hue[0.23333333333333334`, 1, 1], 
+          Hue[0.3333333333333333, 1, 1], 
+          Hue[0.5166666666666667, 1, 1], 
+          Hue[0.43333333333333335`, 1, 1], 
+          Hue[0.35000000000000003`, 1, 1], 
+          Hue[0.31666666666666665`, 1, 1], 
+          Hue[0.4, 1, 1], 
+          Hue[0.23333333333333334`, 1, 1]}, {
+          Hue[0.4166666666666666, 1, 1], 
+          Hue[0.6000000000000001, 1, 1], 
+          Hue[0.31666666666666665`, 1, 1], 
+          Hue[0.30000000000000004`, 1, 1], 
+          Hue[0.5666666666666668, 1, 1], 
+          Hue[0.48333333333333334`, 1, 1], 
+          Hue[0.18333333333333335`, 1, 1], 
+          Hue[0.3666666666666667, 1, 1], 
+          Hue[0.36666666666666675`, 1, 1], 
+          Hue[0.13333333333333333`, 1, 1], 
+          Hue[0.43333333333333335`, 1, 1], 
+          Hue[0.18333333333333332`, 1, 1], 
+          Hue[0.5166666666666666, 1, 1], 
+          Hue[0.6, 1, 1], 
+          Hue[0.4, 1, 1], 
+          Hue[0.7666666666666667, 1, 1]}, {
+          Hue[{1.0666666666666667`}], 
+          Hue[0.43333333333333335`, 1, 1], 
+          Hue[0.35, 1, 1], 
+          Hue[0.5499999999999999, 1, 1], 
+          Hue[0.5, 1, 1], 
+          Hue[0.4, 1, 1], 
+          Hue[0.5333333333333333, 1, 1], 
+          Hue[0.3999999999999999, 1, 1], 
+          Hue[0.3666666666666667, 1, 1], 
+          Hue[0.23333333333333334`, 1, 1], 
+          Hue[0.3333333333333333, 1, 1], 
+          Hue[0.1333333333333333, 1, 1], 
+          Hue[0.5333333333333334, 1, 1], 
+          Hue[0.5333333333333334, 1, 1], 
+          Hue[0.55, 1, 1], 
+          Hue[0.48333333333333334`, 1, 1]}, {
+          Hue[0.33333333333333337`, 1, 1], 
+          Hue[0.11666666666666667`, 1, 1], 
+          Hue[0.4166666666666667, 1, 1], 
+          Hue[0.2833333333333333, 1, 1], 
+          Hue[0.23333333333333328`, 1, 1], 
+          Hue[0.25, 1, 1], 
+          Hue[0.38333333333333336`, 1, 1], 
+          Hue[0.3333333333333333, 1, 1], 
+          Hue[0.35, 1, 1], 
+          Hue[0.41666666666666674`, 1, 1], 
+          Hue[0.38333333333333336`, 1, 1], 
+          Hue[0.55, 1, 1], 
+          Hue[0.6166666666666667, 1, 1], 
+          Hue[0.6333333333333333, 1, 1], 
+          Hue[0.5666666666666668, 1, 1], 
+          Hue[0.5166666666666666, 1, 1]}, {
+          Hue[0.5, 1, 1], 
+          Hue[{1.0666666666666667`}], 
+          Hue[{1.0666666666666667`}], 
+          Hue[{1.0666666666666667`}], 
+          Hue[0.21666666666666667`, 1, 1], 
+          Hue[0.35, 1, 1], 
+          Hue[0.3833333333333333, 1, 1], 
+          Hue[0.3499999999999999, 1, 1], 
+          Hue[0.31666666666666665`, 1, 1], 
+          Hue[0.55, 1, 1], 
+          Hue[0.2833333333333333, 1, 1], 
+          Hue[0.5833333333333334, 1, 1], 
+          Hue[0.5333333333333333, 1, 1], 
+          Hue[0.41666666666666674`, 1, 1], 
+          Hue[0.2833333333333334, 1, 1], 
+          Hue[0.5, 1, 1]}, {
+          Hue[0.08333333333333331, 1, 1], 
+          Hue[0.26666666666666666`, 1, 1], 
+          Hue[0.4, 1, 1], 
+          Hue[0.8166666666666668, 1, 1], 
+          Hue[0.23333333333333334`, 1, 1], 
+          Hue[0.18333333333333332`, 1, 1], 
+          Hue[0.13333333333333333`, 1, 1], 
+          Hue[0.3, 1, 1], 
+          Hue[0.5166666666666666, 1, 1], 
+          Hue[0.5666666666666667, 1, 1], 
+          Hue[0.2, 1, 1], 
+          Hue[0.26666666666666666`, 1, 1], 
+          Hue[0.6166666666666668, 1, 1], 
+          Hue[0.5166666666666666, 1, 1], 
+          Hue[0.6666666666666666, 1, 1], 
+          Hue[0.6500000000000001, 1, 1]}, {
+          Hue[{1.0666666666666667`}], 
+          Hue[0.3333333333333333, 1, 1], 
+          Hue[{1.0666666666666667`}], 
+          Hue[{1.0666666666666667`}], 
+          Hue[0.4, 1, 1], 
+          Hue[0.4833333333333334, 1, 1], 
+          Hue[0.41666666666666663`, 1, 1], 
+          Hue[0.30000000000000004`, 1, 1], 
+          Hue[0.16666666666666666`, 1, 1], 
+          Hue[0.26666666666666666`, 1, 1], 
+          Hue[0.5166666666666666, 1, 1], 
+          Hue[0.3833333333333333, 1, 1], 
+          Hue[0.3666666666666667, 1, 1], 
+          Hue[0.5166666666666667, 1, 1], 
+          Hue[0.46666666666666673`, 1, 1], 
+          Hue[0.4833333333333333, 1, 1]}}, $CellContext`setarr[
+         Pattern[$CellContext`col, 
+          Blank[]], {
+          Pattern[$CellContext`p1, 
+           Blank[]], 
+          Pattern[$CellContext`p2, 
+           Blank[]]}] := (
+        Part[$CellContext`arr, 1 + $CellContext`p1, 
+          1 + $CellContext`p2] = $CellContext`col)}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.55059227035122*^9, 3.550592307280076*^9, 3.55059243661088*^9, {
+   3.5505924902864857`*^9, 3.550592529286663*^9}, {3.5505925596504383`*^9, 
+   3.550592614478827*^9}, {3.550592656681017*^9, 3.5505926824571543`*^9}, {
+   3.5505928671991663`*^9, 3.550592883311776*^9}, 3.550592944448401*^9, 
+   3.550593009534202*^9, {3.550593042609597*^9, 3.550593069610519*^9}, {
+   3.5505931225307417`*^9, 3.550593177097513*^9}, 3.5505932198369703`*^9, 
+   3.550593338111514*^9, 3.550593377474242*^9, {3.55059352876691*^9, 
+   3.550593548014377*^9}, 3.550593624221952*^9, 3.550593708788735*^9, 
+   3.5505937881290083`*^9, 3.550594047271823*^9, 3.5505941282488317`*^9, {
+   3.550594212152842*^9, 3.5505942313593884`*^9}, 3.550594345457889*^9, 
+   3.55059441736008*^9, {3.550594558257547*^9, 3.550594598245818*^9}, 
+   3.550594668692441*^9, 3.5505948993292007`*^9, 3.5505953421086063`*^9, 
+   3.550595454887083*^9, 3.550595851841359*^9, 3.5505958960133753`*^9, {
+   3.5505959301559267`*^9, 3.55059595059697*^9}, 3.550596005728648*^9, 
+   3.550596048020417*^9, 3.550596085690117*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 752},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 18308, 459, 1063, "Input"],
+Cell[CellGroupData[{
+Cell[18890, 483, 990, 24, 58, "Input"],
+Cell[19883, 509, 99272, 1848, 489, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

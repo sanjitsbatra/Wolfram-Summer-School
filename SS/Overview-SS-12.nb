@@ -1,0 +1,797 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     25506,        788]
+NotebookOptionsPosition[     23073,        706]
+NotebookOutlinePosition[     23522,        725]
+CellTagsIndexPosition[     23479,        722]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["  "], "Input",
+ CellChangeTimes->{{3.35971769920313*^9, 3.35971769920313*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Wolfram Science Summer School
+Introduction and Overview\
+\>", "Title",
+ CellChangeTimes->{{3.35970209135938*^9, 3.35970210346875*^9}, {
+  3.5493275664776983`*^9, 3.549327571516507*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Introduction", "Section"],
+
+Cell["Projects", "Subsection",
+ CellChangeTimes->{{3.35970221685938*^9, 3.35970224507813*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Twiki page", "Subsection",
+ CellChangeTimes->{{3.3597021705*^9, 3.35970219357813*^9}}],
+
+Cell["\<\
+https://www.wolframscience.com/summerschool/private/twiki/bin/view/NKSSS2012/\
+WebHome\
+\>", "Text",
+ CellChangeTimes->{{3.4232228523426*^9, 3.423222856227*^9}, {
+  3.4546389000517664`*^9, 3.4546389219073663`*^9}, {3.486113181282151*^9, 
+  3.486113181999752*^9}, {3.518074113767251*^9, 3.5180741139388514`*^9}, {
+  3.549588012224211*^9, 3.549588012380212*^9}}]
+}, Open  ]],
+
+Cell["Today's schedule", "Subsection",
+ CellChangeTimes->{{3.35970218090625*^9, 3.3597021836875*^9}}],
+
+Cell["Summer school page", "Subsection",
+ CellChangeTimes->{{3.391754439609375*^9, 3.39175444334375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Other logistical details", "Subsection",
+ CellChangeTimes->{{3.35970230089063*^9, 3.35970230504688*^9}}],
+
+Cell["\<\
+NDA's  -- return form to instructor
+
+Get twiki login and password from instructor\
+\>", "Text",
+ CellChangeTimes->{{3.359702708625*^9, 3.35970276860938*^9}, {
+   3.39175404021875*^9, 3.391754041921875*^9}, {3.391754082421875*^9, 
+   3.391754125078125*^9}, {3.4232171836064*^9, 3.4232172022328*^9}, {
+   3.4546389383185663`*^9, 3.454638938630566*^9}, {3.486113193512573*^9, 
+   3.486113195821377*^9}, {3.5180740820367956`*^9, 3.5180740835967984`*^9}, 
+   3.549587470170059*^9},
+ FontSize->18]
+}, Open  ]],
+
+Cell["Groups", "Subsection",
+ CellChangeTimes->{{3.391754173796875*^9, 3.39175418903125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Wolfram Demonstrations", "Subsection",
+ CellChangeTimes->{{3.391755784796875*^9, 3.391755786734375*^9}, {
+  3.391755845828125*^9, 3.391755847015625*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"http", ":"}], "//", 
+  RowBox[{
+   RowBox[{"demonstrations", ".", "wolfram", ".", "com"}], "/"}]}]], "Input"]
+}, Open  ]],
+
+Cell["Wolfram Alpha", "Subsection",
+ CellChangeTimes->{{3.454638975836566*^9, 3.454638978816166*^9}}],
+
+Cell["\<\
+Lunch/Dinner/Snack meetings + Project meetings\
+\>", "Subsection",
+ CellChangeTimes->{{3.391756341859375*^9, 3.39175635178125*^9}, {
+  3.518074126278473*^9, 3.5180741276980753`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Homework Due -- Attach to your twiki page", "Section",
+ CellChangeTimes->{{3.359702880875*^9, 3.35970289734375*^9}, {
+  3.35970313703125*^9, 3.3597031516875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Friday evening  (June 29)  -- Project description\
+\>", "Subsection",
+ CellChangeTimes->{{3.3597030853125*^9, 3.35970313401563*^9}, {
+  3.391755646484375*^9, 3.3917556469375*^9}, {3.454639011903766*^9, 
+  3.4546390121845665`*^9}, {3.4861133120525827`*^9, 3.486113312426983*^9}, {
+  3.5180741420033007`*^9, 3.518074144530505*^9}, {3.5495879813673573`*^9, 
+  3.5495879840817623`*^9}}],
+
+Cell["A one page summary of your project.", "Text",
+ CellChangeTimes->{{3.35970318607813*^9, 3.35970322829688*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Monday morning (July 2) -- Your favorite Turing Machine, s=4, k=4\
+\>", "Subsection",
+ CellChangeTimes->{{3.3597031186875*^9, 3.35970312532813*^9}, {
+  3.35970315620313*^9, 3.35970315873438*^9}, {3.3597032484375*^9, 
+  3.35970325573438*^9}, {3.391755652625*^9, 3.3917556670625*^9}, {
+  3.4232184277688*^9, 3.4232184309356003`*^9}, {3.454639023416566*^9, 
+  3.454639042651366*^9}, {3.4861133258742065`*^9, 3.4861133362014246`*^9}, {
+  3.518074147619311*^9, 3.5180741561213255`*^9}, {3.5495879934573784`*^9, 
+  3.549587997092185*^9}, {3.549591780830431*^9, 3.549591793825254*^9}}],
+
+Cell["\<\
+For every pair of states and colors, the Turing machine rule picks a new \
+state of the Turing machine, and a new color for the active cell, and a \
+direction either left and right for the active cell to move.  The active cell \
+is usually called the head of the Turing machine.\
+\>", "Text",
+ CellChangeTimes->{{3.5495918020308685`*^9, 3.5495918576137657`*^9}, {
+  3.5495919723051677`*^9, 3.5495919839115877`*^9}}],
+
+Cell["\<\
+For 4 states and 4 colors there are 16 pairs, and for each of those pairs \
+there are 32 possible choices.
+So there are 32^16 = 1208925819614629174706176 possible Turing machines.\
+\>", "Text",
+ CellChangeTimes->{{3.549591866552582*^9, 3.549591918048272*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"2", " ", "s", " ", "k"}], ")"}], "^", 
+      RowBox[{"(", 
+       RowBox[{"s", " ", "k"}], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"s", ",", "1", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "1", ",", "4"}], "}"}]}], "]"}], ",", 
+   RowBox[{"Dividers", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5495876343915477`*^9, 3.5495876825800323`*^9}, {
+  3.5495917205363255`*^9, 3.549591756244788*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"2", "16", "216", "4096"},
+    {"16", "4096", "2985984", "4294967296"},
+    {"216", "2985984", "198359290368", "36520347436056576"},
+    {"4096", "4294967296", "36520347436056576", "1208925819614629174706176"}
+   },
+   AutoDelete->False,
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{
+  3.5495877001612635`*^9, {3.5495917252163334`*^9, 3.5495917565411882`*^9}}]
+}, Open  ]],
+
+Cell["\<\
+We start with the infinte blank tape and state 1, specified by {1, {{},0}}.\
+\>", "Text",
+ CellChangeTimes->{{3.5495921631247025`*^9, 3.5495921897071495`*^9}}],
+
+Cell["\<\
+The output of TuringMachine is the evolution where the first sublist gives \
+the current state of the Turing machine and the position of its active cell, \
+and the second sublist gives the colors on its tape.  It only shows the cells \
+where the active cell has been.\
+\>", "Text",
+ CellChangeTimes->{{3.5495922000655675`*^9, 3.5495922979557395`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Column", "[", 
+  RowBox[{"TuringMachine", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"668568713360944227707944", ",", "4", ",", "4"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", "}"}], ",", "0"}], "}"}]}], "}"}], ",", "10"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.5495921334066505`*^9, 3.5495921443734694`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "2", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"3", ",", "1", ",", 
+         RowBox[{"-", "1"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1", ",", "0", ",", "0"}], "}"}]}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", "2", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "1", ",", "0", ",", "0"}], "}"}]}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", "3", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", "2", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0", ",", "2", ",", "0"}], "}"}]}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", "1", ",", 
+         RowBox[{"-", "1"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "2", ",", "2", ",", "0"}], "}"}]}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", "2", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "2", ",", "2", ",", "0"}], "}"}]}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", "3", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "3", ",", "2", ",", "0"}], "}"}]}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", "4", ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "3", ",", "3", ",", "0"}], "}"}]}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"2", ",", "3", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "3", ",", "3", ",", "2"}], "}"}]}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"4", ",", "4", ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "3", ",", "2", ",", "2"}], "}"}]}], "}"}]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{3.549592145091071*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"samples", "=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"s", "=", "4"}], ",", 
+      RowBox[{"k", "=", "4"}]}], "}"}], ",", 
+    RowBox[{"RandomInteger", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"2", " ", "s", " ", "k"}], ")"}], "^", 
+       RowBox[{"(", 
+        RowBox[{"s", " ", "k"}], ")"}]}], ",", "10"}], "]"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.549587810656257*^9, 3.5495878384555063`*^9}, {
+  3.549591295513579*^9, 3.549591295669579*^9}, {3.549591346884469*^9, 
+  3.549591350269675*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ArrayPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"TuringMachine", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"#", ",", "4", ",", "4"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", "}"}], ",", "0"}], "}"}]}], "}"}], ",", "100"}], 
+       "]"}], "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", "2"}], "]"}], "]"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "50"}]}], "]"}], "&"}], "/@", 
+  "samples"}]], "Input",
+ CellChangeTimes->{
+  3.549591307666*^9, {3.5495913557140846`*^9, 3.549591394136952*^9}}],
+
+Cell["Nothing interesting?", "Text",
+ CellChangeTimes->{{3.549591935161502*^9, 3.5495919381723075`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ListLinePlot", "[", 
+    RowBox[{
+     RowBox[{"TuringMachine", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"#", ",", "4", ",", "4"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", "}"}], ",", "0"}], "}"}]}], "}"}], ",", "100"}], 
+      "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "1", ",", "3"}], "]"}], "]"}], "]"}], "&"}], "/@", 
+  "samples"}]], "Input",
+ CellChangeTimes->{{3.549591307666*^9, 3.549591374699318*^9}}],
+
+Cell["\<\
+We can speed up the search by eliminating those whose head position moves to \
+quickly.
+
+For example, here we restrict our attention to those whose heads don\
+\[CloseCurlyQuote]t go further than 50 cells from the initial position.\
+\>", "Text",
+ CellChangeTimes->{{3.5495919481563253`*^9, 3.5495920402744865`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"samples2", "=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"s", "=", "4"}], ",", 
+      RowBox[{"k", "=", "4"}]}], "}"}], ",", 
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{"RandomInteger", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"2", " ", "s", " ", "k"}], ")"}], "^", 
+         RowBox[{"(", 
+          RowBox[{"s", " ", "k"}], ")"}]}], ",", "100"}], "]"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Max", "[", 
+         RowBox[{"Abs", "[", 
+          RowBox[{
+           RowBox[{"TuringMachine", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"#", ",", "4", ",", "4"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"1", ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", "}"}], ",", "0"}], "}"}]}], "}"}], ",", "100"}],
+             "]"}], "[", 
+           RowBox[{"[", 
+            RowBox[{"All", ",", "1", ",", "3"}], "]"}], "]"}], "]"}], "]"}], 
+        "<", "50"}], "&"}]}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.549587810656257*^9, 3.5495878384555063`*^9}, {
+  3.549591295513579*^9, 3.549591295669579*^9}, {3.549591346884469*^9, 
+  3.549591350269675*^9}, {3.5495914197521973`*^9, 3.549591479484702*^9}, {
+  3.5495915263939843`*^9, 3.549591543242014*^9}, {3.549591668822234*^9, 
+  3.549591694343879*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ListLinePlot", "[", 
+    RowBox[{
+     RowBox[{"TuringMachine", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"#", ",", "4", ",", "4"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", "}"}], ",", "0"}], "}"}]}], "}"}], ",", "100"}], 
+      "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "1", ",", "3"}], "]"}], "]"}], "]"}], "&"}], "/@", 
+  "samples2"}]], "Input",
+ CellChangeTimes->{{3.549591307666*^9, 3.549591374699318*^9}, 
+   3.549591508188752*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ArrayPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"TuringMachine", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"#", ",", "4", ",", "4"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", "}"}], ",", "0"}], "}"}]}], "}"}], ",", "100"}], 
+       "]"}], "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", "2"}], "]"}], "]"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Automatic", ",", "100"}], "}"}]}]}], "]"}], "&"}], "/@", 
+  "samples2"}]], "Input",
+ CellChangeTimes->{
+  3.549591307666*^9, {3.5495913557140846`*^9, 3.549591394136952*^9}, 
+   3.5495915150371647`*^9, {3.5495916129741364`*^9, 3.5495916228333535`*^9}}],
+
+Cell["\<\
+Pick your favorite TM in the space of all 10^24  possible cases, and explain \
+why.\
+\>", "Text",
+ CellChangeTimes->{{3.35970326457813*^9, 3.35970331285938*^9}, {
+  3.391764822859375*^9, 3.391764843203125*^9}, {3.391765016734375*^9, 
+  3.39176501715625*^9}, {3.4232184458803997`*^9, 3.4232184482672*^9}, {
+  3.4546390779073663`*^9, 3.4546390815889664`*^9}, {3.486113371519887*^9, 
+  3.486113374515092*^9}, {3.5495923132437663`*^9, 3.5495923481254272`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Some TM tools", "Subsection",
+ CellChangeTimes->{{3.54959258811745*^9, 3.549592590301454*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TuringClipHistory", "[", "history_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"min", ",", "max"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"min", ",", "max"}], "}"}], "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Min", "[", "#", "]"}], ",", 
+          RowBox[{"Max", "[", "#", "]"}]}], "}"}], "&"}], "[", 
+       RowBox[{"history", "[", 
+        RowBox[{"[", 
+         RowBox[{"All", ",", "1", ",", "2"}], "]"}], "]"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"MapIndexed", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"MapAt", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "-", "min", "+", "1"}], "&"}], ",", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], ",", "2"}], "]"}], ",", 
+          RowBox[{"Take", "[", 
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"min", ",", "max"}], "}"}]}], "]"}]}], "}"}], "&"}], ",",
+        "history"}], "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.386677692125*^9, 3.386677883875*^9}, {
+  3.386677937515625*^9, 3.386677941109375*^9}, {3.386677988046875*^9, 
+  3.3866780316875*^9}, {3.38667811325*^9, 3.3866781176875*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TuringPadRightHistory", "[", 
+   RowBox[{"history_", ",", "n_", ",", 
+    RowBox[{"m_:", "0"}], ",", 
+    RowBox[{"offset_:", "0"}]}], "]"}], ":=", 
+  RowBox[{"MapIndexed", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"MapAt", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "+", "offset"}], "&"}], ",", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], ",", "2"}], "]"}], ",", 
+       RowBox[{"PadRight", "[", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], ",", "n", ",", "m", ",", "offset"}],
+         "]"}]}], "}"}], "&"}], ",", "history"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.386677692125*^9, 3.386677883875*^9}, {
+  3.386677937515625*^9, 3.386677941109375*^9}, {3.386677988046875*^9, 
+  3.3866780316875*^9}, {3.38667811325*^9, 3.3866781176875*^9}, {
+  3.38719346509375*^9, 3.38719352153125*^9}, {3.387193559640625*^9, 
+  3.387193612296875*^9}, {3.387193645328125*^9, 3.387193651703125*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TuringPadHistory", "[", 
+   RowBox[{"history_", ",", "left_", ",", "right_"}], "]"}], ":=", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"MapAt", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "+", "left"}], "&"}], ",", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], ",", "2"}], "]"}], ",", 
+       RowBox[{"Join", "[", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{"0", ",", 
+           RowBox[{"{", "left", "}"}]}], "]"}], ",", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], ",", 
+         RowBox[{"Table", "[", 
+          RowBox[{"0", ",", 
+           RowBox[{"{", "right", "}"}]}], "]"}]}], "]"}]}], "}"}], "&"}], ",",
+     "history"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.386677692125*^9, 3.386677883875*^9}, {
+   3.386677937515625*^9, 3.386677941109375*^9}, {3.386677988046875*^9, 
+   3.3866780316875*^9}, {3.38667811325*^9, 3.3866781176875*^9}, {
+   3.38719346509375*^9, 3.38719352153125*^9}, {3.387193559640625*^9, 
+   3.387193612296875*^9}, {3.387193645328125*^9, 3.387193651703125*^9}, 
+   3.387753993703125*^9, {3.387754061734375*^9, 3.3877541486875*^9}, {
+   3.387754376421875*^9, 3.38775438309375*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LeftTuringCompress", "[", "history_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"min", "=", 
+      RowBox[{
+       RowBox[{"history", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], "+", "1"}]}], "}"}],
+     ",", 
+    RowBox[{"Pick", "[", 
+     RowBox[{"history", ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"min", ">", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", 
+             RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"min", "=", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ";", "True"}], ",", 
+          "False"}], "]"}], "&"}], "/@", "history"}]}], "]"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.38601268728125*^9, 3.386012827984375*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RightTuringCompress", "[", "history_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"max", "=", 
+      RowBox[{
+       RowBox[{"history", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], "-", "1"}]}], "}"}],
+     ",", 
+    RowBox[{"Pick", "[", 
+     RowBox[{"history", ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"max", "<", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", 
+             RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ",", 
+          RowBox[{
+           RowBox[{"max", "=", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", 
+              RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ";", "True"}], ",", 
+          "False"}], "]"}], "&"}], "/@", "history"}]}], "]"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.38601268728125*^9, 3.386012827984375*^9}, {
+  3.386012965359375*^9, 3.386012987953125*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LeftRightTuringCompress", "[", "history_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"min", "=", 
+       RowBox[{
+        RowBox[{"history", "[", 
+         RowBox[{"[", 
+          RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], "+", "1"}]}], ",", 
+      RowBox[{"max", "=", 
+       RowBox[{
+        RowBox[{"history", "[", 
+         RowBox[{"[", 
+          RowBox[{"1", ",", "1", ",", "2"}], "]"}], "]"}], "-", "1"}]}]}], 
+     "}"}], ",", 
+    RowBox[{"Pick", "[", 
+     RowBox[{"history", ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"max", "\[GreaterEqual]", " ", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", 
+             RowBox[{"1", ",", "2"}], "]"}], "]"}], "\[GreaterEqual]", " ", 
+           "min"}], ",", "False", ",", 
+          RowBox[{
+           RowBox[{"min", "=", 
+            RowBox[{"Min", "[", 
+             RowBox[{"min", ",", 
+              RowBox[{"#", "[", 
+               RowBox[{"[", 
+                RowBox[{"1", ",", "2"}], "]"}], "]"}]}], "]"}]}], ";", 
+           RowBox[{"max", "=", 
+            RowBox[{"Max", "[", 
+             RowBox[{"max", ",", 
+              RowBox[{"#", "[", 
+               RowBox[{"[", 
+                RowBox[{"1", ",", "2"}], "]"}], "]"}]}], "]"}]}], ";", 
+           "True"}]}], "]"}], "&"}], "/@", "history"}]}], "]"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.38601268728125*^9, 3.3860129520625*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Schedule Overview", "Section",
+ CellChangeTimes->{{3.391756367515625*^9, 3.391756373859375*^9}}]
+}, Open  ]]
+},
+WindowSize->{965, 656},
+WindowMargins->{{27, Automatic}, {-52, Automatic}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+ShowSelection->True,
+Magnification->1.25,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 92, 1, 35, "Input"],
+Cell[CellGroupData[{
+Cell[662, 25, 195, 5, 170, "Title"],
+Cell[CellGroupData[{
+Cell[882, 34, 31, 0, 88, "Section"],
+Cell[916, 36, 94, 1, 46, "Subsection"],
+Cell[CellGroupData[{
+Cell[1035, 41, 92, 1, 35, "Subsection"],
+Cell[1130, 44, 370, 7, 34, "Text"]
+}, Open  ]],
+Cell[1515, 54, 101, 1, 46, "Subsection"],
+Cell[1619, 57, 105, 1, 35, "Subsection"],
+Cell[CellGroupData[{
+Cell[1749, 62, 110, 1, 35, "Subsection"],
+Cell[1862, 65, 501, 11, 103, "Text"]
+}, Open  ]],
+Cell[2378, 79, 93, 1, 46, "Subsection"],
+Cell[CellGroupData[{
+Cell[2496, 84, 159, 2, 35, "Subsection"],
+Cell[2658, 88, 144, 4, 35, "Input"]
+}, Open  ]],
+Cell[2817, 95, 101, 1, 46, "Subsection"],
+Cell[2921, 98, 192, 4, 35, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3150, 107, 168, 2, 88, "Section"],
+Cell[CellGroupData[{
+Cell[3343, 113, 392, 7, 46, "Subsection"],
+Cell[3738, 122, 115, 1, 34, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3890, 128, 588, 9, 46, "Subsection"],
+Cell[4481, 139, 425, 7, 55, "Text"],
+Cell[4909, 148, 269, 5, 55, "Text"],
+Cell[CellGroupData[{
+Cell[5203, 157, 580, 16, 35, "Input"],
+Cell[5786, 175, 534, 12, 98, "Output"]
+}, Open  ]],
+Cell[6335, 190, 169, 3, 34, "Text"],
+Cell[6507, 195, 361, 6, 55, "Text"],
+Cell[CellGroupData[{
+Cell[6893, 205, 421, 12, 35, "Input"],
+Cell[7317, 219, 2562, 85, 212, "Output"]
+}, Open  ]],
+Cell[9894, 307, 605, 18, 35, "Input"],
+Cell[10502, 327, 669, 21, 58, "Input"],
+Cell[11174, 350, 104, 1, 34, "Text"],
+Cell[11281, 353, 576, 18, 35, "Input"],
+Cell[11860, 373, 324, 7, 76, "Text"],
+Cell[12187, 382, 1433, 39, 80, "Input"],
+Cell[13623, 423, 603, 19, 35, "Input"],
+Cell[14229, 444, 812, 24, 58, "Input"],
+Cell[15044, 470, 466, 8, 34, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15547, 483, 100, 1, 46, "Subsection"],
+Cell[15650, 486, 1453, 41, 80, "Input"],
+Cell[17106, 529, 1049, 26, 58, "Input"],
+Cell[18158, 557, 1295, 32, 80, "Input"],
+Cell[19456, 591, 945, 29, 80, "Input"],
+Cell[20404, 622, 995, 30, 80, "Input"],
+Cell[21402, 654, 1526, 44, 124, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[22955, 702, 102, 1, 88, "Section"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

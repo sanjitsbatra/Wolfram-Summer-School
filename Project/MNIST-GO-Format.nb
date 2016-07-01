@@ -1,0 +1,62 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1477,         52]
+NotebookOptionsPosition[      1227,         38]
+NotebookOutlinePosition[      1580,         54]
+CellTagsIndexPosition[      1537,         51]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{"int32", " ", "-", "HN"}], "\[IndentingNewLine]", 
+ RowBox[{"int32", "-", "VN"}], "\[IndentingNewLine]", 
+ RowBox[{"float64", "-", 
+  RowBox[{
+  "NH", "*", "NV", " ", "Matrix", " ", "Initial"}]}], "\[IndentingNewLine]", 
+ RowBox[{"int32", "-", 
+  RowBox[{
+  "number", " ", "of", " ", "training", " ", 
+   "vectors"}]}], "\[IndentingNewLine]", 
+ RowBox[{"data", "-", 
+  RowBox[{"64", " ", "*", " ", 
+   RowBox[{"Ceiling", "[", 
+    RowBox[{"nv", "/", "64"}], "]"}], "*", "number", " ", "of", " ", 
+   "vectors"}]}]}], "Input",
+ CellChangeTimes->{{3.550264076963767*^9, 3.5502641259933243`*^9}, {
+  3.550264346444662*^9, 3.550264362177278*^9}}]
+},
+WindowSize->{740, 752},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 666, 16, 88, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,175 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5474,        166]
+NotebookOptionsPosition[      5180,        151]
+NotebookOutlinePosition[      5535,        167]
+CellTagsIndexPosition[      5492,        164]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"DiscreteHilbert", "[", 
+    RowBox[{"n_", ",", "m_"}], "]"}], ":=", 
+   RowBox[{"Plus", "@@", 
+    RowBox[{"First", "/@", 
+     RowBox[{"FoldList", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"#1", "[", 
+           RowBox[{"[", 
+            RowBox[{"2", ",", 
+             RowBox[{"#2", "+", "1"}]}], "]"}], "]"}], ",", 
+          RowBox[{
+           RowBox[{"#1", "[", 
+            RowBox[{"[", 
+             RowBox[{"2", ",", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"1", ",", "4", ",", "3", ",", "2"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"3", ",", "2", ",", "1", ",", "4"}], "}"}]}], "}"}],
+                "[", 
+               RowBox[{"[", 
+                RowBox[{"#2", "+", "1"}], "]"}], "]"}]}], "]"}], "]"}], "/", 
+           "2"}]}], "}"}], "&"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], ",", 
+         RowBox[{
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"m", "+", "1"}], ",", "m"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"1", ",", "1"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"m", ",", 
+                RowBox[{"m", "+", "1"}]}], "}"}]}], "}"}], ",", "2"}], "]"}], 
+          "*", 
+          RowBox[{"2", "^", 
+           RowBox[{"(", 
+            RowBox[{"m", "-", "1"}], ")"}]}]}]}], "}"}], ",", 
+       RowBox[{"IntegerDigits", "[", 
+        RowBox[{"n", ",", "4", ",", "m"}], "]"}]}], "]"}]}]}]}], 
+  "\n"}]], "Input",
+ CellChangeTimes->{{3.550005956046442*^9, 3.550005956047975*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"DiscreteHilbertImproved", "[", "n_", "]"}], ":=", 
+   RowBox[{"With", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m", "=", 
+       RowBox[{"IntegerLength", "[", 
+        RowBox[{"n", ",", "4"}], "]"}]}], "}"}], ",", 
+     RowBox[{"Plus", "@@", 
+      RowBox[{"First", "/@", 
+       RowBox[{"FoldList", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"#1", "[", 
+             RowBox[{"[", 
+              RowBox[{"2", ",", 
+               RowBox[{"#2", "+", "1"}]}], "]"}], "]"}], ",", 
+            RowBox[{
+             RowBox[{"#1", "[", 
+              RowBox[{"[", 
+               RowBox[{"2", ",", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"{", 
+                    RowBox[{"1", ",", "4", ",", "3", ",", "2"}], "}"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{"3", ",", "2", ",", "1", ",", "4"}], "}"}]}], 
+                  "}"}], "[", 
+                 RowBox[{"[", 
+                  RowBox[{"#2", "+", "1"}], "]"}], "]"}]}], "]"}], "]"}], "/",
+              "2"}]}], "}"}], "&"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0"}], "}"}], ",", 
+           RowBox[{
+            RowBox[{"Mod", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"0", ",", "0"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"m", "+", "1"}], ",", "m"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "1"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"m", ",", 
+                  RowBox[{"m", "+", "1"}]}], "}"}]}], "}"}], ",", "2"}], 
+             "]"}], "*", 
+            RowBox[{"2", "^", 
+             RowBox[{"(", 
+              RowBox[{"m", "-", "1"}], ")"}]}]}]}], "}"}], ",", 
+         RowBox[{"IntegerDigits", "[", 
+          RowBox[{"n", ",", "4"}], "]"}]}], "]"}]}]}]}], "]"}]}], 
+  "\n"}]], "Input",
+ CellChangeTimes->{{3.550008557921647*^9, 3.5500085666387444`*^9}}]
+},
+WindowSize->{740, 752},
+WindowMargins->{{12, Automatic}, {Automatic, 24}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 2173, 61, 133, "Input"],
+Cell[2733, 83, 2443, 66, 148, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,1421 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     71115,       1412]
+NotebookOptionsPosition[     35236,        620]
+NotebookOutlinePosition[     70892,       1405]
+CellTagsIndexPosition[     70849,       1402]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1: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
+PfPy7bgz4tPZt+Hze9t+uK6rtnTlct9fvjSwjiDyZ3u5eWB9QDv/g/cxY1x8
+Y/iYE+Cua8HvMI5BWyzsmxI8dWt7OIcgqXx/+k5f8J3HuqL1/6vxe6z9x3iK
+evp90c+3QggxXCn6uVQIIUTtWN/Gczr3Iud8b7iTnSNu+wTwPt0K/sX9wrim
+vc/3bJw+zkk/43xyzN0HGF+G33J/Oe49z3Xe6E3uOne2TLwOu6cX569z3BF/
+z+j3KDPew3noPe61V6o/zo23MQ+c489xVpsO5bB7mdn64B7mti7dNQDYFsgX
+5WW+tg+E/s7xbsb62/FptgfvAdYZ11GwczOYDvmwHpP2P3Dx9fF0dbSE3orY
+c4xPL+idEmt3uwed65GMX+C6+2hvzNNHn0Dr5HPDuH7MIUfe8F7WOfdEYNun
+tR+vO8u9lXSf2jxsG/j2ULAxLkiHc6R9H9nnxvuA9zDKgmNWXjgl3G9wgMnR
+PvZ2D3vuSYB/o58E9Ye98cDo0aPDfwMc6zueeyvU8lwptxdCiGIp+plUCCFE
+7bi+zjnd1j8YZ2zXHOe8X+uMrjP7nNh6KfOgoyEfntti9zujk1m3d8vENdjd
+fHz5cVycY+EoO+cj83N77b76o48hPefGs95sOe38as6fd+PuOSbNedG43kr9
+Czy/my+Ptf7ONerttdl9/mxbsI5sLLg9F9esS2tvH26Z7T3Hfg17P7n7ybMc
+vCaWhW3O/iauS5jU9oxJsP0fvvaz92qWe4u+a9vO5mHbwG1ft/+D57P5+vp7
+WKdco8+2I+oUPm7hug7sy7DrObD+3GNQn8Q9vh7j9/J7IYQolqKfSYUQQtSO
+O/4HN+DveTxv2znEdDfr51wbnscw5tl6re+crpMwH7tPGudY23zdfcVtnm6Z
+kvY+p4fYmHfruHRt37Un1R/P6x7rczCeA2XkdVnPtHnQ/ZLi3tPyda/N5m+v
+jfEFSWWzMQi8VltPldrbV2ZfW6W1e1r+Sf1N3L/O5su2d/e0S2o/GwOf996y
+5Xbz8LVvpe9X0vfR3gc8zn6Xce2Mh3DjYdhnwDpiLATjaZJgP4w9vujnUiGE
+ELVR9DOpEEKI+uC6Acd76T/WUZmeDkI3Yvok/650XpsPY6aJ9VS3LJXySoLX
+Zv2Wjsvj3XMmXYN1bNZBUr259WzPY8ue9fyV8rXXxvztPu1u/4OvDO68AFtP
+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
+6Ncct37qqafC53/rO9ZnXC9H7LYdA7Vum/a56+H0e3yOcVWM4+PZ3uaHedT0
+6ttuuy38GfPv6SVpfk+Hf+CBB2LOBDCvnH0Fb7zxRvgz/A9/37L6vevk1m3p
+3siP5YEf0e3x+Ycffhh+tnDhwjA/W/dZx+6R/uGHH47iIBCfTtfCufEzyuv6
+va1b9HHQo12vt9dm/d6289atW8NjbD8AjrGf++4DvKItGUNh3Z7l4DjyjTfe
+GKY7ceJE2blY35iTgDRXXHFFWMd0e14b8sZ7rPfVq1eH+dv+Lbzi2ivdw9V+
+7+z9wfbD9dxZcnb48msPzgnLZO9tHoOYfKTZuKIt1veBufB4H/PkfX0Dtl8B
+13Yy5r4nuu/sPQ9wPjuGz/4ROv4r9w2c88jemcHkyZPDz9hu1Xq6/F4IIYql
+6OdTIYQQ1dHz2bzwffv2RWP4GM/E+DldJmkeepLX+fze/TzJ7+EHTzzxRPjz
+mjVrIncDdDZ466233lrR71F2+jTyhcuh74D9BsyXMQHwQNfvkc71e8RpM1/E
+EcDz77zzzvBaly9fHs2/x6sdW0d+OO4HP/hB2N+Asl9//fXhv/E+rgllgHuy
+rrKuo09PXLp0aRR3jleUD+XmuKrr9/Q99nFceeWV0Rxs28fAuvLNrbftjP4h
+1AXXDcTYN14ZV8D4BF97cZz8wQcfjMrKuAOk5xg3juH1wSPxHvtWOBbOWASU
+3Y4p87kF+SL/+++/P0yHemK8g/V7nLvSPVzLd49tx3sFZec8+l0bBsbzGcdi
+65vz5m0fCLji0o5o7N9Xz9bv8Zn1e1/MCnD93vaPLJ43LTz+b+/PDdpnTgp9
+v55+X/TzrRBCDFeKfj4VQghRHfQFOAR8mrHPHEfFem1Z/B7ehr8HSX7vfp7k
+9xgTXLFiRWysHc4Gb+aYLfzBjt8n+aLr9+wTgMPSBxnHDUfP6/c+MLZPV7Px
+9dbvXdDvgOtAGVEGOqv1+6R13t313lFfKCfnI9CDkT9j9W38Na+J9Y92sudn
+27tOnxTHUQnESCSNSdPv4dp2zQD2xdDd8T7zo0vaueOcB8H7iWlwTYxFYD6c
+54E18uGm7F+hy+KYSvdwLd89wjb8ypGBefVYz57lsDHz/L5Yv2c94Zr2bu6M
+xdvbvgF7Xn4/cD1MX2n8no7P2HukR78Ajt+/ZXowYcKE8B729aXkfa6U3wsh
+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
+hBBCCCGEEOLU5v8D7HJkPg==
+    "], {{0, 102}, {1016, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->{777., Automatic},
+  ImageSizeRaw->{1016, 102},
+  PlotRange->{{0, 1016}, {0, 102}}]], "Output",
+ CellMargins->{{0, 0}, {0, 0}},
+ CellChangeTimes->{{3.5509235753768806`*^9, 3.550923592171934*^9}, 
+   3.55092362676223*^9, 3.550923960291442*^9}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+To learn, perchance to dream...\
+\>", "Title",
+ CellChangeTimes->{{3.550924112263969*^9, 3.550924125692358*^9}, {
+  3.550936163385107*^9, 3.550936168978125*^9}, {3.55103785348011*^9, 
+  3.5510378634027033`*^9}}],
+
+Cell["\<\
+Sanjit Singh Batra\tMentor : Taliesin Beynon\
+\>", "Subtitle",
+ CellChangeTimes->{{3.550924180905904*^9, 3.550924230280465*^9}, {
+  3.551037866531107*^9, 3.551037903137238*^9}}],
+
+Cell["\<\
+Indian Institute of Technology, Delhi\
+\>", "Subsubtitle",
+ CellMargins->{{27, Inherited}, {8, 0}},
+ CellChangeTimes->{{3.5509242338159513`*^9, 3.550924235927483*^9}, {
+  3.551037878867319*^9, 3.551037893921739*^9}}],
+
+Cell["\<\
+
+How the human mind perceives, is a concept that has eluded humans for \
+hundreds of years since sciences have developed. Attempts have been made, but \
+the difficulty in being able to confirm whether the predicted model is \
+correct makes the problem seem intractable.In the last few weeks, I along \
+with my mentor, Taliesin Beynon, have modeled and investigated a new model of \
+machine learning due to Geoffrey Hinton. It involves a network of binary \
+units, which are arranged in the form of layers. The layers form a bipartite \
+graph and these connections modeled in the form of a weight matrix are used \
+to learn structure in unlabeled data. The nature of the learning that is \
+performed in this model is more biologically plausible than previous methods, \
+such as back - propagation, due to the local nature of its learning rule, \
+which requires neurons to interact only with their neighbors. When many such \
+layers of these' Boltzmann machines' are stacked on top of one another, we \
+end up with something called' Deep Learning'. The project investigated \
+implementing Deep Learning using a combination of Mathematica for prototyping \
+and Go for performance. Initially we started out with just two layers of \
+neurons, one called the' visible' layer, which is clamped to the the input \
+data and the other, called the' hidden' layer, which models learned features \
+in the input data. The learning mechanism is surprisingly simple, wherein the \
+objective is to start out from a random initial state and somehow reach the \
+state that seems closest to' reality', which is the input data.In order to do \
+this, at each step, the data corresponding to reality is \"promoted\" and \
+weights corresponding to its connections are increased, and weights of data \
+corresponding to what the system \"thinks\" reality should look like, are \
+reduced.In this way, gradually the' belief' of the system becomes close to \
+reality.
+\
+\>", "Text",
+ CellChangeTimes->{{3.551037990891842*^9, 3.551038000797402*^9}, {
+  3.55103804680075*^9, 3.5510380706140547`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJztna+Ss0wWxlO7F7DXsDfAPXAFVK1YhfoEdrFYHBKHWhQKhUJhUDEYTAwC
+g0EgMAhEFvoPgUAm6RnYvJ15flVf1TsDeaBPnz6n+3Rnvn/+9Z9//fX30+n0
+7+G/f/ztdBr/fQUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAPwx/BfIBvzk80Cfghd5i6vAYSQFfvJ5oE/Bi7zFVeYOc4TmQbL7
+ak6yp12ZLHCE7O4WeN1K4CDe26dHyB6hKZfsEZrvcpX5OxyhKUUXXJEsRKwk
+RYskcj8kCyFNuWSP0ESyEJLdV/OKZCFiJSlaJJH7IVkIacole4QmkoWQ7L6a
+VyQLEStJ0SKJ3A/JQkhTLtkjNJEshGT31bwiWYhYSYoWSeR+SBZCmnLJHqGJ
+ZCEku6/mFclCxEpStEgi90OyENKUS/YITSQLIdl9Na9IFiJWkqJFErkfkoWQ
+plyyR2giWQjJ7qt5RbIQsZIULZLI/ZAshDTlkj1CE8lCSHZfzSuShYiVpGiR
+RO6HZCGkKZfsEZpIFkKy+2pekSxErCRFiyRyPyQLIU25ZI/QRLIQkt1X84pk
+IWIlKVokkfshWQhpyiV7hCaShZDsvprXX5gs+ir04+ZbVvpDW/TgVY+QPULz
+p7Lf6tDdnv5A9ghNuWSP0ESyEJLdV/P6C5PFtbQHLc2rxK30p7Zo+1WPkD1C
+88ey3+nQ/Z6+LXuEplyyR2giWQjJ7qt5/Y3JYqDxjdNJtYtOzEp/cIs2XvUI
+2SM095AV7tBdn74he4SmXLJHaCJZCMnuq3n96GTRFucwjDaI4yT2iKSZNf3r
+Vnp7i4Re9QjZIzRfl92xQ7/xdCHZIzTlkj1CE8lCSHZfzetHJ4s6ixzHcbfw
+fZtIqnGFZCEge4Tm67I7dug3ni4ke4SmXLJHaCJZCMnuq3n96GTxBamrnU56
+Kh5Y/tgWrV/1CNkjNHeRFe3QfZ++lj1CUy7ZIzSRLIRk99W8/sZk0QT6IKZn
+Igdo/uwWbb/qEbJHaP5Y9jsdut/Tt2WP0JRL9ghNJAsh2X01r78wWXQXS7Py
+9jtW+kNb9OBVj5A9QvOnst/q0N2e/kD2CE25ZI/QRLIQkt1X8/oLk8UPrCRF
+iyRyv/dGABgKFvjGOxyhKUUXXJEsRKwkRYskcj8kCyFNuWSP0ESyEJLdV/OK
+ZCFiJSlaJJH7IVkIacole4QmkoWQ7L6aVyQLEStJ0SKJ3A/JQkhTLtkjNJEs
+hGT31bwiWYhYSYoWSeR+SBZCmnLJHqGJZCEku6/mFclCxEpStEgi90OyENKU
+S/YITSQLIdl9Na9IFiJWkqJFErkfkoWQplyyR2j+CckCSMR7/QTJYnfNt/cp
+kIi3uAocRlLgJ58H+hS8yFtcBQ4jKfCTzwN9Cl7kLa4CAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAOnp68hzHC+q+28K1Hnk2E6U13e6fd8N
+//34/cD/kZedgfTt4+7t2fW93w+AZ/w4oIGHdJk2/pE59Sz+/6CnZI46ft45
+z39ZhAb943Ve9liXPZrh5d99A7AXrzlD7uuszzRv48Yu16c+/aL3gWz0XVM3
+3Xtf4fkb/Dig/S66nEVqZQrCfeKMJlTIb0560M5u1n+YLFySLNxs/svqHBja
++DA3ax5+si99yzQty9Sf3Ql+QHfxbylZsYuGuwdxhUU4f80Z6iy0TEN5lCz6
+OnSs573/a7jl1lsvqLrpZrLNfclIN4o3vnWXDW+gh8WX9/w0oP0u+tIzVOqV
+g1PGxZiKs8A2dPZLw0vnHd53Az/xgL5rNz7fkxjlvjC35HcisBxCXyWGwoKU
+6cRNV3qmoRFfUHS3WE7UXnaG3h9mH+pWsqCgTzlVOsyJaAAzbMexbWsaiHIt
+pnNv6HIte+Paosu11bx0zY8D2m+j9UaH1BbptY6VcWqZ0p/6+mzpujGiG068
+4QJt4dss6yiqZpjDv9XgclPMQ3sSiIp7gTb3xnCRZGngmuQu2w2LrdHB7twI
+LH0ee7rKI51mBGkpbAnA07Hm5dNvLuN0V8v5kHruDNdrkQbWcHm4zXSSPPf0
+ZbJoimBYUIyXDcdP8tS969O+zj1LV/jc2rCDcvpwkw1TmeGztheFrknv0Sy/
+fG/NY0/GKDezfx+TVjrnyT5PXb3PI5feoKiqYTn2sHjTnGme31XZaF4ioCiq
+6YY3671m3iLx2RxieP7Qi8PDDFaCaOuyLIvIHqsTQVaUBaWaBLoyNon/6LqV
+NT0pLFAp1UurMvGGi7o2RIlRr0xceq9hh/N40NeZS6sMJN44jqUpihOTdUTf
+lsNj82gUNYKiYq9QzopSL/hwl0WTkcfVXXjmRv58D/yKKrbGKoN/iw+ZS/qa
+R/WuCG/rYtVbRerKod2mmcNsaBrks+HfRaYyCaxDPU0BK9SHaeVeoQ25/pCo
+TD4b07zzFQhCLbxOFtOy75kz3PpiAS9DtZdw6/LJ433aXoITj4Omyde9J50G
+y66MFh9X+HUz+pAJIimkz+2fWvMy3VNXb4OpdKgoM1ux2WBz5mNNGSd1/AYt
+qUb7vWLeOrHpNdN2bJPXzZgndL562sTmyW5R6lwytPrC3562d1aXu81m2zyY
+PjJvIl1HtJnzQN65xaMnPlx701bbkFI0bnAn6X+DB35NlxHb2BX9sS/M0QhO
+fX9fM65B1vWEluwTaf5kq9Qd9WZzIf757H4OyQR4srCCc9P3XVsGFq193L/D
+ZrKoU+K9qp3zX3dFTDfEw1W6AV/D+0I1LQYJSNqqRrjtDCWZeAz3h/kQffqm
+SFlso3f2JbtsR1U79HSTeuY8OAydSSceVjhFyy4mm2gnI2R92Z7pvqR/Jg7b
+ZCS+6B+yQ06ShWKGRXnJ8ywOHBqMwnIcXk9dvZrsn9HR3J19amHSg/2FxmLD
+OzNj9nVokidoPGY+My+N5/6FD/c6JdHDJR/vizQKo8glSd7ywzgaCMMwLpe9
+02RsyCuGd2m6vquScJi8jze1qyiR0aIWU6horlKtkC5XuurMWkiSxeBz4xtQ
+u6lWNL3BeV1q2PZhfuTGSPl6qM4Cde6ln+2Bz0hIcKYnUprz2FnDAm51V7td
+fOaHCkzbDcaeidNzGsfn9abcoyISm80uCoyNR0T9S/dUIbFJTxpBlp1TwjlL
+qP/Y6SrjgS95sMpbJ4tNZ2hpry2Oq9WJypMFEzeCeafS7mN9Wsd0VPop78s0
+SwPSmSqfOVB/M8LJv5Jx7q19yDYlm7ktsHnqfObqXUAD92Ke1kfjHdaQbWgc
+PunBXVWJrF34Pu8z85L9iHHZ5/rjcI+T9JzE6WUx0C6jc9xKl2uoJwyxfD2Z
+W4/xfJYs2MJEWywH+jI6LZdj1/6umrf9Fts+rG5EnjKyTtNJzs/2wGewLjCj
+4d/RmCbVdGO/8UGyGLwtslcOrnhpdf/5L5PF3YFYUv24v3lLYVh3bxY2yKj6
++jgEWMFGMRkU9OsPy3nd7cbNgTb+8mQuj8F0050sWZjJ4vJsg/tWg9qAy64K
+NfmyUCY3LBB55yx1WEnXmQowz1ydJmslvTdFT7dxafllFUIbMnq5AZ+at7vY
+q1rTsECoZp2eb/vMDT7kt/Y/2Rif7Xh6txdYl0n5Wy03qkkrnm1wb/pwRwp9
+yl3kp9UtNqH9bA98Dl3+6+eCLCqnJf8C4opbZeosSbKizNJxyRdHocNOdLj3
+WwtfJgsrWqwTY0td37yl0NEypxnmNd/MKoqyrKqqbn5FFXFX1qu8BwN/0xlo
+sFKTxbSPlD7InS0pPkwHJygFWTjQPu1YsrDyat6XY2c2Le/M9j4OPA1NMtHO
+A1FpK/M5z1NXZ8kiKu8dn0ZSurJQrGR5sSFjn0+Mn5m3LbM4zcsiI6M9Dn2W
+0x6tBbZb+fCkCrvk3GoCdLnEXo9eVdYbBP1GstC8J8liy4dJbeqkxsuaRHOe
+JYvP9sAXKG4bYxvbDQQ2RVztOp9V4sG3zurS02kjrdCTNuvpRM/2vLSYH4Eq
+E7JePul3924q0DdX7cWphipPXNtJK+xZiPH0NBRn0xl6epJBMXw+1Fp6MOak
++d1YLqAbi4qfsevtJaIld9anrKiuLc42tFUSuI5/Zq+wqjA8LXrIxLJ1PHuy
+lf5TV7/QOpTmTIdzujonez7kIGuT0jWBl91CYR7SOpbFFm7PzEu/LTXfDTzb
+99+UIavRW3WiKfPQ99PZvsWjUHDlGU21WUbrq4Q6EHsB/kVOJ5nmll0eOffL
+DRrPHT4t6Zs8Cf3gbsm1HdDOdJtI9282anO69WbSCe1ne+ArcEe6LyO0+XhU
+jBwzoyOd/TAdgp2qrKrhBsPKIrA0Nh+ivcDPzbKzG+Sw3e3QWn329dmqdn78
+wAgv9BWq1KMn3XR6SaU/6FZAV4XTVwt1x/M91+YCJwen90UYBuZUMNftsO5K
+dzA5+56FM/b2U2eoYm571bRMbX4cx/SrvifVXdqHpmXMvpevaLRuOZ2H0S3H
+9z3b5PfQckGbO/zIpDGeTukT11T5YbxE8vOLZexycw8uzr7YkrItbtXys/6p
+q/eFxe1l2c7NwqpLQ1/uMwHNcoPQnw4vumdy/QXz0j2LcXja7rCyCPjx0Xn6
+YHvEimY7zu00ETlvyaIBa+Z44G1wH9NNbh/mgUjVx1O/Mwdy6BOKiDWRHAu2
+JguwJlD6wmBeN1phOoZ9bl8JaDcju37gu5PLEht+tAe+DBvI+rIe2Ffxg9Nw
+/E80LP8WB+9Hb/KdZF3i5N7TzoKDMfjV7Bycl9y2Gy6zVc8cxYrZHU3uGoun
+DJ4Wpu/8CqmMdPn8WKO1/gb3c2cYFwuxfutHxbSn7jfIRLKNndkW7jCYeccZ
+PpsbXCJ3+RTVcsOCFFoWLzCuVsg3/jj+Re5CwPIb3Px0TV+ydEFnX09dvSt9
+cz4iFdNZfGvpEnuLAasa059re8W8dGVxWmyeDKP17qxRHczeYUh9bpDSEy/b
+0YCEgokidid51XRdel5rdtyoTP1FCzUzSO93J6cjTPSWISGll+a+jUtuf3Om
+vXgLGw7Rif0Jqc/2QBH6tv1OZmybeqwY9n3bNHVd38rL33iBZuCbn++aeizf
+Ds/HtzLfTE+74pE3Dd1MCu1fjKxuFKh+5EwfzFNXZxaum0fXG2Zf8eDWt/Sv
+LvVdO472xzuD4w3DC35vMPajePNVOGI+9vU94xt8NxxQG37hxgAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYJP/AdFh1u8=
+    "], {{0, 86}, {527, 
+    0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->Automatic,
+  ImageSizeRaw->{527, 86},
+  PlotRange->{{0, 527}, {0, 86}}]], "Input"],
+
+Cell[TextData[{
+ "One very exciting feature of this model is that after the system has learnt \
+the structure in the data, there is a way to cross - check what it has \
+learnt.In other words, by clamping the hidden layer of neurons, the system \
+can be told to \"hallucinate\" its conception of reality. This feature is \
+unique to this learning model and is something that argues strongly for it, \
+in its similarity to how the mind perceives, since the human beings often \
+reconstruct in their own minds what their conception of reality around them. \
+The famous \"Problem of the other mind\" is based on this very idea, that it \
+is possible that each human has his/her own perception of reality and it may \
+be, that no other human is able to relate to this conception, as a \
+fundamental inability of the mind to perceive beyond what it has \
+reconstructed. Beyond the implementation of this model, the preliminary \
+analysis of simple Boltzmann machines led to modeling their basins of \
+attraction in the form of the Hilbert curve and the Gray code, which gave an \
+interesting pattern, wherein units close to each other in the actual space \
+were mapped to points close to each other on the Hilbert curve due to its \
+distance - preserving property. As a result, locally, colors of neighbors are \
+similar in the plotted figure.\n\n",
+ Cell[BoxData[
+  GraphicsBox[
+   TagBox[RasterBox[CompressedData["
+1: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
+ghKUoAQlKEEJSlCCEpSgBCUoQQlKUIISlKAEJShBCUpQghKUoAQlKEEJSlCC
+EpSgBCUoQQlKUIISlKAEJShBCUpQghKUoAQlKEEJSlCCEpSgBCXup0Sq/ERq
+vDfId/oCWepuRGWqr1Gb4RVrPA51KkpQghKUoAQlKEEJSlCCEpSgBCUoQQlK
+UIISlKAEJShBCUpQghKUoAQlKEEJSlCCEpSgBCUoQQlKUIISlKAEJShBCUpQ
+ghKUoAQlKEEJSlCCEpSgBCUoQQlKUIISlKAEJShBCUpQghKUoAQlKEEJSlDi
+t1PighvGJY9P7L3uR//2cawL3vh45QZZuTzFtoTT//2DEpSgBCUoQQlKUIIS
+lKAEJShBCUpQghKUoAQlKEEJSlCCEpSgBCUoQQlKUIISlKAEJShBCUpQghKU
+oAQlKEEJSlCCEpSgBCUoQQlKUIISlKAEJShBCUpQghKUoAQlKEEJSlCCEpSg
+BCUoQQlKUIISlKAEJShBifsp8ZEqvvGP19vrKNWVeD9SXfBG4k+44I3Vyo80
+jzCGGLfwrX6rfzxESlCCEpSgBCUoQQlKUIISlKAEJShBCUpQghKUoAQlKEEJ
+SlCCEpSgBCUoQQlKUIISlKAEJShBCUpQghKUoAQlKEEJSlCCEpSgBCUoQQlK
+UIISlKAEJShBCUpQghKUoAQlKEEJSlCCEpSgBCUoQQlKUOK3UyKux/eGNGTi
+erzf4RPWLd8+gfGfcMEForTd2vjn+wzaBChBCUpQghKUoAQlKEEJSlCCEpSg
+BCUoQQlKUIISlKAEJShBCUpQghKUoAQlKEEJSlCCEpSgBCUoQQlKUIISlKAE
+JShBCUpQghKUoAQlKEEJSlCCEpSgBCUoQQlKUIISlKAEJShBCUpQghKUoAQl
+KEEJSlCCEpS4nxJpxeITe+vzyQEP3//1mZjORFyjRLtCv0CcYf7Qfv3U/wUR
+tKIEJShBCUpQghKUoAQlKEEJSlCCEpSgBCUoQQlKUIISlKAEJShBCUpQghKU
+oAQlKEEJSlCCEpSgBCUoQQlKUIISlKAEJShBCUpQghKUoAQlKEEJSsxHQAlK
+UIISlKAEJShBCUpQghKUoAQlKEEJSlCCEv8/Jerd2seTvys/01izD+S74g94
+5epDbB9wHoeufoL7vX4K/grsU1GCEpSgBCUoQQlKUIISlKAEJShBCUpQghKU
+oAQlKEEJSlCCEpSgBCUoQQlKUIISlKAEJShBCUpQghKUoAQlKEEJSlCCEpSg
+BCUoQQlKUIISlKAEJShBCUpQghKUoAQlKEEJSlCCEpSgBCUoQQlKUIISlKAE
+JShxNyVi967E8HTyA3nAhscL9Kqfuf+qeIXuZNuCPsO4hJSgBCUoQQlKUIIS
+lKAEJShBCUpQghKUoAQlKEEJSlCCEpSgBCUoQQlKUIISlKAEJShBCUpQghKU
+oAQlKEEJSlCCEpSgBCUoQQlKUIISlKAEJShBCUpQghKUoAQlKEEJSlCCEpSg
+BCUoQQlKUIISlKDEzyvhOI7jOI7jOI7jOI7zY+c/ZkqkrQ==
+     "], {{0, 351}, {354, 
+     0}}, {0, 255},
+     ColorFunction->RGBColor],
+    BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+    Selectable->False],
+   BaseStyle->"ImageGraphics",
+   ImageSize->Automatic,
+   ImageSizeRaw->{354, 351},
+   PlotRange->{{0, 354}, {0, 351}}]], "Input"]
+}], "Text",
+ CellChangeTimes->{{3.5510380309463243`*^9, 3.5510380414921923`*^9}, {
+  3.551038074827551*^9, 3.5510381049005423`*^9}}],
+
+Cell[TextData[StyleBox["To understand' exactly' how the mind works, will be \
+my lifelong endeavor ...",
+ FontSlant->"Italic"]], "Text",
+ CellChangeTimes->{{3.551038122766673*^9, 3.551038126183907*^9}}]
+}, Open  ]]
+},
+WindowSize->{772, 777},
+WindowMargins->{{Automatic, 283}, {-30, Automatic}},
+PrintingCopies->1,
+PrintingPageRange->{1, Automatic},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData["SlideShowNavigationBar", "SlideShow"], Deletable -> False, 
+    ShowCellBracket -> False, CellMargins -> {{-1, -1}, {-1, -1}}, 
+    PageBreakAbove -> True, CellFrameMargins -> {{1, 1}, {0, 0}}], 
+   Cell[
+    CellGroupData[{
+      Cell[
+       TextData[{"Style Definitions for \n", 
+         StyleBox["Wolfram Seminars", FontSlant -> "Italic"]}], "Subtitle"], 
+      Cell[
+       StyleData[StyleDefinitions -> "Default.nb"]], 
+      Cell[
+       StyleData[StyleDefinitions -> "StyleMenuClear.nb"]], 
+      Cell[
+       CellGroupData[{
+         Cell["Style Environment Definitions", "Section"], 
+         Cell[
+          StyleData[
+          All, "SlideShow", StyleDefinitions -> 
+           StyleData[All, "Presentation"]], PageWidth -> WindowWidth, 
+          DockedCells -> Cell[
+            BoxData[
+             GridBox[{{
+                TooltipBox[
+                 ButtonBox[
+                  StyleBox[
+                   RowBox[{"  ", "\[EmptySquare]", " "}], FontSize -> 20, 
+                   GrayLevel[0.7]], Appearance -> None, 
+                  ButtonFunction :> (
+                   FEPrivate`NotebookToggleFullScreen[]; {}), Evaluator -> 
+                  None], 
+                 DynamicBox[
+                  FEPrivate`FrontEndResource[
+                  "SlideshowToolbarText", "TooltipToggleFullScreen"]]], 
+                StyleBox[
+                 RowBox[{
+                   TooltipBox[
+                    ButtonBox[
+                    StyleBox[
+                    RowBox[{" ", "\[FirstPage]", " "}], FontSize -> 25, 
+                    GrayLevel[0.7]], ButtonData -> "ScrollPageFirst", 
+                    Appearance -> None], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "SlideshowToolbarText", "TooltipFirstSlide"]]], 
+                   "\[InvisibleSpace]", 
+                   TooltipBox[
+                    ButtonBox[
+                    StyleBox[
+                    RowBox[{" ", "\[LeftPointer]", " "}], FontSize -> 25, 
+                    GrayLevel[0.7]], ButtonData -> "ScrollPagePrevious", 
+                    Appearance -> None], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "SlideshowToolbarText", "TooltipPreviousSlide"]]], 
+                   "\[InvisibleSpace]", 
+                   TooltipBox[
+                    ButtonBox[
+                    StyleBox[
+                    RowBox[{" ", "\[RightPointer]", " "}], FontSize -> 25, 
+                    GrayLevel[0.7]], ButtonData -> "ScrollPageNext", 
+                    Appearance -> None], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "SlideshowToolbarText", "TooltipNextSlide"]]], 
+                   "\[InvisibleSpace]", 
+                   TooltipBox[
+                    ButtonBox[
+                    StyleBox[
+                    RowBox[{" ", "\[LastPage]", " "}], FontSize -> 25, 
+                    GrayLevel[0.7]], ButtonData -> "ScrollPageLast", 
+                    Appearance -> None], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "SlideshowToolbarText", "TooltipLastSlide"]]]}], 
+                 ButtonBoxOptions -> {Alignment -> {Automatic, 
+                    FEPrivate`If[
+                    FEPrivate`SameQ[
+                    FEPrivate`$OperatingSystem, "Unix"], -0.4, -0.5]}, 
+                   Appearance -> "Palette", 
+                   ButtonFunction :> (FEPrivate`FrontEndExecute[
+                    FrontEnd`FrontEndToken[
+                    FrontEnd`ButtonNotebook[], #]]& ), Evaluator -> None, 
+                   FrameMargins -> 0, ImageMargins -> 0, ImageSize -> 
+                   Medium}], 
+                
+                DynamicModuleBox[{$CellContext`cells$$ = {}, \
+$CellContext`tagFind$$ = False}, 
+                 TagBox[
+                  DynamicBox[
+                   PopupMenuBox[
+                    Dynamic[
+                    0, 
+                    With[{$CellContext`nb$ = ButtonNotebook[]}, 
+                    SelectionMove[$CellContext`nb$, Before, Notebook, 
+                    AutoScroll -> False]; If[$CellContext`tagFind$$, 
+                    Do[
+                    
+                    NotebookFind[$CellContext`nb$, "SlideShowHeader", Next, 
+                    CellTags, AutoScroll -> False], {#}], 
+                    Do[
+                    
+                    NotebookFind[$CellContext`nb$, "SlideShowNavigationBar", 
+                    Next, CellStyle, AutoScroll -> False], {#}]]; 
+                    SelectionMove[$CellContext`nb$, After, Cell, AutoScroll -> 
+                    False]; NotebookWrite[$CellContext`nb$, 
+                    Cell["", Deletable -> True, ShowCellBracket -> False], 
+                    All]; NotebookDelete[$CellContext`nb$]; 
+                    SelectionMove[$CellContext`nb$, 
+                    If[$CellContext`tagFind$$, Previous, Next], 
+                    Cell]]& ], $CellContext`cells$$, 
+                    StyleBox[
+                    RowBox[{
+                    DynamicBox[
+                    CurrentValue[{"CounterValue", "SlideShowNavigationBar"}]], 
+                    DynamicBox[
+                    FEPrivate`FrontEndResource[
+                    "SlideshowToolbarText", "SlideshowToolbarCounterText"]], 
+                    DynamicBox[
+                    
+                    CurrentValue[{
+                    "MaxCounterValue", "SlideShowNavigationBar"}]]}], 
+                    "ControlStyle"], Appearance -> None, ImageSize -> 
+                    Automatic], ImageSizeCache -> {50., {6., 18.}}], 
+                  
+                  EventHandlerTag[{
+                   "MouseDown" :> 
+                    Module[{$CellContext`cnt$, $CellContext`nb$ = 
+                    InputNotebook[]}, $CellContext`cells$$ = {}; \
+$CellContext`cnt$ = Apply[(
+                    NotebookFind[$CellContext`nb$, #, All, #2, AutoScroll -> 
+                    False]; CurrentValue[$CellContext`nb$, {
+                    "CellCount", True}])& , {{
+                    "SlideShowNavigationBar", CellStyle}, {
+                    "SlideShowHeader", CellTags}}, {1}]; $CellContext`cnt$ = 
+                    Apply[If[$CellContext`tagFind$$ = # == 
+                    0, #2, #]& , $CellContext`cnt$]; 
+                    SelectionMove[$CellContext`nb$, Before, Notebook, 
+                    AutoScroll -> False]; 
+                    If[$CellContext`tagFind$$, $CellContext`cells$$ = 
+                    Map[# -> StringJoin["Slide ", 
+                    ToString[#]]& , 
+                    Range[$CellContext`cnt$]], 
+                    Do[NotebookFind[$CellContext`nb$, 
+                    "SlideShowNavigationBar", Next, CellStyle, AutoScroll -> 
+                    False]; SelectionMove[$CellContext`nb$, Next, Cell, 
+                    AutoScroll -> False]; AppendTo[$CellContext`cells$$, 
+                    ReplaceAll[
+                    NotebookRead[$CellContext`nb$], Pattern[$CellContext`s, 
+                    Blank[StyleBox]] :> With[{$CellContext`ss = Join[
+                    Take[$CellContext`s, 1], 
+                    DeleteCases[
+                    Rest[$CellContext`s], 
+                    Alternatives[
+                    Blank[String], 
+                    Blank[][FontColor, 
+                    Blank[]]]]]}, 
+                    
+                    Condition[$CellContext`ss, 
+                    True]]]], {$CellContext`cnt$}]; $CellContext`cells$$ = 
+                    Replace[
+                    Part[$CellContext`cells$$, All, 1], {BoxData[
+                    Pattern[$CellContext`c, 
+                    Blank[]]] :> $CellContext`c, TextData[
+                    Pattern[$CellContext`c, 
+                    Blank[]]] :> RowBox[
+                    If[
+                    
+                    ListQ[$CellContext`c], $CellContext`c, \
+{$CellContext`c}]]}, 1]; $CellContext`cells$$ = 
+                    Thread[Range[$CellContext`cnt$] -> \
+$CellContext`cells$$]]], PassEventsDown -> True, EvaluationOrder -> Before, 
+                    PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+                 DynamicModuleValues :> {}]}}, AutoDelete -> False, 
+              GridBoxItemSize -> {"Columns" -> {Automatic, Fit, Automatic}}]],
+             "DockedCell", CellDynamicExpression :> If[CurrentValue[
+                EvaluationNotebook[], {TaggingRules, "DisableController"}] === 
+              True, Null, 
+              (FrontEndExecute[
+               FrontEnd`FrontEndToken[
+                FrontEnd`InputNotebook[], #]]& )[
+               Switch[
+                ControllerState["Apple IR", {"B1", "B2"}], {True, 
+                 Blank[]}, "ScrollPagePrevious", {
+                 Blank[], True}, "ScrollPageNext", 
+                Blank[], None]]], Magnification -> 0.75], 
+          ScrollingOptions -> {
+           "PagewiseDisplay" -> True, "VerticalScrollRange" -> Fit}, 
+          ShowGroupOpener -> False, MenuSortingValue -> 1300], 
+         Cell[
+          StyleData["DockedCell"], Editable -> False, Evaluator -> "Local", 
+          PageWidth -> WindowWidth, CellFrame -> {{0, 0}, {0, 0}}, 
+          ShowSelection -> True, CellMargins -> {{0, 0}, {0, 0}}, 
+          CellElementSpacings -> {
+           "ClosedCellHeight" -> 0, "ClosedGroupTopMargin" -> 0}, 
+          DynamicUpdating -> True, CellFrameMargins -> {{0, 0}, {0, 4}}, 
+          ContextMenu -> None, ComponentwiseContextMenu -> {}, 
+          ShowStringCharacters -> False, LineBreakWithin -> False, 
+          Magnification -> 1, Background -> GrayLevel[0.97], 
+          TooltipBoxOptions -> {TooltipDelay -> Automatic}]}, Open]], 
+      Cell[
+       CellGroupData[{
+         Cell["Styles for Headings", "Section"], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Title"], MenuSortingValue -> 1, MenuCommandKey -> "1",
+              FontFamily -> "Georgia", FontSize -> 36, FontWeight -> Plain, 
+             FontColor -> RGBColor[0.796078, 0.0705882, 0]], 
+            Cell[
+             StyleData["Title", "Presentation"], 
+             CellMargins -> {{90, 100}, {10, 100}}, FontSize -> 54], 
+            Cell[
+             StyleData["Title", "SlideShow"]]}, Open]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Subtitle"], CellMargins -> {{27, Inherited}, {8, 2}}, 
+             MenuSortingValue -> 100, MenuCommandKey -> "2", FontFamily -> 
+             "Georgia", FontSize -> 24, FontWeight -> "Plain", FontSlant -> 
+             "Italic"], 
+            Cell[
+             StyleData["Subtitle", "Presentation"], 
+             CellMargins -> {{90, 100}, {100, 20}}, FontSize -> 32], 
+            Cell[
+             StyleData["Subtitle", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Subsubtitle"], 
+             CellMargins -> {{27, Inherited}, {8, 0}}, MenuSortingValue -> 
+             200, MenuCommandKey -> "3", FontFamily -> "Georgia", FontSize -> 
+             20, FontWeight -> "Plain", FontSlant -> "Italic", FontColor -> 
+             GrayLevel[0.2]], 
+            Cell[
+             StyleData["Subsubtitle", "Presentation"], 
+             CellMargins -> {{90, 20}, {2, 120}}, LineSpacing -> {1.25, 1}, 
+             FontSize -> 26], 
+            Cell[
+             StyleData["Subsubtitle", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["DateSection"], CellMargins -> {{30, 0}, {12, 24}}, 
+             ShowStringCharacters -> False], 
+            Cell[
+             StyleData["DateSection", "Presentation"], 
+             CellMargins -> {{90, 20}, {2, 36}}, ShowStringCharacters -> 
+             False, FontSize -> 21], 
+            Cell[
+             StyleData["DateSection", "SlideShow"]]}, Closed]]}, Open]], 
+      Cell[
+       CellGroupData[{
+         Cell["Styles for Sections", "Section"], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Chapter"], CellMargins -> {{27, Inherited}, {8, 34}}, 
+             CounterIncrements -> {"Chapter"}, MenuSortingValue -> 2410, 
+             FontFamily -> "Georgia", FontSize -> 28, FontColor -> 
+             RGBColor[0.811765, 0.117647, 0.145098], CellTags -> "Chapter"], 
+            Cell[
+             StyleData["Chapter", "Presentation"], CellFrame -> None, 
+             CellMargins -> {{80, 60}, {20, 30}}, FontSize -> 36], 
+            Cell[
+             StyleData["Chapter", "SlideShow"]]}, Open]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Section"], CellFrame -> 0, 
+             CellMargins -> {{27, Inherited}, {8, 20}}, MenuSortingValue -> 
+             1200, MenuCommandKey -> "4", FontFamily -> "Georgia", FontSize -> 
+             24, FontWeight -> Plain, FontColor -> 
+             RGBColor[0.811765, 0.117647, 0.145098]], 
+            Cell[
+             StyleData["Section", "Presentation"], CellFrame -> None, 
+             CellMargins -> {{80, 14}, {30, 30}}, FontFamily -> "Georgia", 
+             FontSize -> 34, FontWeight -> Plain, FontColor -> 
+             RGBColor[0.811765, 0.117647, 0.145098]], 
+            Cell[
+             StyleData["Section", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Subsection"], CellDingbat -> "\[RightGuillemet]", 
+             CellGroupingRules -> {"SectionGrouping", 40}, MenuSortingValue -> 
+             1300, MenuCommandKey -> "5", FontFamily -> "Georgia", FontSize -> 
+             22, FontWeight -> Plain, FontColor -> GrayLevel[0.25]], 
+            Cell[
+             StyleData["Subsection", "Presentation"], 
+             CellMargins -> {{80, 60}, {12, 20}}, FontSize -> 25], 
+            Cell[
+             StyleData["Subsection", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Subsubsection"], CellDingbat -> "\[RightGuillemet]", 
+             MenuSortingValue -> 1400, MenuCommandKey -> "6", FontFamily -> 
+             "Georgia", FontSize -> 20, FontWeight -> Plain, FontColor -> 
+             GrayLevel[0.3]], 
+            Cell[
+             StyleData["Subsubsection", "Presentation"], 
+             CellMargins -> {{88, 60}, {0, 12}}, FontSize -> 22], 
+            Cell[
+             StyleData["Subsubsection", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData[
+             "MoreExamplesSection", StyleDefinitions -> 
+              StyleData["Subsubsection"]], CellDingbat -> None, 
+             ShowGroupOpener -> True, 
+             CellGroupingRules -> {"SectionGrouping", 45}, MenuSortingValue -> 
+             2100, FontColor -> RGBColor[0.636862, 0.0564706, 0.]], 
+            Cell[
+             StyleData["MoreExamplesSection", "Presentation"], 
+             CellMargins -> {{88, 60}, {20, 12}}], 
+            Cell[
+             StyleData["MoreExamplesSection", "SlideShow"], 
+             WholeCellGroupOpener -> True, 
+             CellMargins -> {{88, 60}, {20, 12}}]}, Closed]]}, Open]], 
+      Cell[
+       CellGroupData[{
+         Cell["Styles for Text", "Section"], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Text"], CellMargins -> {{66, 10}, {3, 3}}, 
+             MenuSortingValue -> 2000, MenuCommandKey -> "7", FontFamily -> 
+             "Georgia", FontSize -> 14], 
+            Cell[
+             StyleData["Text", "Presentation"], 
+             CellMargins -> {{80, 20}, {12, 12}}, LineSpacing -> {1.25, 1}, 
+             FontFamily -> "Georgia", FontSize -> 20], 
+            Cell[
+             StyleData["Text", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["MathCaption"], MenuSortingValue -> 2010, 
+             MenuCommandKey -> "8", FontFamily -> "Georgia", FontSize -> 18, 
+             FontColor -> GrayLevel[0]], 
+            Cell[
+             StyleData["MathCaption", "Presentation"], 
+             CellMargins -> {{120, 12}, {6, 34}}, LineSpacing -> {1.25, 1}, 
+             FontSize -> 20], 
+            Cell[
+             StyleData["MathCaption", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData[
+             "IntegrationMathCaption", StyleDefinitions -> 
+              StyleData["MathCaption"]], CellMargins -> {{0, 12}, {2, 24}}, 
+             CellFrameMargins -> {{0, 0}, {0, 3}}, CellFrameLabels -> {{
+                PaneBox[
+                 FrameBox[
+                  StyleBox[
+                  "Integration", FontFamily -> "Helvetica", FontSize -> 9, 
+                   FontColor -> GrayLevel[1], FontWeight -> Plain], 
+                  Background -> RGBColor[0.811765, 0.117647, 0.145098], 
+                  BoxFrame -> 0, FrameStyle -> None, 
+                  FrameMargins -> {{3, 3}, {1, 1}}], ImageSize -> 56, 
+                 Alignment -> Left, FrameMargins -> 0], None}, {None, None}}], 
+            Cell[
+             StyleData["IntegrationMathCaption", "Presentation"], 
+             CellMargins -> {{30, 12}, {12, 12}}, 
+             CellFrameMargins -> {{10, 0}, {0, 5}}, FontSize -> 20], 
+            Cell[
+             StyleData["IntegrationMathCaption", "SlideShow"], 
+             CellMargins -> {{30, 12}, {12, 12}}, 
+             CellFrameMargins -> {{10, 0}, {0, 5}}]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData[
+             "AutomationMathCaption", StyleDefinitions -> 
+              StyleData["IntegrationMathCaption"]], 
+             CellMargins -> {{0, 12}, {2, 24}}, 
+             CellFrameMargins -> {{0, 0}, {0, 3}}, CellFrameLabels -> {{
+                PaneBox[
+                 FrameBox[
+                  StyleBox[
+                  "Automation", FontFamily -> "Helvetica", FontSize -> 9, 
+                   FontColor -> GrayLevel[1], FontWeight -> Plain], 
+                  Background -> RGBColor[0.811765, 0.117647, 0.145098], 
+                  BoxFrame -> 0, FrameStyle -> None, 
+                  FrameMargins -> {{3, 3}, {1, 1}}], ImageSize -> 56, 
+                 Alignment -> Left, FrameMargins -> 0], None}, {None, None}}], 
+            Cell[
+             StyleData["AutomationMathCaption", "Presentation"], 
+             CellMargins -> {{30, 12}, {12, 12}}, FontSize -> 20], 
+            Cell[
+             StyleData["AutomationMathCaption", "SlideShow"], 
+             CellMargins -> {{30, 12}, {12, 12}}]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Comment", StyleDefinitions -> StyleData["Text"]], 
+             CellMargins -> {{0, 12}, {2, 24}}, 
+             CellFrameMargins -> {{0, 0}, {0, 3}}, CellFrameLabels -> {{
+                PaneBox[
+                 FrameBox[
+                  StyleBox[
+                  "Comment", FontFamily -> "Helvetica", FontSize -> 9, 
+                   FontColor -> GrayLevel[1], FontWeight -> Plain], 
+                  Background -> RGBColor[1., 0.647059, 0], BoxFrame -> 1, 
+                  FrameStyle -> RGBColor[1., 0.647059, 0], 
+                  FrameMargins -> {{3, 3}, {1, 1}}], ImageSize -> 56, 
+                 Alignment -> Left, FrameMargins -> 0], None}, {None, None}}, 
+             MenuSortingValue -> 2200, FontSize -> 14], 
+            Cell[
+             StyleData["Comment", "Presentation"], 
+             CellMargins -> {{30, 12}, {12, 12}}, FontSize -> 16], 
+            Cell[
+             StyleData["Comment", "SlideShow"], 
+             CellMargins -> {{30, 12}, {12, 12}}, FontSize -> 16]}, Closed]], 
+         
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["DisplayFormula"], 
+             CellMargins -> {{60, Inherited}, {Inherited, Inherited}}, 
+             StripStyleOnPaste -> True, DefaultFormatType -> 
+             DefaultInputFormatType, 
+             HyphenationOptions -> {
+              "HyphenationCharacter" -> "\[Continuation]"}, LanguageCategory -> 
+             "Formula", ScriptLevel -> 0, SingleLetterItalics -> True, 
+             MenuSortingValue -> 1700, 
+             UnderoverscriptBoxOptions -> {LimitsPositioning -> True}], 
+            Cell[
+             StyleData["DisplayFormula", "Presentation"], 
+             CellMargins -> {{120, Inherited}, {
+               Inherited 1.75, Inherited 1.75}}, LineSpacing -> {1, 5}, 
+             FontFamily -> "Georgia", FontSize -> 20], 
+            Cell[
+             StyleData["DisplayFormula", "SlideShow"]]}, Closed]]}, Open]], 
+      Cell[
+       CellGroupData[{
+         Cell["Styles for Items", "Section"], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Item"], CellDingbat -> "\[RightGuillemet] ", 
+             LineSpacing -> {1.5, 0}, MenuSortingValue -> 2700, FontFamily -> 
+             "Georgia", FontSize -> 18, FontColor -> GrayLevel[0.2]], 
+            Cell[
+             StyleData["Item", "Presentation"], 
+             CellMargins -> {{116, 20}, {12, 12}}, FontFamily -> "Georgia", 
+             FontSize -> 20], 
+            Cell[
+             StyleData["Item", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["ItemParagraph"], MenuSortingValue -> 2710, FontFamily -> 
+             "Georgia", FontSize -> 18, FontColor -> GrayLevel[0.2]], 
+            Cell[
+             StyleData["ItemParagraph", "Presentation"], 
+             CellMargins -> {{120, 90}, {12, 12}}, LineSpacing -> {1.25, 0}, 
+             FontFamily -> "Georgia", FontSize -> 20], 
+            Cell[
+             StyleData["ItemParagraph", "SlideShow"]]}, Open]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["ItemNumbered"], LineSpacing -> {1.5, 0}, 
+             MenuSortingValue -> 2720, FontFamily -> "Georgia", FontSize -> 
+             18, FontColor -> GrayLevel[0.25]], 
+            Cell[
+             StyleData["ItemNumbered", "Presentation"], 
+             CellMargins -> {{116, 20}, {12, 12}}, FontFamily -> "Georgia", 
+             FontSize -> 20], 
+            Cell[
+             StyleData["ItemNumbered", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Subitem"], CellDingbat -> "\[RightGuillemet] ", 
+             LineSpacing -> {1.5, 0}, MenuSortingValue -> 2730, FontFamily -> 
+             "Georgia", FontSize -> 16, FontColor -> GrayLevel[0.3]], 
+            Cell[
+             StyleData["Subitem", "Presentation"], 
+             CellMargins -> {{136, 20}, {10, 10}}, FontFamily -> "Georgia", 
+             FontSize -> 21], 
+            Cell[
+             StyleData["Subitem", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["SubitemParagraph"], LineSpacing -> {1.5, 0}, 
+             MenuSortingValue -> 2740, FontFamily -> "Georgia", FontSize -> 
+             16, FontColor -> GrayLevel[0.3]], 
+            Cell[
+             StyleData["SubitemParagraph", "Presentation"], 
+             CellMargins -> {{136, 90}, {10, 8}}, FontFamily -> "Georgia", 
+             FontSize -> 18], 
+            Cell[
+             StyleData["SubitemParagraph", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["SubitemNumbered"], LineSpacing -> {1.5, 0}, 
+             MenuSortingValue -> 2750, FontFamily -> "Georgia", FontSize -> 
+             16, FontColor -> GrayLevel[0.3]], 
+            Cell[
+             StyleData["SubitemNumbered", "Presentation"], 
+             CellMargins -> {{136, 20}, {10, 10}}, FontFamily -> "Georgia", 
+             FontSize -> 18], 
+            Cell[
+             StyleData["SubitemNumbered", "SlideShow"]]}, Open]]}, Closed]], 
+      Cell[
+       CellGroupData[{
+         Cell["Styles for Input and Output", "Section"], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Input"], MenuSortingValue -> 2020, MenuCommandKey -> 
+             "9", FontSize -> 18], 
+            Cell[
+             StyleData["Input", "Presentation"], 
+             CellMargins -> {{120, 10}, {7, 12}}, FontSize -> 18], 
+            Cell[
+             StyleData["Input", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["CellLabel"], 
+             CellLabelMargins -> {{12, Inherited}, {Inherited, Inherited}}, 
+             LanguageCategory -> None, StyleMenuListing -> None, FontFamily -> 
+             "Helvetica", FontSize -> 9, FontColor -> 
+             RGBColor[0.269993, 0.308507, 0.6]], 
+            Cell[
+             StyleData["CellLabel", "Presentation"], 
+             CellMargins -> {{12, Inherited}, {Inherited 1.5, Inherited 1.5}},
+              FontSize -> 12], 
+            Cell[
+             StyleData["CellLabel", "SlideShow"], 
+             CellMargins -> {{12, Inherited}, {Inherited 1.5, Inherited 1.5}},
+              FontSize -> 12]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["WolframAlphaShort"], FontSize -> 18], 
+            Cell[
+             StyleData["WolframAlphaShort", "Presentation"], 
+             CellMargins -> {{120, 10}, {7, 12}}, FontSize -> 18], 
+            Cell[
+             StyleData["WolframAlphaShort", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["WolframAlphaShortInput"], FontSize -> 18], 
+            Cell[
+             StyleData["WolframAlphaShortInput", "Presentation"], 
+             CellMargins -> {{120, 10}, {7, 12}}, FontSize -> 18], 
+            Cell[
+             StyleData["WolframAlphaShortInput", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["WolframAlphaLong"], FontFamily -> "Helvetica", 
+             FontSize -> 18], 
+            Cell[
+             StyleData["WolframAlphaLong", "Presentation"], 
+             CellMargins -> {{120, 10}, {7, 12}}, FontSize -> 18], 
+            Cell[
+             StyleData["WolframAlphaLong", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["WolframAlphaLongInput"], FontSize -> 18], 
+            Cell[
+             StyleData["WolframAlphaLongInput", "Presentation"], 
+             CellMargins -> {{120, 10}, {7, 12}}, FontSize -> 18], 
+            Cell[
+             StyleData["WolframAlphaLongInput", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Output"], MenuSortingValue -> 2030, FontSize -> 18], 
+            Cell[
+             StyleData["Output", "Presentation"], 
+             CellMargins -> {{120, 10}, {7, 12}}, FontSize -> 18], 
+            Cell[
+             StyleData["Output", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Print"], FontSize -> 18], 
+            Cell[
+             StyleData["Print", "Presentation"], 
+             CellMargins -> {{120, 10}, {7, 12}}, FontSize -> 18], 
+            Cell[
+             StyleData["Print", "SlideShow"]]}, Closed]], 
+         Cell[
+          StyleData["MSG"], FontSize -> 16]}, Closed]], 
+      Cell[
+       CellGroupData[{
+         Cell["Styles of Links", "Section"], 
+         Cell[
+          StyleData["Link", "SlideShow"], FontSize -> 21], 
+         Cell[
+          StyleData["SearchLink", StyleDefinitions -> StyleData["Link"]]], 
+         Cell[
+          StyleData["FunctionLink"]]}, Closed]], 
+      Cell[
+       CellGroupData[{
+         Cell["Special Styles", "Section"], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Picture"], CellMargins -> {{100, 100}, {20, 20}}, 
+             ShowStringCharacters -> False, MenuSortingValue -> 5000, 
+             Magnification -> 1], 
+            Cell[
+             StyleData["Picture", "Presentation"], 
+             CellMargins -> {{100, 100}, {20, 20}}, Magnification -> 1], 
+            Cell[
+             StyleData["Picture", "SlideShow"]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData[
+             "PictureCaption", StyleDefinitions -> StyleData["Text"]], 
+             CellDingbat -> "\[FilledUpTriangle]", 
+             CellMargins -> {{114, 100}, {15, 4}}, ShowStringCharacters -> 
+             False, MenuSortingValue -> 5100, FontSize -> 14, FontColor -> 
+             GrayLevel[0.3]], 
+            Cell[
+             StyleData["PictureCaption", "Presentation"], 
+             CellMargins -> {{114, 100}, {20, 4}}, FontSize -> 16], 
+            Cell[
+             StyleData["PictureCaption", "SlideShow"], 
+             CellMargins -> {{114, 100}, {20, 4}}, FontSize -> 16]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["OverviewTitle"], CellFrame -> None, 
+             CellMargins -> {{100, 100}, {20, 60}}, FontFamily -> "Calibri", 
+             FontSize -> 24, FontWeight -> "Bold", FontColor -> 
+             GrayLevel[0.4]], 
+            Cell[
+             StyleData["OverviewTitle", "Presentation"], CellFrame -> None, 
+             CellMargins -> {{100, 100}, {20, 60}}, FontFamily -> "Calibri", 
+             FontSize -> 24, FontWeight -> "Bold", FontColor -> 
+             GrayLevel[0.4]], 
+            Cell[
+             StyleData["OverviewTitle", "SlideShow"], CellFrame -> None, 
+             CellMargins -> {{100, 100}, {20, 60}}, FontFamily -> "Calibri", 
+             FontSize -> 24, FontWeight -> "Bold", FontColor -> 
+             GrayLevel[0.4]]}, Open]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["OverviewSection"], CellFrame -> None, 
+             CellMargins -> {{120, 100}, {10, 10}}, ReturnCreatesNewCell -> 
+             True, FontFamily -> "Georgia", FontSize -> 22, FontWeight -> 
+             Plain, FontColor -> RGBColor[0.811765, 0.117647, 0.145098]], 
+            Cell[
+             StyleData["OverviewSection", "Presentation"], CellFrame -> None, 
+             CellMargins -> {{120, 100}, {10, 10}}, ReturnCreatesNewCell -> 
+             True, FontFamily -> "Georgia", FontSize -> 22, FontWeight -> 
+             Plain, FontColor -> RGBColor[0.811765, 0.117647, 0.145098]], 
+            Cell[
+             StyleData["OverviewSection", "SlideShow"], CellFrame -> None, 
+             CellMargins -> {{120, 100}, {10, 10}}, ReturnCreatesNewCell -> 
+             True, FontFamily -> "Georgia", FontSize -> 22, FontWeight -> 
+             Plain, FontColor -> RGBColor[0.811765, 0.117647, 0.145098]]}, 
+           Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["ChapterTagline"], CellMargins -> {{60, 90}, {15, 0}}, 
+             MenuSortingValue -> 2420, FontFamily -> "Georgia", FontSize -> 
+             20, FontWeight -> "Plain", FontSlant -> "Italic", FontColor -> 
+             GrayLevel[0.3]], 
+            Cell[
+             StyleData["ChapterTagline", "Presentation"], 
+             CellMargins -> {{90, 90}, {15, 0}}, FontSize -> 24], 
+            Cell[
+             StyleData["ChapterTagline", "SlideShow"]]}, Open]], 
+         Cell[
+          StyleData["PlotLabel"], FontFamily -> "Helvetica", FontSize -> 14], 
+         
+         Cell[
+          StyleData["NonPrintButton"], 
+          CellMargins -> {{128, Inherited}, {16, 0}}, FontFamily -> 
+          "Helvetica", FontSize -> 12, FontColor -> GrayLevel[1], 
+          ButtonBoxOptions -> {
+           Background -> RGBColor[0.811765, 0.117647, 0.145098], 
+            ButtonMargins -> 4}], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Program"]], 
+            Cell[
+             StyleData["Program", "SlideShow"], 
+             CellMargins -> {{116, 48}, {16, 16}}, FontSize -> 18]}, 
+           Closed]]}, Open]], 
+      Cell[
+       CellGroupData[{
+         Cell[
+         "Styles for Screencast", "Section", 
+          CellChangeTimes -> {{3.520687019071189*^9, 
+           3.5206870238431892`*^9}, {3.520687323526189*^9, 
+           3.520687328236189*^9}}], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData[
+             "LargeChapter", StyleDefnitions -> StyleData["Chapter"]], 
+             CellMargins -> {{27, Inherited}, {8, 34}}, MenuSortingValue -> 
+             2430, FontFamily -> "Georgia", FontSize -> 30, FontColor -> 
+             RGBColor[0.811765, 0.117647, 0.145098]], 
+            Cell[
+             StyleData["LargeChapter", "SlideShow"], 
+             CellMargins -> {{100, 10}, {15, 100}}, FontSize -> 48]}, Open]], 
+         
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["LargeChapterTagline"], 
+             CellMargins -> {{27, 60}, {30, 20}}, MenuSortingValue -> 2420, 
+             FontFamily -> "Georgia", FontSize -> 26, FontWeight -> "Plain", 
+             FontSlant -> "Italic", FontColor -> GrayLevel[0.3]], 
+            Cell[
+             StyleData["LargeChapterTagline", "SlideShow"], 
+             CellMargins -> {{100, 60}, {30, 15}}, FontSize -> 32]}, Open]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["LargeOverviewTitle"], CellFrame -> None, 
+             CellMargins -> {{100, 100}, {20, 60}}, FontFamily -> "Calibri", 
+             FontSize -> 24, FontWeight -> "Bold", FontColor -> 
+             GrayLevel[0.4]], 
+            Cell[
+             StyleData["LargeOverviewTitle", "SlideShow"], CellFrame -> None, 
+             CellMargins -> {{100, 100}, {20, 60}}, FontFamily -> "Calibri", 
+             FontSize -> 36, FontWeight -> "Bold", FontColor -> 
+             GrayLevel[0.4]]}, Open]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["LargeOverviewSection"], CellFrame -> None, 
+             CellMargins -> {{120, 100}, {10, 10}}, ReturnCreatesNewCell -> 
+             True, FontFamily -> "Georgia", FontSize -> 22, FontWeight -> 
+             Plain, FontColor -> RGBColor[0.811765, 0.117647, 0.145098]], 
+            Cell[
+             StyleData["LargeOverviewSection", "SlideShow"], CellFrame -> 
+             None, CellMargins -> {{120, 100}, {10, 10}}, 
+             ReturnCreatesNewCell -> True, FontFamily -> "Georgia", FontSize -> 
+             30, FontWeight -> Plain, FontColor -> 
+             RGBColor[0.811765, 0.117647, 0.145098]]}, Open]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["LargeItem", StyleDefinitions -> StyleData["Item"]], 
+             CellDingbat -> "\[RightGuillemet] ", LineSpacing -> {1.5, 0}, 
+             MenuSortingValue -> 2700, FontFamily -> "Georgia", FontSize -> 
+             18, FontColor -> GrayLevel[0.2]], 
+            Cell[
+             StyleData["LargeItem", "SlideShow"], 
+             CellMargins -> {{100, 20}, {10, 10}}, FontSize -> 26]}, Open]]}, 
+        Closed]]}, Open]]}, Visible -> False, FrontEndVersion -> 
+  "8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, 2011)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 20062, 334, 78, "Output"],
+Cell[CellGroupData[{
+Cell[20644, 358, 221, 5, 81, "Title"],
+Cell[20868, 365, 187, 4, 38, "Subtitle"],
+Cell[21058, 371, 226, 5, 31, "Subsubtitle"],
+Cell[21287, 378, 2079, 31, 385, "Text"],
+Cell[23369, 411, 5777, 100, 101, "Input"],
+Cell[29149, 513, 5866, 99, 621, "Text"],
+Cell[35018, 614, 202, 3, 22, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

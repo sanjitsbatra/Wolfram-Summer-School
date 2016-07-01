@@ -1,0 +1,6174 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[    193324,       6165]
+NotebookOptionsPosition[    190553,       6068]
+NotebookOutlinePosition[    191006,       6086]
+CellTagsIndexPosition[    190963,       6083]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Sampling", "Subsubtitle",
+ CellChangeTimes->{{3.55016089342069*^9, 3.5501608959718027`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Logistic Function", "Subsection",
+ CellChangeTimes->{{3.550160882941441*^9, 3.550160885803917*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Logistic", "[", "x_", "]"}], ":=", " ", 
+  RowBox[{"1", "/", 
+   RowBox[{"(", 
+    RowBox[{"1", "+", 
+     RowBox[{"Exp", "[", 
+      RowBox[{"-", "x"}], "]"}]}], ")"}]}]}]], "Code",
+ CellChangeTimes->{{3.5501569839856787`*^9, 3.550157027586588*^9}, {
+  3.5501580786167*^9, 3.5501580835260487`*^9}, {3.550158288093451*^9, 
+  3.550158288436398*^9}, {3.550161136272181*^9, 3.550161143343041*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Logistic", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "5"}], ",", "5"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.550157033224915*^9, 3.5501570464403887`*^9}, {
+  3.550157093861498*^9, 3.550157118841263*^9}, {3.550161157718329*^9, 
+  3.55016116289296*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJwt13lUzP33APCRapoa08x8hAptRFFaPHpSue8KJUVJEZFC2oRKetTT9rRL
+aJE2LUobldAmetNeFG2WQqIRmc+nRZSo7/zO+f3xPve8zj333Hvu/eut4HRq
+z3EhGo3WLnj/F//9bDExP0/g5eWZb364+gPPf8lU/28C14r7Hz0S5A+72O9/
+Vs4QuJzVGvUm0R/kdU//OTVJ4HWV6f007A9PYuLFBnkE1rTcI7Z0aQCIqb9c
+iZ8ROOFDR4dPSwAk+hzZGZxG4CnadOKevwOheIF3Lk2HwDY2lURHfjD8bV0k
+mqJN4Dx1kccf7wdDU+4HF00NAvd6m20RaQiGQRNLNScVAs/yqjrdB4NhSZxa
+Rb0sgdvXthxpkQ6BUJmR5ggagV8wQ782x4XAfu1Do8w2Lt7iyK1YExoKIsdN
+tKQPcfFQn/HKR5fDoOuw5r5ROy5+se1h9URWGFzfLxvw0Fbg1PFp7TthsMmc
+anS05GIrE/XogRdh4KydbFdkzMUTQb9ozUQ4tCz4HKynysUmoXuHGanhEHs9
+ovPQTw7e31VSdbEsAohXjR45Vzj4jmdFy0t6NOB12VFhcRy8/oiliJJsNHgE
+BeQ6X+DgQuaj8QD1aGhS1h5QDedgv4elIodsouH82aydd/04eOrYS/POG9Ew
+xPVXbXDg4ORHg2IRxjFQbqExMqzGwZLGhvsvxF2APfWpR1Xa2HhlhNXTKJs4
+WNXz6V1zExvzZ3Ryej3j4Mcn9QPO9WwcvdQB6UTFQYpoveWNWjZ2VspZqvsg
+DgZ3jBqsKGXjszOSwrqKl+Dkc71lnEQ2dlB8ffHv75cg6u3A0+lDbDycPee4
+r+cy+FMGHpc/SmKx1K0p5cXxkO6oM4LeSmKduTX31GriobZb49h4nyS2XhTV
+c7clHuYqlez3tElir5iF2z8Mx0NoMMN88R1JvHLF747H8gkQw+lddy1QEt+X
+9riRdS0BUrU9RjOlJbGrw9J2ySuJUHUu1a10Nwvf6teH1JtXQfHYmbxXpiwc
++qbH8Ur1VbhoaTq4wIiFVX6JM649vQpOKj9s9m5k4acalVI9E1dBot/KcGYZ
+C5PMkgAxlAyHtzCWGQ8twhLhvYYn3ybDQhG/xj6fRbhpmDwduCoFdsXbyM+l
+MPGlSnunVF4anNeS3GGSwMTJrxyr3f6kwc2uljOXY5lYS2+npsXidJjj6tcr
+BjFxXSutxtQoHW4nKDqbHGPi1mi7W7KZ6cBMooovqzNxQWbicgP7DGhLjtZR
+qpfAVa6Vus8/XQeTjIe7TL+J4/1j5wu1pLNh7OLAb2GeOP6VZVi7RjkbUgNn
+ix6/F8cvuxx2KGtnwzcHXbpetzj+rL37G1hkQ7zi/Tq1GnE8HOTH4IVkw7v8
+WxpElDhO2XrdciE/G3zL07jvlMTxZp+snWVtOXCz+Z8+74MMvHZraIpVXi6k
+aPkaF+5l4JnwShHVilyIzfAqe2fBwAUX69Ikm3PBy9s9Zgdi4N7kPDehL7lg
+IHdoi9xqBj7FOpsaqZYHPb7oZhsphpPs5aKWVeeBkDLdVyFUDO+lZ/Qmv7kJ
+h8MSpToL6LiGvShj045C6IAfdL8cOj4jNiBvZl8IMLvvl3w6HRvdszN1P1UI
+8l6y770u0XF7TX9uX1IhDDnkFCzxpWN+zaqIPR8LwVmvTO+wMR1bDRhF8oKL
+wHOi3ZH/VhRb9mzQeNhUDIFHFpZIEKJ43+Xf5iuDSoCmJldnHC6MXSfRjQzT
+cnhzISWyuFcI0wOLR921K2C5uEvhd6MF2KvwwuT5iBpw/0tVpH/5fN0MVtg/
+LIzhqM67gvr62bpjfZa6uzTqQdVv87xn7nTdU/uoEOFrTZD91rrhH8Opur3S
+FfkTz9rgc4iUvsmyiborB81i2XqdUJO0dtuILb+uIOCOwxaTLtD48vr7hgxe
+nZdJHHf1ql7YWtPP+GM7WNdurOzWTnsFpwtLpzlEd93vVNJPY2s/2DorZXcF
+VNetP2vxO8rlHTQ/fR2jbV0FFwYDVXyeDMJmtcfllsndsPBGcyjbcwiEfKUG
+jkkPwmQv7Zfy+EegMy1DnEgeXJpSn+wPGob/BvuMvW7wYTDrbvKPUR6UpUVY
+Bk6Mg8zHBr6R0gicyjnG/mQ7BSedzF8nW3+Bw26pKyJDpmFEwfHbi91fIdrK
+V1c7fRb6ZsiNHSqjILw4iRf0aw64G26Ub/45Ci/bw8fCJBeg3S9G7n1M+wY2
+/k6bUuuFkOHvqp5ubT54SIwqdhwQRh7UAeJSMR9G/6kRlnAURr1BLpUGt/ng
+NhLNMzkhjNzXd+qPlvDhROPaosfewiirdwlpVM4HpyBnzfuxwmim9/Lspyo+
+2E1+gPRHwuiEYcuO74182N7/yt5NUQRt2xs+YvyeD3LFTVdFv4qgqdBbti0s
+EvZmVlW3jYmg7ZmvG/ewSYhJKBqI+ymC4ur/Zg9wSPjuH6e4VEQUzVBeuqOL
+SWgzty1ZIy+KgjB7YlaGBF9yuNHUVhQ1TQylf1Ym4ZmmyFTME1HUduKvrm8G
+JPhXGVtLptHRmuGlab0uJGjZPx9zyKYj8bzPaaJuJHydt48ry6ejfi25hk3u
+JBww8W21ukdHAZnDsYknSdjcVwCJz+josWYOa7sXCdOTi9ZL08TQNaNbpiH+
+gv4bXgkrHRdD5za56NpfJOH0TY+KTRsY6NGl5fa4hIR3nbJJrE0MxDQwvtBT
+SoLFTJs3T5+BdAeHPnwuI0HVXEXzqhkDvb/2nc68S8Kn8eHiqeOCfOAqU7NK
+EvYZOGTfS2egOI3qFZl1JGzpsYrVEhdH8iplG0s6SWAK6TipD4sjjVO8qhA+
+CdXnFlrzRsXR+iMW6kdIEpz5ncbXJ8RR4bWsKQOKBPzKZTWLJoFa9YUDfo6R
+4F2aOsKXkUDenufPOn0n4Y39nOdtSwn0T/OfyGWzJBRUNvqvr5VAemkzoWJi
+FGw7uTdJNYGJqujN6Rx5CnziH9BOpTDRXPz0/AOBcysVPe5mMlFet9LwcQUK
+hITGjfRvMdHI4qZNVYoU4KsXxywamajTp4G2bzUFm3HTzjM/mUi21dr/X1UK
+1AldoaqDi5CPyplDpzdSsKx6xaltq1goJHplw/x2CuaO5sty1rFQlWikXIoJ
+BZ9Ymi0Dmiy00bFmTtOUgrJjWxV8gIUWBNLMnHZQYMJ27845wEIH871XPtxJ
+ge+JKh3aFRYK5rty7C0p6JWypj34w0JFlbN5hnYUxHtFXdF4KYl0EwzIR64U
+/Hp6qyrqrSSK8o+v0XajwGnNi/eDHyXRtNNTtQKBtQek1a+MCezznXHZnYKv
+OTbD08Js9GJGI+vgSQpimZ9D7FaykfnJ/ICh0xR0vGc8kLFiI6JcprTsHAV7
+InarZVSwUe6Pgwb2YRTctBvbUV3NRhnjrKYagWfWX3HurWUjleWJdOlwCrK6
+uzIX1bPRmv8+3e8RmC9vyw3sZCPyvFGjaSQFUQ/sfx4eYSOWa36/UgwFj8Zc
+H8vLcJBbct62/EsUqB4Ms8n9l4OWjZCJ/BQK7M5UcIVDOEhn2NDPKFVQHznS
+eTSMg7rS3kklCzx819xM6QIHnVPpCYY0QX+mFORc46DbBnWyF9MpkHqUtzbr
+LgcVcaKSZDMpoCk0z6Z94SCnABabnktBH4+Rk2DDRfL6TfuUblPQtDc6vXo/
+F817GnUcFbjiiVjy+4NctKhPhsgV+Op1euw6Jy5SHjortqqEAhtbEd96Ty6a
+PMfLUyiloKeRZjYZyUXP5XntxB0KunJ/ju+p4aLedZm4555gv07Dhlw5Aq0r
+OtL//AEFH4Tzp5MUCcTn5akyayn4ftOlVFqZQBdXPdluIrD06OhyBTUC3aCr
+8WoFPuY98XODHoFKvUOb8h4K7v/f/G2LfQRayXXV8qyjQDlPWib6EoHQ1/nX
+b55QoGvS/5yZQKDW3fFS7HoKzL+kR16+SqDiv1YrbRP4jJr8VHIGgZJ+jNwr
+Ebj2vvLzm8UEWnt6bWVQg+D+TdoRDc0EiuuU2y/dRMFxlyl903YC+VQ+a9wp
+sJ945WR7B4G+RbynBwqcsWuzY3cvgVin6hlDAo/0If2hjwQqK0sSK2gWzOsn
+NHn8M4GsfnmseC3wItmGwi9fCfTXpg66eAsFWg4mS8fHCeRhVnfIXeBtCxgd
+PlMEyt6c3Jom8P4bbWHT0wTiWERLPBXYbVusXsBvAikaVyv9Fvj//ycoA5tx
+17dS8D9euRtm
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{0, 0},
+  PlotRange->{{-5, 5}, {0., 0.9933071477189689}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{
+  3.5501571198091183`*^9, 3.550161163570292*^9, 3.550177396532113*^9, 
+   3.550177437746686*^9, 3.550177515222032*^9, 3.550177771625536*^9, 
+   3.5501780144785833`*^9, 3.550178637546516*^9, 3.550178737154457*^9, 
+   3.550178899426914*^9, {3.550178943863941*^9, 3.550178965065345*^9}, 
+   3.5501790062469673`*^9, 3.550182933506654*^9, 3.550239708498753*^9, 
+   3.5502397429996023`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Main Functions", "Subsection",
+ CellChangeTimes->{{3.55016106705329*^9, 3.55016107405031*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Weight", "[", 
+   RowBox[{"m_", ",", "n_"}], "]"}], ":=", 
+  RowBox[{"RandomReal", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"m", ",", "n"}], "}"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Visibles", "[", "m_", "]"}], ":=", 
+  RowBox[{"RandomInteger", "[", 
+   RowBox[{"1", ",", "m"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Hiddens", "[", "n_", "]"}], ":=", 
+  RowBox[{"RandomInteger", "[", 
+   RowBox[{"1", ",", "n"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"BiasHiddenSampling", "[", "n_", "]"}], ":=", 
+  RowBox[{"RandomInteger", "[", 
+   RowBox[{"0", ",", "n"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"BiasVisibleSampling", "[", "m_", "]"}], ":=", 
+  RowBox[{"RandomInteger", "[", 
+   RowBox[{"0", ",", "m"}], "]"}]}]}], "Code",
+ CellChangeTimes->{{3.550157622747487*^9, 3.550157689178244*^9}, {
+  3.550158458958453*^9, 3.550158479580562*^9}, {3.550160909854986*^9, 
+  3.550160933101741*^9}, {3.5501613877798243`*^9, 3.5501613890108747`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Declarations", "Subsection",
+ CellChangeTimes->{{3.550161077434642*^9, 3.550161082769435*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"SeedRandom", "[", "1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"W", "=", 
+  RowBox[{"Weight", "[", 
+   RowBox[{"4", ",", "5"}], "]"}]}], "\n", 
+ RowBox[{"V", "=", 
+  RowBox[{"Visibles", "[", "4", "]"}]}], "\n", 
+ RowBox[{"H", "=", 
+  RowBox[{"Hiddens", "[", "5", "]"}]}], "\n", 
+ RowBox[{"BH", "=", 
+  RowBox[{"BiasHiddenSampling", "[", "5", "]"}]}], "\n", 
+ RowBox[{"BV", "=", 
+  RowBox[{"BiasVisibleSampling", "[", "4", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.550157676381402*^9, 3.5501577033103952`*^9}, {
+   3.550158555645545*^9, 3.550158575594821*^9}, {3.550158721222659*^9, 
+   3.5501587238861732`*^9}, 3.550160958162116*^9, {3.550161217833049*^9, 
+   3.55016122186491*^9}, {3.550165267376802*^9, 3.550165270935163*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.6347789803421424`", ",", 
+     RowBox[{"-", "0.7771607777375271`"}], ",", "0.5790519892677031`", ",", 
+     RowBox[{"-", "0.6243937065879472`"}], ",", 
+     RowBox[{"-", "0.5172780650846991`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.8685224809824379`"}], ",", "0.08449324101924827`", ",", 
+     RowBox[{"-", "0.5376909865279451`"}], ",", 
+     RowBox[{"-", "0.20798783690282585`"}], ",", "0.4009475638844897`"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.576348041891745`"}], ",", "0.4973137629658959`", ",", 
+     RowBox[{"-", "0.15429870132010226`"}], ",", 
+     RowBox[{"-", "0.505010438271984`"}], ",", "0.9543435234815529`"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.6503258789770276`", ",", "0.8505504023577255`", ",", 
+     "0.15611230398875842`", ",", 
+     RowBox[{"-", "0.414260526404155`"}], ",", 
+     RowBox[{"-", "0.5838978704388147`"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.550161208562572*^9, 3.55016122380204*^9}, 
+   3.550161395573702*^9, 3.550165272103352*^9, 3.5501709053217382`*^9, 
+   3.5501773965998077`*^9, 3.550177437800007*^9, 3.550177515302742*^9, 
+   3.550177771696575*^9, 3.5501780145600758`*^9, 3.550178637613679*^9, 
+   3.550178737224259*^9, 3.550178899494458*^9, {3.55017894393137*^9, 
+   3.550178965148115*^9}, 3.5501790063127623`*^9, 3.550182933568433*^9, 
+   3.5502397085785646`*^9, 3.550239743081707*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "0", ",", "0", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{{3.550161208562572*^9, 3.55016122380204*^9}, 
+   3.550161395573702*^9, 3.550165272103352*^9, 3.5501709053217382`*^9, 
+   3.5501773965998077`*^9, 3.550177437800007*^9, 3.550177515302742*^9, 
+   3.550177771696575*^9, 3.5501780145600758`*^9, 3.550178637613679*^9, 
+   3.550178737224259*^9, 3.550178899494458*^9, {3.55017894393137*^9, 
+   3.550178965148115*^9}, 3.5501790063127623`*^9, 3.550182933568433*^9, 
+   3.5502397085785646`*^9, 3.550239743085919*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "1", ",", "0", ",", "0", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{{3.550161208562572*^9, 3.55016122380204*^9}, 
+   3.550161395573702*^9, 3.550165272103352*^9, 3.5501709053217382`*^9, 
+   3.5501773965998077`*^9, 3.550177437800007*^9, 3.550177515302742*^9, 
+   3.550177771696575*^9, 3.5501780145600758`*^9, 3.550178637613679*^9, 
+   3.550178737224259*^9, 3.550178899494458*^9, {3.55017894393137*^9, 
+   3.550178965148115*^9}, 3.5501790063127623`*^9, 3.550182933568433*^9, 
+   3.5502397085785646`*^9, 3.550239743088328*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{{3.550161208562572*^9, 3.55016122380204*^9}, 
+   3.550161395573702*^9, 3.550165272103352*^9, 3.5501709053217382`*^9, 
+   3.5501773965998077`*^9, 3.550177437800007*^9, 3.550177515302742*^9, 
+   3.550177771696575*^9, 3.5501780145600758`*^9, 3.550178637613679*^9, 
+   3.550178737224259*^9, 3.550178899494458*^9, {3.55017894393137*^9, 
+   3.550178965148115*^9}, 3.5501790063127623`*^9, 3.550182933568433*^9, 
+   3.5502397085785646`*^9, 3.550239743090461*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{{3.550161208562572*^9, 3.55016122380204*^9}, 
+   3.550161395573702*^9, 3.550165272103352*^9, 3.5501709053217382`*^9, 
+   3.5501773965998077`*^9, 3.550177437800007*^9, 3.550177515302742*^9, 
+   3.550177771696575*^9, 3.5501780145600758`*^9, 3.550178637613679*^9, 
+   3.550178737224259*^9, 3.550178899494458*^9, {3.55017894393137*^9, 
+   3.550178965148115*^9}, 3.5501790063127623`*^9, 3.550182933568433*^9, 
+   3.5502397085785646`*^9, 3.5502397430921717`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataV", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"Visibles", "[", "4", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "10"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.550164163433736*^9, 3.550164199912343*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "1", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.5501641695934477`*^9, 3.550164200777379*^9, 3.550177396655205*^9, 
+   3.550177437853801*^9, 3.550177515360372*^9, 3.550177771751891*^9, 
+   3.55017801461979*^9, 3.550178637656389*^9, 3.5501787372785788`*^9, 
+   3.550178899553162*^9, {3.5501789439713984`*^9, 3.550178965205206*^9}, 
+   3.550179006358572*^9, 3.550182933621244*^9, 3.550239708630818*^9, 
+   3.550239743137212*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"V2", "=", 
+  RowBox[{"Visibles", "[", "4", "]"}]}]], "Input",
+ CellChangeTimes->{{3.550164163433736*^9, 3.5501641747053223`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "1", ",", "1", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.550164175334021*^9, 3.550177396705287*^9, 3.550177437887699*^9, 
+   3.550177515410631*^9, 3.550177771798683*^9, 3.5501780146671467`*^9, 
+   3.550178637703018*^9, 3.550178737313348*^9, 3.550178899601224*^9, {
+   3.550178944005229*^9, 3.550178965254672*^9}, 3.5501790064028873`*^9, 
+   3.550182933657215*^9, 3.550239708681349*^9, 3.5502397431866007`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"V3", "=", 
+  RowBox[{"Visibles", "[", "4", "]"}]}]], "Input",
+ CellChangeTimes->{{3.550164163433736*^9, 3.5501641799053717`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "1", ",", "0", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.5501641806274*^9, 3.550177396755747*^9, 3.550177437936771*^9, 
+   3.5501775154606256`*^9, 3.5501777718299437`*^9, 3.550178014716468*^9, 
+   3.550178637754209*^9, 3.550178737363051*^9, 3.55017889965141*^9, {
+   3.5501789440565863`*^9, 3.550178965305666*^9}, 3.550179006453774*^9, 
+   3.5501829337201147`*^9, 3.550239708730186*^9, 3.550239743237644*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Sampling Functions", "Subsection",
+ CellChangeTimes->{{3.5501610950732403`*^9, 3.5501611186384563`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.5501795417671423`*^9, 3.550179554797352*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"sample", "[", "l_", "]"}], ":=", " ", 
+   RowBox[{"Sign", "[", 
+    RowBox[{"Thread", "[", 
+     RowBox[{"l", " ", "-", " ", 
+      RowBox[{"RandomReal", "[", 
+       RowBox[{"1", ",", " ", 
+        RowBox[{"Length", "[", "l", "]"}]}], "]"}]}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sample", "[", "l_", "]"}], ":=", " ", 
+   RowBox[{"Sign", "[", 
+    RowBox[{"Thread", "[", 
+     RowBox[{"l", " ", "-", " ", 
+      RowBox[{"RandomReal", "[", 
+       RowBox[{"1", ",", " ", 
+        RowBox[{"Length", "[", "l", "]"}]}], "]"}]}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"zsample", "[", "l_", "]"}], ":=", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Sign", "[", 
+       RowBox[{"Thread", "[", 
+        RowBox[{"l", " ", "-", " ", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"1", ",", " ", 
+           RowBox[{"Length", "[", "l", "]"}]}], "]"}]}], "]"}], "]"}], "+", 
+      "1"}], ")"}], "/", "2"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"SampleHidden", "[", "w_", "]"}], "[", "v_", "]"}], ":=", 
+   RowBox[{"sample", "[", 
+    RowBox[{"Logistic", "[", 
+     RowBox[{
+      RowBox[{"w", "\[Transpose]"}], ".", "v"}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"SampleVisible", "[", "w_", "]"}], "[", "h_", "]"}], ":=", " ", 
+   RowBox[{"sample", "[", 
+    RowBox[{"Logistic", "[", 
+     RowBox[{"w", ".", "h"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"HiddenProbabilities", "[", "w_", "]"}], "[", "v_", "]"}], ":=", 
+   RowBox[{"Logistic", "[", 
+    RowBox[{
+     RowBox[{"w", "\[Transpose]"}], ".", "v"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"VisibleProbabilities", "[", "w_", "]"}], "[", "h_", "]"}], ":=", 
+   " ", 
+   RowBox[{"Most", "[", 
+    RowBox[{"Logistic", "[", 
+     RowBox[{"w", ".", "h"}], "]"}], "]"}]}], ";"}]}], "Code",
+ CellChangeTimes->{{3.550160307995582*^9, 3.550160313857978*^9}, {
+   3.550160346257184*^9, 3.550160427024436*^9}, {3.5501604697026567`*^9, 
+   3.550160548509067*^9}, {3.550160787516067*^9, 3.550160797608432*^9}, {
+   3.55016085930663*^9, 3.5501608646576347`*^9}, 3.550175828039633*^9, {
+   3.550179468301003*^9, 3.550179532030835*^9}, {3.5501795882893753`*^9, 
+   3.5501795963994293`*^9}, {3.550179893450171*^9, 3.5501799124332647`*^9}, {
+   3.55018002359336*^9, 3.550180054439166*^9}, {3.550180814277869*^9, 
+   3.5501808183635483`*^9}, {3.55018087677744*^9, 3.550180906676918*^9}, 
+   3.5501811459032173`*^9, {3.550182246628127*^9, 3.550182249964109*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Learning
+\
+\>", "Section",
+ CellChangeTimes->{{3.5501627057227716`*^9, 3.5501627097630672`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"DataLearning", ",", "DeltaWeight"}], "]"}]], "Input",
+ CellChangeTimes->{{3.550167893461828*^9, 3.550167899939686*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"DeltaWeight", "[", 
+    RowBox[{"\[Epsilon]_", ",", "v1_"}], "]"}], "[", "w_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "h1", ",", "v2", ",", "h2", ",", "w0", ",", "w1", ",", "wnew", ",", "v3",
+       ",", "h3"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"wnew", "=", "w"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"h1", "=", 
+         RowBox[{
+          RowBox[{"SampleHidden", "[", "w", "]"}], "[", "v1", "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"v2", "=", 
+         RowBox[{
+          RowBox[{"SampleVisible", "[", "w", "]"}], "[", "h1", "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"h2", "=", 
+         RowBox[{
+          RowBox[{"SampleHidden", "[", "w", "]"}], "[", "v2", "]"}]}], ";", 
+        "\n", 
+        RowBox[{"v3", "=", 
+         RowBox[{
+          RowBox[{"SampleVisible", "[", "w", "]"}], "[", "h2", "]"}]}], ";", 
+        "\n", 
+        RowBox[{"h3", "=", 
+         RowBox[{
+          RowBox[{"SampleHidden", "[", "w", "]"}], "[", "v3", "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", "\n", 
+         RowBox[{
+          RowBox[{"w0", "=", 
+           RowBox[{"1", "-", 
+            RowBox[{"Outer", "[", 
+             RowBox[{"BitXor", ",", " ", "v1", ",", " ", "h1"}], "]"}]}]}], 
+          ";", "\[IndentingNewLine]", 
+          RowBox[{"w1", "=", 
+           RowBox[{"1", "-", 
+            RowBox[{"Outer", "[", 
+             RowBox[{"BitXor", ",", " ", "v1", ",", " ", "h3"}], "]"}]}]}], 
+          ";"}], "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"w0", "=", 
+         RowBox[{"Outer", "[", 
+          RowBox[{"Times", ",", " ", "v1", ",", " ", "h1"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"w1", "=", 
+         RowBox[{"Outer", "[", 
+          RowBox[{"Times", ",", " ", "v1", ",", " ", "h3"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", "\n", 
+        RowBox[{"wnew", " ", "+=", " ", 
+         RowBox[{"\[Epsilon]", "*", 
+          RowBox[{"(", 
+           RowBox[{"w0", "-", "w1"}], ")"}]}]}], ";"}], "\[IndentingNewLine]",
+        ",", "\[IndentingNewLine]", 
+       RowBox[{"{", "16", "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "wnew"}]}], "\[IndentingNewLine]", "]"}]}]], "Code",
+ CellChangeTimes->{{3.550162715280593*^9, 3.550162953808947*^9}, {
+   3.5501630416424017`*^9, 3.550163069726346*^9}, {3.5501631287040873`*^9, 
+   3.550163137735112*^9}, {3.550163276066983*^9, 3.55016328873775*^9}, {
+   3.5501633361338778`*^9, 3.5501633444365587`*^9}, {3.550163647475541*^9, 
+   3.55016367912015*^9}, {3.5501637929639597`*^9, 3.5501638458270197`*^9}, {
+   3.550166309807276*^9, 3.5501663330601597`*^9}, {3.550166380640815*^9, 
+   3.5501663941518707`*^9}, {3.550167305504125*^9, 3.5501673079887733`*^9}, {
+   3.550167569804681*^9, 3.5501675767301826`*^9}, {3.550167837297208*^9, 
+   3.550167881077168*^9}, {3.550167946530472*^9, 3.5501679466152782`*^9}, {
+   3.55016803980083*^9, 3.550168039875893*^9}, {3.550168086294922*^9, 
+   3.550168088628499*^9}, {3.55017674863461*^9, 3.550176760231694*^9}, {
+   3.55017683750589*^9, 3.550176840400543*^9}, 3.5501768988188334`*^9, {
+   3.5501769367359247`*^9, 3.550177123310986*^9}, {3.550177277970574*^9, 
+   3.5501773192294188`*^9}, {3.550177375520667*^9, 3.55017738427059*^9}, {
+   3.5501774225000877`*^9, 3.550177432489965*^9}, {3.550177503577756*^9, 
+   3.550177510746111*^9}, {3.550177636887949*^9, 3.55017763807069*^9}, {
+   3.550177698872789*^9, 3.5501776997368813`*^9}, {3.550177748828504*^9, 
+   3.5501777589384737`*^9}, {3.550177997811706*^9, 3.5501780059385347`*^9}, {
+   3.5501786192164*^9, 3.550178630103549*^9}, {3.550178732789708*^9, 
+   3.550178733733355*^9}, {3.550178889647347*^9, 3.550178959055687*^9}, {
+   3.550178999252205*^9, 3.5501790026834087`*^9}, {3.550179371880822*^9, 
+   3.550179406811225*^9}, {3.550179444848476*^9, 3.550179450463336*^9}, {
+   3.550179986813398*^9, 3.550180009034643*^9}, {3.5501800984335318`*^9, 
+   3.550180162460738*^9}, {3.5501807985039186`*^9, 3.550180800663732*^9}, {
+   3.5501809145167017`*^9, 3.550180928778365*^9}, {3.5501811111697283`*^9, 
+   3.550181171188106*^9}, {3.5501813119608917`*^9, 3.550181314334475*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DataLearning", "[", 
+   RowBox[{"w_", ",", "\[Epsilon]_", ",", "n_", ",", "dataV_"}], "]"}], ":=", 
+  
+  RowBox[{"Nest", "[", 
+   RowBox[{
+    RowBox[{"Function", "[", 
+     RowBox[{
+      RowBox[{"DeltaWeight", "[", 
+       RowBox[{"\[Epsilon]", ",", 
+        RowBox[{"RandomChoice", "[", "dataV", "]"}]}], "]"}], "[", "#", "]"}],
+      "]"}], ",", "w", ",", "n"}], "]"}]}]], "Code",
+ CellChangeTimes->{{3.550163299585978*^9, 3.550163414897472*^9}, {
+  3.5501636320509377`*^9, 3.550163640859419*^9}, {3.550163687732188*^9, 
+  3.550163687908023*^9}, {3.55016383049842*^9, 3.550163852263363*^9}, {
+  3.550166750310513*^9, 3.550166792650815*^9}, {3.550167634753131*^9, 
+  3.550167680090426*^9}, {3.550180943724598*^9, 3.550180948819581*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"StepLearning", "[", 
+   RowBox[{"w_", ",", "\[Epsilon]_", ",", "n_", ",", "dataV_"}], "]"}], ":=", 
+  
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"w1", ",", "w2", ",", "w3"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"w1", "=", 
+      RowBox[{"Nest", "[", 
+       RowBox[{
+        RowBox[{"Function", "[", 
+         RowBox[{
+          RowBox[{"DeltaWeight", "[", 
+           RowBox[{"\[Epsilon]", ",", 
+            RowBox[{"RandomChoice", "[", "dataV", "]"}]}], "]"}], "[", "#", 
+          "]"}], "]"}], ",", "w", ",", 
+        RowBox[{"n", "/", "3"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"w2", "=", 
+      RowBox[{"Nest", "[", 
+       RowBox[{
+        RowBox[{"Function", "[", 
+         RowBox[{
+          RowBox[{"DeltaWeight", "[", 
+           RowBox[{
+            RowBox[{"\[Epsilon]", "/", "10"}], ",", 
+            RowBox[{"RandomChoice", "[", "dataV", "]"}]}], "]"}], "[", "#", 
+          "]"}], "]"}], ",", "w1", ",", 
+        RowBox[{"n", "/", "3"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"w3", "=", 
+      RowBox[{"Nest", "[", 
+       RowBox[{
+        RowBox[{"Function", "[", 
+         RowBox[{
+          RowBox[{"DeltaWeight", "[", 
+           RowBox[{
+            RowBox[{"\[Epsilon]", "/", "100"}], ",", 
+            RowBox[{"RandomChoice", "[", "dataV", "]"}]}], "]"}], "[", "#", 
+          "]"}], "]"}], ",", "w2", ",", 
+        RowBox[{"n", "/", "3"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "w3"}]}], "\[IndentingNewLine]", "]"}]}]], "Code",
+ CellChangeTimes->{{3.550175620651236*^9, 3.550175765976137*^9}, {
+  3.5501809532400303`*^9, 3.550180963430361*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"square", "[", "col_", "]"}], ":=", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{
+     RowBox[{"Style", "[", 
+      RowBox[{
+       RowBox[{"Rectangle", "[", "]"}], ",", "col"}], "]"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "10"}], ",", 
+     RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+     RowBox[{"FrameTicks", "\[Rule]", "False"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"numbers2colors", "[", "x_", "]"}], ":=", " ", 
+   RowBox[{"x", " ", "/.", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "1"}], " ", "\[Rule]", " ", 
+       RowBox[{"square", "[", "White", "]"}]}], ",", " ", 
+      RowBox[{"1", "\[Rule]", 
+       RowBox[{"square", "[", "Black", "]"}]}], ",", " ", 
+      RowBox[{"r_Real", "  ", "\[RuleDelayed]", " ", 
+       RowBox[{"Tooltip", "[", 
+        RowBox[{
+         RowBox[{"square", "[", 
+          RowBox[{"Blend", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"Red", ",", "White", ",", "Blue"}], "}"}], ",", " ", 
+            "r"}], "]"}], "]"}], ",", "r"}], "]"}]}]}], "}"}]}]}], 
+  ";"}]}], "Code",
+ CellChangeTimes->{{3.5501815220352573`*^9, 3.5501817099172564`*^9}, {
+  3.550181740597066*^9, 3.55018174888836*^9}, {3.550181796371976*^9, 
+  3.550181810833091*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"colors", "[", "n_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Replace", "[", 
+    RowBox[{
+     RowBox[{"Round", "[", 
+      RowBox[{
+       RowBox[{"data", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "n"}], "]"}], "]"}], "/", "256"}], "]"}], ",", 
+     RowBox[{"0", "\[Rule]", 
+      RowBox[{"-", "1"}]}], ",", 
+     RowBox[{"{", "2", "}"}]}], "]"}], "//", "numbers2colors"}]}], "\n", 
+ RowBox[{
+  RowBox[{"process1", "[", "n_", "]"}], ":=", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{"Replace", "[", 
+    RowBox[{
+     RowBox[{"Round", "[", 
+      RowBox[{
+       RowBox[{"data", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "n"}], "]"}], "]"}], "/", "256"}], "]"}], ",", 
+     RowBox[{"0", "\[Rule]", 
+      RowBox[{"-", "1"}]}], ",", 
+     RowBox[{"{", "2", "}"}]}], "]"}], "]"}]}]}], "Code",
+ CellChangeTimes->{{3.550188762543695*^9, 3.5501887709741087`*^9}, {
+   3.5501888237427797`*^9, 3.550188840830419*^9}, {3.550188871982634*^9, 
+   3.550188874230295*^9}, {3.550188999199915*^9, 3.550189017914447*^9}, {
+   3.5501890481185637`*^9, 3.5501892784068336`*^9}, 3.550189488446642*^9, 
+   3.5501901257034283`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ProcessImage", "[", "image_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"2", "*", 
+    RowBox[{"Flatten", "[", 
+     RowBox[{"Round", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Total", "[", 
+         RowBox[{
+          RowBox[{"Partition", "[", 
+           RowBox[{"image", ",", 
+            RowBox[{"{", 
+             RowBox[{"3", ",", "3"}], "}"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"3", ",", "4"}], "}"}]}], "]"}], "/", "256"}], "/", "8"}], 
+      "]"}], "]"}]}], "-", "1"}]}]], "Code",
+ CellChangeTimes->{{3.550190002456767*^9, 3.550190157397813*^9}, {
+  3.550239522459353*^9, 3.550239549022006*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ParseIDX", "[", "file_", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", "\n", "\t", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "stream", ",", " ", "mnumber", ",", " ", "type", ",", " ", "dim", ",", 
+       " ", "sizes", ",", " ", "data"}], "}"}], ",", "\n", "\t", 
+     RowBox[{
+      RowBox[{"stream", " ", "=", " ", 
+       RowBox[{"OpenRead", "[", 
+        RowBox[{"file", ",", " ", 
+         RowBox[{"BinaryFormat", " ", "\[Rule]", " ", "True"}]}], "]"}]}], 
+      ";", "\n", "\t", 
+      RowBox[{"mnumber", " ", "=", " ", 
+       RowBox[{"BinaryRead", "[", 
+        RowBox[{"stream", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Byte\>\"", ",", " ", "\"\<Byte\>\""}], "}"}]}], 
+        "]"}]}], ";", "\n", "\t", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"mnumber", " ", "=!=", " ", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}]}], ",", " ", 
+        RowBox[{"Abort", "[", "]"}]}], "]"}], ";", "\n", "\t", 
+      RowBox[{"type", " ", "=", " ", 
+       RowBox[{"BinaryRead", "[", 
+        RowBox[{"stream", ",", " ", "\"\<Byte\>\""}], "]"}]}], ";", "\n", 
+      "\t", 
+      RowBox[{"type", " ", "=", " ", 
+       RowBox[{"Replace", "[", 
+        RowBox[{"type", ",", " ", 
+         RowBox[{"{", "\n", "\t\t", 
+          RowBox[{
+           RowBox[{"8", " ", "\[Rule]", " ", "\"\<UnsignedInteger8\>\""}], 
+           ",", "\n", "\t\t", 
+           RowBox[{"9", " ", "\[Rule]", " ", "\"\<Integer8\>\""}], ",", "\n", 
+           "\t\t", 
+           RowBox[{"11", " ", "\[Rule]", " ", "\"\<Integer16\>\""}], ",", 
+           "\n", "\t\t", 
+           RowBox[{"12", " ", "\[Rule]", " ", "\"\<Integer32\>\""}], ",", 
+           "\n", "\t\t", 
+           RowBox[{"13", " ", "\[Rule]", " ", "\"\<Real32\>\""}], ",", "\n", 
+           "\t\t", 
+           RowBox[{"14", " ", "\[Rule]", " ", "\"\<Real64\>\""}], ",", "\n", 
+           "\t\t", 
+           RowBox[{"_", " ", "\[RuleDelayed]", " ", 
+            RowBox[{"Abort", "[", "]"}]}]}], "\n", "\t", "}"}]}], "]"}]}], 
+      ";", "\n", "\t", 
+      RowBox[{"Print", "[", "type", "]"}], ";", "\n", "\t", 
+      RowBox[{"dim", " ", "=", " ", 
+       RowBox[{"BinaryRead", "[", 
+        RowBox[{"stream", ",", " ", "\"\<Byte\>\""}], "]"}]}], ";", "\n", 
+      "\t", 
+      RowBox[{"Print", "[", "dim", "]"}], ";", "\n", "\t", 
+      RowBox[{"sizes", " ", "=", " ", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"BinaryRead", "[", 
+          RowBox[{"stream", ",", " ", "\"\<Integer32\>\"", ",", " ", 
+           RowBox[{"ByteOrdering", " ", "\[Rule]", " ", "1"}]}], "]"}], ",", 
+         " ", 
+         RowBox[{"{", "dim", "}"}]}], "]"}]}], ";", "\n", "\t", 
+      RowBox[{"Print", "[", "sizes", "]"}], ";", "\n", "\t", 
+      RowBox[{"data", " ", "=", " ", 
+       RowBox[{"BinaryReadList", "[", 
+        RowBox[{"stream", ",", " ", "type", ",", " ", 
+         RowBox[{"Times", " ", "@@", " ", "sizes"}], ",", "  ", 
+         RowBox[{"ByteOrdering", " ", "\[Rule]", " ", "1"}]}], "]"}]}], ";", 
+      "\n", "\t", 
+      RowBox[{"Fold", "[", 
+       RowBox[{"Partition", ",", " ", "data", ",", " ", 
+        RowBox[{"Reverse", " ", "@", " ", "sizes"}]}], "]"}]}]}], "\n", 
+    "]"}]}], ";"}]], "Code"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", 
+   StyleBox["=",
+    FontSize->14], 
+   RowBox[{
+   "ParseIDX", "[", "\"\<~/Downloads/train-images-idx3-ubyte\>\"", "]"}]}], 
+  ";"}]], "Code"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"UnsignedInteger8\"\>"], "Print",
+ CellChangeTimes->{3.550239743665601*^9}],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->{3.5502397436681833`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"60000", ",", "28", ",", "28"}], "}"}]], "Print",
+ CellChangeTimes->{3.55023974367113*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Testing", "Section",
+ CellChangeTimes->{{3.55016440352302*^9, 3.550164412113885*^9}, {
+  3.55016775543981*^9, 3.55016775609573*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SeedRandom", "[", "5", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Hn", "=", "10"}], ";", 
+  RowBox[{"Vn", "=", "82"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"W", "=", 
+   RowBox[{"RandomReal", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "0.5"}], ",", "0.5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Vn", ",", "Hn"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataV", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Append", "[", 
+      RowBox[{"#", ",", "1"}], "]"}], "&"}], " ", "/@", " ", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"ProcessImage", "[", 
+       RowBox[{"data", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "i"}], "]"}], "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "10"}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"w1", "=", 
+   RowBox[{"StepLearning", "[", 
+    RowBox[{"W", ",", "0.002", ",", "600", ",", "dataV"}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.550164436680462*^9, 3.5501645278484163`*^9}, {
+   3.5501646714620647`*^9, 3.550164698898015*^9}, {3.5501647301583757`*^9, 
+   3.550164752780929*^9}, {3.5501648043280563`*^9, 3.550164966307166*^9}, {
+   3.550164999503237*^9, 3.550164999645896*^9}, {3.5501650338829193`*^9, 
+   3.550165037793888*^9}, {3.550165072830461*^9, 3.550165103155828*^9}, {
+   3.550165150647073*^9, 3.550165171261024*^9}, {3.550165232335471*^9, 
+   3.5501652609374*^9}, 3.5501653275530443`*^9, 3.550165530445311*^9, {
+   3.5501657437090883`*^9, 3.5501657993390903`*^9}, {3.550165890238688*^9, 
+   3.5501659048367987`*^9}, {3.5501659646737328`*^9, 3.550165970310604*^9}, {
+   3.5501665032836533`*^9, 3.5501665372169313`*^9}, {3.550166588169613*^9, 
+   3.550166669218292*^9}, {3.550166844731366*^9, 3.5501668499281893`*^9}, {
+   3.550166886932917*^9, 3.550166903723027*^9}, 3.550166970174155*^9, {
+   3.550167000513834*^9, 3.55016700100948*^9}, {3.550167119231964*^9, 
+   3.550167148209659*^9}, {3.550167180456603*^9, 3.550167195653861*^9}, {
+   3.55016724241759*^9, 3.5501672431452427`*^9}, {3.550167373501011*^9, 
+   3.5501673736363688`*^9}, {3.5501675849195013`*^9, 3.550167592991089*^9}, {
+   3.55016772898177*^9, 3.5501678195928392`*^9}, {3.5501679408941793`*^9, 
+   3.550168011724374*^9}, {3.55016805335028*^9, 3.550168059854344*^9}, {
+   3.550168108369286*^9, 3.550168176901314*^9}, {3.550168207415592*^9, 
+   3.5501683630329323`*^9}, {3.550168398549389*^9, 3.550168428050311*^9}, {
+   3.550168475942597*^9, 3.550168476028469*^9}, 3.55017095689769*^9, {
+   3.550170993920301*^9, 3.55017103836084*^9}, {3.550171098812976*^9, 
+   3.550171155062029*^9}, {3.550171191890765*^9, 3.550171238845861*^9}, {
+   3.550171287281427*^9, 3.550171324182474*^9}, {3.550171669221066*^9, 
+   3.550171679714362*^9}, {3.550171756539134*^9, 3.550171765233801*^9}, {
+   3.5501755720934277`*^9, 3.550175600286913*^9}, {3.5501757979086523`*^9, 
+   3.550175801604312*^9}, {3.5501759331859818`*^9, 3.550175934175201*^9}, {
+   3.5501759837632103`*^9, 3.550175983906736*^9}, {3.550176032750256*^9, 
+   3.550176032886462*^9}, {3.550177467053534*^9, 3.550177467389318*^9}, {
+   3.550177818640091*^9, 3.55017783497012*^9}, {3.550177872366468*^9, 
+   3.550177977476184*^9}, {3.550178654507881*^9, 3.5501786546032667`*^9}, {
+   3.550178780943717*^9, 3.550178804037594*^9}, {3.550178853048993*^9, 
+   3.55017885316849*^9}, {3.550179319928742*^9, 3.550179321740231*^9}, {
+   3.5501797313540363`*^9, 3.550179780572282*^9}, {3.550179814773645*^9, 
+   3.550179815149699*^9}, 3.550180004443882*^9, {3.55018017811628*^9, 
+   3.550180179579342*^9}, {3.550180330508456*^9, 3.550180384367383*^9}, 
+   3.550180440588698*^9, {3.550180566375346*^9, 3.550180571996108*^9}, {
+   3.550180608434618*^9, 3.550180620409849*^9}, {3.550180651959635*^9, 
+   3.550180652190381*^9}, {3.550180843340651*^9, 3.5501808444149237`*^9}, {
+   3.550180973505405*^9, 3.550181022802115*^9}, {3.550181190586153*^9, 
+   3.550181191209839*^9}, {3.550181256987858*^9, 3.55018125706777*^9}, {
+   3.550181321821733*^9, 3.550181403529269*^9}, {3.5501817750040827`*^9, 
+   3.5501818160933857`*^9}, {3.55018216901604*^9, 3.550182212639533*^9}, {
+   3.550182293004077*^9, 3.550182295436191*^9}, {3.550182367944067*^9, 
+   3.550182386379271*^9}, {3.5501824187465563`*^9, 3.550182419127318*^9}, {
+   3.550182451918069*^9, 3.550182455692864*^9}, {3.550182486066538*^9, 
+   3.5501825292884073`*^9}, {3.550182584170164*^9, 3.550182654531012*^9}, {
+   3.550182704966523*^9, 3.550182869791752*^9}, {3.550183415740142*^9, 
+   3.5501834190806847`*^9}, {3.5501836034805393`*^9, 3.550183624001672*^9}, {
+   3.550183665734119*^9, 3.550183666093061*^9}, {3.5501843500025797`*^9, 
+   3.550184361679538*^9}, {3.550189731049994*^9, 3.550189766191983*^9}, {
+   3.550189811377195*^9, 3.5501898218494473`*^9}, {3.550190221041936*^9, 
+   3.550190291135439*^9}, {3.550190347815042*^9, 3.5501903618147078`*^9}, {
+   3.550239562676915*^9, 3.550239567769945*^9}, 3.550239770638541*^9}],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{{3.550184589421946*^9, 3.550184589587881*^9}, {
+  3.550189921988082*^9, 3.5501899797523193`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"IntegerDigits", "[", 
+    RowBox[{
+     RowBox[{"2", "^", "i"}], ",", "2", ",", "10"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "0", ",", "9"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1",
+      ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "0",
+      ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0",
+      ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.550189962129355*^9, 3.5501908637104607`*^9, 
+  3.550239757155724*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Checking out how it behaves when it is fed unit vectors!\
+\>", "Subsection",
+ CellChangeTimes->{{3.5501909410681343`*^9, 3.550190953863954*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"numbers2colors", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"Most", "[", "#", "]"}], "\[Rule]", 
+       RowBox[{
+        RowBox[{"HiddenProbabilities", "[", "w1", "]"}], "[", "#", "]"}]}], 
+      "&"}], "/@", 
+     RowBox[{"Tuples", "[", "]"}]}], " ", "]"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"numbers2colors", "[", "#", "]"}], "\[Rule]", " ", 
+     RowBox[{"ArrayPlot", "[", 
+      RowBox[{"Partition", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"VisibleProbabilities", "[", "w1", "]"}], "[", "#", "]"}], 
+         "+", "1"}], ",", "9"}], "]"}], "]"}]}], "&"}], "/@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"2", "*", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"IntegerDigits", "[", 
+         RowBox[{
+          RowBox[{"2", "^", "i"}], ",", "2", ",", "10"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "0", ",", "9"}], "}"}]}], "]"}]}], "-", "1"}], 
+    ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.550164436680462*^9, 3.5501645278484163`*^9}, {
+   3.5501646714620647`*^9, 3.550164698898015*^9}, {3.5501647301583757`*^9, 
+   3.550164752780929*^9}, {3.5501648043280563`*^9, 3.550164966307166*^9}, {
+   3.550164999503237*^9, 3.550164999645896*^9}, {3.5501650338829193`*^9, 
+   3.550165037793888*^9}, {3.550165072830461*^9, 3.550165103155828*^9}, {
+   3.550165150647073*^9, 3.550165171261024*^9}, {3.550165232335471*^9, 
+   3.5501652609374*^9}, 3.5501653275530443`*^9, 3.550165530445311*^9, {
+   3.5501657437090883`*^9, 3.5501657993390903`*^9}, {3.550165890238688*^9, 
+   3.5501659048367987`*^9}, {3.5501659646737328`*^9, 3.550165970310604*^9}, {
+   3.5501665032836533`*^9, 3.5501665372169313`*^9}, {3.550166588169613*^9, 
+   3.550166669218292*^9}, {3.550166844731366*^9, 3.5501668499281893`*^9}, {
+   3.550166886932917*^9, 3.550166903723027*^9}, 3.550166970174155*^9, {
+   3.550167000513834*^9, 3.55016700100948*^9}, {3.550167119231964*^9, 
+   3.550167148209659*^9}, {3.550167180456603*^9, 3.550167195653861*^9}, {
+   3.55016724241759*^9, 3.5501672431452427`*^9}, {3.550167373501011*^9, 
+   3.5501673736363688`*^9}, {3.5501675849195013`*^9, 3.550167592991089*^9}, {
+   3.55016772898177*^9, 3.5501678195928392`*^9}, {3.5501679408941793`*^9, 
+   3.550168011724374*^9}, {3.55016805335028*^9, 3.550168059854344*^9}, {
+   3.550168108369286*^9, 3.550168176901314*^9}, {3.550168207415592*^9, 
+   3.5501683630329323`*^9}, {3.550168398549389*^9, 3.550168428050311*^9}, {
+   3.550168475942597*^9, 3.550168476028469*^9}, 3.55017095689769*^9, {
+   3.550170993920301*^9, 3.55017103836084*^9}, {3.550171098812976*^9, 
+   3.550171155062029*^9}, {3.550171191890765*^9, 3.550171238845861*^9}, {
+   3.550171287281427*^9, 3.550171324182474*^9}, {3.550171669221066*^9, 
+   3.550171679714362*^9}, {3.550171756539134*^9, 3.550171765233801*^9}, {
+   3.5501755720934277`*^9, 3.550175600286913*^9}, {3.5501757979086523`*^9, 
+   3.550175801604312*^9}, {3.5501759331859818`*^9, 3.550175934175201*^9}, {
+   3.5501759837632103`*^9, 3.550175983906736*^9}, {3.550176032750256*^9, 
+   3.550176032886462*^9}, {3.550177467053534*^9, 3.550177467389318*^9}, {
+   3.550177818640091*^9, 3.55017783497012*^9}, {3.550177872366468*^9, 
+   3.550177977476184*^9}, {3.550178654507881*^9, 3.5501786546032667`*^9}, {
+   3.550178780943717*^9, 3.550178804037594*^9}, {3.550178853048993*^9, 
+   3.55017885316849*^9}, {3.550179319928742*^9, 3.550179321740231*^9}, {
+   3.5501797313540363`*^9, 3.550179780572282*^9}, {3.550179814773645*^9, 
+   3.550179815149699*^9}, 3.550180004443882*^9, {3.55018017811628*^9, 
+   3.550180179579342*^9}, {3.550180330508456*^9, 3.550180384367383*^9}, 
+   3.550180440588698*^9, {3.550180566375346*^9, 3.550180571996108*^9}, {
+   3.550180608434618*^9, 3.550180620409849*^9}, {3.550180651959635*^9, 
+   3.550180652190381*^9}, {3.550180843340651*^9, 3.5501808444149237`*^9}, {
+   3.550180973505405*^9, 3.550181022802115*^9}, {3.550181190586153*^9, 
+   3.550181191209839*^9}, {3.550181256987858*^9, 3.55018125706777*^9}, {
+   3.550181321821733*^9, 3.550181403529269*^9}, {3.5501817750040827`*^9, 
+   3.550181848236993*^9}, {3.5501822705336723`*^9, 3.550182273045641*^9}, {
+   3.550190431982534*^9, 3.5501904344188213`*^9}, {3.5501905596018763`*^9, 
+   3.550190564204529*^9}, {3.550190597733819*^9, 3.550190619484996*^9}, {
+   3.550190721500667*^9, 3.550190755821425*^9}, {3.550190799733817*^9, 
+   3.550190840461647*^9}, {3.55019088147793*^9, 3.550190920276669*^9}, {
+   3.550239473220171*^9, 3.550239494149473*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[RasterBox[CompressedData["
+1:eJwtxX0slAEAx/GHtRNmeasdo2glGnnZzSzmd16mp+a1VJOJecvCnLeRWh2G
+y9sQplJEYXbTLTmXkNfunJcjnHMTd17uboi8VFqa+sN3++xrHp5wNUqdIAjN
+Q+TFYLeQM3zQ3tJS7t+bAX3T097buQJ0hU+DktEBxhPdpMljnxC2Fvsr4v/p
+yWfj6urbYKbxrpE3PYQqMufa0nov5nVMZ4tGl2DJd+vONhzCekFAbXqPFCm/
++1s0S+XQz3iwMk1VQabFcvGs5IOQN4el3RXC/6RW/sA+Bzy7cPXJgV5wyl8u
+xhvw0H2F/ljkrIBjbnO606QCkgjE9433YuNVZtrWl1UQ9hY3VNqjaAr9kdnJ
+EEC12MiU/PwMTi8pm/fsBnGkKErNQQDmACWs2EIAE+XGgS1jBhx2YNV5Xx4o
+0ewKP+cVPPSrZ5SxF7Gv36EI156DdV7c+0bfKZDGlWr6GkLEUBQ6WjI5qgtO
+1HKok1Dl2iyEdM2ARaG4b1sPgh3pWMq9LAVBITJasttQHMZ6lhEpA+t4a5Bd
++AT8jQ9oXMtWLDuSNX+5cgiYiR+FayMo8aGsri91Qve7gcTKYwxUcaGgun0K
+e6e1TPRWxKBYJUqxpIB36F5a1uAESPlNK7rOIEh321vRWbOQ+KRSBXQRmHwz
+C726Eozo1iRvJ30FLVqsFls4jV1l3hxZtgB/xliOR0gbqEEi10vcYVSZnovJ
+TezHeMJa8Ka5FJavbQqCZcNoUK11vAlchqty53mkpRK+ywqTjKcyqPPVfPxT
+lyETfqvnaYpQ7kArrQ4QQ/DBJs9wawzEn93ZfYYQkgslp6679CO9rckrzagH
+xGHMR6KiJrILrPTFO3tMMcZfVOU77UpxlN3Fbb7dBzMvXaOdo+34B/tpPPA=
+
+      "], {{0, 0}, {9, 9}}, {0, 1.9288389953792902`}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[RasterBox[CompressedData["
+1:eJw1ym0s1AEAx/Fj5mGsxKx2JsdGqISiK+NnF+uuSbouNJu71Wk0d9lKM9E1
+o65Z3Q0hbDripKdJONe1LmmeNvdHxzmde3DdeSqa0c0u1Yv6bp9334CLV5nZ
+jiQSye2fkJTQJ2xXI5hOS9rhEjNcedlRIucBrGQK80aHdFgQsspr6QRs3WVh
+k3wDFIF290S5BhlhJL9C6QQMPc2RrPAOELg3d1dmAqc0MdvO1iP/ew/TpWoc
+LBtPUBqigXNZ0HKvYAkh/tRpD50ZWw2hzpmRZkQksDhB5wex5r3BF9/sQWpT
+a45cpoTQkOZCp5mQt4MjXZVbwUn0sF769RpbHaIVye9FpI7XWS4c7QdlPYza
+yHgH24GK3ZYIJShpIznMYy2oO+MZ+/XlLGRyaXDurRmknH5cx71sxVBhbbQo
+ZQrV6kCBfOci0uKHFC4FBhBuLzpHpjsh9jlEptMtyJiIS/LeHACF5yl2+KFH
+uyRIH35EDfGWNHxRqoPQFhvVWKmGp1f0K3EWgeqAcuqYikBaU9Wyf60R4YeD
+Y9hFZhha4nJ591XI0HvU95ZZcXvUneDeGEMEd0yx1kKguM2m3tU/h4SFJWKv
+pRsyqWrlM8sIyklWVgxjHhRWSd/ZT0rYFws2fr7RYM/gpr46TIe1B1FJ5V/G
+kNxcP8kga9Hux9dnpI+CYnpabGtUwmBL39dn6gRJEsNbuzML+jrjlFYwi5xv
+lavUg2rQy9n5Tj5ayK65HG+4MgXys/Fz4JpAExkddG+NaG+V7Oc+sqBoSTnQ
+FWiGvYbWzH1uAoW6pUlXWJEwo902Z76H5kOZh4j/97fFf+xKJpB6oseX760G
+6X8z7sNFChUcq8gPa9gWbE+300Yr5nHdXNHmq5yHbDuPrPSawB9Ru0a7
+      "], {{0, 0}, {
+      9, 9}}, {0, 1.899525068714714}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[RasterBox[CompressedData["
+1:eJwtw3ss1AEAB/BjtfKoLmm5eSyc0nkMkZuaL5VkayUkql0S1dI4aqKsslIy
+jpY5a9Wy5ljzOnGuzDmPLh2Xc16He/zOucshkSOS6h+f7eMYnxKRaEoikczW
+F5n3nE10UOFGQpNaucEA0rpbMRxlzgENdpe5CWpvdiJo0Tb4lUQKfiBjCydu
+EDSzaVpzEoG6Qj+VaJMYwmR1fZVEA2Y0GCZ9Y3CNCS4/7KsDP83N84SRgIDT
+Eh1RqUOC7b3kzx0KeJm+CZsc64WNd9FCwItOJHwyjpr/JhDUJM72PSbEST3V
+WhWlBe/26tpHz0kU5SSZTFcQGFfMzFLI07C7bE7NLZDCcinkXOpbGUrnuXde
+Lg3A8sz5out9ajwqYM+5vNeBmUu9sMulC0T3vrb5ST0qK6Yrer/3oyGitjXn
+qgFdjL+1mWP9IC9r2qTRCmQUFwssm4chlVQ/9FyQw32OXlB3RY+jgYVm7Lvj
+8LH4cspJpEPACM85fkYL+VJZYAlZCeqhH5F704chvs/1387TwUbB4rr/G8Dx
+0RRFi5Ma4iVH3xLvcQjJ1pR0Kw3o7q5r6lA5StMHuVKmHHUel7qywxvgmuFg
+aC1Rgmmjf0ZjyBBTv3OjMVaJjC6Dj/3oCGaqmeytnt8QftoraqxZAroPlcj2
+GIV49ml7D00L4ZPnjlqiFXPVdlZZFgpIxR3lzMftENKS26s4atAbZUoRIcbr
+DzVmlH4C1zh/GOT5EYhSZ2UKFy0ElplWrPZJTPAH8ha1euQ3prUVQ4c9+Sv7
+BXMGbP65zXGH7xTy/AQhvIAJxLGTV5ejpXhQ2Z1qzyoDf8r7IKlGChKdFPur
+7R2ESVmysItfIcqPlBgjteCrQp17xjUobfFfGWINgm97hNJtMoT/MdJPyA==
+
+      "], {{0, 0}, {9, 9}}, {0, 1.9326640098676133`}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[RasterBox[CompressedData["
+1:eJwtzHswEwAAx/GhznlFyqM5xXkcd9Mpk12cH3cqjtutJxK3PM67LevhKOqM
+XKdrVyzD1U5LIi1ja3ows5HXMvPchrE/jDvyRy11rqs/fO8+/3690xnnsiwJ
+BILNLhprino4eQhfv+SHf/BeQtQvebAFnwf6aqywxk0Dd1p0e2nLAOihfjZk
+t26QidxvMotJEHobPosjxHCa8y/ZIPaALP056bozjWLNuzEvBzUSSvYVXmdp
+oXrjl7TGM+DhlWDr3+3rMPHErIoLSziYXG9hYKtBIx54azv8//PAkznRqQSz
+c52alCXGXEpps4Q8Dcr5/YyPW6sIUHpmBOYqIEoc395UrIE2SClvj+yFqTEi
+z5AmQxRZGq+OrkM1j5bv4q4EeaDibOHGEgi7mS+RJNX1y6j3qfST7ZkCiXos
+IzXDCL6E/SyteBpJN+cZsi05pAznTLtYFaJUYeUixzpIBXJzEWcSpjgjxb92
+EMXiJ6Ph3qsg+aScMvQtgjNKbTHGj8Od+ld/e+8IOLf0Z16YTejuV/kcn9FA
+NuYWZqZzoSjm9vUzlpGQsH4xSanGnXut0u48NWJGGY9TBTp4Pd/5k/e9DduR
+OSXNuSrMQXuUJtOhwENOt1yeBJ/VEEt3GQHplYO8S74AkpVpHo802HrKvhuS
+3YVWrqFKx1WAKRyOvkEUQV9Z5Ulp04ItfP/aan4B/Nic+ZQCATgnaLXpFXKw
+mUMZab5qSHXW0VSmAie98oPMmmU4l7QaC9NX0BxIXuujrCBh4GqnxHkWNYKO
+WeKoGqTspnyXazpwmjw2glyHERMiSGzcXESr0E6Ym6mAb9xcjih7BoTy+06O
+L+sQNeH+qainA4rTcaFHZBOoCdCXzdiqYa+9zDpkr4d0W1tG/zGCf8uyPIU=
+
+      "], {{0, 0}, {9, 9}}, {0, 1.9084431164005735`}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[RasterBox[CompressedData["
+1:eJwtkGlI0wEAR//mMEvSrdQMG2quHFpgQjLH9Lc8530vqYi0mTIrM0URjEZa
+SKFZlEmZLlkhiLqGxyaetIm6TeeRR27u7zU1S5EkI0Xzgw/e98dzScmMSz1E
+EMSRA6U5GebPywfArBc4xDUug0yP1lYqmhCh4B8O3xsFd5H2r0LyGcRvnwjt
+6ASc/1ysU5RPQXzapYhF16JYaC6zp4+AVbpOq2OPY+7DT9rtbyYkBDFNsUGL
+0Pdl1H/lGDGZ6OWVb2eCQF5muZNnAsM2S5IVPQORZXfOFucNnEsivM1nv0Nu
+vcoWnVSBcazkVWjALCh09TXfqz8gPeUmbeudxHJ6vtJMsQJuvFXko8laiM8k
+EVyTCsQBLDK0926mDs5EvUXLCQPEQ3cGs1tboDubmyZcmwWPmxu5KRzCPcFL
+euVbEuL1x4RGpoO0kx3sN6iFhJ6x0e62CG5ndOpRm/0+VVehK2cCmnZbWoXe
+iIVgsb9PlB5j3ufU7xtJ1N6wW0p17EHx5mq0O0MJjryAYmVYga6g2JH1wABq
+q9rYJ9KDZNMdvHNIeB5P4Ad0TuH1RnJUjWASstXw0qGxeYjoVslbSg3S+WEW
+F9JGsMy6ZB9vMwaePGW3jrn/fSV+Uy4dwN+QCV5/jB4Lyn5/RawRgV2SbZXj
+MMh3vLxdlh4xyjWLsEY1bvKf+DR3ypBUVRYiOT8KcYMxV+raA72dS7dH9TRE
+yg4htV8D4kxzg3uhERQ2yeNvz0N8/1OQ2a05KKtiE6tFK2gy0xaWOS3Bei87
+95fzIgQ9RV+4WwZUVD7s6HOaRozlsOuVpzqQsc92egObwAzzCKb69sGzxsTV
+X28FSW0zlda2gmvihyR9JBFR6LftPbMAHUU47vTCAEZozmWXwFn8B6GnOGc=
+
+      "], {{0, 0}, {9, 9}}, {0, 1.89235497300269}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[RasterBox[CompressedData["
+1:eJwtj3ss1AEAx4+mduj0QJZHXrtGN915RVNfjBtCDXEMYa7WUvdba8MyjrUJ
+baitzDjy6nVGxJzRWHfeznmcbj93XP08Qy6jXTOVP3y2z/+fj0OaIIpvSKPR
+6Idqq9uYEU6jiAnoIhl5C7A3kpP5u+3wD/pgndbYAsXnACZHMIDaMurlfu4w
+eJrXz5ZkCujfeV7xIoag48wKHrp/BM+rbTtOPIF0nubBlKsWneXd85qfWhgm
+J2165qwiZNJqOO7tGk7o0r1fUArEzHTwByInkWLpUe4g7EXZoOeeG0uOvoZ0
+78QdCXTD0Su7XBJNJSuWYosN8PZDwxOukWCMuzCbutahUE+E3bw+ggyKJ+Fz
+ptHKq7M1cpViddBx7dWwElY93NwbvWqk+F3MTM5tgTRLtLRy/gcItvOlvd9z
+GFisU9l1Uth5Q/c+vvQNZaEGrmOafrRyu6lz7DkkbnbrPQIVYI0XpK0Ff0VZ
+BdMjo3gaXTXSk5KrK/Bp7MhmG1NQuxRMFDEnoa3iboj9ZOhz9a6yvbOMp5JK
+x/5HGghzSxT/muVgNPhkBN9egl7vW7vuS4KwqG5kJ40gSrzoVf1+EUHN8ffu
+b8yhdXAoNZIah0r0adHgshqExv1CDr0d9s+fSLXhEmjtNrTHrBdAC6kXRXPF
+yFKKSnt65SCO9trKC0ZhcyvPYIw5A2H3X6fHDC30ASkmzNIvIMgKM4tiFdgR
+McUmmnHwfo2dlcb2g1Bm+4UtKBFSWXQkIZDETLhgdYuYhc2fVP+OCgqK7fwh
+lkgJ4V2SE5kzD5bb1nSY3TJUPHM2dXoEtXy6857s4NM3PqrJrPKgj217akcD
+2iEh9Q0yyrgf5jWGMkJAQq86U+iWQ4IVO6VTFX6HqS6Tzjedx3/ITENx
+      "], {{0, 0}, {
+      9, 9}}, {0, 1.95390443811399}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[RasterBox[CompressedData["
+1:eJwBmQJm/SFib1JlAgAAAAkAAAAJAAAAQLFx08T/vz8ipVElEOngP1COKC+K
+EbU/IEK2I+YCtD8AKvqCREiWP2B1Og6lo74/ACIffjYrxT8oBUQBCl/GPyiB
+Nt0X+tA/0FODAkgj4j8Exn72hsLlP34skihIMOA/AlC6O7vL5z+qrV1zDDfn
+P/DOBBt9u8w/kgeHqWu/4z8AAAAAAAAAAPC1MEZB27I/+B+CqK9QxD9EbTBX
+aQPdP+iXR0XaIOk/ECqovRtb0T8aSZlpzVftP7AAhtGqqMo/YFozDX520j8A
+CcMoX9yJP0j8Fx7+ns0/aAzGizs31z+0NSeGYtTRP8yygu7NmeE/4GiCSTI+
+3z86/mwtLEXpP4hrCLJL6tQ/SDMFbK4P4D+ohT7v8qjfPyCMUiDsNL0/ELx6
+iltZ1D8Ei3s3XJ3jP4Bbrvr/2d8/DtCWiRcm4D8McZaPgZjbP+grJam2ddI/
+gN2zl9ux3z/IEwCamMnaP+CeYVNghbw/DKfUSGe62j+Ebs7x/WniP+B5UAxF
+fNU/YmX8gwqq5T+QqA6M0SnKP6w3VIRz3eM/cMYoFz+t2T/ge0xXJZyuPyif
+IHwz9ME/sPpMqwMo0D9YKK5cAQzQPxAmyFiXDbo/YKQVuVPN1z+wjKqJ2ze3
+P7hyzm2Rxds/qAKuMBTH1j9wcJkETRfSP5Chgelmxsw/4O5i50arzD8AY8zF
+Rla+P7S8+tS9Pec/aG2NotXs2z+oyG1iKSLpP3ItdxZ+qeA/tBA9gaIy2j9Q
+J9osdXPbP5CWuGlXAs4/oD4MNfUlwz8QalFwBnTDPzg9MuMZb+A/QIMSb0IG
+sz+gMfbMQHnCP4BxvGye+tM/mCY1SFRn0z9wvn9i9cDPP8jYxGip4dE/V1Ux
+XA==
+      "], {{0, 0}, {9, 9}}, {0, 1.9527710801642923`}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[RasterBox[CompressedData["
+1:eJwtzG0s1AEAx/Hrurhk1+UxYvMwktFkiXjx00hCJabMaJKzQ/Ow2C5qnZWn
+a8el1q4tt5tOWZMuzjJbnWfmsTvH4Q7/O3echy5PE6PUC9/t8/brnJIdwyCT
+SKSjB1bPN7/tTCCwOaeQ1tvMwenN9mtVRi/oInqqcEYONvl0dZGvCBGSQOel
+IA3odx3Ta3Q9EB6+9rJS0wKfoN+PP3j1gFfpop5o1MGcE8bt7zMgMTW2wtVO
+C4VjCLmxSoUJpyaic3sBUbft7zhG6LFXWW4s/DwKdsL+NrflE1Ys3UrJawqQ
+DlLLqSPrCYtIqb2pVFoZkHN1WxLn0w7e8uh1M+tlENxX2WWLY4gOYgz8PDeM
+AAtazINvwyDaC9taljvA9FNZt7tMgbm10XGxTwGjTSZV5qUBW84T+3xtxnwA
+a1xhOwe+MiTjQpUe0VGNdg5UNfbAy6UcmwaxMMhI40yB4LhZUkJ1UCyI7+/T
+9eCfIVP2Gwgkdyv9qR5D6Dqh9cu9pUK42IRR9KcHgjn2d6caHYjikYhEUy0c
+itIiicBZlNjmua+5acFnsXxl0TMI9javKN/9/2cyKWtxIwg2JO4fapGAxxcz
+yi0J7Bk9ZSUP1WCvrNs0vfuCH6Y2Zz0du8CLfBLZQFOCFc749WhgFsn6IIOD
+xzTydijp8cxZCEVCw+aWFG10u8yOLCnqeJzh4vfj4JkZy8IE46jbPbne6quC
+vTx0N1mghVjaX851HYIx/hLqM3VItCjNe36FQEFtwOi9yzoY/kqoU+YaOHgv
+dR95QYA9OGT1dF4DUZe/dDx/EvzjrH7aqQHosk3EuS4yuOdUswpWNRBO14pY
+EIFKC8l6ljSJ1M0brW0cPaJMFTsfQxbQF9ubnzQmg5NsgywgqfEPKi5HeQ==
+
+      "], {{0, 0}, {9, 9}}, {0, 1.9161076706251556`}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[RasterBox[CompressedData["
+1:eJwBmQJm/SFib1JlAgAAAAkAAAAJAAAA8JDKj0MK4D8YC19a6ELmPwAAAAAA
+AAAA7AzBu+ql1D+wqp0A3GnUP+Q8kocFlNI/sOthLQJlvT8Qas5Yw17HPxAT
+lTcyWtM/0nY229s05j/Or7AhwXPkP4gvk8uz99g/cBWpV+m64T9sR7da4APn
+P/D3YDd+QOA/UOI/c2ll3j9MMMbT58bQP2yLEEovnd0/oCvwAXU2yT8460GQ
+xDriP2B1KsIoM+s/wGGklRbn1D+mIRANJTPrP7DWnbU6D8A/AC/s3kD6zD9o
+HncRZj7KPyijpo11c9A/IDflAvVH4z/owR/oKxPXP0zNFRRpquY/0IsgoP0v
+1T/8Thb/8i3hP8iemMQa/N4/2Pv2fdEo2j+0w6L39B3eP7hHuqkw2Ns/BuFg
+4JHG5j84V0Fg5azbP8Jc73HSKeY/TAuF9/2M3j8Qa4XfEJ7RP/BzlkjPLcA/
+RgIh3Hur5T/qKpbw1ALmP4B0m8cnUdU/nCKum3L36D+Yl3RXwE/YPyAtdYJN
+ldI/EAFimlOA4T/AQDD7GV6zPzSRSc/rX9g/lKoN+ZVq4T/om59Ewz7fP7CH
+ZLLzMt8/aB7O+RD51T8YMgT7gR/EP6jZrWLYUNI/VFGkgDfG4D9gHylVo2TN
+P1DQRLHZu8g/MBVkGTG21z+Aa4bcqcXVPyCansAY2ts/+PVf2Hkc3z9YSiq6
+DZDeP4ymG1g64Ok//EUAwOZ34D/YLAc45fPkP6QvE6TjVtw/oLIpuQHK5j+4
+itKGxybjP4zZ5vKkctc/hoqVhgkq5T/Av7M6/6m/P4BnH9SF5ts/UN78jDbp
+wz8gQ2fX+KXZPwz3yS9UeNc/nPf012gc5j9IMMquqzbjP5ZlYcMfpuM/YYFK
+ag==
+      "], {{0, 0}, {9, 9}}, {0, 1.928181632517243}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[RasterBox[CompressedData["
+1:eJwBmQJm/SFib1JlAgAAAAkAAAAJAAAAkBMIEITB3j9Se64JX0DpPzApHF8G
+Db0/HP8f6Cdt2T9Q5IjhWqm4PxQhRD8YMeA/FCRZnkV+2j84LJoqKhfcP+Dg
+PefZta4/sGr9dUNA3z946ITpGM7ZP9xbQgipqtc/VM83BQZr5z/YlgtQvmjl
+P3aa5BOCt+E/Qsbf04pT4j8gC1K3Pq+4P/gqpv4v5cc/HPL7a8YG0D9aBw5C
+1/rmP3I4RHK/A+k/6NE5ZasI1T/kqP2HB73qP9CDiqQCsMc/SPiVL7Bv1T8I
+3vhBvsPHPzhoB5gBnc4/RClJlyZH4T8QKx1JghrWP1we3OT5wtw/fFuuPbYB
+0T9UDdGcUWLmP04Y7CjIPuE/9AwPH4b70T8i447QhgnkP2CYSbZ+k8g/+Ocr
+HbQ55z8Yh/vTKPviP5J6H14aVOI/qIQeUe2fxz8QiZ7tAX7hPwAAAAAAAAAA
+FksLt9Rc5D+4fG0LCQDdP2gHU6baMso//o/5eXPC5T+QKaVzmD/KP8i6NJE2
+fco/PJ1PB9tR3z/0Oma7733RP/zS1holP94/dIWKaW8O3T8ccvoiL+vUP7j0
+j34pNtA/xkv318Od5D8c/6CUgobQPzBqwCnV2cQ/BDD4lOM03j9ggZVedsim
+P4gFmqc3LMQ/NEU/qpiJ1D+sci/XV93XPwSjyaukUN8/yHbnlZ/UwD+yUcQT
+JyPhP8rjaB1aleY/gj0EH9iP6D+uvi/U9DfqP+wSmnBs+N4/HMJfQZcB4T+8
+tAOX9kHnPzgK+L81Q9o/DogzNiuc5D90a1GZjmrQPwhX77P3aMs/oOo8r6+e
+pz9wt7Tvucq2P1xOeGp8R9U/7MLa3TLK3z9OY+fSbbflP9wge6es5Ng/CUU9
+4w==
+      "], {{0, 0}, {9, 9}}, {0, 1.909805348553985}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.550190922424116*^9, 3.5502394894613743`*^9, 
+  3.550239757344789*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"numbers2colors", "[", "#", "]"}], "\[Rule]", " ", 
+    RowBox[{"ArrayPlot", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"HiddenProbabilities", "[", "w1", "]"}], "[", "#", "]"}], 
+      "}"}], "]"}]}], "&"}], "/@", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Append", "[", 
+      RowBox[{"#", ",", "1"}], "]"}], "&"}], " ", "/@", " ", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"ProcessImage", "[", 
+       RowBox[{"data", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "i"}], "]"}], "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "10"}], "}"}]}], "]"}]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.550240014984767*^9, 3.550240017551011*^9}, {
+  3.5502401083011436`*^9, 3.5502401130046253`*^9}, {3.5502401605928392`*^9, 
+  3.550240180498192*^9}, {3.55024023964541*^9, 3.550240243988763*^9}, {
+  3.5502403388796883`*^9, 3.550240420618503*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[
+     RasterBox[{{0.000028195298895528076`, 5.167746105483317*^-7, 
+      0.0007878720470173572, 0.9999859761670082, 0.9999476409703306, 
+      3.3446725135055644`*^-6, 0.999737373444615, 7.540101245040454*^-6, 0., 
+      0.9999988367309929}}, {{0, 0}, {10, 1}}, {0, 0.9999988489592646}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[
+     RasterBox[{{0., 0.000010732723417117285`, 0.000020228172087577434`, 
+      0.9999789969213738, 0.9999916523229886, 0.00039088861487068804`, 
+      0.9999236209384497, 2.3450846494688093`*^-6, 0.000023973001978316866`, 
+      0.9999917076102538}}, {{0, 0}, {10, 1}}, {0, 0.9999989286454816}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[
+     RasterBox[{{2.0258931081595932`*^-6, 0.0000160218676171775, 
+      0.0001417870774286234, 0.999986757390427, 0.9994243016393081, 
+      0.0000846753490711949, 0.9999035234663562, 0., 0.00006823756002682924, 
+      0.9999818531833268}}, {{0, 0}, {10, 1}}, {0, 0.9999944370324012}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[
+     RasterBox[{{0.000034329682195965994`, 0., 0.00008225651948912116, 
+      0.9999970043592158, 0.998766913802123, 3.379821232218916*^-6, 
+      0.9999384972166111, 0.00001587978492123554, 0.00007753057503667726, 
+      0.9999901480983322}}, {{0, 0}, {10, 1}}, {0, 0.9999985264463924}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[
+     RasterBox[{{0., 4.516077693805798*^-6, 0.000057208896838800705`, 
+      0.9999628623208422, 0.9999773672140563, 2.480517126368653*^-6, 
+      0.9999802064727628, 7.521649003638942*^-7, 0.0010714290516918856`, 
+      0.9999919639850157}}, {{0, 0}, {10, 1}}, {0, 0.9999927411018589}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[
+     RasterBox[{{0., 0.000027861658021932634`, 0.00005944522157819154, 
+      0.9999623395329088, 0.9999859462466971, 0.0003910661739399135, 
+      0.9999536531678854, 5.096140390681292*^-6, 4.252249701797162*^-6, 
+      0.9999930255016398}}, {{0, 0}, {10, 1}}, {0, 0.9999940733856658}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[
+     RasterBox[{{0.00008772430268011444, 0., 0.0015706890568552012`, 
+      0.9999447824616485, 0.9997851962500651, 0.00006615726749970019, 
+      0.9998896214236468, 9.309275502689118*^-6, 0.0007566724500859268, 
+      0.9999983941692698}}, {{0, 0}, {10, 1}}, {0, 0.9999987097762326}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[
+     RasterBox[{{0., 1.3882790296237957`*^-6, 0.001251307124827128, 
+      0.9997623839073302, 0.9998076757239625, 0.0000925753954509334, 
+      0.9999916976496338, 0.00001048492665278733, 0.000059031220917327154`, 
+      0.9999946550123427}}, {{0, 0}, {10, 1}}, {0, 0.9999957767882893}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[
+     RasterBox[{{0.00003601237161632298, 0., 0.00012230452658690272`, 
+      0.999976931446183, 0.9999463239006169, 0.00001912465328812729, 
+      0.9999488601939605, 3.802042625511426*^-6, 0.00010007580913473646`, 
+      0.9999976417220426}}, {{0, 0}, {10, 1}}, {0, 0.9999976878348691}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[1], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10], ",", 
+      GraphicsBox[
+       {GrayLevel[0], RectangleBox[{0, 0}]},
+       Frame->True,
+       FrameTicks->False,
+       ImageSize->10]}], "}"}], "\[Rule]", 
+    GraphicsBox[
+     RasterBox[{{9.049800474558722*^-6, 8.606126118415602*^-7, 
+      6.448111197210338*^-6, 0.9999791079366216, 0.9999900422114206, 0., 
+      0.9994751615986569, 7.186070537512634*^-7, 0.0002435116697153683, 
+      0.9999940270123041}}, {{0, 0}, {10, 1}}, {0, 0.9999983388752716}],
+     Frame->Automatic,
+     FrameLabel->{None, None},
+     FrameTicks->{{None, None}, {None, None}}]}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.550240152567137*^9, 3.550240189381542*^9, 3.550240247379343*^9, {
+   3.550240362370565*^9, 3.550240421984356*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1440, 852},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.5, 1.5 Inherited],
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 98, 1, 39, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[702, 27, 105, 1, 51, "Subsection"],
+Cell[810, 30, 429, 10, 66, "Code"],
+Cell[CellGroupData[{
+Cell[1264, 44, 361, 9, 40, "Input"],
+Cell[1628, 55, 5034, 89, 372, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6711, 150, 100, 1, 51, "Subsection"],
+Cell[6814, 153, 1133, 29, 162, "Code"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7984, 187, 100, 1, 51, "Subsection"],
+Cell[CellGroupData[{
+Cell[8109, 192, 753, 16, 156, "Input"],
+Cell[8865, 210, 1495, 32, 64, "Output"],
+Cell[10363, 244, 567, 9, 40, "Output"],
+Cell[10933, 255, 577, 9, 40, "Output"],
+Cell[11513, 266, 577, 9, 40, "Output"],
+Cell[12093, 277, 569, 9, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12699, 291, 264, 7, 40, "Input"],
+Cell[12966, 300, 1245, 29, 64, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14248, 334, 153, 3, 40, "Input"],
+Cell[14404, 339, 470, 8, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14911, 352, 153, 3, 40, "Input"],
+Cell[15067, 357, 469, 8, 40, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15585, 371, 110, 1, 51, "Subsection"],
+Cell[15698, 374, 94, 1, 40, "Input"],
+Cell[15795, 377, 2651, 73, 210, "Code"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18483, 455, 106, 4, 133, "Section"],
+Cell[18592, 461, 171, 3, 40, "Input"],
+Cell[18766, 466, 4338, 88, 480, "Code"],
+Cell[23107, 556, 774, 17, 66, "Code"],
+Cell[23884, 575, 1673, 44, 158, "Code"],
+Cell[25560, 621, 1331, 36, 90, "Code"],
+Cell[26894, 659, 1164, 31, 90, "Code"],
+Cell[28061, 692, 668, 19, 66, "Code"],
+Cell[28732, 713, 3273, 76, 573, "Code"],
+Cell[CellGroupData[{
+Cell[32030, 793, 186, 7, 64, "Code"],
+Cell[CellGroupData[{
+Cell[32241, 804, 92, 1, 30, "Print"],
+Cell[32336, 807, 71, 1, 30, "Print"],
+Cell[32410, 810, 129, 3, 30, "Print"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32600, 820, 138, 2, 100, "Section"],
+Cell[32741, 824, 5056, 89, 133, "Input"],
+Cell[37800, 915, 162, 2, 64, "Input"],
+Cell[CellGroupData[{
+Cell[37987, 921, 243, 7, 40, "Input"],
+Cell[38233, 930, 1644, 44, 87, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39914, 979, 154, 3, 51, "Subsection"],
+Cell[CellGroupData[{
+Cell[40093, 986, 4588, 82, 87, "Input"],
+Cell[44684, 1070, 25898, 744, 835, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70619, 1819, 962, 26, 64, "Input"],
+Cell[71584, 1847, 118917, 4215, 730, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
