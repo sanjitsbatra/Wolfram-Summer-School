@@ -1,7 +1,10 @@
 # Wolfram-Summer-School
 Restricted Boltzmann Machines in Mathematica
+
 To learn, perchance to dream...
-				Sanjit Singh Batra     Taliesin Beynon
+
+Sanjit Singh Batra     Taliesin Beynon
+
 How the human mind perceives,  is a concept that has eluded humans for hundreds of years since sciences have developed. Attempts have been made, but the difficulty in being able to confirm whether the predicted model is correct makes the problem seem intractable. 
 
 In the last few weeks, I along with my mentor, Taliesin Beynon, have modeled and investigated a new model of machine learning due to Geoffrey Hinton. It involves a network of binary units, which are arranged in the form of layers. The layers form a bipartite graph and these connections modeled in the form of a weight matrix are used to learn structure in unlabeled data. The nature of the learning that is performed in this model is more biologically plausible than previous methods, such as back-propagation, due to the local nature of its learning rule, which requires neurons to interact only with their neighbors. 
